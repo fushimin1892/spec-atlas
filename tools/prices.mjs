@@ -256,7 +256,9 @@ export async function refreshPrices({ env, cat = "gpu", only, onItem } = {}) {
   const items = loadItems(cat).filter((it) => !only || it.name === only);
   if (!items.length) throw new Error(`型番が見つかりません: ${only}`);
   const prev = readPrices(cat);
-  const data = { source: "楽天市場", fetchedAt: prev?.fetchedAt || null, items: { ...(prev?.items || {}) } };
+  // 前回の値は、今の取得元（TRUSTED_SHOPS）の店のものだけ引き継ぐ。取得に失敗した型番に古い別の店の値が残らないようにする
+  const kept = Object.entries(prev?.items || {}).filter(([, v]) => !v || TRUSTED_SHOPS[shopOf(v.url)]);
+  const data = { source: "楽天市場", fetchedAt: prev?.fetchedAt || null, items: Object.fromEntries(kept) };
 
   let found = 0;
   let failedInRow = 0;

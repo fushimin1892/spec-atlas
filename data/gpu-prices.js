@@ -461,14 +461,6 @@ window.SPEC.prices.gpu = {
    "title": "【中古】ASRock(アスロック) Phantom Gaming X Radeon RX590 8G OC 【297-ud】",
    "matched": 1
   },
-  "r9-fury-x": {
-   "price": 419760,
-   "condition": "中古",
-   "shop": "バリューコネクト",
-   "url": "https://item.rakuten.co.jp/trmt-1/b011hx9nxi/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
-   "title": "【中古】 GIGABYTE ビデオカード AMD Radeon R9 Fury X HBM採用 水冷クーラー ショート基板 GV-R9FURYX-4GD-B",
-   "matched": 8
-  },
   "r9-fury": null,
   "gtx-1650-super": null,
   "rx-580": null,
