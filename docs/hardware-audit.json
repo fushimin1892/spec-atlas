@@ -33261,7 +33261,7 @@
         "specsPartlyVerified": 96,
         "specsUnverified": 5,
         "scoreVerified": 0,
-        "scorePublished": 120,
+        "scorePublished": 0,
         "mismatches": 0,
         "structuralIssues": 0
       },
@@ -33321,12 +33321,6 @@
                 }
               ],
               "current": "2025/01/30"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 43937
             }
           ],
           "verified": 3,
@@ -33405,12 +33399,6 @@
                 }
               ],
               "current": "2022/10/12"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 36472
             }
           ],
           "verified": 3,
@@ -33473,12 +33461,6 @@
                 }
               ],
               "current": "2025/01/30"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 31840
             }
           ],
           "verified": 3,
@@ -33541,12 +33523,6 @@
                 }
               ],
               "current": "2022/12/13"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 30298
             }
           ],
           "verified": 3,
@@ -33625,12 +33601,6 @@
                 }
               ],
               "current": "2024/01/31"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 28963
             }
           ],
           "verified": 3,
@@ -33698,12 +33668,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2022/11/16"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 28185
             }
           ],
           "verified": 2,
@@ -33755,12 +33719,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2025/02/20"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 27954
             }
           ],
           "verified": 2,
@@ -33823,12 +33781,6 @@
                 }
               ],
               "current": "2025/03/06"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 26705
             }
           ],
           "verified": 3,
@@ -33891,12 +33843,6 @@
                 }
               ],
               "current": "2022/12/13"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 26384
             }
           ],
           "verified": 3,
@@ -33975,12 +33921,6 @@
                 }
               ],
               "current": "2024/01/24"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 23048
             }
           ],
           "verified": 3,
@@ -34043,12 +33983,6 @@
                 }
               ],
               "current": "2025/03/06"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 22959
             }
           ],
           "verified": 3,
@@ -34116,12 +34050,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2023/01/05"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 22781
             }
           ],
           "verified": 2,
@@ -34173,12 +34101,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2022/03/29"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 21970
             }
           ],
           "verified": 2,
@@ -34230,12 +34152,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2025/03/05"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 21564
             }
           ],
           "verified": 2,
@@ -34298,12 +34214,6 @@
                 }
               ],
               "current": "2022/05/10"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 21457
             }
           ],
           "verified": 3,
@@ -34382,12 +34292,6 @@
                 }
               ],
               "current": "2024/01/17"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 21116
             }
           ],
           "verified": 3,
@@ -34439,12 +34343,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2024/02/27"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 20982
             }
           ],
           "verified": 2,
@@ -34509,12 +34407,6 @@
                 }
               ],
               "current": "2020/12/08"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 20976
             }
           ],
           "verified": 3,
@@ -34566,12 +34458,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2023/09/06"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 19998
             }
           ],
           "verified": 2,
@@ -34623,12 +34509,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2020/09/24"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 19871
             }
           ],
           "verified": 2,
@@ -34691,12 +34571,6 @@
                 }
               ],
               "current": "2021/06/03"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 19719
             }
           ],
           "verified": 3,
@@ -34759,12 +34633,6 @@
                 }
               ],
               "current": "2020/11/18"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 19450
             }
           ],
           "verified": 3,
@@ -34816,12 +34684,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2022/01/11"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 18727
             }
           ],
           "verified": 2,
@@ -34889,12 +34751,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2023/04/13"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 17868
             }
           ],
           "verified": 2,
@@ -34946,12 +34802,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2020/09/17"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 17672
             }
           ],
           "verified": 2,
@@ -35003,12 +34853,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2023/09/06"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 17045
             }
           ],
           "verified": 2,
@@ -35071,12 +34915,6 @@
                 }
               ],
               "current": "2020/11/18"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 16373
             }
           ],
           "verified": 3,
@@ -35130,12 +34968,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2018/12/18"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 15105
             }
           ],
           "verified": 2,
@@ -35187,12 +35019,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2025/04/16"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 15098
             }
           ],
           "verified": 2,
@@ -35244,12 +35070,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2025/04/16"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 15071
             }
           ],
           "verified": 2,
@@ -35312,12 +35132,6 @@
                 }
               ],
               "current": "2021/06/10"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 14924
             }
           ],
           "verified": 3,
@@ -35369,12 +35183,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2025/06/05"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 14692
             }
           ],
           "verified": 2,
@@ -35427,12 +35235,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2018/09/27"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 14655
             }
           ],
           "verified": 2,
@@ -35486,12 +35288,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2020/10/29"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 13568
             }
           ],
           "verified": 2,
@@ -35543,12 +35339,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2022/10/12"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 13552
             }
           ],
           "verified": 2,
@@ -35611,12 +35401,6 @@
                 }
               ],
               "current": "2022/05/10"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 13517
             }
           ],
           "verified": 3,
@@ -35684,12 +35468,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2023/05/24"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 13493
             }
           ],
           "verified": 2,
@@ -35741,12 +35519,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2017/12/07"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 13490
             }
           ],
           "verified": 2,
@@ -35814,12 +35586,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2023/07/18"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 13483
             }
           ],
           "verified": 2,
@@ -35871,12 +35637,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2025/05/19"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 12916
             }
           ],
           "verified": 2,
@@ -35928,12 +35688,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2025/06/05"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 12805
             }
           ],
           "verified": 2,
@@ -35985,12 +35739,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2021/03/18"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 12786
             }
           ],
           "verified": 2,
@@ -36044,12 +35792,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2022/10/12"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 12505
             }
           ],
           "verified": 2,
@@ -36112,12 +35854,6 @@
                 }
               ],
               "current": "2020/12/02"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 11622
             }
           ],
           "verified": 3,
@@ -36169,12 +35905,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2019/07/23"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 11579
             }
           ],
           "verified": 2,
@@ -36226,12 +35956,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2024/12/13"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 11200
             }
           ],
           "verified": 2,
@@ -36283,12 +36007,6 @@
               "status": "unverified",
               "claims": [],
               "current": null
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 11185
             }
           ],
           "verified": 2,
@@ -36344,12 +36062,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2018/09/20"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 10986
             }
           ],
           "verified": 2,
@@ -36403,12 +36115,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2023/05/25"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 10949
             }
           ],
           "verified": 2,
@@ -36476,12 +36182,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2023/06/29"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 10614
             }
           ],
           "verified": 2,
@@ -36533,12 +36233,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2025/07/01"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 10240
             }
           ],
           "verified": 2,
@@ -36590,12 +36284,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2017/04/06"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 10179
             }
           ],
           "verified": 2,
@@ -36647,12 +36335,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2019/07/09"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 10115
             }
           ],
           "verified": 2,
@@ -36715,12 +36397,6 @@
                 }
               ],
               "current": "2022/05/10"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 9936
             }
           ],
           "verified": 3,
@@ -36774,12 +36450,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2017/03/10"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 9876
             }
           ],
           "verified": 2,
@@ -36844,12 +36514,6 @@
                 }
               ],
               "current": "2021/08/11"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 9597
             }
           ],
           "verified": 3,
@@ -36908,12 +36572,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2016/08/02"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 9578
             }
           ],
           "verified": 2,
@@ -36978,12 +36636,6 @@
                 }
               ],
               "current": "2019/07/07"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 9513
             }
           ],
           "verified": 3,
@@ -37035,12 +36687,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2019/02/07"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 9291
             }
           ],
           "verified": 2,
@@ -37092,12 +36738,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2021/02/25"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 9046
             }
           ],
           "verified": 2,
@@ -37150,12 +36790,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2018/10/17"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 8889
             }
           ],
           "verified": 2,
@@ -37209,12 +36843,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2019/07/09"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 8650
             }
           ],
           "verified": 2,
@@ -37277,12 +36905,6 @@
                 }
               ],
               "current": "2019/07/07"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 8516
             }
           ],
           "verified": 3,
@@ -37345,12 +36967,6 @@
                 }
               ],
               "current": "2021/10/13"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 8098
             }
           ],
           "verified": 3,
@@ -37402,12 +37018,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2020/01/21"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 7725
             }
           ],
           "verified": 2,
@@ -37459,12 +37069,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2022/10/12"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 7618
             }
           ],
           "verified": 2,
@@ -37516,12 +37120,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2016/05/27"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 7537
             }
           ],
           "verified": 2,
@@ -37573,12 +37171,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2017/08/14"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 7525
             }
           ],
           "verified": 2,
@@ -37630,12 +37222,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2019/01/15"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 7497
             }
           ],
           "verified": 2,
@@ -37687,12 +37273,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2017/08/28"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 6888
             }
           ],
           "verified": 2,
@@ -37757,12 +37337,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2017/11/02"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 6809
             }
           ],
           "verified": 2,
@@ -37817,12 +37391,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2019/02/22"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 6259
             }
           ],
           "verified": 2,
@@ -37874,12 +37442,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2022/01/27"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 6223
             }
           ],
           "verified": 2,
@@ -37944,12 +37506,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2016/06/10"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 6068
             }
           ],
           "verified": 2,
@@ -38004,12 +37560,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2019/10/29"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 5979
             }
           ],
           "verified": 2,
@@ -38072,12 +37622,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2015/06/01"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 5678
             }
           ],
           "verified": 2,
@@ -38131,12 +37675,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2019/03/14"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 5412
             }
           ],
           "verified": 2,
@@ -38199,12 +37737,6 @@
                 }
               ],
               "current": "2022/01/19"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 4939
             }
           ],
           "verified": 3,
@@ -38256,12 +37788,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2024/02/02"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 4902
             }
           ],
           "verified": 2,
@@ -38324,12 +37850,6 @@
                 }
               ],
               "current": "2019/12/12"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 4864
             }
           ],
           "verified": 3,
@@ -38393,12 +37913,6 @@
                 }
               ],
               "current": "2018/11/15"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 4766
             }
           ],
           "verified": 2,
@@ -38453,12 +37967,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2015/06/24"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 4739
             }
           ],
           "verified": 2,
@@ -38510,12 +38018,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2015/07"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 4728
             }
           ],
           "verified": 2,
@@ -38567,12 +38069,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2019/11/22"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 4680
             }
           ],
           "verified": 2,
@@ -38647,12 +38143,6 @@
                 }
               ],
               "current": "2017/04/18"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 4364
             }
           ],
           "verified": 3,
@@ -38707,12 +38197,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2022/06/14"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 4347
             }
           ],
           "verified": 2,
@@ -38766,12 +38250,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2014/09/18"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 4329
             }
           ],
           "verified": 2,
@@ -38826,12 +38304,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2016/07/19"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 4193
             }
           ],
           "verified": 2,
@@ -38885,12 +38357,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2016/06/29"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 4166
             }
           ],
           "verified": 2,
@@ -38955,12 +38421,6 @@
                 }
               ],
               "current": "2017/04/18"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 3868
             }
           ],
           "verified": 3,
@@ -39013,12 +38473,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2016/08/18"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 3835
             }
           ],
           "verified": 2,
@@ -39072,12 +38526,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2016/08/04"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 3700
             }
           ],
           "verified": 2,
@@ -39131,12 +38579,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2014/09/18"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 3626
             }
           ],
           "verified": 2,
@@ -39190,12 +38632,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2020/04/01"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 3597
             }
           ],
           "verified": 2,
@@ -39247,12 +38683,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2022/04/20"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 3583
             }
           ],
           "verified": 2,
@@ -39306,12 +38736,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2019/04/23"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 3582
             }
           ],
           "verified": 2,
@@ -39367,12 +38791,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2013/11/07"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 3355
             }
           ],
           "verified": 2,
@@ -39428,12 +38846,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2013/05/23"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 2796
             }
           ],
           "verified": 2,
@@ -39488,12 +38900,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2016/10/25"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 2338
             }
           ],
           "verified": 2,
@@ -39549,12 +38955,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2015/01/22"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 2281
             }
           ],
           "verified": 2,
@@ -39609,12 +39009,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2013/05/30"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 2137
             }
           ],
           "verified": 2,
@@ -39668,12 +39062,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2022/06/28"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 2024
             }
           ],
           "verified": 2,
@@ -39725,12 +39113,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2012/03/22"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 1996
             }
           ],
           "verified": 2,
@@ -39784,12 +39166,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2015/08/20"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 1879
             }
           ],
           "verified": 2,
@@ -39851,12 +39227,6 @@
               "status": "unverified",
               "claims": [],
               "current": null
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 1816
             }
           ],
           "verified": 2,
@@ -39913,12 +39283,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2016/10/25"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 1737
             }
           ],
           "verified": 2,
@@ -39974,12 +39338,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2016/08/08"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 1728
             }
           ],
           "verified": 2,
@@ -40037,12 +39395,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2013/06/25"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 1666
             }
           ],
           "verified": 2,
@@ -40098,12 +39450,6 @@
               "status": "unverified",
               "claims": [],
               "current": null
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 1406
             }
           ],
           "verified": 0,
@@ -40159,12 +39505,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2012/09/13"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 1313
             }
           ],
           "verified": 2,
@@ -40218,12 +39558,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2014/02/18"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 1226
             }
           ],
           "verified": 2,
@@ -40275,12 +39609,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2017/04/20"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 1196
             }
           ],
           "verified": 2,
@@ -40336,12 +39664,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2017/05/17"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 1083
             }
           ],
           "verified": 2,
@@ -40397,12 +39719,6 @@
               "status": "unverified",
               "claims": [],
               "current": null
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 812
             }
           ],
           "verified": 0,
@@ -40459,12 +39775,6 @@
               "status": "unverified",
               "claims": [],
               "current": null
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 701
             }
           ],
           "verified": 0,
@@ -40521,12 +39831,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2018/03/12"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 624
             }
           ],
           "verified": 2,
@@ -40582,12 +39886,6 @@
               "status": "unverified",
               "claims": [],
               "current": null
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 419
             }
           ],
           "verified": 0,
@@ -40644,12 +39942,6 @@
               "status": "unverified",
               "claims": [],
               "current": null
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 379
             }
           ],
           "verified": 0,
@@ -40706,12 +39998,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2014/06/18"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 308
             }
           ],
           "verified": 2,
@@ -40767,12 +40053,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2014/03/27"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": 192
             }
           ],
           "verified": 2,
@@ -40826,12 +40106,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2026/06/01"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": null
             }
           ],
           "verified": 2,
@@ -40883,12 +40157,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2024/01/24"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": null
             }
           ],
           "verified": 2,
@@ -40940,12 +40208,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2023/10/18"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": null
             }
           ],
           "verified": 2,
@@ -40997,12 +40259,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2023/10/18"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": null
             }
           ],
           "verified": 2,
@@ -41054,12 +40310,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2021/12/07"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": null
             }
           ],
           "verified": 2,
@@ -41111,12 +40361,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2022/10/12"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": null
             }
           ],
           "verified": 2,
@@ -41168,12 +40412,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2023/10/10"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": null
             }
           ],
           "verified": 2,
@@ -41227,12 +40465,6 @@
               "status": "unverified",
               "claims": [],
               "current": "2025/01/16"
-            },
-            {
-              "key": "score",
-              "status": "unverified",
-              "claims": [],
-              "current": null
             }
           ],
           "verified": 2,

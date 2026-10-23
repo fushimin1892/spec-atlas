@@ -39,7 +39,7 @@ for (const cat of ["cpu", "gpu"]) {
     technicalReferenceOnly: records.filter((r) => r.fields.filter((f) => !["release", "score"].includes(f.key)).some((f) => f.status === "reference")).length,
     specsPartlyVerified: records.filter((r) => r.verified > 0 && r.verified < r.total).length,
     specsUnverified: records.filter((r) => r.verified === 0).length,
-    scoreVerified: records.filter((r) => r.fields.find((f) => f.key === "score").status === "verified").length,
+    scoreVerified: records.filter((r) => r.fields.find((f) => f.key === "score")?.status === "verified").length,
     scorePublished: items.filter((item) => item.score != null).length,
     mismatches: records.reduce((n, r) => n + r.mismatches, 0),
     structuralIssues: issues.length,
@@ -54,7 +54,7 @@ if (process.argv.includes("--report")) {
   let report = `# CPU・GPU情報の照合結果\n\n確認日: ${SPEC.hardwareEvidence.checkedAt}（日本時間）。全359件の構造・計算を検査し、証拠のある項目を一次資料と照合。未確認は一致を保証しません。\n\n`;
   report += "|カテゴリ|全件数|技術仕様が全項目一致 / 対象型番|内蔵GPUの数値対象外|発売日を含む仕様全項目一致|スコア一致|残る不一致|\n|---|---:|---:|---:|---:|---:|---:|\n";
   for (const [cat, { summary: s }] of Object.entries(results)) report += `|${cat.toUpperCase()}|${s.total}|${s.technicalSpecsVerified}/${s.technicalApplicable}|${s.technicalNotApplicable}|${s.specsFullyVerified}|${s.scoreVerified}|${s.mismatches}|\n`;
-  report += "\nCPUの技術仕様はコア・スレッド・公称電力・ベース/最大ブースト・L3。GPUはVRAM・公称電力。対象外を一致数へ足さず、空欄や参考資料だけの照合も一致へ含めません。GPUは全128型番のうち独立GPU123型番が数値照合対象、内蔵GPU5型番は共有メモリ・搭載CPU依存のため数値対象外です。RX 560の公称範囲60〜80Wは両端を照合し、単一値として効率を計算しません。\n\n技術仕様の残る未確定はAMD 4700Sの公称電力とRX 590の公称電力です。4700Sの65Wは確定できないため取り下げました。RX 590の225Wは発売時実機レビューと参考照合できますが、現在のAMD公式資料には値がなく、別のMSI製カードの220Wを流用しません。この2件を埋めたという報告はしません。\n\nCPUスコアはPassMarkの2026-10-22更新一覧と照合。GPUスコアはUL公式がHTTP 500で取得できず、既存値を保持して未確認としています。価格は保存済み楽天取得値であり、現在の在庫・価格の一致を保証しません。\n\n";
+  report += "\nCPUの技術仕様はコア・スレッド・公称電力・ベース/最大ブースト・L3。GPUはVRAM・公称電力。対象外を一致数へ足さず、空欄や参考資料だけの照合も一致へ含めません。GPUは全128型番のうち独立GPU123型番が数値照合対象、内蔵GPU5型番は共有メモリ・搭載CPU依存のため数値対象外です。RX 560の公称範囲60〜80Wは両端を照合し、単一値として効率を計算しません。\n\n技術仕様の残る未確定はAMD 4700Sの公称電力とRX 590の公称電力です。4700Sの65Wは確定できないため取り下げました。RX 590の225Wは発売時実機レビューと参考照合できますが、現在のAMD公式資料には値がなく、別のMSI製カードの220Wを流用しません。この2件を埋めたという報告はしません。\n\nCPUスコアはPassMarkの2026-10-22更新一覧と照合。GPUの性能スコアはPassMark G3D Mark（data/performance.js で出典と照合）。以前のTime SpyはUL公式が停止して確かめられないため削除しました。価格は保存済み楽天取得値であり、現在の在庫・価格の一致を保証しません。\n\n";
   report += "## 修正\n\n";
   const changes = JSON.parse(fs.readFileSync(path.join(ROOT, "docs/hardware-corrections.json"), "utf8"));
   for (const fix of changes.corrections) report += `- ${fix.name} / ${fix.field}: ${fix.from} → ${fix.to}。${fix.reason}\n`;

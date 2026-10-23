@@ -60,7 +60,8 @@ for (const item of window.SPEC.data.gpu) {
   const matches = gpuTable.slice(1).filter((row) => normalizeName(row[0].text) === normalizeName(item.name));
   // VRAM違い・メモリ規格違い・複数型番の合算は別のGPUへ流用しない。
   if (matches.length === 1 && /^\d+$/.test(matches[0][1].text)) {
-    result.gpu[item.id] = { g3dScore: { name: matches[0][0].text, value: Number(matches[0][1].text), source: "g3d" } };
+    // GPU の性能スコア（score）は PassMark G3D Mark
+    result.gpu[item.id] = { score: { name: matches[0][0].text, value: Number(matches[0][1].text), source: "g3d" } };
   }
 }
 // 明示した測定モデルと設定だけを対応付ける。モデル名の部分一致や最高値の自動選択をしない。

@@ -364,6 +364,7 @@ a.btn-small:hover { color: var(--gold); }
 .benchmark-guide h2 span { display: inline-block; margin-left: 16px; font-family: var(--sans); font-size: 11px; font-weight: 400; color: var(--gold); }
 .benchmark-guide > p { font-size: 13px; line-height: 1.8; max-width: 900px; }
 .benchmark-method { font-size: 12px; line-height: 1.8; }
+.metric-scale { margin: 0 0 6px; font-size: 12px; color: var(--text); }
 .benchmark-method summary { cursor: pointer; color: var(--muted); }
 .benchmark-method summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 .benchmark-settings { display: flex; align-items: flex-end; flex-wrap: wrap; gap: 12px 24px; margin: 12px 0 0; }

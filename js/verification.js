@@ -5,7 +5,7 @@
   const evidence = SPEC.hardwareEvidence;
   const keys = {
     cpu: ["cores", "threads", "tdp", "baseClock", "boostClock", "cache", "release", "score"],
-    gpu: ["vram", "tdp", "release", "score"],
+    gpu: ["vram", "tdp", "release"], // 性能スコア（PassMark G3D Mark）は data/performance.js で出典と照合
   };
   SPEC.verificationOf = function (catId, item) {
     if (!keys[catId]) return null;

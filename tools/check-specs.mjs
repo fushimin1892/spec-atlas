@@ -104,8 +104,8 @@ async function main() {
     diffs.push(o.name);
     console.log(`${inActions ? "::warning::" : "✗ "}${o.name}: ${bad.join("、")}`);
     if (fix) {
-      // CSV の該当行の 3・4 列目（VRAM・消費電力）だけを書き換える
-      src = src.replace(new RegExp(`^(${o.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}),([^,]*),[^,]*,[^,]*,`, "m"), `$1,$2,${o.vram},${o.tdp},`);
+      // CSV の該当行の 2・3 列目（VRAM・消費電力）だけを書き換える
+      src = src.replace(new RegExp(`^(${o.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}),[^,]*,[^,]*,`, "m"), `$1,${o.vram},${o.tdp},`);
     }
   }
 

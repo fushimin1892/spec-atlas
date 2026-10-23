@@ -73,7 +73,9 @@ for (const cat of ["cpu", "gpu"]) {
 const gpu = SPEC.data.gpu.find((g) => g.id === "rtx-4090");
 assert.equal(SPEC.verificationOf("gpu", gpu).fields.find((f) => f.key === "vram").status, "verified");
 assert.equal(SPEC.verificationOf("gpu", { ...gpu, vram: 12 }).fields.find((f) => f.key === "vram").status, "mismatch", "証拠があっても掲載値と違えば不一致");
-assert.equal(SPEC.verificationOf("gpu", gpu).fields.find((f) => f.key === "score").status, "unverified", "仕様の確認をスコアへ流用しない");
+// GPU の性能スコアは PassMark G3D Mark（出典は data/performance.js）。メーカー仕様の照合結果をスコアの確認に流用しない
+assert(!SPEC.verificationOf("gpu", gpu).fields.some((f) => f.key === "score"), "GPU の性能スコアはメーカー仕様の照合項目に含めない");
+assert.equal(gpu.score, SPEC.performanceData.gpu["rtx-4090"].score.value, "GPU の性能スコアは PassMark の確認済みの値");
 assert.equal(SPEC.verificationOf("gpu", { ...gpu, id: "missing" }).verified, 0, "根拠なしを合格にしない");
 assert.equal(SPEC.data.cpu.find((c) => c.id === "core-i9-11900kf").boostClock, 5.3, "TVB込みの最大値を保持");
 assert.equal(SPEC.data.cpu.find((c) => c.id === "ryzen-9-3950x").release, "2019/11/25", "一括表より個別発売告知を優先");
@@ -125,8 +127,8 @@ assert.equal(SPEC.relativePerformance(200, 0), null, "基準値なしで比率�
 assert.equal(SPEC.relativePerformance(250, 100), 250);
 assert.equal(hardware("cpu", "ryzen-5-7600").gamingScore, 5742);
 assert.equal(hardware("cpu", "core-i9-11900k").singleScore, 3501, "旧Intelの定格周波数の接尾辞を区別して照合");
-assert.equal(hardware("gpu", "rtx-4060").g3dScore, 19480);
-assert.equal(hardware("gpu", "rtx-4060-ti-8gb").g3dScore, null, "容量が未分離のGPU測定を8GBへ流用しない");
+assert.equal(hardware("gpu", "rtx-4060").score, 19480, "GPU の性能スコアは PassMark G3D Mark");
+assert.equal(hardware("gpu", "rtx-4060-ti-8gb").score, null, "容量が未分離のGPU測定を8GBへ流用しない");
 assert.equal(hardware("cpu", "ryzen-5-1600-af").singleScore, null, "AFなしの別CPUを流用しない");
 // 出力速度・待ち時間・料金は日々の測定で変わるので、値そのものではなく取り込まれていることを確かめる
 for (const key of ["aiIndex", "aiSpeed", "aiLatency", "aiOmni", "aiPrice"]) assert(Number.isFinite(model("gpt-6-astra")[key]), `GPT-6 Astra: ${key}`);

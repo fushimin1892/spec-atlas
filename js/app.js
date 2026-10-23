@@ -51,8 +51,7 @@
     }
     if (field.bar && value != null) {
       const max = Math.max(...getItems(cat.id).map((i) => i[field.key] || 0)) || 1;
-      const pending = SPEC.verificationOf?.(cat.id, item)?.fields.find((f) => f.key === field.key)?.status !== "verified";
-      return `<span class="bar-cell"><span class="bar"><i style="width:${((value / max) * 100).toFixed(1)}%"></i></span><span class="val">${formatValue(field, value)}</span></span>${pending ? '<span class="sub">参考値（出典で再確認待ち）</span>' : ""}`;
+      return `<span class="bar-cell"><span class="bar"><i style="width:${((value / max) * 100).toFixed(1)}%"></i></span><span class="val">${formatValue(field, value)}</span></span>`;
     }
     const sub = field.sub && item[field.sub] ? `<span class="sub">${esc(item[field.sub])}</span>` : "";
     const url = field.link && item[field.link];
@@ -60,8 +59,7 @@
     const shown = url && /^https:\/\//.test(url)
       ? `<a class="ext" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${itemValue(field, item)}</a>`
       : itemValue(field, item);
-    const check = field.key === "score" && SPEC.verificationOf?.(cat.id, item);
-    return shown + sub + (check && check.fields.find((f) => f.key === "score").status !== "verified" && value != null ? '<span class="sub">参考値（出典で再確認待ち）</span>' : "");
+    return shown + sub;
   }
 
   // 一覧の上に出す「この表の見方」。表に出ている各列の意味を、初めての人にも分かる言葉で並べる。
@@ -124,11 +122,11 @@
   function benchmarkEvidence(cat, item) {
     const config = SPEC.benchmarks[cat.id];
     const records = SPEC.performanceData[cat.id][item.id] || {};
-    return `<section class="verification"><h2>性能テストの値と測り方</h2>${config.metrics.filter((m) => m.key !== "score").map((metric) => {
+    return `<section class="verification"><h2>性能テストの値と測り方</h2>${config.metrics.filter((m) => m.key !== "score" || m.source).map((metric) => {
       const record = records[metric.key];
       const source = record && SPEC.performanceData.sources[record.source];
       return `<p><strong>${esc(metric.title)}</strong> · ${record ? `${formatValue({ type: "number", unit: metric.unit, digits: metric.digits }, record.value)}${record.input != null ? `（入力は ${formatValue({ type: "number", unit: metric.unit, digits: metric.digits }, record.input)}）` : ""}` : "比較データなし"}</p>
-        <p class="note">${esc(metric.description)} ${esc(metric.limit)}</p>
+        <p class="note">${metric.scale ? `点数の範囲: ${esc(metric.scale)}。` : ""}${esc(metric.description)} ${esc(metric.limit)}</p>
         ${record ? `<p class="note">測定名・設定: ${esc(record.name)}${cat.id === "ai" ? "。API提供モデルの測定で、公開重みを手元で実行した結果ではありません。" : ""} · <a class="ext" href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.label)}</a> · 取得 ${esc(source.checkedAt)}</p>` : ""}`;
     }).join("")}${cat.id === "ai" ? '<p class="note">各モデルで明示した設定を比較しています。max・high等の設定名は提供元ごとに意味が異なり、同じ計算量ではありません。旧版の評価値は混ぜていません。</p>' : ""}</section>`;
   }
@@ -324,6 +322,7 @@
       ${ranking ? `<section class="benchmark-guide" aria-label="性能の比較方法">
         <div class="benchmark-tabs" role="group" aria-label="比較する性能">${config.metrics.map((m) => `<button type="button" class="metric-tab ${m.key === st.metric ? "active" : ""}" data-metric="${esc(m.key)}" aria-pressed="${m.key === st.metric}">${esc(m.label)}</button>`).join("")}</div>
         <h2>${esc(metric.title)}<span>${metric.betterLabel || (metric.better === "low" ? "小さいほど速い" : "高いほど高性能")}</span></h2>
+        ${metric.scale ? `<p class="metric-scale">点数の範囲: ${esc(metric.scale)}</p>` : ""}
         <details class="benchmark-method"><summary>指標の意味・測定条件</summary><p>${esc(metric.description)}</p><p class="note">${esc(metric.limit)}</p>
         ${cat.id === "ai" ? '<p class="note">主に高推論設定を掲載。設定名は提供元ごとに意味が異なり、同じ計算量ではありません。公開重みを手元で測定した結果ではありません。</p>' : '<p class="note">基準比200はスコアが基準製品の2倍という意味で、ゲームのFPSが2倍になるとは限りません。</p>'}
         ${metric.source ? `<a class="benchmark-credit ext" href="${esc(SPEC.performanceData.sources[metric.source].url)}" target="_blank" rel="noopener noreferrer">${esc(SPEC.performanceData.sources[metric.source].label)}</a><span class="benchmark-credit">取得 ${esc(SPEC.performanceData.checkedAt)}</span>` : ""}</details>
@@ -511,8 +510,8 @@
 
   // 比較表の項目の区切り。ここに無い項目は「基本情報」に入る。メーカー・シリーズは列の見出しに出すので行にしない
   const CMP_SECTIONS = [
-    ["性能・仕様", ["gamingScore", "singleScore", "g3dScore", "aiIndex", "aiSpeed", "aiLatency", "score", "cores", "threads", "baseClock", "boostClock", "cache", "vram", "params", "active", "context", "contextMax", "maxOutput"]],
-    ["価格・効率", ["price", "costPerf", "efficiency", "tdp"]],
+    ["性能・仕様", ["gamingScore", "singleScore", "aiOmni", "aiAccuracy", "aiNonHallucination", "aiIndex", "aiSpeed", "aiLatency", "score", "cores", "threads", "baseClock", "boostClock", "cache", "vram", "params", "active", "context", "contextMax", "maxOutput"]],
+    ["価格・効率", ["price", "aiPrice", "costPerf", "efficiency", "tdp"]],
   ];
   const CMP_HIDDEN = ["maker", "series"];
 

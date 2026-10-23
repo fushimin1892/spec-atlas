@@ -2148,784 +2148,784 @@ window.SPEC.performanceData = {
   },
   "gpu": {
     "rtx-5090": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 5090",
         "value": 38990,
         "source": "g3d"
       }
     },
     "rtx-4090": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 4090",
         "value": 38028,
         "source": "g3d"
       }
     },
     "rtx-5080": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 5080",
         "value": 35646,
         "source": "g3d"
       }
     },
     "rx-7900-xtx": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 7900 XTX",
         "value": 31473,
         "source": "g3d"
       }
     },
     "rtx-4080-super": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 4080 SUPER",
         "value": 34214,
         "source": "g3d"
       }
     },
     "rtx-4080": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 4080",
         "value": 34439,
         "source": "g3d"
       }
     },
     "rtx-5070-ti": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 5070 Ti",
         "value": 32328,
         "source": "g3d"
       }
     },
     "rx-9070-xt": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 9070 XT",
         "value": 26924,
         "source": "g3d"
       }
     },
     "rx-7900-xt": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 7900 XT",
         "value": 29116,
         "source": "g3d"
       }
     },
     "rtx-4070-ti-super": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 4070 Ti SUPER",
         "value": 31848,
         "source": "g3d"
       }
     },
     "rx-9070": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 9070",
         "value": 25393,
         "source": "g3d"
       }
     },
     "rtx-4070-ti": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 4070 Ti",
         "value": 31509,
         "source": "g3d"
       }
     },
     "rtx-3090-ti": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 3090 Ti",
         "value": 29207,
         "source": "g3d"
       }
     },
     "rtx-5070": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 5070",
         "value": 28678,
         "source": "g3d"
       }
     },
     "rx-6950-xt": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 6950 XT",
         "value": 28074,
         "source": "g3d"
       }
     },
     "rtx-4070-super": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 4070 SUPER",
         "value": 29937,
         "source": "g3d"
       }
     },
     "rx-7900-gre": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 7900 GRE",
         "value": 27461,
         "source": "g3d"
       }
     },
     "rx-6900-xt": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 6900 XT",
         "value": 26633,
         "source": "g3d"
       }
     },
     "rx-7800-xt": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 7800 XT",
         "value": 24477,
         "source": "g3d"
       }
     },
     "rtx-3090": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 3090",
         "value": 26464,
         "source": "g3d"
       }
     },
     "rtx-3080-ti": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 3080 Ti",
         "value": 26728,
         "source": "g3d"
       }
     },
     "rx-6800-xt": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 6800 XT",
         "value": 25117,
         "source": "g3d"
       }
     },
     "rtx-3080-12gb": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 3080 12GB",
         "value": 26559,
         "source": "g3d"
       }
     },
     "rtx-4070": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 4070",
         "value": 26850,
         "source": "g3d"
       }
     },
     "rx-7700-xt": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 7700 XT",
         "value": 22775,
         "source": "g3d"
       }
     },
     "rx-6800": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 6800",
         "value": 22055,
         "source": "g3d"
       }
     },
     "rtx-5060-ti-16gb": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 5060 Ti 16GB",
         "value": 22632,
         "source": "g3d"
       }
     },
     "rtx-5060-ti-8gb": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 5060 Ti 8GB",
         "value": 21810,
         "source": "g3d"
       }
     },
     "rtx-3070-ti": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 3070 Ti",
         "value": 23159,
         "source": "g3d"
       }
     },
     "rx-9060-xt-16gb": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 9060 XT 16GB",
         "value": 20123,
         "source": "g3d"
       }
     },
     "rtx-2080-ti": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 2080 Ti",
         "value": 21401,
         "source": "g3d"
       }
     },
     "rtx-3070": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 3070",
         "value": 22063,
         "source": "g3d"
       }
     },
     "rx-6750-xt": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 6750 XT",
         "value": 20697,
         "source": "g3d"
       }
     },
     "rtx-4060-ti-16gb": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 4060 Ti 16GB",
         "value": 22538,
         "source": "g3d"
       }
     },
     "rtx-5060": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 5060",
         "value": 20606,
         "source": "g3d"
       }
     },
     "rx-9060-xt-8gb": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 9060 XT 8GB",
         "value": 19668,
         "source": "g3d"
       }
     },
     "rx-6700-xt": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 6700 XT",
         "value": 19712,
         "source": "g3d"
       }
     },
     "arc-a750": {
-      "g3dScore": {
+      "score": {
         "name": "Intel Arc A750",
         "value": 12644,
         "source": "g3d"
       }
     },
     "rtx-3060-ti": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 3060 Ti",
         "value": 20210,
         "source": "g3d"
       }
     },
     "rtx-2080-super": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 2080 SUPER",
         "value": 19389,
         "source": "g3d"
       }
     },
     "arc-b580": {
-      "g3dScore": {
+      "score": {
         "name": "Intel Arc B580",
         "value": 16106,
         "source": "g3d"
       }
     },
     "rx-6700": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 6700",
         "value": 18859,
         "source": "g3d"
       }
     },
     "rtx-2080": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 2080",
         "value": 18568,
         "source": "g3d"
       }
     },
     "rx-7600": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 7600",
         "value": 16436,
         "source": "g3d"
       }
     },
     "rtx-4060": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 4060",
         "value": 19480,
         "source": "g3d"
       }
     },
     "rtx-5050": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 5050",
         "value": 16738,
         "source": "g3d"
       }
     },
     "nvidia-titan-xp": {
-      "g3dScore": {
+      "score": {
         "name": "NVIDIA TITAN Xp",
         "value": 18762,
         "source": "g3d"
       }
     },
     "rtx-2070-super": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 2070 SUPER",
         "value": 18121,
         "source": "g3d"
       }
     },
     "rx-6650-xt": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 6650 XT",
         "value": 17101,
         "source": "g3d"
       }
     },
     "gtx-1080-ti": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 1080 Ti",
         "value": 18597,
         "source": "g3d"
       }
     },
     "rx-6600-xt": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 6600 XT",
         "value": 16444,
         "source": "g3d"
       }
     },
     "rx-5700-xt": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 5700 XT",
         "value": 16023,
         "source": "g3d"
       }
     },
     "radeon-vii": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon VII",
         "value": 16173,
         "source": "g3d"
       }
     },
     "rtx-3060-12gb": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 3060 12GB",
         "value": 16699,
         "source": "g3d"
       }
     },
     "rtx-2070": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 2070",
         "value": 16051,
         "source": "g3d"
       }
     },
     "rtx-2060-super": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 2060 SUPER",
         "value": 16455,
         "source": "g3d"
       }
     },
     "rx-5700": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 5700",
         "value": 14190,
         "source": "g3d"
       }
     },
     "rx-6600": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 6600",
         "value": 15034,
         "source": "g3d"
       }
     },
     "rx-5600-xt": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 5600 XT",
         "value": 13378,
         "source": "g3d"
       }
     },
     "rtx-3060-8gb": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 3060 8GB",
         "value": 15212,
         "source": "g3d"
       }
     },
     "gtx-1080": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 1080",
         "value": 15604,
         "source": "g3d"
       }
     },
     "rx-vega-64": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX Vega 64",
         "value": 13830,
         "source": "g3d"
       }
     },
     "rtx-2060": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 2060",
         "value": 14071,
         "source": "g3d"
       }
     },
     "rx-vega-56": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX Vega 56",
         "value": 12911,
         "source": "g3d"
       }
     },
     "gtx-1070-ti": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 1070 Ti",
         "value": 14682,
         "source": "g3d"
       }
     },
     "gtx-1660-ti": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 1660 Ti",
         "value": 12555,
         "source": "g3d"
       }
     },
     "rtx-3050-8gb": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 3050 8GB",
         "value": 12456,
         "source": "g3d"
       }
     },
     "gtx-1070": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 1070",
         "value": 13511,
         "source": "g3d"
       }
     },
     "gtx-1660-super": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 1660 SUPER",
         "value": 12655,
         "source": "g3d"
       }
     },
     "gtx-980-ti": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 980 Ti",
         "value": 13614,
         "source": "g3d"
       }
     },
     "gtx-1660": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 1660",
         "value": 11610,
         "source": "g3d"
       }
     },
     "rx-6500-xt": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 6500 XT",
         "value": 9615,
         "source": "g3d"
       }
     },
     "rtx-3050-6gb": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 3050 6GB",
         "value": 10740,
         "source": "g3d"
       }
     },
     "rx-590": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 590",
         "value": 9274,
         "source": "g3d"
       }
     },
     "r9-fury-x": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon R9 Fury X",
         "value": 9366,
         "source": "g3d"
       }
     },
     "r9-fury": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon R9 Fury",
         "value": 9516,
         "source": "g3d"
       }
     },
     "gtx-1650-super": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 1650 SUPER",
         "value": 10189,
         "source": "g3d"
       }
     },
     "rx-580": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 580",
         "value": 8781,
         "source": "g3d"
       }
     },
     "arc-a380": {
-      "g3dScore": {
+      "score": {
         "name": "Intel Arc A380",
         "value": 6331,
         "source": "g3d"
       }
     },
     "gtx-980": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 980",
         "value": 11072,
         "source": "g3d"
       }
     },
     "rx-480": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 480",
         "value": 8524,
         "source": "g3d"
       }
     },
     "gtx-1060-3gb": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 1060 3GB",
         "value": 9859,
         "source": "g3d"
       }
     },
     "gtx-970": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 970",
         "value": 9636,
         "source": "g3d"
       }
     },
     "rx-6400": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 6400",
         "value": 7756,
         "source": "g3d"
       }
     },
     "gtx-780-ti": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 780 Ti",
         "value": 9474,
         "source": "g3d"
       }
     },
     "gtx-780": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 780",
         "value": 7972,
         "source": "g3d"
       }
     },
     "gtx-1050-ti": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 1050 Ti",
         "value": 6368,
         "source": "g3d"
       }
     },
     "gtx-960": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 960",
         "value": 6149,
         "source": "g3d"
       }
     },
     "gtx-770": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 770",
         "value": 5962,
         "source": "g3d"
       }
     },
     "gtx-1630": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 1630",
         "value": 4972,
         "source": "g3d"
       }
     },
     "gtx-680": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 680",
         "value": 5616,
         "source": "g3d"
       }
     },
     "gtx-950": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 950",
         "value": 5357,
         "source": "g3d"
       }
     },
     "rx-560": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 560",
         "value": 3687,
         "source": "g3d"
       }
     },
     "gtx-1050": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 1050",
         "value": 5053,
         "source": "g3d"
       }
     },
     "rx-460": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 460",
         "value": 4096,
         "source": "g3d"
       }
     },
     "gtx-760": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 760",
         "value": 4824,
         "source": "g3d"
       }
     },
     "rx-vega-8": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX Vega 8",
         "value": 1532,
         "source": "g3d"
       }
     },
     "gtx-660": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 660",
         "value": 4042,
         "source": "g3d"
       }
     },
     "gtx-750-ti": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GTX 750 Ti",
         "value": 3900,
         "source": "g3d"
       }
     },
     "rx-550": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 550",
         "value": 2699,
         "source": "g3d"
       }
     },
     "uhd-770": {
-      "g3dScore": {
+      "score": {
         "name": "Intel UHD 770",
         "value": 1357,
         "source": "g3d"
       }
     },
     "uhd-630": {
-      "g3dScore": {
+      "score": {
         "name": "Intel UHD 630",
         "value": 720,
         "source": "g3d"
       }
     },
     "hd-530": {
-      "g3dScore": {
+      "score": {
         "name": "Intel HD 530",
         "value": 984,
         "source": "g3d"
       }
     },
     "gt-730": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GT 730",
         "value": 820,
         "source": "g3d"
       }
     },
     "gt-710": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce GT 710",
         "value": 616,
         "source": "g3d"
       }
     },
     "rx-9070-gre": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 9070 GRE",
         "value": 23373,
         "source": "g3d"
       }
     },
     "rx-7600-xt": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 7600 XT",
         "value": 17361,
         "source": "g3d"
       }
     },
     "rx-6750-gre-12gb": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 6750 GRE 12GB",
         "value": 20410,
         "source": "g3d"
       }
     },
     "rx-6750-gre-10gb": {
-      "g3dScore": {
+      "score": {
         "name": "Radeon RX 6750 GRE 10GB",
         "value": 18941,
         "source": "g3d"
       }
     },
     "rtx-2060-12gb": {
-      "g3dScore": {
+      "score": {
         "name": "GeForce RTX 2060 12GB",
         "value": 15913,
         "source": "g3d"
       }
     },
     "arc-a580": {
-      "g3dScore": {
+      "score": {
         "name": "Intel Arc A580",
         "value": 12076,
         "source": "g3d"
       }
     },
     "arc-b570": {
-      "g3dScore": {
+      "score": {
         "name": "Intel Arc B570",
         "value": 14085,
         "source": "g3d"
