@@ -129,7 +129,7 @@ window.SPEC.categories = [
 // data/<id>.js の最後に setupPrices(id, 電力の項目名) を呼ぶと、window.SPEC.applyPrices[id] ができ、すぐに 1 回当てはめる。
 // 当てはめるのは、ページ読み込み時（data/<id>-prices.js）と、手元のサーバーから新しい価格が届いたとき（app.js）。
 // 価格は楽天から取得したものだけを使う（出どころの分からない値でコスパを計算しない）。
-// 取得済みで見つからなかった型番は「楽天で取扱なし」と添える。まだ取得していない型番は「—」だけにする。
+// 取得済みで見つからなかった型番は「主要店で取扱なし」と添える（取得元の店は tools/prices.mjs の TRUSTED_SHOPS）。まだ取得していない型番は「—」だけにする。
 window.SPEC.applyPrices = {};
 window.SPEC.setupPrices = function (id, powerLabel) {
   const apply = function (fetched) {
@@ -141,14 +141,14 @@ window.SPEC.setupPrices = function (id, powerLabel) {
       cat.note =
         `コスパ ＝ 性能スコア ÷ 参考価格 × 1,000（1,000 円あたりの性能スコア）。電力効率 ＝ 性能スコア ÷ ${powerLabel}（1W あたりの性能スコア）。` +
         (at
-          ? `参考価格は${fetched.source}の新品最安値（新品が無い型番は中古と表示）で、${at} 時点の値です。実際の価格・在庫は販売ページでご確認ください。`
+          ? `参考価格は${fetched.source}に出店している PC パーツ専門店・大手家電店・大手中古 PC 店（ドスパラ、ツクモ、パソコン工房、Joshin、ビックカメラ、じゃんぱら、ソフマップなど）の新品最安値（新品が無い型番は中古と表示）で、${at} 時点の値です。実際の価格・在庫は販売ページでご確認ください。`
           : "参考価格はまだ取得していません。");
     }
     for (const it of window.SPEC.data[id]) {
       const known = fetched && fetched.items && it.id in fetched.items;
       const best = known ? fetched.items[it.id] : null; // 見つからなかった型番は null（生産終了などで売られていない）
       it.price = best ? best.price : null;
-      it.priceNote = best ? `${best.condition}・${best.shop}` : known ? "楽天で取扱なし" : null;
+      it.priceNote = best ? `${best.condition}・${best.shop}` : known ? "主要店で取扱なし" : null;
       it.priceUrl = best ? best.url : null;
       it.costPerf = it.price && it.score ? Math.round((it.score / it.price) * 10000) / 10 : null;
     }

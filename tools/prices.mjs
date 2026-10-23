@@ -185,36 +185,63 @@ async function search(env, keyword, page, genreId) {
   throw new Error("HTTP 429 が続いたため中断しました");
 }
 
-// 1 型番の最安値を探す。ジャンル内を安い順に 2 ページ（60 件）まで見て、型番が合うものの最安値を選ぶ
+// 価格を取ってよい店（楽天の店舗コード → 新品店か中古専門店か）。
+// 楽天には PC パーツと無関係な店や輸入転売の店も多く、型番が合っていても値段が当てにならないので、
+// 実店舗を持つ PC パーツ専門店・大手家電店・大手中古 PC 店だけに絞る。店舗コードは商品 URL（item.rakuten.co.jp/<店舗コード>/）で確認した
+export const TRUSTED_SHOPS = {
+  "dospara-r": "new", // ドスパラ
+  shoptsukumo: "new", // ツクモ
+  pckoubou: "new", // パソコン工房
+  jism: "new", // Joshin web
+  biccamera: "new", // 楽天ビック（ビックカメラ）
+  "r-kojima": "new", // コジマ
+  "a-price": "new", // XPRICE
+  premoa: "new", // PREMOA
+  "akibaoo-r": "new", // あきばお〜
+  "compmoto-r": "new", // コンプモト
+  pc4u: "new", // PC4U
+  "e-zoa": "new", // e-zoa（秋葉原）
+  janpara: "used", // じゃんぱら
+  "akiba-u-shop": "used", // ソフマップ中古専門
+  excellar: "used", // エクセラー
+  kadekaden: "used", // エクセラー 2 号館
+  "home-carpentry": "used", // エクセラー 3 号館
+  pasodon: "used", // パソどん
+};
+const shopOf = (url) => (String(url).match(/item\.rakuten\.co\.jp\/([^/?#]+)/) || [])[1];
+
+// 1 型番の最安値を探す。ジャンル内を安い順に 3 ページ（90 件）まで見て、信頼できる店の型番が合う商品から選ぶ
 export async function findBest(env, item, cat = "gpu") {
   const match = modelMatcher(item.name, cat);
   // 1 文字の語（「Ryzen 7 7800X3D」の「7」）があると楽天は検索語エラー（400）を返すので外す
   const keyword = CATEGORIES[cat].tokens(item.name).filter((t) => t.length >= 2).join(" ");
   const hits = [];
   const collect = async (kw) => {
-    for (let page = 1; page <= 2; page++) {
+    for (let page = 1; page <= 3; page++) {
       const data = await search(env, kw, page, CATEGORIES[cat].genreId);
       for (const it of data.Items || data.items || []) { // 2026-07-01 版は Items（大文字）で返る
-        if (match(it.itemName)) hits.push(it);
+        if (match(it.itemName) && TRUSTED_SHOPS[shopOf(it.itemUrl)]) hits.push(it);
       }
       await sleep(WAIT_MS);
       if (!data.pageCount || page >= data.pageCount) break;
     }
   };
   await collect(keyword);
-  // 見つからなければ書き方を変えてもう一度探す。それでも無ければ楽天では売られていない（生産終了など）とみなす
+  // 見つからなければ書き方を変えてもう一度探す。それでも無ければ信頼できる店では扱っていない（生産終了など）とみなす
   const alt = CATEGORIES[cat].fallback(item.name);
   if (!hits.length && alt && alt !== keyword) await collect(alt);
   if (!hits.length) return null;
+  // 中古専門店の商品は、商品名に「中古」と書いていなくても中古として扱う
+  const cond = (h) => (TRUSTED_SHOPS[shopOf(h.itemUrl)] === "used" ? "中古" : conditionOf(h.itemName));
   // 型番が合っていても極端に安いものは付属品の取りこぼしとみなし、中央値の 3 割未満は捨てる
   const prices = hits.map((h) => h.itemPrice).sort((a, b) => a - b);
   const median = prices[Math.floor(prices.length / 2)];
   const sane = hits.filter((h) => h.itemPrice >= median * 0.3).sort((a, b) => a.itemPrice - b.itemPrice);
   // コスパが中古の安値で実際より良く見えないよう、新品の最安値を優先する。新品が無いときだけ中古を使う
-  const best = sane.find((h) => conditionOf(h.itemName) === "新品") || sane[0];
+  const best = sane.find((h) => cond(h) === "新品") || sane[0];
   return {
     price: best.itemPrice,
-    condition: conditionOf(best.itemName),
+    condition: cond(best),
     shop: best.shopName,
     url: best.itemUrl,
     title: best.itemName,
