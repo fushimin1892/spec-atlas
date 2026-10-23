@@ -313,6 +313,7 @@
       <div class="toolbar">
         <label class="grow">絞り込み <input id="fq" type="search" value="${esc(st.q)}" placeholder="${esc(cat.searchHint || "名前で絞り込み")}"></label>
         <span id="filterSelects" style="display:contents">${selectsHtml()}</span>
+        ${!ranking && SPEC.applyPrices[cat.id] ? `<label class="toggle priced-filter"><input type="checkbox" id="pricedOnly" ${st.pricedOnly ? "checked" : ""}> 今買える製品だけ（主要店で価格があるもの）</label>` : ""}
         <span class="muted" id="hitCount"></span>
         <a class="btn btn-ghost btn-small toolbar-cmp" href="#/compare?cat=${esc(cat.id)}">${esc(cat.name)}を比較する</a>
       </div>
@@ -326,6 +327,7 @@
 
     const table = document.getElementById("specTable");
     main.querySelector(".table-guide")?.addEventListener("toggle", (e) => setGuideClosed(cat.id, !e.target.open));
+    document.getElementById("pricedOnly")?.addEventListener("change", (e) => { st.pricedOnly = e.target.checked; draw(); });
     const draw = () => {
       updateRanks();
       const q = st.q.trim().toLowerCase();
@@ -334,6 +336,7 @@
       const matched = items
         .filter((i) => !q || [i.name, i.maker, i.family, i.modelId].some((v) => String(v || "").toLowerCase().includes(q)))
         .filter((i) => filterKeys.every((k) => !st.filters[k] || i[k] === st.filters[k]))
+        .filter((i) => !st.pricedOnly || i.price != null)
         .sort(compareBy(field, st.dir));
       const rows = matched.filter((i) => !st.measuredOnly || i[st.metric] != null);
       const cols = listFields.length + (hasRank ? 1 : 0);
@@ -464,7 +467,7 @@
         <button class="btn" id="cmpBtn">この製品をほかと比較する</button>
       </div>
       <dl class="spec-list">
-        ${cat.fields.map((f) => `<dt>${esc(f.label)}${f.help ? `<span class="field-help">${esc(f.help)}</span>` : ""}</dt><dd>${cellHtml(cat, f, item)}</dd>`).join("")}
+        ${cat.fields.filter((f) => !f.filterOnly).map((f) => `<dt>${esc(f.label)}${f.help ? `<span class="field-help">${esc(f.help)}</span>` : ""}</dt><dd>${cellHtml(cat, f, item)}</dd>`).join("")}
       </dl>
       ${benchmarkEvidence(cat, item)}
       ${cat.specNote ? `<p class="note">${esc(cat.specNote)}</p>` : ""}
@@ -551,7 +554,7 @@
     const chosen = cols.filter(Boolean);
     // 選んだ製品で値がすべて同じ項目は「違いのある項目だけ」のとき隠す
     const differs = (f) => new Set(chosen.map((i) => String(i[f.key] ?? ""))).size > 1;
-    const shown = cat.fields.slice(1).filter((f) => !CMP_HIDDEN.includes(f.key) && (!diffOnly || chosen.length < 2 || differs(f)));
+    const shown = cat.fields.slice(1).filter((f) => !f.filterOnly && !CMP_HIDDEN.includes(f.key) && (!diffOnly || chosen.length < 2 || differs(f)));
     const sections = [...CMP_SECTIONS, ["基本情報", null]]
       .map(([title, keys]) => [title, shown.filter((f) => (keys ? keys.includes(f.key) : !CMP_SECTIONS.some(([, k]) => k.includes(f.key))))])
       .filter(([, fs]) => fs.length);

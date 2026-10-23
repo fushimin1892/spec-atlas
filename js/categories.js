@@ -3,6 +3,7 @@
 //   list: false = 一覧表には出さない / bar: true = 最大値に対する横棒を付ける
 //   digits = 小数の桁数（maxDigits = 小数があるときだけ出す最大桁数） / sub = 値の下に小さく添える別項目のキー / link = 値を外部リンクにする URL の項目キー
 //   better: "high" / "low" = 比較画面で、大きい方／小さい方を「最良」として強調する
+//   filterOnly: true = 絞り込み専用（詳細・比較には出さない）
 // filters: 一覧のプルダウン絞り込みに使う項目（省略時はメーカー）
 // optionOrder: { 項目キー: [並び順] } = プルダウンの選択肢の並び（省略時はデータに出てくる順）
 // defaultSort: 一覧の初期の並び順。dir は 1 = 昇順 / -1 = 降順
@@ -107,8 +108,9 @@ window.SPEC.categories = [
       { label: "NVIDIA 公式GeForce仕様比較", url: "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/" },
       { label: "AMD 公式グラフィックス仕様表", url: "https://www.amd.com/en/products/specifications/graphics.html" },
     ],
-    filters: ["maker", "series"],
+    filters: ["maker", "series", "vramTier"],
     optionOrder: {
+      vramTier: ["6GB以下", "8GB", "10〜12GB", "16GB", "20GB以上", "メインメモリと共有（内蔵）"],
       maker: ["NVIDIA", "AMD", "Intel"],
       series: [
         "RTX 50", "RTX 40", "RTX 30", "RTX 20", "GTX 16", "GTX 10", "GTX 900", "GTX 700", "GTX 600", "GT", "TITAN",
@@ -124,6 +126,7 @@ window.SPEC.categories = [
       { key: "series", label: "シリーズ", type: "text", list: false },
       { key: "score", label: "参考スコア", type: "number", bar: true, better: "high" },
       { key: "vram", label: "VRAM", type: "number", unit: "GB", better: "high" },
+      { key: "vramTier", label: "VRAMの量", type: "text", list: false, filterOnly: true },
       { key: "tdp", label: "公称電力", type: "number", unit: "W", better: "low", sub: "tdpNote", empty: "未確認" },
       { key: "price", label: "参考価格", type: "number", prefix: "¥", sub: "priceNote", link: "priceUrl", better: "low" },
       { key: "costPerf", label: "コスパ", type: "number", digits: 1, better: "high" },
@@ -161,6 +164,7 @@ window.SPEC.categories = [
     },
     gpu: {
       name: "製品の型番。押すと詳しい仕様と出典を見られます。",
+      vramTier: "VRAM の量で絞り込むための区切り。内蔵 GPU は専用のメモリを持たず、パソコンのメインメモリを共有して使います。",
       vram: "グラフィックボード専用のメモリの量。多いほど、高い解像度・高画質の設定や大きな AI モデルを扱いやすくなります。",
       tdp: "メーカーが示すカード全体の電力の目安（TGP・TBP など）。電源を選ぶときの目安で、実際に測った値ではありません。メーカー製のカードでは数値が違うことがあります。",
       price: "楽天市場に出店している PC パーツ専門店・大手家電店などでの最安値（新品が無ければ中古）。取得したときの参考値です。",

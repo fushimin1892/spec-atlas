@@ -420,6 +420,8 @@ a.btn-small:hover { color: var(--gold); }
 .audit-mismatch { color: #a13825; font-weight: 600; }
 .audit-unverified { color: #775c29; }
 .audit-reference, .audit-notApplicable { color: #775c29; }
+/* 一覧の「今買える製品だけ」（.toolbar label の縦並びの指定を打ち消す） */
+.toolbar .priced-filter { flex-direction: row; align-items: center; align-self: center; min-width: 0; font-size: 13px; letter-spacing: .04em; color: var(--text); }
 /* 「この表の見方」: 列の意味を初めての人向けに並べる */
 .table-guide { margin: 8px 0 18px; padding: 0 18px; background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--gold); }
 .table-guide summary { cursor: pointer; padding: 12px 0; font-size: 13px; font-weight: 500; letter-spacing: .04em; }

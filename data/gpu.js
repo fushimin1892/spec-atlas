@@ -197,6 +197,14 @@ Arc B570,,10,150,2025/01/16
     if (item.id === "rx-560") item.tdpRange = [60, 80];
     if (item.id === "rx-590") item.tdpNote = "225Wは発売時レビューの公称値。現在のAMD資料では未確認。MSI ARMORの220Wとは区別。";
     if (item.id === "gt-730") item.variantNote = "1GB GDDR5・64bit版。DDR3版とは仕様が異なります。";
+    // VRAM の絞り込み用の段階（初めての人が用途で選びやすい区切り）
+    item.vramTier = item.integrated ? "メインメモリと共有（内蔵）"
+      : item.vram == null ? null
+      : item.vram <= 6 ? "6GB以下"
+      : item.vram === 8 ? "8GB"
+      : item.vram <= 12 ? "10〜12GB"
+      : item.vram === 16 ? "16GB"
+      : "20GB以上";
   }
 
   // data/gpu-prices.js（楽天から取得した価格）があれば当てはめ、コスパを計算する（categories.js）
