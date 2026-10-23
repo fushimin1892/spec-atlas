@@ -98,12 +98,6 @@ a { color: inherit; text-decoration: none; }
 .search input::placeholder { color: var(--faint); }
 .compare-link { margin-left: auto; display: flex; align-items: center; gap: 8px; white-space: nowrap; font-size: 14px; letter-spacing: .1em; }
 .compare-link:hover { color: var(--gold); }
-.badge {
-  display: inline-grid; place-items: center;
-  min-width: 22px; height: 22px; padding: 0 6px;
-  border: 1px solid var(--gold); border-radius: 11px;
-  font-family: var(--latin); font-size: 14px; font-weight: 600; color: var(--gold);
-}
 .menu-btn { display: none; background: none; border: 0; padding: 4px; color: var(--text); cursor: pointer; }
 .menu-btn .ico { width: 22px; height: 22px; }
 
@@ -231,8 +225,6 @@ a.card:hover .card-arrow { transform: translateX(4px); }
 .spec-table td a { font-family: var(--serif); font-size: 15px; font-weight: 500; letter-spacing: .04em; border-bottom: 1px solid transparent; transition: border-color .2s, color .2s; }
 .spec-table td a:hover { color: var(--gold); border-color: var(--gold); }
 .spec-table .num { text-align: right; font-variant-numeric: tabular-nums lining-nums; }
-.col-check { width: 44px; }
-.col-check input { accent-color: var(--gold); width: 15px; height: 15px; cursor: pointer; }
 .sort-btn { background: none; border: 0; padding: 0; font: inherit; letter-spacing: inherit; color: inherit; cursor: pointer; }
 .sort-btn:hover, th[aria-sort="ascending"] .sort-btn, th[aria-sort="descending"] .sort-btn { color: var(--gold); }
 .empty { text-align: center; color: var(--muted); padding: 40px; }
@@ -274,59 +266,78 @@ a.ext:hover { color: var(--gold); border-bottom-color: var(--gold); }
 .placeholder p { margin: 0; font-size: 13px; }
 
 /* 比較・検索 */
-.compare-table th[scope="row"] { color: var(--muted); font-size: 12px; font-weight: 400; letter-spacing: .14em; }
-.compare-table thead th { font-family: var(--serif); font-size: 15px; letter-spacing: .04em; color: var(--text); }
-.x-btn { margin-left: 8px; border: 0; background: none; color: var(--faint); cursor: pointer; font-size: 16px; }
-.x-btn:hover { color: var(--gold); }
-.empty-box { padding: 48px 24px; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); color: var(--muted); font-size: 14px; letter-spacing: .06em; }
-.empty-box p { margin: 0 0 8px; }
-.empty-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 28px; margin-top: 20px !important; }
-.empty-links a { display: inline-flex; align-items: center; gap: 8px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 2px; }
-.empty-links a:hover { color: var(--gold); border-color: var(--gold); }
 .btn-small { margin: 0; padding: 8px 16px; font-size: 12px; letter-spacing: .12em; }
-.col-check { font-size: 10px !important; letter-spacing: .1em !important; text-align: center; }
-td.col-check { text-align: center; }
-
-/* 一覧の下に出る比較リスト */
-.compare-bar {
-  position: sticky; bottom: 0; z-index: 5;
-  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
-  margin-top: 16px; padding: 12px 16px;
-  background: var(--surface); border: 1px solid var(--line);
-  box-shadow: 0 -6px 24px rgba(0,0,0,.08);
-}
-.compare-bar[hidden] { display: none; }
-.cmp-bar-title { font-size: 12px; letter-spacing: .14em; color: var(--muted); }
-.cmp-bar-title b { font-family: var(--latin); font-size: 18px; color: var(--text); }
-.chips { display: flex; flex-wrap: wrap; gap: 6px; flex: 1 1 240px; }
-.chip { display: inline-flex; align-items: center; padding: 3px 4px 3px 10px; border: 1px solid var(--border); font-size: 13px; background: var(--bg); }
-.chip .x-btn { margin-left: 2px; padding: 0 6px; }
-.cmp-bar-actions { display: flex; align-items: center; gap: 12px; margin-left: auto; }
-.cmp-hint { font-size: 12px; }
-.compare-bar a.btn:hover { color: #fff; }
+a.btn-small:hover { color: var(--gold); }
+.toolbar .toolbar-cmp { margin-left: auto; align-self: center; }
 
 /* 比較画面 */
-.cmp-head { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; margin: 20px 0 8px; }
+.cmp-cats { display: flex; flex-wrap: wrap; gap: 0; margin: 24px 0 0; border-bottom: 1px solid var(--line); }
+.cmp-cats a {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 22px; margin-bottom: -1px;
+  font-size: 14px; letter-spacing: .08em; color: var(--muted);
+  border: 1px solid transparent; border-bottom: 0;
+}
+.cmp-cats a:hover { color: var(--text); }
+.cmp-cats a[aria-current="page"] { color: var(--text); background: var(--surface); border-color: var(--line); border-bottom: 1px solid var(--surface); }
+.cmp-cats .ico { color: var(--gold); }
+.cmp-head { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; margin: 0 0 18px; padding: 16px 0; border-bottom: 1px solid var(--border); }
+.cmp-head-actions { display: flex; gap: 10px; margin-left: auto; }
 .toggle { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; letter-spacing: .06em; cursor: pointer; }
 .toggle input { accent-color: var(--gold); width: 16px; height: 16px; }
-.cmp-legend { font-size: 12px; display: inline-flex; align-items: center; gap: 6px; }
-.cmp-head .btn { margin-left: auto; }
-.section-title .count { margin-left: 4px; font-family: var(--latin); font-size: 15px; color: var(--muted); }
-.cmp-tools { display: flex; flex-wrap: wrap; align-items: end; gap: 12px 24px; margin: 0 0 14px; }
-.cmp-add { display: flex; flex-direction: column; gap: 2px; font-size: 11px; letter-spacing: .15em; color: var(--muted); flex: 0 1 320px; }
-.cmp-add input { padding: 8px 0; border: 0; border-bottom: 1px solid var(--border); background: transparent; color: var(--text); font: inherit; font-size: 14px; }
-.cmp-add input:focus { outline: none; border-color: var(--gold); }
-.cmp-more { font-size: 13px; letter-spacing: .06em; color: var(--muted); border-bottom: 1px solid var(--border); }
-.cmp-more:hover { color: var(--gold); border-color: var(--gold); }
+.cmp-legend { font-size: 12px; display: inline-flex; align-items: center; gap: 8px; }
+.cmp-legend-mark { width: 22px; height: 3px; background: var(--gold); }
 .detail-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin: 20px 0 36px; }
 .detail-actions .btn { margin: 0; }
+
+/* 表本体: 項目名の列 + 製品ごとに同じ幅の列 */
+.cmp-scroll { overflow-x: auto; }
+.cmp {
+  width: 100%; min-width: calc(150px + var(--n) * 190px);
+  table-layout: fixed; border-collapse: separate; border-spacing: 0;
+  font-size: 14px; font-variant-numeric: tabular-nums lining-nums;
+}
+.cmp .cmp-corner, .cmp tbody th[scope="row"] { width: 150px; }
+.cmp thead th { padding: 0 6px 12px; vertical-align: bottom; text-align: left; }
+.cmp thead th:last-child { padding-right: 0; }
+/* 列の見出し: 製品を選ぶプルダウン */
+.cmp-card { position: relative; height: 100%; padding: 12px 12px 12px; background: var(--surface); border: 1px solid var(--border); border-top: 2px solid var(--line); }
+.cmp-card.is-empty { border-top-color: var(--border); border-style: dashed; }
+.cmp-select {
+  display: block; width: 100%; padding: 8px 28px 8px 10px;
+  border: 1px solid var(--border); border-radius: 0; background: var(--bg); color: var(--text);
+  font-family: var(--serif); font-size: 16px; font-weight: 500; letter-spacing: .02em;
+  appearance: none; cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50%; background-size: 5px 5px; background-repeat: no-repeat;
+}
+.cmp-select:hover, .cmp-select:focus { border-color: var(--gold); outline: none; }
+.cmp-card.is-empty .cmp-select { color: var(--muted); font-family: var(--sans); font-size: 14px; }
+.cmp-maker { display: inline-block; margin-top: 8px; font-size: 11px; letter-spacing: .1em; color: var(--muted); }
+.cmp-name { float: right; margin-top: 8px; font-size: 11px; letter-spacing: .08em; color: var(--muted); border-bottom: 1px solid var(--border); }
+.cmp-name:hover { color: var(--gold); border-color: var(--gold); }
+.cmp-x { position: absolute; top: -11px; right: -9px; width: 22px; height: 22px; border: 1px solid var(--border); border-radius: 50%; background: var(--bg); color: var(--muted); font-size: 13px; line-height: 1; cursor: pointer; }
+.cmp-x:hover { color: var(--gold); border-color: var(--gold); }
+.cmp td.cmp-blank { background: transparent; }
+/* 区切り見出し */
+.cmp .cmp-sec th {
+  padding: 22px 0 8px; text-align: left;
+  font-family: var(--latin); font-size: 12px; font-weight: 600; letter-spacing: .2em; color: var(--gold);
+  border-bottom: 1px solid var(--line);
+}
+/* 各行 */
+.cmp tbody th[scope="row"] { padding: 12px 12px 12px 0; text-align: left; font-size: 12px; font-weight: 400; letter-spacing: .1em; color: var(--muted); border-bottom: 1px solid var(--border); }
+.cmp tbody td { padding: 12px 14px 12px 22px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.cmp tbody tr:hover td, .cmp tbody tr:hover th[scope="row"] { background: var(--gold-soft); }
+.cmp-val { display: block; font-size: 15px; }
+.cmp-val .sub { margin-top: 2px; }
+.cmp-meter { display: block; height: 3px; margin-top: 8px; background: var(--border); }
+.cmp-meter i { display: block; height: 100%; background: var(--faint); }
+.cmp td.is-best .cmp-val { font-weight: 700; color: var(--gold); }
+.cmp td.is-best .cmp-val .sub { font-weight: 400; }
+.cmp td.is-best .cmp-meter i { background: var(--gold); }
 /* 横に動かしても項目名が見えるよう、1 列目を固定する */
-.compare-table th[scope="row"], .compare-table .cmp-corner { position: sticky; left: 0; z-index: 1; background: var(--bg); }
-.compare-table thead th { vertical-align: bottom; }
-.compare-table thead th a { font-family: var(--serif); font-size: 15px; }
-.compare-table td.best { background: var(--gold-soft); font-weight: 600; }
-.best-mark { display: inline-block; margin-left: 6px; padding: 1px 6px; font-size: 10px; font-weight: 500; letter-spacing: .12em; color: var(--gold); border: 1px solid var(--gold); vertical-align: middle; }
-.gap { display: block; font-size: 11px; color: var(--muted); letter-spacing: .04em; font-weight: 400; }
+.cmp .cmp-corner, .cmp tbody th[scope="row"] { position: sticky; left: 0; z-index: 1; background: var(--bg); }
 .result-list { list-style: none; padding: 0; margin: 24px 0 0; border-top: 1px solid var(--line); }
 .result-list li a { display: flex; align-items: baseline; gap: 14px; padding: 18px 4px; border-bottom: 1px solid var(--border); font-family: var(--serif); font-size: 16px; transition: color .2s; }
 .result-list li a:hover { color: var(--gold); }
@@ -370,5 +381,17 @@ td.col-check { text-align: center; }
   .toolbar label, .toolbar label.grow { min-width: 0; flex: 1 1 140px; }
   .bar { width: 64px; }
   .spec-list { grid-template-columns: 120px 1fr; }
+  /* 比較: 2 製品が画面に収まる幅にする（3 列以上は横に動かす） */
+  .cmp { min-width: calc(84px + var(--n) * 136px); font-size: 13px; }
+  .cmp .cmp-corner, .cmp tbody th[scope="row"] { width: 84px; }
+  .cmp tbody th[scope="row"] { font-size: 11px; letter-spacing: .04em; padding-right: 6px; }
+  .cmp tbody td { padding: 10px 8px 10px 10px; }
+  .cmp-val { font-size: 14px; }
+  .cmp thead th { padding: 0 3px 10px; }
+  .cmp-card { padding: 8px; }
+  .cmp-select { font-size: 14px; padding: 7px 22px 7px 8px; background-position: calc(100% - 12px) 50%, calc(100% - 7px) 50%; }
+  .cmp-name { float: none; display: inline-block; margin-left: 6px; }
+  .cmp-cats a { padding: 10px 14px; font-size: 13px; }
+  .cmp-head-actions { margin-left: 0; }
   .footer { padding: 24px 16px; }
 }

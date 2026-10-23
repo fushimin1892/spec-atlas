@@ -129,7 +129,7 @@ window.SPEC.categories = [
 // data/<id>.js の最後に setupPrices(id, 電力の項目名) を呼ぶと、window.SPEC.applyPrices[id] ができ、すぐに 1 回当てはめる。
 // 当てはめるのは、ページ読み込み時（data/<id>-prices.js）と、手元のサーバーから新しい価格が届いたとき（app.js）。
 // 価格は楽天から取得したものだけを使う（出どころの分からない値でコスパを計算しない）。
-// 取得済みで見つからなかった型番は「楽天で取扱なし」、まだ取得していない型番は「価格未取得」と添える。
+// 取得済みで見つからなかった型番は「楽天で取扱なし」と添える。まだ取得していない型番は「—」だけにする。
 window.SPEC.applyPrices = {};
 window.SPEC.setupPrices = function (id, powerLabel) {
   const apply = function (fetched) {
@@ -148,7 +148,7 @@ window.SPEC.setupPrices = function (id, powerLabel) {
       const known = fetched && fetched.items && it.id in fetched.items;
       const best = known ? fetched.items[it.id] : null; // 見つからなかった型番は null（生産終了などで売られていない）
       it.price = best ? best.price : null;
-      it.priceNote = best ? `${best.condition}・${best.shop}` : known ? "楽天で取扱なし" : "価格未取得";
+      it.priceNote = best ? `${best.condition}・${best.shop}` : known ? "楽天で取扱なし" : null;
       it.priceUrl = best ? best.url : null;
       it.costPerf = it.price && it.score ? Math.round((it.score / it.price) * 10000) / 10 : null;
     }
