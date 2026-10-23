@@ -369,7 +369,7 @@
       <p class="muted">${esc(cat.description)}</p>
       ${cat.id === "ai" ? aiHighlights(items) : ""}
       ${ranking ? `<section class="benchmark-guide" aria-label="性能の比較方法">
-        <div class="benchmark-tabs" role="group" aria-label="比較する性能">${config.metrics.map((m) => `<button type="button" class="metric-tab ${m.key === st.metric ? "active" : ""}" data-metric="${esc(m.key)}" aria-pressed="${m.key === st.metric}">${esc(m.label)}</button>`).join("")}</div>
+        ${config.metrics.length > 1 ? `<div class="benchmark-tabs" role="group" aria-label="比較する性能">${config.metrics.map((m) => `<button type="button" class="metric-tab ${m.key === st.metric ? "active" : ""}" data-metric="${esc(m.key)}" aria-pressed="${m.key === st.metric}">${esc(m.label)}</button>`).join("")}</div>` : ""}
         <h2>${esc(metric.title)}<span>${metric.betterLabel || (metric.better === "low" ? "小さいほど速い" : "高いほど高性能")}</span></h2>
         ${metric.scale ? `<p class="metric-scale">点数の範囲: ${esc(metric.scale)}</p>` : ""}
         <details class="benchmark-method"><summary>指標の意味・測定条件</summary><p>${esc(metric.description)}</p><p class="note">${esc(metric.limit)}</p>

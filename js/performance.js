@@ -7,8 +7,8 @@
       default: "score", baseline: "ryzen-5-7600",
       metrics: [
         { key: "score", label: "マルチ", columnLabel: "マルチ性能", title: "PassMark CPU Mark", help: "すべてのコアを使ったときの処理能力（PassMark CPU Mark）。動画の書き出しや圧縮など、重い作業の速さの目安です。数値が大きいほど速い CPU です。", better: "high", unit: "pt", source: null, description: "CPU全体で並列処理する能力。レンダリング・圧縮などの重い作業を比べる目安です。", limit: "マルチの順位はゲームの順位と一致するとは限りません。PassMark の値は毎日少しずつ更新されます。" },
-        { key: "gamingScore", label: "ゲーム指標", columnLabel: "ゲーム指標", title: "PassMark Gaming Score（キャッシュ重視）", help: "PassMark のゲーム向けの合成値。1 コアの速さと一部の計算テストに、L3 キャッシュの量を加えて計算します。キャッシュの多い X3D 系は、実際のゲームの差より大きく高く出る傾向があります。ゲームの FPS そのものではありません。", better: "high", unit: "pt", source: "gaming", description: "シングル・素数計算・物理演算とL3キャッシュを組み合わせた合成指標。ゲーム向けCPUを比較する目安です。", limit: "実際のゲームのFPSではありません。公開表の上位300件にないCPUはデータなしです。" },
         { key: "singleScore", label: "シングル", columnLabel: "シングル性能", title: "PassMark Single Thread", help: "1 つのコアの速さ（PassMark Single Thread）。アプリの操作の軽さや、多くのゲームの動きやすさに関わります。", better: "high", unit: "pt", source: "single", description: "1つの処理を実行する速さ。操作の応答や、並列化しにくい処理を比べる目安です。", limit: "ゲームのFPSはGPU・メモリ・ゲームの処理によっても変わります。" },
+        { key: "gamingScore", label: "ゲーム指標", columnLabel: "ゲーム指標", title: "PassMark Gaming Score（キャッシュ重視）", help: "PassMark のゲーム向けの合成値。1 コアの速さと一部の計算テストに、L3 キャッシュの量を加えて計算します。キャッシュの多い X3D 系は、実際のゲームの差より大きく高く出る傾向があります。ゲームの FPS そのものではありません。", better: "high", unit: "pt", source: "gaming", description: "シングル・素数計算・物理演算とL3キャッシュを組み合わせた合成指標。ゲーム向けCPUを比較する目安です。", limit: "実際のゲームのFPSではありません。公開表の上位300件にないCPUはデータなしです。" },
       ],
     },
     gpu: {
@@ -50,7 +50,7 @@
   };
   for (const [catId, config] of Object.entries(SPEC.benchmarks)) {
     const cat = SPEC.categories.find((c) => c.id === catId);
-    cat.description = { cpu: "マルチ・ゲーム・シングルの性能を、ソケットや価格で絞り込んで比較", gpu: "3D描画性能を、VRAM の量や価格で絞り込んで比較", ai: "正確さ（誤答の少なさ）・能力・速さを、ローカルで動かせるモデルとクラウドのモデルで比較" }[catId];
+    cat.description = { cpu: "マルチ・シングル・ゲームの性能を、ソケットや価格で絞り込んで比較", gpu: "3D描画性能を、VRAM の量や価格で絞り込んで比較", ai: "正確さ（誤答の少なさ）・能力・速さを、ローカルで動かせるモデルとクラウドのモデルで比較" }[catId];
     // 3 カテゴリとも、指標を切り替える性能ランキング（細かい仕様は「仕様一覧」の表）。
     // 項目名は表・詳細・比較で分かりやすい columnLabel、指標のボタンは短い label を使う
     const def = config.metrics.find((m) => m.key === config.default);
