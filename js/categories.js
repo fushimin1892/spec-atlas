@@ -5,6 +5,7 @@
 // filters: 一覧のプルダウン絞り込みに使う項目（省略時はメーカー）
 // defaultSort: 一覧の初期の並び順。dir は 1 = 昇順 / -1 = 降順
 // rank: true = 一覧に順位列を出す / searchHint・note: 絞り込み欄の例文と表の注記
+// source: { label, url } = データの出典。表の注記の下にリンクで出す
 // icon: js/icons.js のキー名。en: 英字の小見出し。
 // status: "ready" = 公開中 / "planned" = 準備中（メニューに「準備中」で表示）
 window.SPEC = window.SPEC || { data: {} };
@@ -51,6 +52,7 @@ window.SPEC.categories = [
     description: "デスクトップ向けグラフィックボードの性能比較",
     searchHint: "型番で絞り込み（例: 5070）",
     note: "コスパは 1,000 円あたり、電力効率は 1W あたりの性能スコア。価格は取得時点の参考値です。",
+    source: { label: "性能スコアの出典: UL Benchmarks（3DMark Time Spy グラフィックススコアの中央値・取得時点）", url: "https://benchmarks.ul.com/jp/compare/best-gpus" },
     filters: ["maker", "series"],
     defaultSort: { key: "score", dir: -1 },
     rank: true,
