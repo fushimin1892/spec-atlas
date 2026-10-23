@@ -318,5 +318,5 @@ Ryzen 5 1600 AF,,6,12,65,3.2,3.6,16,2019/10/11
   }
 
   // data/cpu-prices.js（楽天から取得した価格）があれば当てはめ、コスパを計算する（categories.js）
-  window.SPEC.setupPrices("cpu", "TDP");
+  window.SPEC.setupPrices("cpu");
 })();

@@ -7,7 +7,7 @@
 // filters: 一覧のプルダウン絞り込みに使う項目（省略時はメーカー）
 // optionOrder: { 項目キー: [並び順] } = プルダウンの選択肢の並び（省略時はデータに出てくる順）
 // defaultSort: 一覧の初期の並び順。dir は 1 = 昇順 / -1 = 降順
-// rank: true = 一覧に順位列を出す / searchHint・note: 絞り込み欄の例文と表の注記
+// rank: true = 一覧に順位列を出す / searchHint: 絞り込み欄の例文 / cautions: 数値を読むときの注意（出典の欄・詳細・比較に箇条書きで出す）
 // sources: [{ label, url }] = データの出典。表の注記の下にリンクで出す
 // icon: js/icons.js のキー名。en: 英字の小見出し。
 // status: "ready" = 公開中
@@ -21,7 +21,12 @@ window.SPEC.categories = [
     status: "ready",
     description: "GPT・Claude・Kimi・DeepSeek・Qwen・GLMのモデル仕様と出典",
     searchHint: "モデル名・系列・IDで絞り込み（例: Kimi / GLM）",
-    note: "Bは10億パラメータ。通常コンテキストと拡張上限を区別しています。トークナイザーやAPI・重み版の条件が異なるため、長さだけで能力は比較できません。非公表・未確認は推測で補いません。掲載は各系列の最新世代だけで、後継が出ている旧世代は載せていません。利用形態の「ローカル・クラウド」は重みが公開されていて手元のPCでも動かせるモデル、「クラウドのみ」は提供元のAPI・サービスでだけ使えるモデルです。各モデルの詳細に出典・確認日・確認した項目を掲載しています。",
+    cautions: [
+      "B は 10 億パラメータ。",
+      "コンテキストは通常の長さと拡張したときの上限を分けて載せています。トークナイザーが違うため、長さだけで能力は比べられません。",
+      "利用形態の「ローカル・クラウド」は重みが公開されていて手元の PC でも動かせるモデル、「クラウドのみ」は提供元の API・サービスでだけ使えるモデルです。",
+      "各系列の最新世代だけを載せています。",
+    ],
     sources: [
       { label: "GPT: OpenAI 公式モデル仕様", url: "https://developers.openai.com/api/docs/models" },
       { label: "Claude: Anthropic 公式モデル仕様", url: "https://platform.claude.com/docs/en/models/overview" },
@@ -58,7 +63,11 @@ window.SPEC.categories = [
     icon: "cpu", en: "PROCESSORS",
     status: "ready",
     description: "デスクトップ向けプロセッサの性能比較",
-    specNote: "公称電力はAMDのTDP・IntelのTDP/PBPで、最大消費電力や実測値ではありません。ベースはIntel混成CPUではPコア、最大ブーストは条件付きの最大値（TVB等を含む）。発売日はOEM・地域・一般販売で異なる場合があります。項目別の出典と未確認事項は各製品の詳細で確認できます。",
+    cautions: [
+      "公称電力は AMD の TDP・Intel の TDP/PBP で、実際の消費電力ではありません。",
+      "ベースクロックは、Intel の混成 CPU では P コアの値です。ブーストは条件付きの最大値です。",
+      "発売日は地域・販売形態で異なることがあります。",
+    ],
     searchHint: "型番で絞り込み（例: 9800X3D）",
     // note は data/cpu.js が価格の取得日時を添えて書き込む
     sources: [
@@ -105,9 +114,11 @@ window.SPEC.categories = [
     icon: "gpu", en: "GRAPHICS",
     status: "ready",
     description: "デスクトップ向けグラフィックボードの性能比較",
-    specNote: "公称電力はTGP/TBP等で、実測消費電力ではありません。Founders Edition・基準カード・メーカー製カードで数値が異なります。発売日はメーカー資料で日付まで確認できていないものがあります。性能スコアは PassMark G3D Mark の確認済みの値だけを載せ、測定がどの型番のものか特定できない GPU は空欄にしています。詳細ページで項目別の出典と状態を確認できます。",
+    cautions: [
+      "公称電力は TGP/TBP で、実際の消費電力ではありません。メーカー製カードでは値が異なります。",
+      "性能スコアは、測定がどの型番のものか特定できる GPU だけ載せています。",
+    ],
     searchHint: "型番で絞り込み（例: 5070）",
-    note: "コスパは1,000円あたり、電力あたりは公称電力1Wあたりの3D描画性能。価格は取得した時点の値です。",
     sources: [
       { label: "性能スコア: PassMark G3D Mark（3D描画性能・取得日は各製品の詳細）", url: "https://www.videocardbenchmark.net/gpu_list.php" },
       { label: "NVIDIA 公式GeForce仕様比較", url: "https://www.nvidia.com/en-us/geforce/graphics-cards/compare/" },
@@ -194,24 +205,13 @@ window.SPEC.categories = [
 })();
 
 // ---------- 参考価格（GPU・CPU 共通） ----------
-// data/<id>.js の最後に setupPrices(id, 電力の項目名) を呼ぶと、window.SPEC.applyPrices[id] ができ、すぐに 1 回当てはめる。
+// data/<id>.js の最後に setupPrices(id) を呼ぶと、window.SPEC.applyPrices[id] ができ、すぐに 1 回当てはめる。
 // 当てはめるのは、ページ読み込み時（data/<id>-prices.js）と、手元のサーバーから新しい価格が届いたとき（app.js）。
 // 価格は楽天から取得したものだけを使う（出どころの分からない値でコスパを計算しない）。
 // 取得済みで見つからなかった型番は「主要店で取扱なし」と添える（取得元の店は tools/prices.mjs の TRUSTED_SHOPS）。まだ取得していない型番は「—」だけにする。
 window.SPEC.applyPrices = {};
-window.SPEC.setupPrices = function (id, powerLabel) {
+window.SPEC.setupPrices = function (id) {
   const apply = function (fetched) {
-    const cat = window.SPEC.categories.find((c) => c.id === id);
-    if (cat) {
-      const at = fetched && fetched.fetchedAt
-        ? new Date(fetched.fetchedAt).toLocaleString("ja-JP", { dateStyle: "medium", timeStyle: "short" })
-        : null;
-      cat.note =
-        `コスパと電力あたりの計算には${id === "gpu" ? "3D描画性能（PassMark G3D Mark）" : "マルチ性能（PassMark CPU Mark）"}を使っています。コスパ ＝ このスコア ÷ 参考価格 × 1,000（1,000 円あたり）、電力あたり ＝ このスコア ÷ ${powerLabel}（1W あたり）。電力は実際に測った値ではありません。` +
-        (at
-          ? `参考価格は${fetched.source}に出店している PC パーツ専門店・大手家電店・大手中古 PC 店（ドスパラ、ツクモ、パソコン工房、Joshin、ビックカメラ、じゃんぱら、ソフマップなど）の新品最安値（新品が無い型番は中古と表示）で、${at} 時点の値です。実際の価格・在庫は販売ページでご確認ください。`
-          : "参考価格はまだ取得していません。");
-    }
     for (const it of window.SPEC.data[id]) {
       const known = fetched && fetched.items && it.id in fetched.items;
       const best = known ? fetched.items[it.id] : null; // 見つからなかった型番は null（生産終了などで売られていない）

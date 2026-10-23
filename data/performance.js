@@ -18,7 +18,7 @@ window.SPEC.performanceData = {
     "g3d": {
       "url": "https://www.videocardbenchmark.net/gpu_list.php",
       "label": "PassMark G3D Mark",
-      "checkedAt": "2026-10-23",
+      "checkedAt": "2026-10-24",
       "sha256": "94056b4060bf3e30c32568433a39cb098b13b2b87c8adc8368c3a7ca8131b297"
     },
     "aa": {
@@ -2329,6 +2329,13 @@ window.SPEC.performanceData = {
         "source": "g3d"
       }
     },
+    "nvidia-titan-rtx": {
+      "score": {
+        "name": "TITAN RTX",
+        "value": 19825,
+        "source": "g3d"
+      }
+    },
     "rtx-5060-ti-16gb": {
       "score": {
         "name": "GeForce RTX 5060 Ti 16GB",
@@ -2375,6 +2382,13 @@ window.SPEC.performanceData = {
       "score": {
         "name": "Radeon RX 6750 XT",
         "value": 20697,
+        "source": "g3d"
+      }
+    },
+    "nvidia-titan-v": {
+      "score": {
+        "name": "TITAN V",
+        "value": 19346,
         "source": "g3d"
       }
     },
@@ -2501,6 +2515,13 @@ window.SPEC.performanceData = {
       "score": {
         "name": "Radeon RX 6600 XT",
         "value": 16444,
+        "source": "g3d"
+      }
+    },
+    "nvidia-titan-x-pascal": {
+      "score": {
+        "name": "NVIDIA TITAN X",
+        "value": 13659,
         "source": "g3d"
       }
     },
@@ -2851,6 +2872,13 @@ window.SPEC.performanceData = {
       "score": {
         "name": "Intel UHD 770",
         "value": 1357,
+        "source": "g3d"
+      }
+    },
+    "uhd-750": {
+      "score": {
+        "name": "Intel UHD Graphics 750",
+        "value": 1682,
         "source": "g3d"
       }
     },

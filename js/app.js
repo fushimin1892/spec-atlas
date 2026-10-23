@@ -42,6 +42,8 @@
   function cellHtml(cat, field, item) {
     const value = item[field.key];
     const metric = SPEC.benchmarkOf?.(cat.id, field.key);
+    // 性能スコアが空の理由（PassMark が容量・メモリ違いを 1 行にまとめている等）
+    if (value == null && item[`${field.key}Gap`]) return `<span class="muted">${esc(item[`${field.key}Gap`])}</span>`;
     if (metric && field.key !== "score") {
       const record = SPEC.performanceData[cat.id][item.id]?.[field.key];
       return `${formatValue(field, value)}${record && cat.id === "ai" ? `<span class="sub">${esc(record.name)}</span>` : ""}`;
@@ -106,49 +108,65 @@
     </section>`;
   }
 
-  // 一覧の下に常に出す「データの出典」。項目ごとに、どの資料から取ったか・いつ確かめたかを並べる。
+  // 一覧の下に常に出す「データの出典」。項目ごとの出典と確認日の表、計算している値、注意、メーカー資料との照合の結果。
   // 確認日・取得日はデータ（performanceData・hardwareEvidence・価格・AI の各レコード）から出す。製品ごとの個別の資料は詳細ページ
   function sourcesSection(cat) {
     const perf = SPEC.performanceData?.sources || {};
     const ev = SPEC.hardwareEvidence?.sources || {};
+    const evAt = SPEC.hardwareEvidence?.checkedAt;
     const priceAt = SPEC.prices?.[cat.id]?.fetchedAt ? new Date(SPEC.prices[cat.id].fetchedAt).toLocaleDateString("sv-SE") : null;
     const link = (label, url) => `<a class="ext" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`;
-    const fromPerf = (key) => perf[key] ? [link(perf[key].label, perf[key].url), perf[key].checkedAt] : null;
-    const fromEv = (key) => ev[key] ? link(ev[key].label, ev[key].url) : "";
-    const rakuten = ["参考価格", `${link("楽天市場 商品検索 API", "https://webservice.rakuten.co.jp/documentation/ichiba-item-search")}（PC パーツ専門店・大手家電店・大手中古 PC 店の 18 店に限定。店名は各価格に表示）`, priceAt];
+    const perfLink = (key, label) => perf[key] ? link(label, perf[key].url) : "";
+    const evLink = (key, label) => ev[key] ? link(label, ev[key].url) : "";
+    const wiki = (url) => `未確認分は ${link("Wikipedia", url)}`;
+    const rakuten = ["参考価格", `${link("楽天市場", "https://webservice.rakuten.co.jp/documentation/ichiba-item-search")}（PC パーツ店・家電店・中古 PC 店の 18 店）`, priceAt];
     const rows = {
       cpu: [
-        ["マルチ性能", ev.passmark ? link(ev.passmark.label, "https://www.cpubenchmark.net/cpu_list.php") : "", ev.passmark?.checkedAt],
-        ["ゲーム指標", ...(fromPerf("gaming") || ["", ""])],
-        ["シングル性能", ...(fromPerf("single") || ["", ""])],
-        ["コア・スレッド・公称電力・クロック・L3キャッシュ", `${fromEv("amd-cpu")}、${fromEv("intel-desktop")}。一部は Intel ARK・AMD の個別ページ（製品ごとの資料は詳細ページ）`, SPEC.hardwareEvidence?.checkedAt],
-        ["発売日", `メーカー資料（${fromEv("amd-cpu")}・各社の発売告知）で日付まで確かめたもの（詳細ページで「メーカー資料と一致」）。それ以外は ${link("Wikipedia 英語版の各世代の記事", "https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors")} の日付で、メーカー資料では未確認`, SPEC.hardwareEvidence?.checkedAt],
-        ["ソケット・内蔵グラフィックス", `AMD は ${fromEv("amd-cpu")}（掲載 98 型番で一致を確認）。Intel は世代ごとのソケットと、型番末尾の F（内蔵グラフィックス無し）というメーカーの命名規則`, SPEC.hardwareEvidence?.checkedAt],
+        ["マルチ性能", ev.passmark ? link("PassMark CPU Mark", "https://www.cpubenchmark.net/cpu_list.php") : "", ev.passmark?.checkedAt],
+        ["ゲーム指標", perfLink("gaming", "PassMark Gaming Score"), perf.gaming?.checkedAt],
+        ["シングル性能", perfLink("single", "PassMark Single Thread"), perf.single?.checkedAt],
+        ["コア・クロック・キャッシュ・公称電力", `${evLink("amd-cpu", "AMD")}・${evLink("intel-desktop", "Intel")}の仕様資料`, evAt],
+        ["ソケット・内蔵グラフィックス", `${evLink("amd-cpu", "AMD")}の仕様資料・Intel の型番の規則（F 付きは内蔵なし）`, evAt],
+        ["発売日", `メーカー資料（${wiki("https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors")}）`, evAt],
         rakuten,
       ],
       gpu: [
-        ["3D描画性能", ...(fromPerf("g3d") || ["", ""])],
-        ["VRAM・公称電力", `${fromEv("nvidia-compare")}、${fromEv("amd-gpu")}、Intel ARK。古い製品は各社の製品ページ・メーカー製カードの仕様資料（製品ごとの資料は詳細ページ）`, SPEC.hardwareEvidence?.checkedAt],
-        ["発売日", `メーカー資料（NVIDIA・AMD の発売告知、${fromEv("amd-gpu-launch")}）で日付まで確かめたもの（詳細ページで「メーカー資料と一致」）。それ以外は ${link("Wikipedia 英語版の各シリーズの記事", "https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units")} の日付で、メーカー資料では未確認`, SPEC.hardwareEvidence?.checkedAt],
+        ["3D描画性能", perfLink("g3d", "PassMark G3D Mark"), perf.g3d?.checkedAt],
+        ["VRAM・公称電力", `${evLink("nvidia-compare", "NVIDIA")}・${evLink("amd-gpu", "AMD")}・Intel の仕様資料`, evAt],
+        ["発売日", `メーカー資料（${wiki("https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units")}）`, evAt],
         rakuten,
       ],
       ai: [
-        ["公開日・パラメータ数・コンテキスト・最大出力・入出力・ライセンス・利用形態", `各社の公式資料（${link("OpenAI", "https://developers.openai.com/api/docs/models")}・${link("Anthropic", "https://platform.claude.com/docs/en/models/overview")}・Hugging Face の公式モデルカード（${link("Moonshot AI", "https://huggingface.co/moonshotai")}・${link("DeepSeek", "https://huggingface.co/deepseek-ai")}・${link("Qwen", "https://huggingface.co/Qwen")}・${link("Z.ai", "https://huggingface.co/zai-org")}）など。モデルごとの資料は詳細ページ）`, getItems("ai")[0]?.checkedAt],
-        ["正確性・正答率・でっち上げない率", `${perf.aa ? link("Artificial Analysis（AA-Omniscience）", "https://artificialanalysis.ai/evaluations/omniscience") : ""}。モデル比較ページに載っている値`, perf.aa?.checkedAt],
-        ["総合能力・出力の速さ・待ち時間・料金", `${perf.aa ? link(perf.aa.label, perf.aa.url) : ""}（評価方法: ${perf.method ? link(perf.method.label, perf.method.url) : ""}）`, perf.aa?.checkedAt],
-        ["重みの大きさ（8bit）", "出典の値ではなく、公式資料の総パラメータ数から計算した目安（1 パラメータ＝1 バイト）", "—"],
+        ["公開日・パラメータ数・コンテキストなどの仕様", `各社の公式資料（${link("OpenAI", "https://developers.openai.com/api/docs/models")}・${link("Anthropic", "https://platform.claude.com/docs/en/models/overview")}・Hugging Face の公式モデルカードなど）`, getItems("ai")[0]?.checkedAt],
+        ["正確性・正答率・でっち上げない率", perf.aa ? link("Artificial Analysis（AA-Omniscience）", "https://artificialanalysis.ai/evaluations/omniscience") : "", perf.aa?.checkedAt],
+        ["総合能力・出力の速さ・待ち時間・料金", perf.aa ? link("Artificial Analysis", perf.aa.url) : "", perf.aa?.checkedAt],
       ],
     }[cat.id];
     if (!rows) return "";
+    const score = { cpu: "マルチ性能", gpu: "3D描画性能" }[cat.id];
+    const calc = score
+      ? [`コスパ ＝ ${score} ÷ 参考価格 × 1,000（1,000 円あたり）`, `電力あたり ＝ ${score} ÷ 公称電力（1W あたり）`]
+      : ["重みの大きさ ＝ 総パラメータ数 × 1 バイト（8bit）または 0.5 バイト（4bit）"];
+    const cautions = [
+      ...(cat.cautions || []),
+      ...(score ? ["参考価格は新品の最安値（新品が無ければ中古）で、取得した時点の値です。"] : []),
+      "出典で確かめられない値は空欄にしています。",
+    ];
+    const audit = auditLine(cat);
     return `<section class="source-list" aria-labelledby="src-title">
       <h2 id="src-title">データの出典</h2>
       <div class="table-wrap"><table class="audit-table"><thead><tr><th scope="col">項目</th><th scope="col">出典</th><th scope="col">確認日</th></tr></thead>
-      <tbody>${rows.map(([what, src, date]) => `<tr><th scope="row">${esc(what)}</th><td>${src}</td><td>${esc(date || "—")}</td></tr>`).join("")}</tbody></table></div>
-      <p class="note">計算で出している値（コスパ・電力あたり・重みの大きさ）を除き、数値は上の出典の値をそのまま載せ、出典で確かめられない値は空欄にしています。製品ごとの出典・確認した日・照合の結果は、各製品の詳細ページにあります。</p>
+      <tbody>${rows.map(([what, src, date]) => `<tr><th scope="row">${esc(what)}</th><td>${src}</td><td class="src-date">${esc(date || "—")}</td></tr>`).join("")}</tbody></table></div>
+      <div class="source-notes">
+        <div><h3>計算している値</h3><ul>${calc.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>
+        <div><h3>注意</h3><ul>${cautions.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>
+        ${audit ? `<div><h3>メーカー資料との照合（${esc(evAt)}）</h3><ul>${audit}</ul></div>` : ""}
+      </div>
+      <p class="note">製品ごとの出典・確認日は、各製品の詳細ページにあります。</p>
     </section>`;
   }
 
-  // 一覧の「数値の見方・出典」に出す、メーカー資料との照合状況の要約（数え方は tools/audit-hardware.mjs と同じ）
+  // 「データの出典」に出す、メーカー資料との照合の結果（数え方は tools/audit-hardware.mjs と同じ）
   function auditLine(cat) {
     if (!SPEC.verificationOf || !["cpu", "gpu"].includes(cat.id)) return "";
     const checks = getItems(cat.id).map((item) => ({ item, check: SPEC.verificationOf(cat.id, item) }));
@@ -158,7 +176,11 @@
     const pending = applicable.filter(({ check }) => !tech(check).every((f) => f.status === "verified")).map(({ item }) => item.name);
     const withDate = checks.filter(({ check }) => check.verified === check.total).length;
     const mismatches = checks.reduce((n, { check }) => n + check.mismatches, 0);
-    return `<p class="note">照合状況（${esc(SPEC.hardwareEvidence.checkedAt)}）: メーカー資料と食い違う項目 ${mismatches} 件。技術仕様は ${techOk.length}/${applicable.length} 型番でメーカー資料と一致${pending.length ? `（未確認: ${esc(pending.join("、"))}）` : ""}、発売日まで一致は ${withDate}/${checks.length} 型番。残りは食い違いではなく、メーカー資料に記載が無く未確認のものです。製品ごとの出典は詳細ページにあります。</p>`;
+    return [
+      `食い違い ${mismatches} 件`,
+      `仕様が一致: ${techOk.length} / ${applicable.length} 型番${pending.length ? `（未確認: ${esc(pending.join("、"))}）` : ""}`,
+      `発売日まで一致: ${withDate} / ${checks.length} 型番（残りはメーカー資料に日付が無く未確認）`,
+    ].map((x) => `<li>${x}</li>`).join("");
   }
 
   function benchmarkEvidence(cat, item) {
@@ -366,9 +388,6 @@
         <span class="muted" id="hitCount"></span>
         <a class="btn btn-ghost btn-small toolbar-cmp" href="#/compare?cat=${esc(cat.id)}">${esc(cat.name)}を比較する</a>
       </div>
-      <details class="category-sources"><summary>数値の見方と照合の状況</summary>
-      ${cat.note ? `<p class="note">${esc(cat.note)}</p>` : ""}
-      ${cat.specNote ? `<p class="note">${esc(cat.specNote)}</p>` : ""}${auditLine(cat)}<p class="note">出典はページの下の「データの出典」にまとめています。</p></details>
       ${SPEC.applyPrices[cat.id] ? `<p class="note live" id="priceStatus" role="status" aria-live="polite">${esc(priceStatus[cat.id] || "")}</p>` : ""}
       ${ranking ? `<div id="performanceRows" class="performance-ranking" ${st.view !== "performance" ? "hidden" : ""}></div>` : ""}
       ${tableGuide(cat, listFields)}
@@ -520,7 +539,7 @@
         ${cat.fields.filter((f) => !f.filterOnly).map((f) => `<dt>${esc(f.label)}${f.help ? `<span class="field-help">${esc(f.help)}</span>` : ""}</dt><dd>${cellHtml(cat, f, item)}</dd>`).join("")}
       </dl>
       ${benchmarkEvidence(cat, item)}
-      ${cat.specNote ? `<p class="note">${esc(cat.specNote)}</p>` : ""}
+      ${cat.cautions ? `<ul class="cautions">${cat.cautions.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
       ${verificationHtml(cat, item)}`;
     // 1 列目にこの製品を入れて比較画面を開く（2 列目以降の選択は残す）
     document.getElementById("cmpBtn").addEventListener("click", () => {
@@ -606,7 +625,7 @@
           return `<div class="cmp-mrow${isBest ? " is-best" : ""}${v == null ? " no-result" : ""}">
             <span class="cmp-mark" aria-hidden="true">${mark}</span>
             <a class="cmp-mname" href="#/c/${esc(cat.id)}/${esc(item.id)}">${esc(item.name)}</a>
-            <span class="cmp-mval">${v == null ? "—" : Number(v).toLocaleString("ja-JP", { maximumFractionDigits: metric.digits || 0 })}<small>${v == null ? "測定データなし" : esc(metric.unit)}</small></span>
+            <span class="cmp-mval">${v == null ? "—" : Number(v).toLocaleString("ja-JP", { maximumFractionDigits: metric.digits || 0 })}<small>${v == null ? esc(item[`${key}Gap`] || "測定データなし") : esc(metric.unit)}</small></span>
             <span class="cmp-mmeter" aria-hidden="true"><i style="width:${v == null ? 0 : meter(v).toFixed(1)}%"></i></span>
             <span class="cmp-mnote">${v == null ? "" : `全体 ${rankOf.get(item.id)} 位 / ${ranked.length}`}${isBest ? '<b>いちばん良い</b>' : gap(v) ? ` · ${esc(gap(v))}` : ""}</span>
           </div>`;
@@ -666,7 +685,6 @@
       <nav class="crumbs" aria-label="パンくず"><a href="#/">トップ</a> › 比較</nav>
       <h1 class="page-title">比較</h1>
       <p class="muted">比べたいカテゴリを選び、プルダウンで製品を選んでください（2〜4 製品）。</p>
-      ${cat.specNote || cat.id === "ai" ? `<p class="note">${esc(cat.specNote || cat.note)}</p>` : ""}
       <nav class="cmp-cats" aria-label="比較するカテゴリ">
         ${ready.map((c) => `<a href="#/compare?cat=${esc(c.id)}"${c.id === cat.id ? ' aria-current="page"' : ""}>${SPEC.icon(c.icon)}${esc(c.name)}</a>`).join("")}
       </nav>

@@ -56,8 +56,17 @@ for (const [source, key] of [["single", "singleScore"], ["gaming", "gamingScore"
 }
 const gpuTable = tablesOf(html.g3d).find((table) => table[0]?.[1]?.text.includes("G3D Mark"));
 assert(gpuTable?.length > 2000, "GPU一覧の構造変更");
+// PassMark の表記が掲載名と違うだけで、容量・メモリ違いの無い型番を明示して対応付ける。
+// TITAN X は Maxwell 版が「GeForce GTX TITAN X」、Pascal 版が「NVIDIA TITAN X」。
+// 名前だけの行（RTX 3080・RTX 4060 Ti・GTX 1060 など）は別容量の測定が混ざりうるので、容量付きの型番へ流用しない。
+const gpuNames = {
+  "nvidia-titan-rtx": "TITAN RTX",
+  "nvidia-titan-v": "TITAN V",
+  "nvidia-titan-x-pascal": "NVIDIA TITAN X",
+  "uhd-750": "Intel UHD Graphics 750",
+};
 for (const item of window.SPEC.data.gpu) {
-  const matches = gpuTable.slice(1).filter((row) => normalizeName(row[0].text) === normalizeName(item.name));
+  const matches = gpuTable.slice(1).filter((row) => gpuNames[item.id] ? row[0].text === gpuNames[item.id] : normalizeName(row[0].text) === normalizeName(item.name));
   // VRAM違い・メモリ規格違い・複数型番の合算は別のGPUへ流用しない。
   if (matches.length === 1 && /^\d+$/.test(matches[0][1].text)) {
     // GPU の性能スコア（score）は PassMark G3D Mark

@@ -207,7 +207,7 @@ Arc B570,10,150,2025/01/16
   }
 
   // data/gpu-prices.js（楽天から取得した価格）があれば当てはめ、コスパを計算する（categories.js）
-  window.SPEC.setupPrices("gpu", "消費電力");
+  window.SPEC.setupPrices("gpu");
 
   // tools/check-specs.mjs が作る data/gpu-official.js があれば、公式仕様と照合済みの型番に印を付ける
   const official = window.SPEC.official && window.SPEC.official.gpu;

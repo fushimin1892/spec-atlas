@@ -32,6 +32,22 @@
       ],
     },
   };
+  // PassMark G3D Mark が容量・メモリ規格・型番を区別しない 1 行しか持たず、どの型番の値か決められない GPU
+  // （対応付けの規則は tools/collect-performance.mjs の gpuNames）
+  const SCORE_GAPS = {
+    "rtx-3080-10gb": "PassMark の RTX 3080 の値は 10GB 版と特定できません",
+    "rtx-4060-ti-8gb": "PassMark の RTX 4060 Ti の値は 8GB 版と特定できません",
+    "gtx-1060-6gb": "PassMark の GTX 1060 の値は 6GB 版と特定できません",
+    "arc-a770-8gb": "PassMark は 8GB と 16GB を区別していません",
+    "arc-a770-16gb": "PassMark は 8GB と 16GB を区別していません",
+    "gtx-1650-gddr5": "PassMark は GDDR5 版と GDDR6 版を区別していません",
+    "gtx-1650-gddr6": "PassMark は GDDR5 版と GDDR6 版を区別していません",
+    "gt-1030-gddr5": "PassMark は GDDR5 版と DDR4 版を区別していません",
+    "gt-1030-gddr4": "PassMark は GDDR5 版と DDR4 版を区別していません",
+    "rx-5500-xt-8gb": "PassMark は 4GB と 8GB を区別していません",
+    "rx-570-8gb": "PassMark は RX 470 と RX 570 をまとめて集計しています",
+    "rx-470": "PassMark は RX 470 と RX 570 をまとめて集計しています",
+  };
   for (const [catId, config] of Object.entries(SPEC.benchmarks)) {
     const cat = SPEC.categories.find((c) => c.id === catId);
     cat.description = { cpu: "マルチ・ゲーム・シングルの性能を、ソケットや価格で絞り込んで比較", gpu: "3D描画性能を、VRAM の量や価格で絞り込んで比較", ai: "正確さ（誤答の少なさ）・能力・速さを、ローカルで動かせるモデルとクラウドのモデルで比較" }[catId];
@@ -46,8 +62,8 @@
         const scoreField = cat.fields.find((f) => f.key === "score");
         scoreField.label = metric.columnLabel || metric.title;
         scoreField.help = metric.help || `${metric.description} ${metric.limit}`;
-        // 出典の UL が止まっていて取れていない GPU は、空欄の理由を表示する
-        if (catId === "gpu") scoreField.empty = "測定データなし";
+        // PassMark に載っていない GPU。型番ごとの理由は下の SCORE_GAPS
+        if (catId === "gpu") scoreField.empty = "PassMark に掲載なし";
       } else {
         cat.fields.splice(at, 0, { ...metric, label: metric.columnLabel || metric.label, help: metric.help || `${metric.description} ${metric.limit}`, type: "number", list: false, benchmark: true, empty: catId === "cpu" ? "PassMark の公表なし" : "比較データなし" });
         at++;
@@ -59,6 +75,7 @@
         if (record) item[metric.key] = record.value;
         else if (metric.key !== "score") item[metric.key] = null;
       }
+      if (catId === "gpu" && item.score == null && SCORE_GAPS[item.id]) item.scoreGap = SCORE_GAPS[item.id];
       // GPU は性能スコアをここで当てるので、電力あたりもここで計算する（コスパは下で価格と一緒に計算し直す）
       if (catId === "gpu") item.efficiency = item.score && item.tdp ? Math.round((item.score / item.tdp) * 10) / 10 : null;
     }
