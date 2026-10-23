@@ -275,7 +275,6 @@ a.btn-small:hover { color: var(--gold); }
 .cmp-cats a[aria-current="page"] { color: var(--text); background: var(--surface); border-color: var(--line); border-bottom: 1px solid var(--surface); }
 .cmp-cats .ico { color: var(--gold); }
 .cmp-head { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; margin: 0 0 18px; padding: 16px 0; border-bottom: 1px solid var(--border); }
-.cmp-head-actions { display: flex; gap: 10px; margin-left: auto; }
 .toggle { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; letter-spacing: .06em; cursor: pointer; }
 .toggle input { accent-color: var(--gold); width: 16px; height: 16px; }
 .cmp-legend { font-size: 12px; display: inline-flex; align-items: center; gap: 8px; }
@@ -482,6 +481,44 @@ a.btn-small:hover { color: var(--gold); }
   .cmp-select { font-size: 14px; padding: 7px 22px 7px 8px; background-position: calc(100% - 12px) 50%, calc(100% - 7px) 50%; }
   .cmp-name { float: none; display: inline-block; margin-left: 6px; }
   .cmp-cats a { padding: 10px 14px; font-size: 13px; }
-  .cmp-head-actions { margin-left: 0; }
   .footer { padding: 24px 16px; }
+}
+
+/* 比較画面の 3 段（選ぶ・性能・仕様） */
+.cmp-step { margin: 40px 0 16px; padding-bottom: 10px; font-family: var(--serif); font-size: 19px; font-weight: 600; letter-spacing: .08em; border-bottom: 1px solid var(--line); }
+.cmp-step small { display: block; margin-top: 6px; font-family: var(--sans); font-size: 12px; font-weight: 400; letter-spacing: .04em; color: var(--muted); }
+.cmp-pickers { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+.cmp-pickers .cmp-card { padding-left: 46px; }
+.cmp-pickers .cmp-card > .cmp-mark { position: absolute; left: 12px; top: 12px; }
+.cmp-picker-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.cmp-mark { display: inline-block; min-width: 1.4em; font-family: var(--latin); font-size: 22px; line-height: 1; color: var(--gold); }
+.empty-box { margin: 28px 0; padding: 32px 20px; text-align: center; color: var(--muted); border: 1px dashed var(--border); }
+.cmp-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 18px; }
+.cmp-metric { padding: 18px 20px 10px; background: var(--surface); border: 1px solid var(--border); border-top: 2px solid var(--line); }
+.cmp-metric h3 { margin: 0 0 10px; font-family: var(--serif); font-size: 16px; font-weight: 600; letter-spacing: .06em; }
+.cmp-metric h3 small { display: block; margin-top: 4px; font-family: var(--sans); font-size: 11px; font-weight: 400; color: var(--muted); letter-spacing: .04em; }
+.cmp-mrow {
+  display: grid; grid-template-columns: 30px minmax(0, 1fr) auto; grid-template-areas: "mark name val" "mark meter meter" "mark note note";
+  column-gap: 10px; row-gap: 6px; align-items: baseline; padding: 12px 0; border-top: 1px solid var(--border);
+}
+.cmp-mrow .cmp-mark { grid-area: mark; font-size: 20px; }
+.cmp-mname { grid-area: name; font-size: 14px; overflow-wrap: anywhere; }
+.cmp-mname:hover { color: var(--gold); }
+.cmp-mval { grid-area: val; font-family: var(--latin); font-size: 26px; font-weight: 600; line-height: 1; font-feature-settings: "lnum", "tnum"; white-space: nowrap; }
+.cmp-mval small { margin-left: 4px; font-family: var(--sans); font-size: 11px; font-weight: 400; color: var(--muted); }
+.cmp-mmeter { grid-area: meter; display: block; height: 4px; background: var(--border); }
+.cmp-mmeter i { display: block; height: 100%; background: var(--faint); }
+.cmp-mnote { grid-area: note; font-size: 11px; letter-spacing: .04em; color: var(--muted); }
+.cmp-mnote b { margin-left: 8px; padding: 1px 8px; font-weight: 500; color: var(--gold); border: 1px solid var(--gold); }
+.cmp-mrow.is-best .cmp-mval { color: var(--gold); }
+.cmp-mrow.is-best .cmp-mmeter i { background: var(--gold); }
+.cmp-mrow.no-result .cmp-mval { font-size: 18px; color: var(--faint); }
+.cmp thead th.cmp-colname { font-family: var(--serif); font-size: 14px; font-weight: 600; padding: 0 14px 10px 22px; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+.cmp thead th.cmp-colname .cmp-mark { font-size: 18px; margin-right: 4px; }
+@media (max-width: 760px) {
+  .cmp-metrics { grid-template-columns: 1fr; }
+  .cmp-metric { padding: 14px 14px 6px; }
+  .cmp-mval { font-size: 22px; }
+  .cmp-pickers { grid-template-columns: 1fr; }
+  .cmp thead th.cmp-colname { padding: 0 8px 8px 10px; font-size: 12px; }
 }

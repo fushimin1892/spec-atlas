@@ -538,7 +538,7 @@
 
   // 比較表の項目の区切り。ここに無い項目は「基本情報」に入る。メーカー・シリーズは列の見出しに出すので行にしない
   const CMP_SECTIONS = [
-    ["性能・仕様", ["gamingScore", "singleScore", "aiOmni", "aiAccuracy", "aiNonHallucination", "aiIndex", "aiSpeed", "aiLatency", "score", "cores", "threads", "baseClock", "boostClock", "cache", "vram", "params", "active", "context", "contextMax", "maxOutput"]],
+    ["仕様", ["cores", "threads", "baseClock", "boostClock", "cache", "vram", "params", "active", "context", "contextMax", "maxOutput"]],
     ["価格・効率", ["price", "aiPrice", "costPerf", "efficiency", "tdp"]],
   ];
   const CMP_HIDDEN = ["maker", "series"];
@@ -563,6 +563,56 @@
     // 比較では数字を見比べやすいよう、説明は最初の一文だけ（全文は詳細ページと一覧の「この表の見方」）
     const shortHelp = f.help ? f.help.split("。")[0] + "。" : "";
     return `<tr><th scope="row">${esc(f.label)}${shortHelp ? `<span class="field-help">${esc(shortHelp)}</span>` : ""}</th>${cells.join("")}</tr>`;
+  }
+
+  // 比較の「性能の比較」。一覧のランキングと同じ指標ごとに、選んだ製品を良い順に並べ、
+  // 大きな数字・棒（一覧と同じ向き）・全体での順位・いちばん良い製品との差を出す。製品の番号（①〜④）は選んだ列の順
+  const MARKS = ["①", "②", "③", "④"];
+  function compareMetrics(cat, cols) {
+    const config = SPEC.benchmarks[cat.id];
+    if (!config) return "";
+    const all = getItems(cat.id);
+    const picked = cols.map((item, k) => item && { item, mark: MARKS[k] }).filter(Boolean);
+    return config.metrics.map((metric) => {
+      const key = metric.key;
+      const low = metric.better === "low";
+      // 全体での順位（同じ値は同じ順位）
+      const ranked = all.filter((i) => i[key] != null).sort((a, b) => (low ? a[key] - b[key] : b[key] - a[key]));
+      const rankOf = new Map();
+      ranked.forEach((i, n) => rankOf.set(i.id, n > 0 && i[key] === ranked[n - 1][key] ? rankOf.get(ranked[n - 1].id) : n + 1));
+      const vals = picked.map((p) => p.item[key]).filter((v) => v != null);
+      const best = vals.length ? (low ? Math.min(...vals) : Math.max(...vals)) : null;
+      // 棒の長さ: 一覧のランキングと同じ考え方（マイナスもある指標は全体の最低〜最高の幅に割り当てる）
+      const gMin = Math.min(...ranked.map((i) => i[key])), gMax = Math.max(...ranked.map((i) => i[key]));
+      const meter = (v) => metric.allowNegative ? Math.max(2, ((v - gMin) / ((gMax - gMin) || 1)) * 100)
+        : low ? (best / v) * 100 : (v / best) * 100;
+      const gap = (v) => {
+        if (best == null || v === best || vals.length < 2) return "";
+        if (metric.allowNegative) return `いちばん良い製品より ${formatValue({ type: "number", digits: metric.digits }, best - v).replace(/<[^>]+>/g, "")} pt 低い`;
+        return low ? `いちばん良い製品の ${(v / best).toFixed(1)} 倍` : `いちばん良い製品の ${Math.round((v / best) * 100)}%`;
+      };
+      const rows = [...picked].sort((a, b) => {
+        const x = a.item[key], y = b.item[key];
+        if (x == null) return 1;
+        if (y == null) return -1;
+        return low ? x - y : y - x;
+      });
+      return `<section class="cmp-metric" aria-label="${esc(metric.label)}">
+        <h3>${esc(metric.columnLabel || metric.label)}<small>${esc(metric.title)} · ${esc(metric.betterLabel || (low ? "小さいほど良い" : "高いほど高性能"))}</small></h3>
+        ${metric.scale ? `<p class="metric-scale">点数の範囲: ${esc(metric.scale)}</p>` : ""}
+        ${rows.map(({ item, mark }) => {
+          const v = item[key];
+          const isBest = v != null && v === best && vals.length > 1;
+          return `<div class="cmp-mrow${isBest ? " is-best" : ""}${v == null ? " no-result" : ""}">
+            <span class="cmp-mark" aria-hidden="true">${mark}</span>
+            <a class="cmp-mname" href="#/c/${esc(cat.id)}/${esc(item.id)}">${esc(item.name)}</a>
+            <span class="cmp-mval">${v == null ? "—" : Number(v).toLocaleString("ja-JP", { maximumFractionDigits: metric.digits || 0 })}<small>${v == null ? "測定データなし" : esc(metric.unit)}</small></span>
+            <span class="cmp-mmeter" aria-hidden="true"><i style="width:${v == null ? 0 : meter(v).toFixed(1)}%"></i></span>
+            <span class="cmp-mnote">${v == null ? "" : `全体 ${rankOf.get(item.id)} 位 / ${ranked.length}`}${isBest ? '<b>いちばん良い</b>' : gap(v) ? ` · ${esc(gap(v))}` : ""}</span>
+          </div>`;
+        }).join("")}
+      </section>`;
+    }).join("");
   }
 
   // プルダウンの選択肢。シリーズ（無ければメーカー）ごとにまとめ、一覧の初期の並び順（性能順など）で並べる
@@ -604,7 +654,9 @@
     const chosen = cols.filter(Boolean);
     // 選んだ製品で値がすべて同じ項目は「違いのある項目だけ」のとき隠す
     const differs = (f) => new Set(chosen.map((i) => String(i[f.key] ?? ""))).size > 1;
-    const shown = cat.fields.slice(1).filter((f) => !f.filterOnly && !CMP_HIDDEN.includes(f.key) && (!diffOnly || chosen.length < 2 || differs(f)));
+    // 性能の指標は上の「性能の比較」に出すので、仕様の表には入れない
+    const isMetric = (f) => Boolean(SPEC.benchmarkOf?.(cat.id, f.key));
+    const shown = cat.fields.slice(1).filter((f) => !f.filterOnly && !isMetric(f) && !CMP_HIDDEN.includes(f.key) && (!diffOnly || chosen.length < 2 || differs(f)));
     const sections = [...CMP_SECTIONS, ["基本情報", null]]
       .map(([title, keys]) => [title, shown.filter((f) => (keys ? keys.includes(f.key) : !CMP_SECTIONS.some(([, k]) => k.includes(f.key))))])
       .filter(([, fs]) => fs.length);
@@ -613,45 +665,49 @@
     main.innerHTML = `
       <nav class="crumbs" aria-label="パンくず"><a href="#/">トップ</a> › 比較</nav>
       <h1 class="page-title">比較</h1>
-      <p class="muted">比べたいカテゴリを選び、各列のプルダウンで製品を選んでください。</p>
+      <p class="muted">比べたいカテゴリを選び、プルダウンで製品を選んでください（2〜4 製品）。</p>
       ${cat.specNote || cat.id === "ai" ? `<p class="note">${esc(cat.specNote || cat.note)}</p>` : ""}
       <nav class="cmp-cats" aria-label="比較するカテゴリ">
         ${ready.map((c) => `<a href="#/compare?cat=${esc(c.id)}"${c.id === cat.id ? ' aria-current="page"' : ""}>${SPEC.icon(c.icon)}${esc(c.name)}</a>`).join("")}
       </nav>
-      <div class="cmp-head">
-        <label class="toggle"><input type="checkbox" id="diffOnly" ${diffOnly ? "checked" : ""}> 違いのある項目だけ表示</label>
-        <span class="muted cmp-legend"><span class="cmp-legend-mark" aria-hidden="true"></span>金色が各項目でいちばん良い値</span>
-        <span class="cmp-head-actions">
-          ${n < CMP_MAX ? '<button class="btn btn-ghost btn-small" id="addCol">＋ 列を追加</button>' : ""}
+      <h2 class="cmp-step">1. 比べる製品を選ぶ</h2>
+      <div class="cmp-pickers">
+        ${cols.map((i, k) => `<div class="cmp-card${i ? "" : " is-empty"}">
+          <span class="cmp-mark" aria-hidden="true">${MARKS[k]}</span>
+          <label class="sr-only" for="slot${k}">${k + 1} 番目の${esc(cat.name)}</label>
+          <select id="slot${k}" class="cmp-select" data-slot="${k}">
+            <option value="">${esc(cat.name)}を選ぶ</option>
+            ${optionsHtml(cat, i && i.id)}
+          </select>
+          ${i
+            ? `<span class="cmp-maker">${esc([i.maker, i.series].filter(Boolean).join(" · "))}</span>
+               <a class="cmp-name" href="#/c/${esc(cat.id)}/${esc(i.id)}">詳細を見る</a>`
+            : '<span class="cmp-maker">未選択</span>'}
+          ${n > CMP_MIN ? `<button class="cmp-x" data-rmcol="${k}" aria-label="${k + 1} 番目を消す" title="この製品を外す">×</button>` : ""}
+        </div>`).join("")}
+        <div class="cmp-picker-actions">
+          ${n < CMP_MAX ? '<button class="btn btn-ghost btn-small" id="addCol">＋ 製品を追加</button>' : ""}
           ${chosen.length ? '<button class="btn btn-ghost btn-small" id="resetCmp">選択をクリア</button>' : ""}
-        </span>
+        </div>
       </div>
-      <div class="cmp-scroll"><table class="cmp" style="--n:${n}">
-        <thead><tr><td class="cmp-corner"></td>${cols
-          .map((i, k) => `<th scope="col">
-            <div class="cmp-card${i ? "" : " is-empty"}">
-              <label class="sr-only" for="slot${k}">${k + 1} 列目の${esc(cat.name)}</label>
-              <select id="slot${k}" class="cmp-select" data-slot="${k}">
-                <option value="">${esc(cat.name)}を選ぶ</option>
-                ${optionsHtml(cat, i && i.id)}
-              </select>
-              ${i
-                ? `<span class="cmp-maker">${esc([i.maker, i.series].filter(Boolean).join(" · "))}</span>
-                   <a class="cmp-name" href="#/c/${esc(cat.id)}/${esc(i.id)}">詳細を見る</a>`
-                : '<span class="cmp-maker">未選択</span>'}
-              ${n > CMP_MIN ? `<button class="cmp-x" data-rmcol="${k}" aria-label="${k + 1} 列目を消す" title="この列を消す">×</button>` : ""}
-            </div>
-          </th>`)
-          .join("")}</tr></thead>
-        ${chosen.length
-          ? sections
-              .map(([title, fs]) => `<tbody>
-                <tr class="cmp-sec"><th scope="rowgroup" colspan="${n + 1}">${esc(title)}</th></tr>
-                ${fs.map((f) => compareRow(cat, f, cols)).join("")}
-              </tbody>`)
-              .join("") || `<tbody><tr><td class="empty" colspan="${n + 1}">違いのある項目はありません</td></tr></tbody>`
-          : `<tbody><tr><td class="empty" colspan="${n + 1}">上のプルダウンから製品を選ぶと、ここに仕様が並びます。</td></tr></tbody>`}
-      </table></div>`;
+      ${chosen.length ? `
+        <h2 class="cmp-step">2. 性能の比較<small>一覧のランキングと同じ指標です。良い順に並べ、いちばん良い製品を金色にしています。</small></h2>
+        <div class="cmp-metrics">${compareMetrics(cat, cols)}</div>
+        <h2 class="cmp-step">3. 仕様の比較</h2>
+        <div class="cmp-head">
+          <label class="toggle"><input type="checkbox" id="diffOnly" ${diffOnly ? "checked" : ""}> 違いのある項目だけ表示</label>
+          <span class="muted cmp-legend"><span class="cmp-legend-mark" aria-hidden="true"></span>金色が各項目でいちばん良い値</span>
+        </div>
+        <div class="cmp-scroll"><table class="cmp" style="--n:${n}">
+          <thead><tr><td class="cmp-corner"></td>${cols.map((i, k) => `<th scope="col" class="cmp-colname">${i ? `<span class="cmp-mark" aria-hidden="true">${MARKS[k]}</span>${esc(i.name)}` : '<span class="muted">未選択</span>'}</th>`).join("")}</tr></thead>
+          ${sections
+            .map(([title, fs]) => `<tbody>
+              <tr class="cmp-sec"><th scope="rowgroup" colspan="${n + 1}">${esc(title)}</th></tr>
+              ${fs.map((f) => compareRow(cat, f, cols)).join("")}
+            </tbody>`)
+            .join("") || `<tbody><tr><td class="empty" colspan="${n + 1}">違いのある項目はありません</td></tr></tbody>`}
+        </table></div>`
+        : '<p class="empty-box">上のプルダウンから製品を選ぶと、性能と仕様の比較が出ます。</p>'}`;
 
     const redraw = (focusSel) => {
       saveCompare();
@@ -678,7 +734,7 @@
       compare.slots[cat.id] = [];
       redraw("#slot0");
     });
-    document.getElementById("diffOnly").addEventListener("change", (e) => {
+    document.getElementById("diffOnly")?.addEventListener("change", (e) => {
       diffOnly = e.target.checked;
       redraw("#diffOnly");
     });
