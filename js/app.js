@@ -64,6 +64,19 @@
     return shown + sub + (check && check.fields.find((f) => f.key === "score").status !== "verified" && value != null ? '<span class="sub">未確認の既存値</span>' : "");
   }
 
+  // 一覧の「数値の見方・出典」に出す、メーカー資料との照合状況の要約（数え方は tools/audit-hardware.mjs と同じ）
+  function auditLine(cat) {
+    if (!SPEC.verificationOf || !["cpu", "gpu"].includes(cat.id)) return "";
+    const checks = getItems(cat.id).map((item) => ({ item, check: SPEC.verificationOf(cat.id, item) }));
+    const tech = (c) => c.fields.filter((f) => !["release", "score"].includes(f.key));
+    const applicable = checks.filter(({ check }) => tech(check).some((f) => f.status !== "notApplicable"));
+    const techOk = applicable.filter(({ check }) => tech(check).every((f) => f.status === "verified"));
+    const pending = applicable.filter(({ check }) => !tech(check).every((f) => f.status === "verified")).map(({ item }) => item.name);
+    const withDate = checks.filter(({ check }) => check.verified === check.total).length;
+    const mismatches = checks.reduce((n, { check }) => n + check.mismatches, 0);
+    return `<p class="note">照合状況（${esc(SPEC.hardwareEvidence.checkedAt)}）: メーカー資料と食い違う項目 ${mismatches} 件。技術仕様は ${techOk.length}/${applicable.length} 型番でメーカー資料と一致${pending.length ? `（未確認: ${esc(pending.join("、"))}）` : ""}、発売日まで一致は ${withDate}/${checks.length} 型番。残りは食い違いではなく、メーカー資料に記載が無く未確認のものです。製品ごとの出典は詳細ページにあります。</p>`;
+  }
+
   function benchmarkEvidence(cat, item) {
     const config = SPEC.benchmarks[cat.id];
     const records = SPEC.performanceData[cat.id][item.id] || {};
@@ -271,7 +284,7 @@
       </div>
       <details class="category-sources"><summary>数値の見方・出典・価格について</summary>
       ${cat.note ? `<p class="note">${esc(cat.note)}</p>` : ""}
-      ${cat.specNote ? `<p class="note">${esc(cat.specNote)}</p>` : ""}${(cat.sources || []).map((s) => `<p class="note"><a class="ext" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></p>`).join("")}</details>
+      ${cat.specNote ? `<p class="note">${esc(cat.specNote)}</p>` : ""}${auditLine(cat)}${(cat.sources || []).map((s) => `<p class="note"><a class="ext" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></p>`).join("")}</details>
       ${SPEC.applyPrices[cat.id] ? `<p class="note live" id="priceStatus" role="status" aria-live="polite">${esc(priceStatus[cat.id] || "")}</p>` : ""}
       <div id="performanceRows" class="performance-ranking" ${st.view !== "performance" ? "hidden" : ""}></div>
       <div class="table-wrap" ${st.view !== "specs" ? "hidden" : ""}><table class="spec-table" id="specTable"></table></div>`;

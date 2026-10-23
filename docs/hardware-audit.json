@@ -33253,12 +33253,12 @@
     "gpu": {
       "summary": {
         "total": 128,
-        "specsFullyVerified": 11,
+        "specsFullyVerified": 27,
         "technicalSpecsVerified": 122,
         "technicalApplicable": 123,
         "technicalNotApplicable": 5,
         "technicalReferenceOnly": 1,
-        "specsPartlyVerified": 112,
+        "specsPartlyVerified": 96,
         "specsUnverified": 5,
         "scoreVerified": 0,
         "scorePublished": 120,
@@ -33527,8 +33527,19 @@
             },
             {
               "key": "release",
-              "status": "unverified",
-              "claims": [],
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://www.amd.com/en/products/specifications/graphics.html",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "d2cf7b09d462cf1379349624a2e7c8cc4042406ad8f1071fe5ae7a09398e4ad5",
+                    "label": "AMD 公式グラフィックス仕様表（Launch Date）"
+                  },
+                  "value": "2022/12/13",
+                  "kind": "value"
+                }
+              ],
               "current": "2022/12/13"
             },
             {
@@ -33538,7 +33549,7 @@
               "current": 30298
             }
           ],
-          "verified": 2,
+          "verified": 3,
           "total": 3,
           "notApplicable": 0,
           "mismatches": 0,
@@ -33866,8 +33877,19 @@
             },
             {
               "key": "release",
-              "status": "unverified",
-              "claims": [],
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://www.amd.com/en/products/specifications/graphics.html",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "d2cf7b09d462cf1379349624a2e7c8cc4042406ad8f1071fe5ae7a09398e4ad5",
+                    "label": "AMD 公式グラフィックス仕様表（Launch Date）"
+                  },
+                  "value": "2022/12/13",
+                  "kind": "value"
+                }
+              ],
               "current": "2022/12/13"
             },
             {
@@ -33877,7 +33899,7 @@
               "current": 26384
             }
           ],
-          "verified": 2,
+          "verified": 3,
           "total": 3,
           "notApplicable": 0,
           "mismatches": 0,
@@ -34262,8 +34284,19 @@
             },
             {
               "key": "release",
-              "status": "unverified",
-              "claims": [],
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://www.amd.com/en/products/specifications/graphics.html",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "d2cf7b09d462cf1379349624a2e7c8cc4042406ad8f1071fe5ae7a09398e4ad5",
+                    "label": "AMD 公式グラフィックス仕様表（Launch Date）"
+                  },
+                  "value": "2022/05/10",
+                  "kind": "value"
+                }
+              ],
               "current": "2022/05/10"
             },
             {
@@ -34273,7 +34306,7 @@
               "current": 21457
             }
           ],
-          "verified": 2,
+          "verified": 3,
           "total": 3,
           "notApplicable": 0,
           "mismatches": 0,
@@ -34418,7 +34451,9 @@
           "total": 3,
           "notApplicable": 0,
           "mismatches": 0,
-          "notes": []
+          "notes": [
+            "AMD 公式表の Launch Date 2023/07/27 は中国での先行発売日。掲載は世界発売日の 2024/02/27。"
+          ]
         },
         {
           "id": "rx-6900-xt",
@@ -34460,8 +34495,19 @@
             },
             {
               "key": "release",
-              "status": "unverified",
-              "claims": [],
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://www.amd.com/en/products/specifications/graphics.html",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "d2cf7b09d462cf1379349624a2e7c8cc4042406ad8f1071fe5ae7a09398e4ad5",
+                    "label": "AMD 公式グラフィックス仕様表（Launch Date）"
+                  },
+                  "value": "2020/12/08",
+                  "kind": "value"
+                }
+              ],
               "current": "2020/12/08"
             },
             {
@@ -34471,7 +34517,7 @@
               "current": 20976
             }
           ],
-          "verified": 2,
+          "verified": 3,
           "total": 3,
           "notApplicable": 0,
           "mismatches": 0,
@@ -34699,8 +34745,19 @@
             },
             {
               "key": "release",
-              "status": "unverified",
-              "claims": [],
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://www.amd.com/en/products/specifications/graphics.html",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "d2cf7b09d462cf1379349624a2e7c8cc4042406ad8f1071fe5ae7a09398e4ad5",
+                    "label": "AMD 公式グラフィックス仕様表（Launch Date）"
+                  },
+                  "value": "2020/11/18",
+                  "kind": "value"
+                }
+              ],
               "current": "2020/11/18"
             },
             {
@@ -34710,7 +34767,7 @@
               "current": 19450
             }
           ],
-          "verified": 2,
+          "verified": 3,
           "total": 3,
           "notApplicable": 0,
           "mismatches": 0,
@@ -35000,8 +35057,19 @@
             },
             {
               "key": "release",
-              "status": "unverified",
-              "claims": [],
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://www.amd.com/en/products/specifications/graphics.html",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "d2cf7b09d462cf1379349624a2e7c8cc4042406ad8f1071fe5ae7a09398e4ad5",
+                    "label": "AMD 公式グラフィックス仕様表（Launch Date）"
+                  },
+                  "value": "2020/11/18",
+                  "kind": "value"
+                }
+              ],
               "current": "2020/11/18"
             },
             {
@@ -35011,7 +35079,7 @@
               "current": 16373
             }
           ],
-          "verified": 2,
+          "verified": 3,
           "total": 3,
           "notApplicable": 0,
           "mismatches": 0,
@@ -35529,8 +35597,19 @@
             },
             {
               "key": "release",
-              "status": "unverified",
-              "claims": [],
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://www.amd.com/en/products/specifications/graphics.html",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "d2cf7b09d462cf1379349624a2e7c8cc4042406ad8f1071fe5ae7a09398e4ad5",
+                    "label": "AMD 公式グラフィックス仕様表（Launch Date）"
+                  },
+                  "value": "2022/05/10",
+                  "kind": "value"
+                }
+              ],
               "current": "2022/05/10"
             },
             {
@@ -35540,7 +35619,7 @@
               "current": 13517
             }
           ],
-          "verified": 2,
+          "verified": 3,
           "total": 3,
           "notApplicable": 0,
           "mismatches": 0,
@@ -35918,7 +35997,9 @@
           "total": 3,
           "notApplicable": 0,
           "mismatches": 0,
-          "notes": []
+          "notes": [
+            "AMD 公式表の Launch Date は 2021/03/01 だが、発表は 2021/03/03、発売は 2021/03/18。表の日付は月単位の値とみられるため採用しない。"
+          ]
         },
         {
           "id": "arc-a750",
@@ -36620,8 +36701,19 @@
             },
             {
               "key": "release",
-              "status": "unverified",
-              "claims": [],
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://www.amd.com/en/products/specifications/graphics.html",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "d2cf7b09d462cf1379349624a2e7c8cc4042406ad8f1071fe5ae7a09398e4ad5",
+                    "label": "AMD 公式グラフィックス仕様表（Launch Date）"
+                  },
+                  "value": "2022/05/10",
+                  "kind": "value"
+                }
+              ],
               "current": "2022/05/10"
             },
             {
@@ -36631,7 +36723,7 @@
               "current": 9936
             }
           ],
-          "verified": 2,
+          "verified": 3,
           "total": 3,
           "notApplicable": 0,
           "mismatches": 0,
@@ -36738,8 +36830,19 @@
             },
             {
               "key": "release",
-              "status": "unverified",
-              "claims": [],
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://www.amd.com/en/products/specifications/graphics.html",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "d2cf7b09d462cf1379349624a2e7c8cc4042406ad8f1071fe5ae7a09398e4ad5",
+                    "label": "AMD 公式グラフィックス仕様表（Launch Date）"
+                  },
+                  "value": "2021/08/11",
+                  "kind": "value"
+                }
+              ],
               "current": "2021/08/11"
             },
             {
@@ -36749,7 +36852,7 @@
               "current": 9597
             }
           ],
-          "verified": 2,
+          "verified": 3,
           "total": 3,
           "notApplicable": 0,
           "mismatches": 0,
@@ -36861,8 +36964,19 @@
             },
             {
               "key": "release",
-              "status": "unverified",
-              "claims": [],
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://www.amd.com/en/products/specifications/graphics.html",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "d2cf7b09d462cf1379349624a2e7c8cc4042406ad8f1071fe5ae7a09398e4ad5",
+                    "label": "AMD 公式グラフィックス仕様表（Launch Date）"
+                  },
+                  "value": "2019/07/07",
+                  "kind": "value"
+                }
+              ],
               "current": "2019/07/07"
             },
             {
@@ -36872,7 +36986,7 @@
               "current": 9513
             }
           ],
-          "verified": 2,
+          "verified": 3,
           "total": 3,
           "notApplicable": 0,
           "mismatches": 0,
@@ -37149,8 +37263,19 @@
             },
             {
               "key": "release",
-              "status": "unverified",
-              "claims": [],
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://www.amd.com/en/products/specifications/graphics.html",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "d2cf7b09d462cf1379349624a2e7c8cc4042406ad8f1071fe5ae7a09398e4ad5",
+                    "label": "AMD 公式グラフィックス仕様表（Launch Date）"
+                  },
+                  "value": "2019/07/07",
+                  "kind": "value"
+                }
+              ],
               "current": "2019/07/07"
             },
             {
@@ -37160,7 +37285,7 @@
               "current": 8516
             }
           ],
-          "verified": 2,
+          "verified": 3,
           "total": 3,
           "notApplicable": 0,
           "mismatches": 0,
@@ -37206,8 +37331,19 @@
             },
             {
               "key": "release",
-              "status": "unverified",
-              "claims": [],
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://www.amd.com/en/products/specifications/graphics.html",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "d2cf7b09d462cf1379349624a2e7c8cc4042406ad8f1071fe5ae7a09398e4ad5",
+                    "label": "AMD 公式グラフィックス仕様表（Launch Date）"
+                  },
+                  "value": "2021/10/13",
+                  "kind": "value"
+                }
+              ],
               "current": "2021/10/13"
             },
             {
@@ -37217,7 +37353,7 @@
               "current": 8098
             }
           ],
-          "verified": 2,
+          "verified": 3,
           "total": 3,
           "notApplicable": 0,
           "mismatches": 0,
@@ -38049,8 +38185,19 @@
             },
             {
               "key": "release",
-              "status": "unverified",
-              "claims": [],
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://www.amd.com/en/products/specifications/graphics.html",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "d2cf7b09d462cf1379349624a2e7c8cc4042406ad8f1071fe5ae7a09398e4ad5",
+                    "label": "AMD 公式グラフィックス仕様表（Launch Date）"
+                  },
+                  "value": "2022/01/19",
+                  "kind": "value"
+                }
+              ],
               "current": "2022/01/19"
             },
             {
@@ -38060,7 +38207,7 @@
               "current": 4939
             }
           ],
-          "verified": 2,
+          "verified": 3,
           "total": 3,
           "notApplicable": 0,
           "mismatches": 0,
@@ -38163,9 +38310,20 @@
             },
             {
               "key": "release",
-              "status": "unverified",
-              "claims": [],
-              "current": "2019/12/18"
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://www.amd.com/en/products/specifications/graphics.html",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "d2cf7b09d462cf1379349624a2e7c8cc4042406ad8f1071fe5ae7a09398e4ad5",
+                    "label": "AMD 公式グラフィックス仕様表（Launch Date）"
+                  },
+                  "value": "2019/12/12",
+                  "kind": "value"
+                }
+              ],
+              "current": "2019/12/12"
             },
             {
               "key": "score",
@@ -38174,7 +38332,7 @@
               "current": 4864
             }
           ],
-          "verified": 2,
+          "verified": 3,
           "total": 3,
           "notApplicable": 0,
           "mismatches": 0,
@@ -38221,8 +38379,19 @@
             },
             {
               "key": "release",
-              "status": "unverified",
-              "claims": [],
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://www.amd.com/en/products/specifications/graphics.html",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "d2cf7b09d462cf1379349624a2e7c8cc4042406ad8f1071fe5ae7a09398e4ad5",
+                    "label": "AMD 公式グラフィックス仕様表（Launch Date）"
+                  },
+                  "value": "2018/11/15",
+                  "kind": "value"
+                }
+              ],
               "current": "2018/11/15"
             },
             {
@@ -38232,7 +38401,7 @@
               "current": 4766
             }
           ],
-          "verified": 1,
+          "verified": 2,
           "total": 3,
           "notApplicable": 0,
           "mismatches": 0,
@@ -38464,8 +38633,19 @@
             },
             {
               "key": "release",
-              "status": "unverified",
-              "claims": [],
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://www.amd.com/en/products/specifications/graphics.html",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "d2cf7b09d462cf1379349624a2e7c8cc4042406ad8f1071fe5ae7a09398e4ad5",
+                    "label": "AMD 公式グラフィックス仕様表（Launch Date）"
+                  },
+                  "value": "2017/04/18",
+                  "kind": "value"
+                }
+              ],
               "current": "2017/04/18"
             },
             {
@@ -38475,7 +38655,7 @@
               "current": 4364
             }
           ],
-          "verified": 2,
+          "verified": 3,
           "total": 3,
           "notApplicable": 0,
           "mismatches": 0,
@@ -38761,8 +38941,19 @@
             },
             {
               "key": "release",
-              "status": "unverified",
-              "claims": [],
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://www.amd.com/en/products/specifications/graphics.html",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "d2cf7b09d462cf1379349624a2e7c8cc4042406ad8f1071fe5ae7a09398e4ad5",
+                    "label": "AMD 公式グラフィックス仕様表（Launch Date）"
+                  },
+                  "value": "2017/04/18",
+                  "kind": "value"
+                }
+              ],
               "current": "2017/04/18"
             },
             {
@@ -38772,7 +38963,7 @@
               "current": 3868
             }
           ],
-          "verified": 2,
+          "verified": 3,
           "total": 3,
           "notApplicable": 0,
           "mismatches": 0,
@@ -39068,7 +39259,9 @@
           "total": 3,
           "notApplicable": 0,
           "mismatches": 0,
-          "notes": []
+          "notes": [
+            "AMD 公式表の Launch Date 2022/01/19 は OEM 向けの提供開始日。掲載は単体カードの一般発売日の 2022/04/20。"
+          ]
         },
         {
           "id": "gtx-1650-gddr5",
@@ -40094,7 +40287,9 @@
           "total": 3,
           "notApplicable": 0,
           "mismatches": 0,
-          "notes": []
+          "notes": [
+            "AMD 公式表の Launch Date 2017/04/18 は RX 500 シリーズの発表日。掲載は RX 550 の発売日の 2017/04/20。"
+          ]
         },
         {
           "id": "gt-1030-gddr5",

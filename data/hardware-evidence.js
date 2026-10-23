@@ -387,6 +387,12 @@ window.SPEC.hardwareEvidence = {
    "label": "アスク SAPPHIRE RX 6700 国内発売案内",
    "checkedAt": "2026-10-23",
    "sha256": "f0514474cdfa9538677885f0d6aa26bdca7c700f0bb33b867a8e880134236a29"
+  },
+  "amd-gpu-launch": {
+   "url": "https://www.amd.com/en/products/specifications/graphics.html",
+   "checkedAt": "2026-10-23",
+   "sha256": "d2cf7b09d462cf1379349624a2e7c8cc4042406ad8f1071fe5ae7a09398e4ad5",
+   "label": "AMD 公式グラフィックス仕様表（Launch Date）"
   }
  },
  "cpu": {
@@ -5454,6 +5460,13 @@ window.SPEC.hardwareEvidence = {
      "tdp": 355
     },
     "url": "https://www.amd.com/en/products/graphics/desktops/radeon/7000-series/amd-radeon-rx-7900xtx.html"
+   },
+   {
+    "source": "amd-gpu-launch",
+    "values": {
+     "release": "2022/12/13"
+    },
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/7000-series/amd-radeon-rx-7900xtx.html"
    }
   ],
   "rtx-4080-super": [
@@ -5511,6 +5524,13 @@ window.SPEC.hardwareEvidence = {
     "values": {
      "vram": 20,
      "tdp": 315
+    },
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/7000-series/amd-radeon-rx-7900xt.html"
+   },
+   {
+    "source": "amd-gpu-launch",
+    "values": {
+     "release": "2022/12/13"
     },
     "url": "https://www.amd.com/en/products/graphics/desktops/radeon/7000-series/amd-radeon-rx-7900xt.html"
    }
@@ -5581,6 +5601,13 @@ window.SPEC.hardwareEvidence = {
      "tdp": 335
     },
     "url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6950-xt.html"
+   },
+   {
+    "source": "amd-gpu-launch",
+    "values": {
+     "release": "2022/05/10"
+    },
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6950-xt.html"
    }
   ],
   "rtx-4070-super": [
@@ -5614,6 +5641,13 @@ window.SPEC.hardwareEvidence = {
     "values": {
      "vram": 16,
      "tdp": 300
+    },
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6900-xt.html"
+   },
+   {
+    "source": "amd-gpu-launch",
+    "values": {
+     "release": "2020/12/08"
     },
     "url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6900-xt.html"
    }
@@ -5658,6 +5692,13 @@ window.SPEC.hardwareEvidence = {
     "values": {
      "vram": 16,
      "tdp": 300
+    },
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6800-xt.html"
+   },
+   {
+    "source": "amd-gpu-launch",
+    "values": {
+     "release": "2020/11/18"
     },
     "url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6800-xt.html"
    }
@@ -5705,6 +5746,13 @@ window.SPEC.hardwareEvidence = {
     "values": {
      "vram": 16,
      "tdp": 250
+    },
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6800.html"
+   },
+   {
+    "source": "amd-gpu-launch",
+    "values": {
+     "release": "2020/11/18"
     },
     "url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6800.html"
    }
@@ -5782,6 +5830,13 @@ window.SPEC.hardwareEvidence = {
     "values": {
      "vram": 12,
      "tdp": 250
+    },
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6750-xt.html"
+   },
+   {
+    "source": "amd-gpu-launch",
+    "values": {
+     "release": "2022/05/10"
     },
     "url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6750-xt.html"
    }
@@ -5932,6 +5987,13 @@ window.SPEC.hardwareEvidence = {
      "tdp": 180
     },
     "url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6650-xt.html"
+   },
+   {
+    "source": "amd-gpu-launch",
+    "values": {
+     "release": "2022/05/10"
+    },
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6650-xt.html"
    }
   ],
   "rx-6600-xt": [
@@ -5942,6 +6004,13 @@ window.SPEC.hardwareEvidence = {
      "tdp": 160
     },
     "url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6600-xt.html"
+   },
+   {
+    "source": "amd-gpu-launch",
+    "values": {
+     "release": "2021/08/11"
+    },
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6600-xt.html"
    }
   ],
   "rx-5700-xt": [
@@ -5950,6 +6019,13 @@ window.SPEC.hardwareEvidence = {
     "values": {
      "vram": 8,
      "tdp": 225
+    },
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-rx/radeon-rx-5000-series/amd-radeon-rx-5700-xt.html"
+   },
+   {
+    "source": "amd-gpu-launch",
+    "values": {
+     "release": "2019/07/07"
     },
     "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-rx/radeon-rx-5000-series/amd-radeon-rx-5700-xt.html"
    }
@@ -6005,6 +6081,13 @@ window.SPEC.hardwareEvidence = {
      "tdp": 180
     },
     "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-rx/radeon-rx-5000-series/amd-radeon-rx-5700.html"
+   },
+   {
+    "source": "amd-gpu-launch",
+    "values": {
+     "release": "2019/07/07"
+    },
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-rx/radeon-rx-5000-series/amd-radeon-rx-5700.html"
    }
   ],
   "rx-6600": [
@@ -6013,6 +6096,13 @@ window.SPEC.hardwareEvidence = {
     "values": {
      "vram": 8,
      "tdp": 132
+    },
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6600.html"
+   },
+   {
+    "source": "amd-gpu-launch",
+    "values": {
+     "release": "2021/10/13"
     },
     "url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6600.html"
    }
@@ -6109,6 +6199,13 @@ window.SPEC.hardwareEvidence = {
      "tdp": 107
     },
     "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-rx/radeon-rx-6000-series/amd-radeon-rx-6500-xt.html"
+   },
+   {
+    "source": "amd-gpu-launch",
+    "values": {
+     "release": "2022/01/19"
+    },
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-rx/radeon-rx-6000-series/amd-radeon-rx-6500-xt.html"
    }
   ],
   "rtx-3050-6gb": [
@@ -6128,6 +6225,13 @@ window.SPEC.hardwareEvidence = {
      "tdp": 130
     },
     "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-rx/radeon-rx-5000-series/amd-radeon-rx-5500-xt.html"
+   },
+   {
+    "source": "amd-gpu-launch",
+    "values": {
+     "release": "2019/12/12"
+    },
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-rx/radeon-rx-5000-series/amd-radeon-rx-5500-xt.html"
    }
   ],
   "rx-590": [
@@ -6145,6 +6249,13 @@ window.SPEC.hardwareEvidence = {
      "tdp": 225
     },
     "note": "実機レビューが記載したAMD公称値225Wと参考照合。現在のAMD公式ページは電力未記載。MSI ARMOR 8G OCの220Wを別カードへ流用せず、メーカー資料による一致には含めない。"
+   },
+   {
+    "source": "amd-gpu-launch",
+    "values": {
+     "release": "2018/11/15"
+    },
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-rx-500-series/radeon-rx-590.html"
    }
   ],
   "r9-fury-x": [
@@ -6191,6 +6302,13 @@ window.SPEC.hardwareEvidence = {
      "tdp": 185
     },
     "note": "記載したメーカー製カードの容量・公称電力で照合。他社製カードや別容量の製品には流用しません。"
+   },
+   {
+    "source": "amd-gpu-launch",
+    "values": {
+     "release": "2017/04/18"
+    },
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-rx-500-series/radeon-rx-580.html"
    }
   ],
   "rx-480": [
@@ -6209,6 +6327,13 @@ window.SPEC.hardwareEvidence = {
     "values": {
      "vram": 8,
      "tdp": 150
+    },
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-rx-500-series/radeon-rx-570.html"
+   },
+   {
+    "source": "amd-gpu-launch",
+    "values": {
+     "release": "2017/04/18"
     },
     "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-rx-500-series/radeon-rx-570.html"
    }
@@ -6867,7 +6992,11 @@ window.SPEC.hardwareEvidence = {
    "rx-460": "掲載値は4GB版。MSI公式カード仕様4GB・75Wを採用し、AMD一括表2GB・70Wからの流用を避ける。",
    "arc-a580": "電力は現在のIntel ARKのTBP 185 W。メーカー製カードや以前の175 Wの案内と異なる場合がある。",
    "rx-590": "VRAM8GBはAMD公式で一致。225Wは発売時レビューの公称値との参考照合に留め、メーカーによる電力確認済み件数には含めない。",
-   "rx-6700": "AMD一括表と既存値の2021/06/09を発売日の根拠に採用しない。SAPPHIRE版の国内発売案内は2022/07/22で、海外の初回発売日とは別条件。日付が確定できないため掲載を取り下げ。"
+   "rx-6700": "AMD一括表と既存値の2021/06/09を発売日の根拠に採用しない。SAPPHIRE版の国内発売案内は2022/07/22で、海外の初回発売日とは別条件。日付が確定できないため掲載を取り下げ。",
+   "rx-7900-gre": "AMD 公式表の Launch Date 2023/07/27 は中国での先行発売日。掲載は世界発売日の 2024/02/27。",
+   "rx-6700-xt": "AMD 公式表の Launch Date は 2021/03/01 だが、発表は 2021/03/03、発売は 2021/03/18。表の日付は月単位の値とみられるため採用しない。",
+   "rx-6400": "AMD 公式表の Launch Date 2022/01/19 は OEM 向けの提供開始日。掲載は単体カードの一般発売日の 2022/04/20。",
+   "rx-550": "AMD 公式表の Launch Date 2017/04/18 は RX 500 シリーズの発表日。掲載は RX 550 の発売日の 2017/04/20。"
   }
  }
 };
