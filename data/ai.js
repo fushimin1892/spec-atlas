@@ -2173,6 +2173,9 @@ window.SPEC.data.ai = [
   const all = window.SPEC.data.ai;
   for (const m of all) {
     m.deploy = m.open === "重み公開" ? "ローカル・クラウド" : "クラウドのみ";
+    // 重みの大きさの目安: パラメータ数からの計算値（8bit で 1 パラメータ＝1 バイト。4bit は半分）。重み公開モデルだけ
+    m.weightSize = m.open === "重み公開" && m.params ? m.params : null;
+    m.weightNote = m.weightSize ? `4bit なら約 ${Math.round(m.weightSize / 2).toLocaleString("ja-JP")} GB` : null;
     // 指定 6 系列以外（2024〜2025 年の参考データ）は最新世代か確認していないので掲載しない
     m.archivedReason = superseded[m.id] ? `後継の ${superseded[m.id]} が公開済み` : m.family === "その他" ? "最新世代か未確認の参考データ" : null;
   }

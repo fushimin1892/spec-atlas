@@ -124,6 +124,8 @@ for (const [id, name] of Object.entries(aaJsonNames)) {
   if (Number.isFinite(m.omniscience)) result.ai[id].aiOmni = { name: m.name, value: Math.round(m.omniscience * 10) / 10, source: "aa" };
   if (Number.isFinite(m.omniscienceAccuracy)) result.ai[id].aiAccuracy = { name: m.name, value: Math.round(m.omniscienceAccuracy * 1000) / 10, source: "aa" };
   if (Number.isFinite(m.omniscienceNonHallucination)) result.ai[id].aiNonHallucination = { name: m.name, value: Math.round(m.omniscienceNonHallucination * 1000) / 10, source: "aa" };
+  // 料金は AA が測定に使った API の出力 100 万トークンあたりの米ドル（重み公開モデルを自分の PC で動かす費用ではない）
+  if (Number.isFinite(m.price1mOutputTokens) && m.price1mOutputTokens > 0) result.ai[id].aiPrice = { name: m.name, value: m.price1mOutputTokens, input: m.price1mInputTokens, source: "aa" };
 }
 const output = "// 公開ベンチマークの保存値。取得方法・対応条件は tools/collect-performance.mjs。\nwindow.SPEC.performanceData = " + JSON.stringify(result, null, 2) + ";\n";
 fs.writeFileSync(path.join(root, "data/performance.js"), output);

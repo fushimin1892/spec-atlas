@@ -28,6 +28,7 @@
         { key: "aiIndex", label: "総合能力", title: "AA Intelligence Index · v4.3.2", better: "high", unit: "pt", source: "aa", description: "推論・知識・コーディング・エージェント作業を含む10評価の総合指標。数値が高いほど高評価です。", limit: "主に英語・テキストの評価で、日本語・画像・音声の総合評価ではありません。正答率や満点に対する割合ではありません。" },
         { key: "aiSpeed", label: "出力の速さ", title: "出力速度（中央値）", better: "high", unit: "tokens/s", source: "aa", description: "生成が始まってからの出力速度。1秒あたりのトークン数が多いほど速く出力します。", limit: "推論の待ち時間は含みません。サービス・負荷・推論設定で変動し、同じ文字数を意味する値でもありません。" },
         { key: "aiLatency", label: "待ち時間", title: "最初の出力までの時間", better: "low", unit: "秒", digits: 2, source: "aa", description: "リクエストから最初の出力までの待ち時間。数値が小さいほど早く応答を始めます。", limit: "推論を長く行う設定では大きくなります。回答全体が終わるまでの時間とは異なります。" },
+        { key: "aiPrice", label: "料金", title: "API 料金（出力 100 万トークンあたり）", betterLabel: "安いほど上", better: "low", unit: "ドル", digits: 2, source: "aa", description: "Artificial Analysis が測定に使った API で、AI が 100 万トークン分の文章を出力するときの料金（米ドル）。入力の料金は各モデルの詳細に載せています。", limit: "重み公開モデルは、測定に使われた提供元の API の料金で、自分の PC で動かす場合の費用ではありません。考える過程の出力も料金がかかるため、実際の費用は使い方で大きく変わります。" },
       ],
     },
   };

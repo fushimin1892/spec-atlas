@@ -128,9 +128,9 @@ assert.equal(hardware("cpu", "core-i9-11900k").singleScore, 3501, "旧Intelの�
 assert.equal(hardware("gpu", "rtx-4060").g3dScore, 19480);
 assert.equal(hardware("gpu", "rtx-4060-ti-8gb").g3dScore, null, "容量が未分離のGPU測定を8GBへ流用しない");
 assert.equal(hardware("cpu", "ryzen-5-1600-af").singleScore, null, "AFなしの別CPUを流用しない");
-assert.equal(model("gpt-6-astra").aiIndex, 53);
-assert.equal(model("gpt-6-astra").aiSpeed, 57);
-assert.equal(model("gpt-6-astra").aiLatency, 268.25);
+// 出力速度・待ち時間・料金は日々の測定で変わるので、値そのものではなく取り込まれていることを確かめる
+for (const key of ["aiIndex", "aiSpeed", "aiLatency", "aiOmni", "aiPrice"]) assert(Number.isFinite(model("gpt-6-astra")[key]), `GPT-6 Astra: ${key}`);
+assert(model("gpt-6-astra").aiLatency > 0 && model("gpt-6-astra").aiPrice > 0);
 assert.match(performance.ai["deepseek-v4-1-flash"].aiIndex.name, /1017 \(max\)$/);
 assert.equal(model("deepseek-v4-pro").aiIndex, null, "0813のAPI評価を公開重み版へ無条件に流用しない");
 assert.equal(SPEC.benchmarkOf("ai", "aiLatency").better, "low");

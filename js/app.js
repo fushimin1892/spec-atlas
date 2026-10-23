@@ -86,6 +86,28 @@
     </details>`;
   }
 
+  // AI 一覧の上に出す「ひと目でわかる」欄。掲載データから条件に合う 1 位を自動で選ぶ（手で選ばない）
+  function aiHighlights(items) {
+    const pick = (list, key, better) => {
+      const has = list.filter((i) => i[key] != null);
+      return has.length ? has.reduce((a, b) => ((better === "low" ? b[key] < a[key] : b[key] > a[key]) ? b : a)) : null;
+    };
+    const metricOf = (key) => SPEC.benchmarkOf("ai", key);
+    const cards = [
+      ["いちばん正確", pick(items, "aiOmni", "high"), "aiOmni"],
+      ["重みが公開されている中でいちばん正確", pick(items.filter((i) => i.deploy === "ローカル・クラウド"), "aiOmni", "high"), "aiOmni"],
+      ["API 料金がいちばん安い", pick(items, "aiPrice", "low"), "aiPrice"],
+      ["出力がいちばん速い", pick(items, "aiSpeed", "high"), "aiSpeed"],
+    ].filter(([, item]) => item);
+    if (!cards.length) return "";
+    return `<section class="ai-picks" aria-label="ひと目でわかる">
+      ${cards.map(([title, item, key]) => {
+        const m = metricOf(key);
+        return `<a class="ai-pick" href="#/c/ai/${esc(item.id)}"><span class="ai-pick-title">${esc(title)}</span><strong>${esc(item.name)}</strong><span class="ai-pick-value">${esc(m.label)}${key === "aiPrice" ? "（出力 100 万トークンあたり）" : ""} ${formatValue({ type: "number", unit: m.unit, digits: m.digits }, item[key])}</span></a>`;
+      }).join("")}
+    </section>`;
+  }
+
   // 一覧の「数値の見方・出典」に出す、メーカー資料との照合状況の要約（数え方は tools/audit-hardware.mjs と同じ）
   function auditLine(cat) {
     if (!SPEC.verificationOf || !["cpu", "gpu"].includes(cat.id)) return "";
@@ -105,7 +127,7 @@
     return `<section class="verification"><h2>性能テストの値と測り方</h2>${config.metrics.filter((m) => m.key !== "score").map((metric) => {
       const record = records[metric.key];
       const source = record && SPEC.performanceData.sources[record.source];
-      return `<p><strong>${esc(metric.title)}</strong> · ${record ? `${formatValue({ type: "number", unit: metric.unit, digits: metric.digits }, record.value)}` : "比較データなし"}</p>
+      return `<p><strong>${esc(metric.title)}</strong> · ${record ? `${formatValue({ type: "number", unit: metric.unit, digits: metric.digits }, record.value)}${record.input != null ? `（入力は ${formatValue({ type: "number", unit: metric.unit, digits: metric.digits }, record.input)}）` : ""}` : "比較データなし"}</p>
         <p class="note">${esc(metric.description)} ${esc(metric.limit)}</p>
         ${record ? `<p class="note">測定名・設定: ${esc(record.name)}${cat.id === "ai" ? "。API提供モデルの測定で、公開重みを手元で実行した結果ではありません。" : ""} · <a class="ext" href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.label)}</a> · 取得 ${esc(source.checkedAt)}</p>` : ""}`;
     }).join("")}${cat.id === "ai" ? '<p class="note">各モデルで明示した設定を比較しています。max・high等の設定名は提供元ごとに意味が異なり、同じ計算量ではありません。旧版の評価値は混ぜていません。</p>' : ""}</section>`;
@@ -298,6 +320,7 @@
       <p class="eyebrow">${esc(cat.en)}</p>
       <h1 class="page-title">${SPEC.icon(cat.icon, "title-icon")}${esc(cat.name)}</h1>
       <p class="muted">${esc(cat.description)}</p>
+      ${cat.id === "ai" ? aiHighlights(items) : ""}
       ${ranking ? `<section class="benchmark-guide" aria-label="性能の比較方法">
         <div class="benchmark-tabs" role="group" aria-label="比較する性能">${config.metrics.map((m) => `<button type="button" class="metric-tab ${m.key === st.metric ? "active" : ""}" data-metric="${esc(m.key)}" aria-pressed="${m.key === st.metric}">${esc(m.label)}</button>`).join("")}</div>
         <h2>${esc(metric.title)}<span>${metric.betterLabel || (metric.better === "low" ? "小さいほど速い" : "高いほど高性能")}</span></h2>
@@ -363,7 +386,7 @@
         const value = item[st.metric];
         const relative = SPEC.relativePerformance(value, base?.[st.metric]);
         const record = SPEC.performanceData[cat.id][item.id]?.[st.metric];
-        const meta = cat.id === "cpu" ? `${item.cores}コア / ${item.threads}スレッド` : cat.id === "gpu" ? item.integrated ? "内蔵GPU · メモリ共有" : `${item.vram} GB VRAM` : [item.maker, item.deploy].filter(Boolean).join(" · ");
+        const meta = cat.id === "cpu" ? `${item.cores}コア / ${item.threads}スレッド` : cat.id === "gpu" ? item.integrated ? "内蔵GPU · メモリ共有" : `${item.vram} GB VRAM` : [item.maker, item.deploy, item.weightSize ? `重み 約${item.weightSize.toLocaleString("ja-JP")}GB（8bit）` : null].filter(Boolean).join(" · ");
         return `<a class="performance-row ${value == null ? "no-result" : ""}" href="#/c/${esc(cat.id)}/${esc(item.id)}">
           <span class="performance-rank">${rankOf.get(item.id) ?? "—"}</span>
           <span class="performance-name"><strong>${esc(item.name)}</strong><small>${esc(meta)}${cat.id !== "ai" && item.price ? ` · ¥${item.price.toLocaleString("ja-JP")}` : ""}</small>${cat.id === "ai" && settingOf(item, record) ? `<small class="benchmark-setting">${esc(settingOf(item, record))}</small>` : ""}</span>

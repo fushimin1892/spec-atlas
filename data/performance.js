@@ -7,31 +7,31 @@ window.SPEC.performanceData = {
       "url": "https://www.cpubenchmark.net/singleThread.html",
       "label": "PassMark Single Thread",
       "checkedAt": "2026-10-23",
-      "sha256": "c3fca37866a582694c6f75b85f6e33e1f676afc4bfed655a5c9b033a43b44a6e"
+      "sha256": "e9808b099c2417c69c74c02634628906e7e04a078f24e943619e7c7e24473c38"
     },
     "gaming": {
       "url": "https://www.cpubenchmark.net/top-gaming-cpus.html",
       "label": "PassMark Gaming Score",
       "checkedAt": "2026-10-23",
-      "sha256": "0ce18b73fbcf28c2c05cc928dca52df54dc2247eb79d32aeb7f7dba316bd0784"
+      "sha256": "872648d2508f4b62e56c13ae9e1877bc938b00dd82be3f05c461e46c36f57c2c"
     },
     "g3d": {
       "url": "https://www.videocardbenchmark.net/gpu_list.php",
       "label": "PassMark G3D Mark",
       "checkedAt": "2026-10-23",
-      "sha256": "2bc591f442ce013209e590ce150fe7ddb68baf2898c565e14975c277dce0cb14"
+      "sha256": "94056b4060bf3e30c32568433a39cb098b13b2b87c8adc8368c3a7ca8131b297"
     },
     "aa": {
       "url": "https://artificialanalysis.ai/leaderboards/models",
       "label": "Artificial Analysis モデル比較",
       "checkedAt": "2026-10-23",
-      "sha256": "afddc47ef5e03215aa98704fe187906a227fd76854abc836cd43b226dc10d201"
+      "sha256": "51da4e7705978f586736c6575a0bf5b6312437def2090179bcda51ebc733b4a9"
     },
     "method": {
       "url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
       "label": "Artificial Analysis 評価方法",
       "checkedAt": "2026-10-23",
-      "sha256": "62b4e8f385722ba4b3cda344d7b54b43847d177cf1fcf336bdee7b0aaa31218f"
+      "sha256": "b230ce8213257f52cfeca608040770382f33a3cba41ccf0d374b2b52389ace5d"
     }
   },
   "cpu": {
@@ -43,7 +43,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "AMD Ryzen 9 9950X3D2",
-        "value": 15473,
+        "value": 15472,
         "source": "gaming"
       }
     },
@@ -67,7 +67,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "Intel Core Ultra 7 270K Plus",
-        "value": 10700,
+        "value": 10702,
         "source": "gaming"
       }
     },
@@ -79,7 +79,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "Intel Core Ultra 9 285K",
-        "value": 10354,
+        "value": 10355,
         "source": "gaming"
       }
     },
@@ -175,7 +175,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "Intel Core i9-14900K",
-        "value": 7492,
+        "value": 7491,
         "source": "gaming"
       }
     },
@@ -211,7 +211,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "Intel Core Ultra 9 285",
-        "value": 9426,
+        "value": 9424,
         "source": "gaming"
       }
     },
@@ -235,14 +235,14 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "AMD Ryzen 9 9900X3D",
-        "value": 12385,
+        "value": 12384,
         "source": "gaming"
       }
     },
     "ryzen-9-9900x": {
       "singleScore": {
         "name": "AMD Ryzen 9 9900X",
-        "value": 4671,
+        "value": 4670,
         "source": "single"
       },
       "gamingScore": {
@@ -259,7 +259,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "Intel Core i7-14700KF",
-        "value": 6853,
+        "value": 6852,
         "source": "gaming"
       }
     },
@@ -271,19 +271,19 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "Intel Core i7-14700K",
-        "value": 6918,
+        "value": 6917,
         "source": "gaming"
       }
     },
     "core-ultra-5-250k-plus": {
       "singleScore": {
         "name": "Intel Core Ultra 5 250K Plus",
-        "value": 4761,
+        "value": 4758,
         "source": "single"
       },
       "gamingScore": {
         "name": "Intel Core Ultra 5 250K Plus",
-        "value": 10307,
+        "value": 10313,
         "source": "gaming"
       }
     },
@@ -307,7 +307,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "Intel Core Ultra 5 250KF Plus",
-        "value": 9871,
+        "value": 9859,
         "source": "gaming"
       }
     },
@@ -338,12 +338,12 @@ window.SPEC.performanceData = {
     "core-ultra-7-265": {
       "singleScore": {
         "name": "Intel Core Ultra 7 265",
-        "value": 4618,
+        "value": 4619,
         "source": "single"
       },
       "gamingScore": {
         "name": "Intel Core Ultra 7 265",
-        "value": 7673,
+        "value": 7674,
         "source": "gaming"
       }
     },
@@ -427,19 +427,19 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "Intel Core i9-14900",
-        "value": 6637,
+        "value": 6639,
         "source": "gaming"
       }
     },
     "core-i9-13900": {
       "singleScore": {
         "name": "Intel Core i9-13900",
-        "value": 4275,
+        "value": 4276,
         "source": "single"
       },
       "gamingScore": {
         "name": "Intel Core i9-13900",
-        "value": 6167,
+        "value": 6168,
         "source": "gaming"
       }
     },
@@ -463,7 +463,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "Intel Core i9-12900KS",
-        "value": 5805,
+        "value": 5804,
         "source": "gaming"
       }
     },
@@ -506,12 +506,12 @@ window.SPEC.performanceData = {
     "ryzen-7-9850x3d": {
       "singleScore": {
         "name": "AMD Ryzen 7 9850X3D",
-        "value": 4705,
+        "value": 4704,
         "source": "single"
       },
       "gamingScore": {
         "name": "AMD Ryzen 7 9850X3D",
-        "value": 12516,
+        "value": 12515,
         "source": "gaming"
       }
     },
@@ -559,7 +559,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "Intel Core i7-14700",
-        "value": 5982,
+        "value": 5981,
         "source": "gaming"
       }
     },
@@ -602,7 +602,7 @@ window.SPEC.performanceData = {
     "ryzen-9-3950x": {
       "singleScore": {
         "name": "AMD Ryzen 9 3950X",
-        "value": 2701,
+        "value": 2700,
         "source": "single"
       }
     },
@@ -626,7 +626,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "Intel Core i5-14600KF",
-        "value": 6372,
+        "value": 6371,
         "source": "gaming"
       }
     },
@@ -638,7 +638,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "Intel Core i7-13700F",
-        "value": 5426,
+        "value": 5427,
         "source": "gaming"
       }
     },
@@ -662,7 +662,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "Intel Core i5-13600KF",
-        "value": 6086,
+        "value": 6087,
         "source": "gaming"
       }
     },
@@ -722,7 +722,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "Intel Core i9-12900F",
-        "value": 4818,
+        "value": 4819,
         "source": "gaming"
       }
     },
@@ -765,7 +765,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "AMD Ryzen 7 7800X3D",
-        "value": 9833,
+        "value": 9832,
         "source": "gaming"
       }
     },
@@ -801,7 +801,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "Intel Core i7-12700KF",
-        "value": 4408,
+        "value": 4407,
         "source": "gaming"
       }
     },
@@ -839,12 +839,12 @@ window.SPEC.performanceData = {
     "ryzen-9-3900xt": {
       "singleScore": {
         "name": "AMD Ryzen 9 3900XT",
-        "value": 2742,
+        "value": 2743,
         "source": "single"
       },
       "gamingScore": {
         "name": "AMD Ryzen 9 3900XT",
-        "value": 4013,
+        "value": 4014,
         "source": "gaming"
       }
     },
@@ -858,12 +858,12 @@ window.SPEC.performanceData = {
     "core-i5-13600": {
       "singleScore": {
         "name": "Intel Core i5-13600",
-        "value": 4021,
+        "value": 4022,
         "source": "single"
       },
       "gamingScore": {
         "name": "Intel Core i5-13600",
-        "value": 5073,
+        "value": 5072,
         "source": "gaming"
       }
     },
@@ -875,7 +875,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "Intel Core Ultra 5 225F",
-        "value": 7138,
+        "value": 7139,
         "source": "gaming"
       }
     },
@@ -889,7 +889,7 @@ window.SPEC.performanceData = {
     "core-i5-13500": {
       "singleScore": {
         "name": "Intel Core i5-13500",
-        "value": 3848,
+        "value": 3847,
         "source": "single"
       },
       "gamingScore": {
@@ -913,7 +913,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "Intel Core i5-14500",
-        "value": 5320,
+        "value": 5319,
         "source": "gaming"
       }
     },
@@ -1114,7 +1114,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "AMD Ryzen 5 7500F",
-        "value": 5616,
+        "value": 5615,
         "source": "gaming"
       }
     },
@@ -1169,7 +1169,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "Intel Core i5-14400F",
-        "value": 4535,
+        "value": 4534,
         "source": "gaming"
       }
     },
@@ -1181,7 +1181,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "AMD Ryzen 5 8600G",
-        "value": 4200,
+        "value": 4199,
         "source": "gaming"
       }
     },
@@ -1193,7 +1193,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "Intel Core i5-14400",
-        "value": 4311,
+        "value": 4309,
         "source": "gaming"
       }
     },
@@ -1205,7 +1205,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "AMD Ryzen 5 7500X3D",
-        "value": 10059,
+        "value": 10060,
         "source": "gaming"
       }
     },
@@ -1224,7 +1224,7 @@ window.SPEC.performanceData = {
       },
       "gamingScore": {
         "name": "Intel Core i5-13400F",
-        "value": 4073,
+        "value": 4072,
         "source": "gaming"
       }
     },
@@ -1264,7 +1264,7 @@ window.SPEC.performanceData = {
     "ryzen-7-5700": {
       "singleScore": {
         "name": "AMD Ryzen 7 5700",
-        "value": 3297,
+        "value": 3298,
         "source": "single"
       }
     },
@@ -1285,7 +1285,7 @@ window.SPEC.performanceData = {
     "core-i7-11700kf": {
       "singleScore": {
         "name": "Intel Core i7-11700KF @ 3.60GHz",
-        "value": 3358,
+        "value": 3359,
         "source": "single"
       }
     },
@@ -1422,13 +1422,8 @@ window.SPEC.performanceData = {
     "core-i5-12600": {
       "singleScore": {
         "name": "Intel Core i5-12600",
-        "value": 3815,
+        "value": 3813,
         "source": "single"
-      },
-      "gamingScore": {
-        "name": "Intel Core i5-12600",
-        "value": 3906,
-        "source": "gaming"
       }
     },
     "core-i7-12700t": {
@@ -1502,7 +1497,7 @@ window.SPEC.performanceData = {
     "core-i9-10900f": {
       "singleScore": {
         "name": "Intel Core i9-10900F @ 2.80GHz",
-        "value": 3026,
+        "value": 3025,
         "source": "single"
       }
     },
@@ -1600,7 +1595,7 @@ window.SPEC.performanceData = {
     "core-i7-10700kf": {
       "singleScore": {
         "name": "Intel Core i7-10700KF @ 3.80GHz",
-        "value": 3020,
+        "value": 3021,
         "source": "single"
       }
     },
@@ -1656,7 +1651,7 @@ window.SPEC.performanceData = {
     "core-i5-11500": {
       "singleScore": {
         "name": "Intel Core i5-11500 @ 2.70GHz",
-        "value": 3130,
+        "value": 3131,
         "source": "single"
       }
     },
@@ -1901,7 +1896,7 @@ window.SPEC.performanceData = {
     "ryzen-3-5300g": {
       "singleScore": {
         "name": "AMD Ryzen 3 5300G",
-        "value": 3054,
+        "value": 3055,
         "source": "single"
       }
     },
@@ -2155,7 +2150,7 @@ window.SPEC.performanceData = {
     "rtx-5090": {
       "g3dScore": {
         "name": "GeForce RTX 5090",
-        "value": 38991,
+        "value": 38990,
         "source": "g3d"
       }
     },
@@ -2169,14 +2164,14 @@ window.SPEC.performanceData = {
     "rtx-5080": {
       "g3dScore": {
         "name": "GeForce RTX 5080",
-        "value": 35648,
+        "value": 35646,
         "source": "g3d"
       }
     },
     "rx-7900-xtx": {
       "g3dScore": {
         "name": "Radeon RX 7900 XTX",
-        "value": 31472,
+        "value": 31473,
         "source": "g3d"
       }
     },
@@ -2190,21 +2185,21 @@ window.SPEC.performanceData = {
     "rtx-4080": {
       "g3dScore": {
         "name": "GeForce RTX 4080",
-        "value": 34438,
+        "value": 34439,
         "source": "g3d"
       }
     },
     "rtx-5070-ti": {
       "g3dScore": {
         "name": "GeForce RTX 5070 Ti",
-        "value": 32330,
+        "value": 32328,
         "source": "g3d"
       }
     },
     "rx-9070-xt": {
       "g3dScore": {
         "name": "Radeon RX 9070 XT",
-        "value": 26926,
+        "value": 26924,
         "source": "g3d"
       }
     },
@@ -2218,14 +2213,14 @@ window.SPEC.performanceData = {
     "rtx-4070-ti-super": {
       "g3dScore": {
         "name": "GeForce RTX 4070 Ti SUPER",
-        "value": 31847,
+        "value": 31848,
         "source": "g3d"
       }
     },
     "rx-9070": {
       "g3dScore": {
         "name": "Radeon RX 9070",
-        "value": 25395,
+        "value": 25393,
         "source": "g3d"
       }
     },
@@ -2239,63 +2234,63 @@ window.SPEC.performanceData = {
     "rtx-3090-ti": {
       "g3dScore": {
         "name": "GeForce RTX 3090 Ti",
-        "value": 29205,
+        "value": 29207,
         "source": "g3d"
       }
     },
     "rtx-5070": {
       "g3dScore": {
         "name": "GeForce RTX 5070",
-        "value": 28677,
+        "value": 28678,
         "source": "g3d"
       }
     },
     "rx-6950-xt": {
       "g3dScore": {
         "name": "Radeon RX 6950 XT",
-        "value": 28071,
+        "value": 28074,
         "source": "g3d"
       }
     },
     "rtx-4070-super": {
       "g3dScore": {
         "name": "GeForce RTX 4070 SUPER",
-        "value": 29938,
+        "value": 29937,
         "source": "g3d"
       }
     },
     "rx-7900-gre": {
       "g3dScore": {
         "name": "Radeon RX 7900 GRE",
-        "value": 27462,
+        "value": 27461,
         "source": "g3d"
       }
     },
     "rx-6900-xt": {
       "g3dScore": {
         "name": "Radeon RX 6900 XT",
-        "value": 26634,
+        "value": 26633,
         "source": "g3d"
       }
     },
     "rx-7800-xt": {
       "g3dScore": {
         "name": "Radeon RX 7800 XT",
-        "value": 24476,
+        "value": 24477,
         "source": "g3d"
       }
     },
     "rtx-3090": {
       "g3dScore": {
         "name": "GeForce RTX 3090",
-        "value": 26466,
+        "value": 26464,
         "source": "g3d"
       }
     },
     "rtx-3080-ti": {
       "g3dScore": {
         "name": "GeForce RTX 3080 Ti",
-        "value": 26730,
+        "value": 26728,
         "source": "g3d"
       }
     },
@@ -2309,42 +2304,42 @@ window.SPEC.performanceData = {
     "rtx-3080-12gb": {
       "g3dScore": {
         "name": "GeForce RTX 3080 12GB",
-        "value": 26560,
+        "value": 26559,
         "source": "g3d"
       }
     },
     "rtx-4070": {
       "g3dScore": {
         "name": "GeForce RTX 4070",
-        "value": 26851,
+        "value": 26850,
         "source": "g3d"
       }
     },
     "rx-7700-xt": {
       "g3dScore": {
         "name": "Radeon RX 7700 XT",
-        "value": 22774,
+        "value": 22775,
         "source": "g3d"
       }
     },
     "rx-6800": {
       "g3dScore": {
         "name": "Radeon RX 6800",
-        "value": 22061,
+        "value": 22055,
         "source": "g3d"
       }
     },
     "rtx-5060-ti-16gb": {
       "g3dScore": {
         "name": "GeForce RTX 5060 Ti 16GB",
-        "value": 22634,
+        "value": 22632,
         "source": "g3d"
       }
     },
     "rtx-5060-ti-8gb": {
       "g3dScore": {
         "name": "GeForce RTX 5060 Ti 8GB",
-        "value": 21833,
+        "value": 21810,
         "source": "g3d"
       }
     },
@@ -2358,14 +2353,14 @@ window.SPEC.performanceData = {
     "rx-9060-xt-16gb": {
       "g3dScore": {
         "name": "Radeon RX 9060 XT 16GB",
-        "value": 20122,
+        "value": 20123,
         "source": "g3d"
       }
     },
     "rtx-2080-ti": {
       "g3dScore": {
         "name": "GeForce RTX 2080 Ti",
-        "value": 21400,
+        "value": 21401,
         "source": "g3d"
       }
     },
@@ -2393,14 +2388,14 @@ window.SPEC.performanceData = {
     "rtx-5060": {
       "g3dScore": {
         "name": "GeForce RTX 5060",
-        "value": 20603,
+        "value": 20606,
         "source": "g3d"
       }
     },
     "rx-9060-xt-8gb": {
       "g3dScore": {
         "name": "Radeon RX 9060 XT 8GB",
-        "value": 19673,
+        "value": 19668,
         "source": "g3d"
       }
     },
@@ -2414,7 +2409,7 @@ window.SPEC.performanceData = {
     "arc-a750": {
       "g3dScore": {
         "name": "Intel Arc A750",
-        "value": 12646,
+        "value": 12644,
         "source": "g3d"
       }
     },
@@ -2428,21 +2423,21 @@ window.SPEC.performanceData = {
     "rtx-2080-super": {
       "g3dScore": {
         "name": "GeForce RTX 2080 SUPER",
-        "value": 19387,
+        "value": 19389,
         "source": "g3d"
       }
     },
     "arc-b580": {
       "g3dScore": {
         "name": "Intel Arc B580",
-        "value": 16105,
+        "value": 16106,
         "source": "g3d"
       }
     },
     "rx-6700": {
       "g3dScore": {
         "name": "Radeon RX 6700",
-        "value": 18860,
+        "value": 18859,
         "source": "g3d"
       }
     },
@@ -2456,7 +2451,7 @@ window.SPEC.performanceData = {
     "rx-7600": {
       "g3dScore": {
         "name": "Radeon RX 7600",
-        "value": 16434,
+        "value": 16436,
         "source": "g3d"
       }
     },
@@ -2470,7 +2465,7 @@ window.SPEC.performanceData = {
     "rtx-5050": {
       "g3dScore": {
         "name": "GeForce RTX 5050",
-        "value": 16734,
+        "value": 16738,
         "source": "g3d"
       }
     },
@@ -2484,14 +2479,14 @@ window.SPEC.performanceData = {
     "rtx-2070-super": {
       "g3dScore": {
         "name": "GeForce RTX 2070 SUPER",
-        "value": 18122,
+        "value": 18121,
         "source": "g3d"
       }
     },
     "rx-6650-xt": {
       "g3dScore": {
         "name": "Radeon RX 6650 XT",
-        "value": 17102,
+        "value": 17101,
         "source": "g3d"
       }
     },
@@ -2505,7 +2500,7 @@ window.SPEC.performanceData = {
     "rx-6600-xt": {
       "g3dScore": {
         "name": "Radeon RX 6600 XT",
-        "value": 16445,
+        "value": 16444,
         "source": "g3d"
       }
     },
@@ -2554,7 +2549,7 @@ window.SPEC.performanceData = {
     "rx-6600": {
       "g3dScore": {
         "name": "Radeon RX 6600",
-        "value": 15035,
+        "value": 15034,
         "source": "g3d"
       }
     },
@@ -2575,7 +2570,7 @@ window.SPEC.performanceData = {
     "gtx-1080": {
       "g3dScore": {
         "name": "GeForce GTX 1080",
-        "value": 15605,
+        "value": 15604,
         "source": "g3d"
       }
     },
@@ -2589,7 +2584,7 @@ window.SPEC.performanceData = {
     "rtx-2060": {
       "g3dScore": {
         "name": "GeForce RTX 2060",
-        "value": 14070,
+        "value": 14071,
         "source": "g3d"
       }
     },
@@ -2610,14 +2605,14 @@ window.SPEC.performanceData = {
     "gtx-1660-ti": {
       "g3dScore": {
         "name": "GeForce GTX 1660 Ti",
-        "value": 12554,
+        "value": 12555,
         "source": "g3d"
       }
     },
     "rtx-3050-8gb": {
       "g3dScore": {
         "name": "GeForce RTX 3050 8GB",
-        "value": 12457,
+        "value": 12456,
         "source": "g3d"
       }
     },
@@ -2631,7 +2626,7 @@ window.SPEC.performanceData = {
     "gtx-1660-super": {
       "g3dScore": {
         "name": "GeForce GTX 1660 SUPER",
-        "value": 12656,
+        "value": 12655,
         "source": "g3d"
       }
     },
@@ -2687,7 +2682,7 @@ window.SPEC.performanceData = {
     "gtx-1650-super": {
       "g3dScore": {
         "name": "GeForce GTX 1650 SUPER",
-        "value": 10190,
+        "value": 10189,
         "source": "g3d"
       }
     },
@@ -2701,14 +2696,14 @@ window.SPEC.performanceData = {
     "arc-a380": {
       "g3dScore": {
         "name": "Intel Arc A380",
-        "value": 6332,
+        "value": 6331,
         "source": "g3d"
       }
     },
     "gtx-980": {
       "g3dScore": {
         "name": "GeForce GTX 980",
-        "value": 11071,
+        "value": 11072,
         "source": "g3d"
       }
     },
@@ -2848,7 +2843,7 @@ window.SPEC.performanceData = {
     "rx-550": {
       "g3dScore": {
         "name": "Radeon RX 550",
-        "value": 2701,
+        "value": 2699,
         "source": "g3d"
       }
     },
@@ -2883,21 +2878,21 @@ window.SPEC.performanceData = {
     "gt-710": {
       "g3dScore": {
         "name": "GeForce GT 710",
-        "value": 617,
+        "value": 616,
         "source": "g3d"
       }
     },
     "rx-9070-gre": {
       "g3dScore": {
         "name": "Radeon RX 9070 GRE",
-        "value": 23384,
+        "value": 23373,
         "source": "g3d"
       }
     },
     "rx-7600-xt": {
       "g3dScore": {
         "name": "Radeon RX 7600 XT",
-        "value": 17360,
+        "value": 17361,
         "source": "g3d"
       }
     },
@@ -2932,7 +2927,7 @@ window.SPEC.performanceData = {
     "arc-b570": {
       "g3dScore": {
         "name": "Intel Arc B570",
-        "value": 14078,
+        "value": 14085,
         "source": "g3d"
       }
     }
@@ -2951,7 +2946,7 @@ window.SPEC.performanceData = {
       },
       "aiLatency": {
         "name": "GPT-6 Astra (max)",
-        "value": 268.25,
+        "value": 244.7,
         "source": "aa"
       },
       "aiOmni": {
@@ -2968,6 +2963,12 @@ window.SPEC.performanceData = {
         "name": "GPT-6 Astra (Max)",
         "value": 48.7,
         "source": "aa"
+      },
+      "aiPrice": {
+        "name": "GPT-6 Astra (Max)",
+        "value": 50,
+        "input": 10,
+        "source": "aa"
       }
     },
     "gpt-6-1-sol": {
@@ -2983,7 +2984,7 @@ window.SPEC.performanceData = {
       },
       "aiLatency": {
         "name": "GPT-6.1 Sol (max)",
-        "value": 241.18,
+        "value": 236.01,
         "source": "aa"
       },
       "aiOmni": {
@@ -3000,6 +3001,12 @@ window.SPEC.performanceData = {
         "name": "GPT-6.1 Sol (Max)",
         "value": 45.7,
         "source": "aa"
+      },
+      "aiPrice": {
+        "name": "GPT-6.1 Sol (Max)",
+        "value": 10,
+        "input": 2,
+        "source": "aa"
       }
     },
     "gpt-6-luna": {
@@ -3010,12 +3017,12 @@ window.SPEC.performanceData = {
       },
       "aiSpeed": {
         "name": "GPT-6 Luna (max)",
-        "value": 134,
+        "value": 136,
         "source": "aa"
       },
       "aiLatency": {
         "name": "GPT-6 Luna (max)",
-        "value": 109.81,
+        "value": 69.59,
         "source": "aa"
       },
       "aiOmni": {
@@ -3032,6 +3039,12 @@ window.SPEC.performanceData = {
         "name": "GPT-6 Luna (Max)",
         "value": 23.3,
         "source": "aa"
+      },
+      "aiPrice": {
+        "name": "GPT-6 Luna (Max)",
+        "value": 0.5,
+        "input": 0.1,
+        "source": "aa"
       }
     },
     "gpt-oss-120b": {
@@ -3042,12 +3055,12 @@ window.SPEC.performanceData = {
       },
       "aiSpeed": {
         "name": "gpt-oss-120b (high)",
-        "value": 223,
+        "value": 207,
         "source": "aa"
       },
       "aiLatency": {
         "name": "gpt-oss-120b (high)",
-        "value": 0.83,
+        "value": 0.84,
         "source": "aa"
       },
       "aiOmni": {
@@ -3064,6 +3077,12 @@ window.SPEC.performanceData = {
         "name": "gpt-oss-120b (High)",
         "value": 9.2,
         "source": "aa"
+      },
+      "aiPrice": {
+        "name": "gpt-oss-120b (High)",
+        "value": 0.6,
+        "input": 0.15,
+        "source": "aa"
       }
     },
     "gpt-oss-20b": {
@@ -3074,12 +3093,12 @@ window.SPEC.performanceData = {
       },
       "aiSpeed": {
         "name": "gpt-oss-20b (high)",
-        "value": 162,
+        "value": 156,
         "source": "aa"
       },
       "aiLatency": {
         "name": "gpt-oss-20b (high)",
-        "value": 0.84,
+        "value": 0.8,
         "source": "aa"
       },
       "aiOmni": {
@@ -3096,6 +3115,12 @@ window.SPEC.performanceData = {
         "name": "gpt-oss-20b (High)",
         "value": 5.9,
         "source": "aa"
+      },
+      "aiPrice": {
+        "name": "gpt-oss-20b (High)",
+        "value": 0.25,
+        "input": 0.07,
+        "source": "aa"
       }
     },
     "claude-opus-5-5": {
@@ -3111,7 +3136,7 @@ window.SPEC.performanceData = {
       },
       "aiLatency": {
         "name": "Claude Opus 5.5 (max with fallback)",
-        "value": 610.04,
+        "value": 588.68,
         "source": "aa"
       },
       "aiOmni": {
@@ -3128,6 +3153,12 @@ window.SPEC.performanceData = {
         "name": "Claude Opus 5.5 (Max, Default Fallback)",
         "value": 41.4,
         "source": "aa"
+      },
+      "aiPrice": {
+        "name": "Claude Opus 5.5 (Max, Default Fallback)",
+        "value": 20,
+        "input": 4,
+        "source": "aa"
       }
     },
     "claude-sonnet-5-5": {
@@ -3143,7 +3174,7 @@ window.SPEC.performanceData = {
       },
       "aiLatency": {
         "name": "Claude Sonnet 5.5 (max with fallback)",
-        "value": 367.29,
+        "value": 375.97,
         "source": "aa"
       },
       "aiOmni": {
@@ -3160,6 +3191,12 @@ window.SPEC.performanceData = {
         "name": "Claude Sonnet 5.5 (Max, Default Fallback)",
         "value": 53,
         "source": "aa"
+      },
+      "aiPrice": {
+        "name": "Claude Sonnet 5.5 (Max, Default Fallback)",
+        "value": 10,
+        "input": 2,
+        "source": "aa"
       }
     },
     "claude-haiku-5-5": {
@@ -3170,12 +3207,12 @@ window.SPEC.performanceData = {
       },
       "aiSpeed": {
         "name": "Claude Haiku 5.5 (max)",
-        "value": 240,
+        "value": 235,
         "source": "aa"
       },
       "aiLatency": {
         "name": "Claude Haiku 5.5 (max)",
-        "value": 325.73,
+        "value": 320.62,
         "source": "aa"
       },
       "aiOmni": {
@@ -3192,6 +3229,12 @@ window.SPEC.performanceData = {
         "name": "Claude Haiku 5.5 (Max)",
         "value": 59.6,
         "source": "aa"
+      },
+      "aiPrice": {
+        "name": "Claude Haiku 5.5 (Max)",
+        "value": 0.5,
+        "input": 0.1,
+        "source": "aa"
       }
     },
     "claude-fable-5-1": {
@@ -3202,12 +3245,12 @@ window.SPEC.performanceData = {
       },
       "aiSpeed": {
         "name": "Claude Fable 5.1 (max with fallback)",
-        "value": 69,
+        "value": 68,
         "source": "aa"
       },
       "aiLatency": {
         "name": "Claude Fable 5.1 (max with fallback)",
-        "value": 257,
+        "value": 161.92,
         "source": "aa"
       },
       "aiOmni": {
@@ -3224,6 +3267,12 @@ window.SPEC.performanceData = {
         "name": "Claude Fable 5.1 (Max, Default Fallback)",
         "value": 27.4,
         "source": "aa"
+      },
+      "aiPrice": {
+        "name": "Claude Fable 5.1 (Max, Default Fallback)",
+        "value": 50,
+        "input": 10,
+        "source": "aa"
       }
     },
     "kimi-k3": {
@@ -3234,12 +3283,12 @@ window.SPEC.performanceData = {
       },
       "aiSpeed": {
         "name": "Kimi K3 (max)",
-        "value": 37,
+        "value": 38,
         "source": "aa"
       },
       "aiLatency": {
         "name": "Kimi K3 (max)",
-        "value": 3.61,
+        "value": 3.45,
         "source": "aa"
       },
       "aiOmni": {
@@ -3256,6 +3305,12 @@ window.SPEC.performanceData = {
         "name": "Kimi K3 (Max)",
         "value": 46.8,
         "source": "aa"
+      },
+      "aiPrice": {
+        "name": "Kimi K3 (Max)",
+        "value": 15,
+        "input": 3,
+        "source": "aa"
       }
     },
     "deepseek-v4-1-flash": {
@@ -3266,12 +3321,12 @@ window.SPEC.performanceData = {
       },
       "aiSpeed": {
         "name": "DeepSeek V4.1 Flash 1017 (max)",
-        "value": 206,
+        "value": 204,
         "source": "aa"
       },
       "aiLatency": {
         "name": "DeepSeek V4.1 Flash 1017 (max)",
-        "value": 1.01,
+        "value": 1.1,
         "source": "aa"
       },
       "aiOmni": {
@@ -3288,6 +3343,12 @@ window.SPEC.performanceData = {
         "name": "DeepSeek V4.1 Flash 1017 (Max)",
         "value": 33.2,
         "source": "aa"
+      },
+      "aiPrice": {
+        "name": "DeepSeek V4.1 Flash 1017 (Max)",
+        "value": 1.2,
+        "input": 0.3,
+        "source": "aa"
       }
     },
     "qwen3-8-2-4t-a95b": {
@@ -3303,7 +3364,7 @@ window.SPEC.performanceData = {
       },
       "aiLatency": {
         "name": "Qwen3.8 2.4T A95B",
-        "value": 3.04,
+        "value": 2.98,
         "source": "aa"
       },
       "aiOmni": {
@@ -3320,6 +3381,12 @@ window.SPEC.performanceData = {
         "name": "Qwen3.8 2.4T A95B",
         "value": 60.8,
         "source": "aa"
+      },
+      "aiPrice": {
+        "name": "Qwen3.8 2.4T A95B",
+        "value": 6,
+        "input": 2,
+        "source": "aa"
       }
     },
     "qwen3-8-flash-next": {
@@ -3330,7 +3397,7 @@ window.SPEC.performanceData = {
       },
       "aiSpeed": {
         "name": "Qwen3.8-Flash-Next",
-        "value": 53,
+        "value": 52,
         "source": "aa"
       },
       "aiLatency": {
@@ -3352,6 +3419,12 @@ window.SPEC.performanceData = {
         "name": "Qwen3.8-Flash-Next",
         "value": 54.7,
         "source": "aa"
+      },
+      "aiPrice": {
+        "name": "Qwen3.8-Flash-Next",
+        "value": 0.47,
+        "input": 0.15,
+        "source": "aa"
       }
     },
     "qwen3-8-27b": {
@@ -3362,12 +3435,12 @@ window.SPEC.performanceData = {
       },
       "aiSpeed": {
         "name": "Qwen3.8 27B (xhigh)",
-        "value": 42,
+        "value": 40,
         "source": "aa"
       },
       "aiLatency": {
         "name": "Qwen3.8 27B (xhigh)",
-        "value": 3.9,
+        "value": 3.93,
         "source": "aa"
       },
       "aiOmni": {
@@ -3383,6 +3456,12 @@ window.SPEC.performanceData = {
       "aiNonHallucination": {
         "name": "Qwen3.8 27B (Xhigh)",
         "value": 69.7,
+        "source": "aa"
+      },
+      "aiPrice": {
+        "name": "Qwen3.8 27B (Xhigh)",
+        "value": 3,
+        "input": 0.5,
         "source": "aa"
       }
     },
@@ -3415,6 +3494,12 @@ window.SPEC.performanceData = {
       "aiNonHallucination": {
         "name": "GLM-5.3 (Max)",
         "value": 70.4,
+        "source": "aa"
+      },
+      "aiPrice": {
+        "name": "GLM-5.3 (Max)",
+        "value": 4.4,
+        "input": 1.4,
         "source": "aa"
       }
     }
