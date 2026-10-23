@@ -79,6 +79,10 @@ jobs:
         run: |
           mkdir _site
           cp -r index.html css js data _site/
+          # Pages は JS・CSS を 10 分間ブラウザに保存させるので、公開ごとに版番号を付けて古いファイルが使われないようにする
+          v=$(git rev-parse --short HEAD)
+          sed -i -E "s#(src|href)=\"((css|js|data)/[^\"?]+)\"#\1=\"\2?v=${v}\"#g" _site/index.html
+          grep -c "?v=${v}" _site/index.html
 
       - uses: actions/upload-pages-artifact@v5
         with:
