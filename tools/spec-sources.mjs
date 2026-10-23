@@ -5,7 +5,7 @@ export function decodeHtml(text) {
       : ({ quot: '"', amp: "&", lt: "<", gt: ">", nbsp: " ", reg: "®", trade: "™" })[name.toLowerCase()]);
 }
 
-export const textOf = (html) => decodeHtml(html.replace(/<script\b[\s\S]*?<\/script>|<style\b[\s\S]*?<\/style>/gi, "").replace(/<[^>]*>/g, " ")).replace(/\s+/g, " ").trim();
+export const textOf = (html) => decodeHtml(html.replace(/<!--[\s\S]*?-->/g, "").replace(/<script\b[\s\S]*?<\/script>|<style\b[\s\S]*?<\/style>/gi, "").replace(/<[^>]*>/g, " ")).replace(/\s+/g, " ").trim();
 
 export function tablesOf(html) {
   return [...html.matchAll(/<table\b[^>]*>([\s\S]*?)<\/table>/gi)].map((table) =>

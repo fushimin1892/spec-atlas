@@ -41,6 +41,11 @@
 
   function cellHtml(cat, field, item) {
     const value = item[field.key];
+    const metric = SPEC.benchmarkOf?.(cat.id, field.key);
+    if (metric && field.key !== "score") {
+      const record = SPEC.performanceData[cat.id][item.id]?.[field.key];
+      return `${formatValue(field, value)}${record && cat.id === "ai" ? `<span class="sub">${esc(record.name)}</span>` : ""}`;
+    }
     if (cat.id === "ai" && field.key === "params" && value == null) {
       return `<span class="muted">${esc(item.paramsStatus || "未確認")}</span>${item.paramsNote ? `<span class="sub">${esc(item.paramsNote)}</span>` : ""}`;
     }
@@ -59,21 +64,16 @@
     return shown + sub + (check && check.fields.find((f) => f.key === "score").status !== "verified" && value != null ? '<span class="sub">未確認の既存値</span>' : "");
   }
 
-  function auditSummary(cat) {
-    if (!["cpu", "gpu"].includes(cat.id)) return "";
-    const items = getItems(cat.id);
-    const checks = items.map((item) => SPEC.verificationOf(cat.id, item));
-    const technicalFields = (check) => check.fields.filter((field) => !["release", "score"].includes(field.key));
-    const applicable = checks.filter((check) => technicalFields(check).some((field) => field.status !== "notApplicable"));
-    const technical = applicable.filter((check) => technicalFields(check).every((field) => field.status === "verified")).length;
-    const pending = items.filter((item, index) => technicalFields(checks[index]).some((field) => !["verified", "notApplicable"].includes(field.status)));
-    const dated = checks.filter((c) => c.verified === c.total).length;
-    const scores = checks.filter((c) => c.fields.find((f) => f.key === "score").status === "verified").length;
-    const publishedScores = getItems(cat.id).filter((item) => item.score != null).length;
-    return `<aside class="audit-summary" aria-label="情報の照合状況"><strong>照合状況（${esc(SPEC.hardwareEvidence.checkedAt)}）</strong>
-      <p>技術仕様 ${technical}/${applicable.length}型番一致${checks.length !== applicable.length ? ` · 内蔵GPU ${checks.length - applicable.length}型番は専用VRAM・単体公称電力の対象外（全${checks.length}型番）` : ""} · 発売日も含む仕様 ${dated}/${checks.length}型番一致 · 掲載スコア ${scores}/${publishedScores}件一致（${checks.length - publishedScores}件空欄）</p>
-      ${pending.length ? `<p>技術仕様の確認が残る型番: ${pending.map((item) => `<a href="#/c/${esc(cat.id)}/${esc(item.id)}">${esc(item.name)}</a>`).join("、")}。参考資料との一致は一次資料での一致に含めません。</p>` : ""}
-      <p>未確認の項目が残っています。各製品の詳細で、項目別の出典・確認日・条件を確認できます。</p></aside>`;
+  function benchmarkEvidence(cat, item) {
+    const config = SPEC.benchmarks[cat.id];
+    const records = SPEC.performanceData[cat.id][item.id] || {};
+    return `<section class="verification"><h2>ベンチマークの測定条件</h2>${config.metrics.filter((m) => m.key !== "score").map((metric) => {
+      const record = records[metric.key];
+      const source = record && SPEC.performanceData.sources[record.source];
+      return `<p><strong>${esc(metric.title)}</strong> · ${record ? `${formatValue({ type: "number", unit: metric.unit, digits: metric.digits }, record.value)}` : "比較データなし"}</p>
+        <p class="note">${esc(metric.description)} ${esc(metric.limit)}</p>
+        ${record ? `<p class="note">測定名・設定: ${esc(record.name)}${cat.id === "ai" ? "。API提供モデルの測定で、公開重みを手元で実行した結果ではありません。" : ""} · <a class="ext" href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.label)}</a> · 取得 ${esc(source.checkedAt)}</p>` : ""}`;
+    }).join("")}${cat.id === "ai" ? '<p class="note">各モデルで明示した設定を比較しています。max・high等の設定名は提供元ごとに意味が異なり、同じ計算量ではありません。旧版の評価値は混ぜていません。</p>' : ""}</section>`;
   }
 
   function verificationHtml(cat, item) {
@@ -88,6 +88,7 @@
           return `<tr><th scope="row">${esc(field.label)}</th><td>${itemValue(field, item)}</td><td class="audit-${result.status}">${esc(labels[result.status])}</td><td>${result.claims.length ? result.claims.map((c) => `${c.reason ? esc(c.reason) : c.range ? itemValue(field, { [`${field.key}Range`]: c.range }) : formatValue(field, c.value)} · <a class="ext" href="${esc(c.source.url)}" target="_blank" rel="noopener noreferrer">${esc(c.source.label)}${c.page ? `（p.${c.page}）` : ""}</a> · ${esc(c.source.checkedAt)}`).join("<br>") : "今回の一次資料による照合は未完了"}</td></tr>`;
         }).join("")}</tbody></table></div>
         ${check.notes.map((note) => `<p class="note">${esc(note)}</p>`).join("")}
+        ${(SPEC.hardwareEvidence[cat.id][item.id] || []).filter((row) => row.note).map((row) => SPEC.hardwareEvidence.sources[row.source]).filter((source, index, all) => all.indexOf(source) === index).map((source) => `<p class="note"><a class="ext" href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.label)}</a> · ${esc(source.checkedAt)}</p>`).join("")}
         ${item.price != null ? `<p class="note">参考価格は楽天の保存済み取得値（${esc(SPEC.prices?.[cat.id]?.fetchedAt || "取得日時未確認")}）。現在の価格・在庫の一致は未確認です。</p>` : ""}
       </section>`;
     }
@@ -194,11 +195,16 @@
 
   function renderList(cat) {
     const items = getItems(cat.id);
+    const config = SPEC.benchmarks[cat.id];
     const filterKeys = cat.filters || ["maker"];
     const filterFields = filterKeys.map((k) => cat.fields.find((f) => f.key === k)).filter(Boolean);
-    const listFields = cat.fields.filter((f) => f.list !== false);
-    const def = cat.defaultSort || { key: cat.fields[0].key, dir: 1 };
-    const st = (listState[cat.id] ||= { q: "", filters: {}, sort: def.key, dir: def.dir });
+    const st = (listState[cat.id] ||= { q: "", filters: {}, sort: config.default, dir: config.metrics[0].better === "low" ? 1 : -1, metric: config.default, baseline: config.baseline, view: "performance", measuredOnly: true });
+    const metric = SPEC.benchmarkOf(cat.id, st.metric);
+    if (config.baseline && !items.some((i) => i.id === st.baseline && i[st.metric] > 0)) {
+      st.baseline = items.find((i) => i.id === config.baseline && i[st.metric] > 0)?.id || items.find((i) => i[st.metric] > 0)?.id;
+    }
+    const listFields = cat.fields.filter((f) => f.benchmark ? f.key === st.metric : f.list !== false);
+    const hasRank = true;
 
     const compareBy = (field, dir) => (a, b) => {
       const x = a[field.key], y = b[field.key];
@@ -209,10 +215,14 @@
     };
     // 順位は絞り込みや並び替えに左右されないよう、初期の並び順で全件に対して付ける
     const rankOf = new Map();
-    if (cat.rank) {
-      const f = cat.fields.find((x) => x.key === def.key);
+    if (hasRank) {
+      const f = cat.fields.find((x) => x.key === st.metric);
       // 基準の値が空欄（スコア未確認など）の製品には順位を付けない
-      [...items].filter((i) => i[f.key] != null).sort(compareBy(f, def.dir)).forEach((i, n) => rankOf.set(i.id, n + 1));
+      let previous, rank;
+      [...items].filter((i) => i[f.key] != null).sort(compareBy(f, metric.better === "low" ? 1 : -1)).forEach((i, n) => {
+        if (i[f.key] !== previous) rank = n + 1;
+        rankOf.set(i.id, rank); previous = i[f.key];
+      });
     }
     // プルダウンの選択肢はデータに出てくる順（性能順のデータならシリーズも新しい順に並ぶ）
     const optionsFor = (key) => {
@@ -241,33 +251,80 @@
       <p class="eyebrow">${esc(cat.en)}</p>
       <h1 class="page-title">${SPEC.icon(cat.icon, "title-icon")}${esc(cat.name)}</h1>
       <p class="muted">${esc(cat.description)}</p>
+      <section class="benchmark-guide" aria-label="性能の比較方法">
+        <div class="benchmark-tabs" role="group" aria-label="比較する性能">${config.metrics.map((m) => `<button type="button" class="metric-tab ${m.key === st.metric ? "active" : ""}" data-metric="${esc(m.key)}" aria-pressed="${m.key === st.metric}">${esc(m.label)}</button>`).join("")}</div>
+        <h2>${esc(metric.title)}<span>${metric.better === "low" ? "小さいほど速い" : "高いほど高性能"}</span></h2>
+        <details class="benchmark-method"><summary>指標の意味・測定条件</summary><p>${esc(metric.description)}</p><p class="note">${esc(metric.limit)}</p>
+        ${cat.id === "ai" ? '<p class="note">主に高推論設定を掲載。設定名は提供元ごとに意味が異なり、同じ計算量ではありません。公開重みを手元で測定した結果ではありません。</p>' : '<p class="note">基準比200はスコアが基準製品の2倍という意味で、ゲームのFPSが2倍になるとは限りません。</p>'}
+        ${metric.source ? `<a class="benchmark-credit ext" href="${esc(SPEC.performanceData.sources[metric.source].url)}" target="_blank" rel="noopener noreferrer">${esc(SPEC.performanceData.sources[metric.source].label)}</a><span class="benchmark-credit">取得 ${esc(SPEC.performanceData.checkedAt)}</span>` : ""}</details>
+        <div class="benchmark-settings">
+          ${config.baseline ? `<label>比較の基準 <select id="benchmarkBase">${items.filter((i) => i[st.metric] > 0).map((i) => `<option value="${esc(i.id)}" ${i.id === st.baseline ? "selected" : ""}>${esc(i.name)} = 100</option>`).join("")}</select></label>` : '<p class="note">測定時の推論設定を各モデルに併記</p>'}
+          <label class="measured-filter"><input type="checkbox" id="measuredOnly" ${st.measuredOnly ? "checked" : ""}>ランキングは比較データがある製品のみ</label>
+        </div>
+      </section>
+      <div class="view-switch" role="group" aria-label="表示形式"><button data-view="performance" aria-pressed="${st.view === "performance"}">性能ランキング</button><button data-view="specs" aria-pressed="${st.view === "specs"}">仕様一覧</button></div>
       <div class="toolbar">
         <label class="grow">絞り込み <input id="fq" type="search" value="${esc(st.q)}" placeholder="${esc(cat.searchHint || "名前で絞り込み")}"></label>
         <span id="filterSelects" style="display:contents">${selectsHtml()}</span>
         <span class="muted" id="hitCount"></span>
         <a class="btn btn-ghost btn-small toolbar-cmp" href="#/compare?cat=${esc(cat.id)}">${esc(cat.name)}を比較する</a>
       </div>
+      <details class="category-sources"><summary>数値の見方・出典・価格について</summary>
       ${cat.note ? `<p class="note">${esc(cat.note)}</p>` : ""}
-      ${cat.specNote ? `<p class="note">${esc(cat.specNote)}</p>` : ""}
-      ${auditSummary(cat)}
-      <details class="category-sources"><summary>カテゴリの参考資料</summary>${(cat.sources || []).map((s) => `<p class="note"><a class="ext" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></p>`).join("")}</details>
+      ${cat.specNote ? `<p class="note">${esc(cat.specNote)}</p>` : ""}${(cat.sources || []).map((s) => `<p class="note"><a class="ext" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></p>`).join("")}</details>
       ${SPEC.applyPrices[cat.id] ? `<p class="note live" id="priceStatus" role="status" aria-live="polite">${esc(priceStatus[cat.id] || "")}</p>` : ""}
-      <div class="table-wrap"><table class="spec-table" id="specTable"></table></div>`;
+      <div id="performanceRows" class="performance-ranking" ${st.view !== "performance" ? "hidden" : ""}></div>
+      <div class="table-wrap" ${st.view !== "specs" ? "hidden" : ""}><table class="spec-table" id="specTable"></table></div>`;
 
     const table = document.getElementById("specTable");
     const draw = () => {
       const q = st.q.trim().toLowerCase();
       const field = cat.fields.find((f) => f.key === st.sort) || cat.fields[0];
-      const rows = items
+      // 仕様一覧は絞り込みに合う全製品、性能ランキングは「比較データがある製品のみ」のときデータの無い製品を除く
+      const matched = items
         .filter((i) => !q || [i.name, i.maker, i.family, i.modelId].some((v) => String(v || "").toLowerCase().includes(q)))
         .filter((i) => filterKeys.every((k) => !st.filters[k] || i[k] === st.filters[k]))
         .sort(compareBy(field, st.dir));
-      const cols = listFields.length + (cat.rank ? 1 : 0);
+      const rows = matched.filter((i) => !st.measuredOnly || i[st.metric] != null);
+      const cols = listFields.length + (hasRank ? 1 : 0);
 
-      document.getElementById("hitCount").textContent = `${rows.length} / ${items.length} 件`;
+      document.getElementById("hitCount").textContent = `${matched.length} / ${items.length} 件 · 比較データ ${matched.filter((i) => i[st.metric] != null).length} 件`;
+      const base = items.find((i) => i.id === st.baseline);
+      const values = items.map((i) => i[st.metric]).filter((v) => v > 0);
+      const max = Math.max(...values, 1);
+      const min = Math.min(...values);
+      // 棒は長いほど良い向きにそろえる（待ち時間のように小さいほど良い指標は、最小値を満たんにする）
+      const meter = (value) => value == null ? 0 : metric.better === "low" ? (min / value) * 100 : (value / max) * 100;
+      // 測定条件の名前（「Claude Opus 5.5 (max with fallback)」）は、モデル名と同じ部分を除いて設定だけを見せる
+      const settingOf = (item, record) => {
+        if (!record) return "";
+        const paren = record.name.match(/\(([^)]+)\)\s*$/);
+        if (paren) return `設定: ${paren[1]}`;
+        return record.name === item.name ? "" : `測定名: ${record.name}`;
+      };
+      const hidden = matched.length - rows.length;
+      document.getElementById("performanceRows").innerHTML = `<div class="ranking-caption"><span>モデル・製品</span><span>${esc(metric.title)}${config.baseline ? " / 基準比" : ""}</span></div>` + (rows.length ? rows.map((item) => {
+        const value = item[st.metric];
+        const relative = SPEC.relativePerformance(value, base?.[st.metric]);
+        const record = SPEC.performanceData[cat.id][item.id]?.[st.metric];
+        const meta = cat.id === "cpu" ? `${item.cores}コア / ${item.threads}スレッド` : cat.id === "gpu" ? item.integrated ? "内蔵GPU · メモリ共有" : `${item.vram} GB VRAM` : item.family || item.maker;
+        return `<a class="performance-row ${value == null ? "no-result" : ""}" href="#/c/${esc(cat.id)}/${esc(item.id)}">
+          <span class="performance-rank">${rankOf.get(item.id) ?? "—"}</span>
+          <span class="performance-name"><strong>${esc(item.name)}</strong><small>${esc(meta)}${cat.id !== "ai" && item.price ? ` · ¥${item.price.toLocaleString("ja-JP")}` : ""}</small>${cat.id === "ai" && settingOf(item, record) ? `<small class="benchmark-setting">${esc(settingOf(item, record))}</small>` : ""}</span>
+          <span class="performance-result"><span class="performance-number">${value == null ? "—" : Number(value).toLocaleString("ja-JP", { maximumFractionDigits: metric.digits || 0 })}<small>${value == null ? "比較データなし" : esc(metric.unit)}</small></span>
+          <span class="performance-meter" aria-hidden="true"><i style="width:${meter(value).toFixed(2)}%"></i></span>
+          ${relative != null ? `<small class="relative-value">基準比 <b>${relative}</b>（${(relative / 100).toFixed(2)}倍）</small>` : ""}</span>
+        </a>`;
+      }).join("") : '<p class="empty">該当する製品がありません</p>') +
+        (hidden ? `<p class="ranking-hidden">この指標の比較データが無い ${hidden} 件は表示していません。<button type="button" id="showUnmeasured">表示する</button></p>` : "");
+      document.getElementById("showUnmeasured")?.addEventListener("click", () => {
+        st.measuredOnly = false;
+        document.getElementById("measuredOnly").checked = false;
+        draw();
+      });
       table.innerHTML = `
         <thead><tr>
-          ${cat.rank ? '<th scope="col" class="rank">#</th>' : ""}
+          ${hasRank ? '<th scope="col" class="rank">#</th>' : ""}
           ${listFields
             .map((f) => {
               const active = f.key === st.sort;
@@ -279,11 +336,11 @@
         </tr></thead>
         <tbody>
           ${
-            rows.length
-              ? rows
+            matched.length
+              ? matched
                   .map((i) => {
                     return `<tr>
-                      ${cat.rank ? `<td class="rank">${rankOf.get(i.id) ?? ""}</td>` : ""}
+                      ${hasRank ? `<td class="rank">${rankOf.get(i.id) ?? ""}</td>` : ""}
                       ${listFields
                         .map((f, idx) =>
                           idx === 0
@@ -299,6 +356,20 @@
         </tbody>`;
     };
     draw();
+
+    main.querySelectorAll("[data-metric]").forEach((button) => button.addEventListener("click", () => {
+      st.metric = button.dataset.metric; st.sort = st.metric;
+      st.dir = SPEC.benchmarkOf(cat.id, st.metric).better === "low" ? 1 : -1;
+      renderList(cat);
+      main.querySelector(`[data-metric="${CSS.escape(st.metric)}"]`).focus();
+    }));
+    main.querySelectorAll("[data-view]").forEach((button) => button.addEventListener("click", () => {
+      st.view = button.dataset.view;
+      renderList(cat);
+      main.querySelector(`[data-view="${CSS.escape(st.view)}"]`).focus();
+    }));
+    document.getElementById("benchmarkBase")?.addEventListener("change", (event) => { st.baseline = event.target.value; draw(); });
+    document.getElementById("measuredOnly").addEventListener("change", (event) => { st.measuredOnly = event.target.checked; draw(); });
 
     document.getElementById("fq").addEventListener("input", (e) => { st.q = e.target.value; draw(); });
     const selects = document.getElementById("filterSelects");
@@ -342,6 +413,7 @@
       <dl class="spec-list">
         ${cat.fields.map((f) => `<dt>${esc(f.label)}</dt><dd>${cellHtml(cat, f, item)}</dd>`).join("")}
       </dl>
+      ${benchmarkEvidence(cat, item)}
       ${cat.specNote ? `<p class="note">${esc(cat.specNote)}</p>` : ""}
       ${verificationHtml(cat, item)}`;
     // 1 列目にこの製品を入れて比較画面を開く（2 列目以降の選択は残す）
@@ -360,7 +432,7 @@
 
   // 比較表の項目の区切り。ここに無い項目は「基本情報」に入る。メーカー・シリーズは列の見出しに出すので行にしない
   const CMP_SECTIONS = [
-    ["性能・仕様", ["score", "cores", "threads", "baseClock", "boostClock", "cache", "vram", "params", "active", "context", "contextMax", "maxOutput"]],
+    ["性能・仕様", ["gamingScore", "singleScore", "g3dScore", "aiIndex", "aiSpeed", "aiLatency", "score", "cores", "threads", "baseClock", "boostClock", "cache", "vram", "params", "active", "context", "contextMax", "maxOutput"]],
     ["価格・効率", ["price", "costPerf", "efficiency", "tdp"]],
   ];
   const CMP_HIDDEN = ["maker", "series"];

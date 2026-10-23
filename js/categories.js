@@ -153,7 +153,7 @@ window.SPEC.setupPrices = function (id, powerLabel) {
         ? new Date(fetched.fetchedAt).toLocaleString("ja-JP", { dateStyle: "medium", timeStyle: "short" })
         : null;
       cat.note =
-        `コスパ ＝ 性能スコア ÷ 参考価格 × 1,000（1,000 円あたりの性能スコア）。公称電力当たりスコア ＝ 性能スコア ÷ ${powerLabel}。実測の電力効率ではありません。` +
+        `価格・効率の計算に使うスコアは${id === "gpu" ? "Time Spy Graphics（未再照合の参考値）" : "PassMark CPU Mark（マルチ）"}です。コスパ ＝ このスコア ÷ 参考価格 × 1,000。公称電力当たりスコア ＝ このスコア ÷ ${powerLabel}。実測の電力効率ではありません。` +
         (at
           ? `参考価格は${fetched.source}に出店している PC パーツ専門店・大手家電店・大手中古 PC 店（ドスパラ、ツクモ、パソコン工房、Joshin、ビックカメラ、じゃんぱら、ソフマップなど）の新品最安値（新品が無い型番は中古と表示）で、${at} 時点の値です。実際の価格・在庫は販売ページでご確認ください。`
           : "参考価格はまだ取得していません。");

@@ -4,12 +4,12 @@
     "cpu": {
       "summary": {
         "total": 231,
-        "specsFullyVerified": 83,
+        "specsFullyVerified": 84,
         "technicalSpecsVerified": 230,
         "technicalApplicable": 231,
         "technicalNotApplicable": 0,
         "technicalReferenceOnly": 0,
-        "specsPartlyVerified": 148,
+        "specsPartlyVerified": 147,
         "specsUnverified": 0,
         "scoreVerified": 230,
         "scorePublished": 230,
@@ -12196,9 +12196,21 @@
             },
             {
               "key": "release",
-              "status": "unverified",
-              "claims": [],
-              "current": "2025/09/16"
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-5-9500f.html",
+                    "label": "AMD Ryzen 5 9500F 個別仕様",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "52ba848684c665951ca936c4fd5b776cd8e8e4d04a4d62e056662320b93c0caf"
+                  },
+                  "note": "発売日はAMD個別仕様のLaunch Date（9/8/25）を採用。",
+                  "value": "2025/09/08",
+                  "kind": "value"
+                }
+              ],
+              "current": "2025/09/08"
             },
             {
               "key": "score",
@@ -12218,11 +12230,14 @@
               "current": 28110
             }
           ],
-          "verified": 6,
+          "verified": 7,
           "total": 7,
           "notApplicable": 0,
           "mismatches": 0,
-          "notes": []
+          "notes": [
+            "発売日はAMD個別仕様のLaunch Date（9/8/25）を採用。",
+            "発売日はAMD個別仕様のLaunch Date（9/8/25）を採用。"
+          ]
         },
         {
           "id": "ryzen-7-5800xt",
@@ -28787,7 +28802,7 @@
               "key": "release",
               "status": "unverified",
               "claims": [],
-              "current": "2020/04/21"
+              "current": null
             },
             {
               "key": "score",
@@ -28811,7 +28826,10 @@
           "total": 7,
           "notApplicable": 0,
           "mismatches": 0,
-          "notes": []
+          "notes": [
+            "既存の2020/04/21は発表日。公式の提供予定は2020年5月で、実際の販売開始日を日単位で確定できないため発売日の掲載を取り下げ。",
+            "既存の2020/04/21は発表日。公式の提供予定は2020年5月で、実際の販売開始日を日単位で確定できないため発売日の掲載を取り下げ。"
+          ]
         },
         {
           "id": "core-i3-12100",
@@ -29496,7 +29514,7 @@
               "key": "release",
               "status": "unverified",
               "claims": [],
-              "current": "2020/04/21"
+              "current": null
             },
             {
               "key": "score",
@@ -29520,7 +29538,10 @@
           "total": 7,
           "notApplicable": 0,
           "mismatches": 0,
-          "notes": []
+          "notes": [
+            "既存の2020/04/21は発表日。公式の提供予定は2020年5月で、実際の販売開始日を日単位で確定できないため発売日の掲載を取り下げ。",
+            "既存の2020/04/21は発表日。公式の提供予定は2020年5月で、実際の販売開始日を日単位で確定できないため発売日の掲載を取り下げ。"
+          ]
         },
         {
           "id": "ryzen-3-4100",
@@ -36180,7 +36201,7 @@
               "key": "release",
               "status": "unverified",
               "claims": [],
-              "current": "2021/06/09"
+              "current": null
             },
             {
               "key": "score",
@@ -36193,7 +36214,10 @@
           "total": 3,
           "notApplicable": 0,
           "mismatches": 0,
-          "notes": []
+          "notes": [
+            "AMD一括表と既存値の2021/06/09を発売日の根拠に採用しない。SAPPHIRE版の国内発売案内は2022/07/22で、海外の初回発売日とは別条件。日付が確定できないため掲載を取り下げ。",
+            "AMD一括表と既存値の2021/06/09を発売日の根拠に採用しない。SAPPHIRE版の国内発売案内は2022/07/22で、海外の初回発売日とは別条件。日付が確定できないため掲載を取り下げ。"
+          ]
         },
         {
           "id": "rtx-2080",
@@ -39633,7 +39657,7 @@
               "key": "release",
               "status": "unverified",
               "claims": [],
-              "current": "2017/04/18"
+              "current": null
             },
             {
               "key": "score",
@@ -39648,7 +39672,8 @@
           "mismatches": 0,
           "notes": [
             "AMDの公称範囲60〜80Wをそのまま掲載。80Wの固定値や全製品共通値とは扱わず、単一値での効率計算を行わない。",
-            "公称電力はメーカーの60〜80Wという範囲で確認済み。単一値・実測値ではありません。"
+            "既存の2017/04/18はシリーズ発表日。公式本文はRX 560を5月発売予定としているため、発売日を取り下げ。",
+            "公称電力はメーカーの60〜80Wという範囲で確認済み。単一値・実測値ではありません。 既存の2017/04/18はシリーズ発表日。公式本文はRX 560を5月発売予定としているため、発売日を取り下げ。"
           ]
         },
         {

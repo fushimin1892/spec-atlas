@@ -71,6 +71,8 @@ jobs:
           node --check js/app.js
           node --check js/categories.js
           node --check js/verification.js
+          node --check js/performance.js
+          node --check tools/collect-performance.mjs
 
       # 公開するのはサイト本体だけ（tools/ や server.mjs は含めない）
       - name: 公開するファイルをまとめる

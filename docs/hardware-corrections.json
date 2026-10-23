@@ -77,6 +77,51 @@
       "from": 80,
       "to": "60–80W（範囲）",
       "reason": "AMD公式の公称電力範囲をそのまま表現し、固定80Wからの効率計算を停止。"
+    },
+    {
+      "category": "cpu",
+      "name": "Ryzen 5 9500F",
+      "field": "release",
+      "column": 8,
+      "from": "2025/09/16",
+      "to": "2025/09/08",
+      "reason": "発売日はAMD個別仕様のLaunch Date（9/8/25）を採用。"
+    },
+    {
+      "category": "cpu",
+      "name": "Ryzen 3 3300X",
+      "field": "release",
+      "column": 8,
+      "from": "2020/04/21",
+      "to": null,
+      "reason": "既存の2020/04/21は発表日。公式の提供予定は2020年5月で、実際の販売開始日を日単位で確定できないため発売日の掲載を取り下げ。"
+    },
+    {
+      "category": "cpu",
+      "name": "Ryzen 3 3100",
+      "field": "release",
+      "column": 8,
+      "from": "2020/04/21",
+      "to": null,
+      "reason": "既存の2020/04/21は発表日。公式の提供予定は2020年5月で、実際の販売開始日を日単位で確定できないため発売日の掲載を取り下げ。"
+    },
+    {
+      "category": "gpu",
+      "name": "RX 560",
+      "field": "release",
+      "column": 4,
+      "from": "2017/04/18",
+      "to": null,
+      "reason": "既存の2017/04/18はシリーズ発表日。公式本文はRX 560を5月発売予定としているため、発売日を取り下げ。"
+    },
+    {
+      "category": "gpu",
+      "name": "RX 6700",
+      "field": "release",
+      "column": 4,
+      "from": "2021/06/09",
+      "to": null,
+      "reason": "AMD一括表と既存値の2021/06/09を発売日の根拠に採用しない。SAPPHIRE版の国内発売案内は2022/07/22で、海外の初回発売日とは別条件。日付が確定できないため掲載を取り下げ。"
     }
   ],
   "reviewDecisions": [

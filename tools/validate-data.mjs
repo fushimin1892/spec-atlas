@@ -4,11 +4,11 @@ import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
 import { ROOT } from "./prices.mjs";
-import { amdItems, normalizeName, tablesOf } from "./spec-sources.mjs";
+import { amdItems, normalizeName, tablesOf, textOf } from "./spec-sources.mjs";
 
 const window = {};
 const context = vm.createContext({ window, console });
-for (const file of ["js/categories.js", "data/ai.js", "data/cpu-prices.js", "data/cpu.js", "data/gpu-prices.js", "data/gpu-official.js", "data/gpu.js", "data/hardware-evidence.js", "js/verification.js"]) {
+for (const file of ["js/categories.js", "data/ai.js", "data/cpu-prices.js", "data/cpu.js", "data/gpu-prices.js", "data/gpu-official.js", "data/gpu.js", "data/hardware-evidence.js", "js/verification.js", "data/performance.js", "js/performance.js"]) {
   vm.runInContext(fs.readFileSync(path.join(ROOT, file), "utf8"), context, { filename: file });
 }
 const SPEC = window.SPEC;
@@ -93,4 +93,45 @@ assert.notEqual(normalizeName("Ryzen 5 3500X"), normalizeName("Ryzen 5 3500"));
 assert.notEqual(normalizeName("RTX 4060 Ti 16GB"), normalizeName("RTX 4060 Ti 8GB"));
 assert.throws(() => amdItems('<html><body>一時的なエラーページ</body></html>'));
 assert.equal(tablesOf('<table><tr><th colspan="2">見出し</th></tr><tr><td>16 GB</td><td>160 W</td></tr></table>')[0][1][1].text, "160 W");
+assert.equal(textOf("<td><!-- 非表示の旧値: 80 W -->70 W</td>"), "70 W", "非表示コメントの旧値を採用しない");
+
+// 指標の取り違え、別容量の値の流用、未測定をゼロ扱いする退行を防ぐ。
+const performance = SPEC.performanceData;
+assert.equal(performance.aiVersion, "4.3.2");
+for (const source of Object.values(performance.sources)) {
+  assert.equal(new URL(source.url).protocol, "https:");
+  assert.match(source.sha256, /^[0-9a-f]{64}$/);
+}
+for (const cat of ["cpu", "gpu", "ai"]) {
+  for (const [id, records] of Object.entries(performance[cat])) {
+    assert(SPEC.data[cat].some((i) => i.id === id), `${cat}: ベンチマークの型番対応`);
+    for (const [key, record] of Object.entries(records)) {
+      assert(SPEC.benchmarkOf(cat, key), `${id}: 指標未定義`);
+      assert(Number.isFinite(record.value) && record.value > 0 && record.name && performance.sources[record.source]);
+      assert.equal(SPEC.data[cat].find((i) => i.id === id)[key], record.value);
+    }
+  }
+}
+assert.equal(SPEC.relativePerformance(null, 100), null, "未測定を0にしない");
+assert.equal(SPEC.relativePerformance(200, 0), null, "基準値なしで比率を作らない");
+assert.equal(SPEC.relativePerformance(250, 100), 250);
+assert.equal(hardware("cpu", "ryzen-5-7600").gamingScore, 5742);
+assert.equal(hardware("cpu", "core-i9-11900k").singleScore, 3501, "旧Intelの定格周波数の接尾辞を区別して照合");
+assert.equal(hardware("gpu", "rtx-4060").g3dScore, 19480);
+assert.equal(hardware("gpu", "rtx-4060-ti-8gb").g3dScore, null, "容量が未分離のGPU測定を8GBへ流用しない");
+assert.equal(hardware("cpu", "ryzen-5-1600-af").singleScore, null, "AFなしの別CPUを流用しない");
+assert.equal(model("gpt-6-astra").aiIndex, 53);
+assert.equal(model("gpt-6-astra").aiSpeed, 57);
+assert.equal(model("gpt-6-astra").aiLatency, 268.25);
+assert.match(performance.ai["deepseek-v4-1-flash"].aiIndex.name, /1017 \(max\)$/);
+assert.equal(model("deepseek-v4-pro").aiIndex, null, "0813のAPI評価を公開重み版へ無条件に流用しない");
+assert.equal(SPEC.benchmarkOf("ai", "aiLatency").better, "low");
+assert.equal(SPEC.benchmarkOf("cpu", "gamingScore").source, "gaming");
+for (const family of families) assert(SPEC.data.ai.some((i) => i.family === family && i.aiIndex > 0), `${family}: 共通評価`);
+for (const cat of ["cpu", "gpu"]) {
+  const base = hardware(cat, SPEC.benchmarks[cat].baseline);
+  for (const metric of SPEC.benchmarks[cat].metrics) assert(base[metric.key] > 0, `${cat}: 初期基準の指標欠落`);
+}
+assert.equal(hardware("cpu", "ryzen-5-9500f").release, "2025/09/08");
+for (const [cat, id] of [["cpu", "ryzen-3-3300x"], ["cpu", "ryzen-3-3100"], ["gpu", "rx-560"], ["gpu", "rx-6700"]]) assert.equal(hardware(cat, id).release, null, `${id}: 未確定の発売日は空欄`);
 console.log(`検証成功: CPU ${SPEC.data.cpu.length}件、GPU ${SPEC.data.gpu.length}件、AI ${SPEC.data.ai.length}件。6系列・出典・拡張条件・未確認判定・計算を確認。`);

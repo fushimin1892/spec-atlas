@@ -363,6 +363,30 @@ window.SPEC.hardwareEvidence = {
    "label": "AMD 内蔵GPUのUMA共有メモリ解説",
    "checkedAt": "2026-10-23",
    "sha256": "3137a2d6fb9a49c503f5477e7a69b7956664bdab21f61d25902cc77831786e6e"
+  },
+  "recheck-9500f": {
+   "url": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-5-9500f.html",
+   "label": "AMD Ryzen 5 9500F 個別仕様",
+   "checkedAt": "2026-10-23",
+   "sha256": "52ba848684c665951ca936c4fd5b776cd8e8e4d04a4d62e056662320b93c0caf"
+  },
+  "recheck-ryzen3": {
+   "url": "https://ir.amd.com/news-events/press-releases/detail/942/amd-expands-3rd-gen-amd-ryzen-desktop-processor-family-unleashing-powerful-zen-2-core-for-the-mainstream",
+   "label": "AMD Ryzen 3 3300X・3100 発表と提供予定",
+   "checkedAt": "2026-10-23",
+   "sha256": "c16e38109dbf76c2bcc31c88f2bef0ff8b694868b3a4100be4d4469ed4d15c58"
+  },
+  "recheck-rx500": {
+   "url": "https://ir.amd.com/news-events/press-releases/detail/763/radeontm-rx-500-series-the-most-compelling-graphics-card-upgrade-yet",
+   "label": "AMD RX 500シリーズ発表・提供予定",
+   "checkedAt": "2026-10-23",
+   "sha256": "0d1b3da535e9dd2a13fda25394a5b5d94c23c8993085b24bc1707717c13be1e7"
+  },
+  "recheck-rx6700": {
+   "url": "https://www.ask-corp.jp/news/2022/07/sapphire-radeon-rx-6700-gaming-oc-10g-gddr6.html",
+   "label": "アスク SAPPHIRE RX 6700 国内発売案内",
+   "checkedAt": "2026-10-23",
+   "sha256": "f0514474cdfa9538677885f0d6aa26bdca7c700f0bb33b867a8e880134236a29"
   }
  },
  "cpu": {
@@ -2204,6 +2228,13 @@ window.SPEC.hardwareEvidence = {
      "cache": 32
     },
     "url": "https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-5-9500f.html"
+   },
+   {
+    "source": "recheck-9500f",
+    "values": {
+     "release": "2025/09/08"
+    },
+    "note": "発売日はAMD個別仕様のLaunch Date（9/8/25）を採用。"
    }
   ],
   "ryzen-7-5800xt": [
@@ -4705,6 +4736,11 @@ window.SPEC.hardwareEvidence = {
      "cache": 16
     },
     "url": "https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen/ryzen-3000-series/amd-ryzen-3-3300x.html"
+   },
+   {
+    "source": "recheck-ryzen3",
+    "values": {},
+    "note": "既存の2020/04/21は発表日。公式の提供予定は2020年5月で、実際の販売開始日を日単位で確定できないため発売日の掲載を取り下げ。"
    }
   ],
   "core-i3-12100": [
@@ -4811,6 +4847,11 @@ window.SPEC.hardwareEvidence = {
      "cache": 16
     },
     "url": "https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen/ryzen-3000-series/amd-ryzen-3-3100.html"
+   },
+   {
+    "source": "recheck-ryzen3",
+    "values": {},
+    "note": "既存の2020/04/21は発表日。公式の提供予定は2020年5月で、実際の販売開始日を日単位で確定できないため発売日の掲載を取り下げ。"
    }
   ],
   "ryzen-3-4100": [
@@ -5824,6 +5865,11 @@ window.SPEC.hardwareEvidence = {
      "tdp": 175
     },
     "url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6700.html"
+   },
+   {
+    "source": "recheck-rx6700",
+    "values": {},
+    "note": "AMD一括表と既存値の2021/06/09を発売日の根拠に採用しない。SAPPHIRE版の国内発売案内は2022/07/22で、海外の初回発売日とは別条件。日付が確定できないため掲載を取り下げ。"
    }
   ],
   "rtx-2080": [
@@ -6232,6 +6278,11 @@ window.SPEC.hardwareEvidence = {
      ]
     },
     "note": "AMDの公称範囲60〜80Wをそのまま掲載。80Wの固定値や全製品共通値とは扱わず、単一値での効率計算を行わない。"
+   },
+   {
+    "source": "recheck-rx500",
+    "values": {},
+    "note": "既存の2017/04/18はシリーズ発表日。公式本文はRX 560を5月発売予定としているため、発売日を取り下げ。"
    }
   ],
   "rx-460": [
@@ -6804,15 +6855,19 @@ window.SPEC.hardwareEvidence = {
    "ryzen-3-8300g": "Zen 4 / Zen 4c混成モデル。ベースクロックは現在のAMD公式仕様表の3.4 GHzを採用。",
    "ryzen-9-3900": "OEM向け。発売日はAMD公式Launch Dateを採用。",
    "amd-4700s": "公称電力は資料によって65W・75Wなどが混在。現在取得できたAMD公式ページに値がなく、確定できない65Wの掲載を取り下げた。電力・発売日は未確認。CPU-ZのL3表記はCCX単位の場合があり、合計容量と混同しない。",
-   "ryzen-5-3500x": "中国向け製品。AMD中国向け公式ページに記載された6技術項目と発売日で照合。英語サポートページは仕様欄がない。"
+   "ryzen-5-3500x": "中国向け製品。AMD中国向け公式ページに記載された6技術項目と発売日で照合。英語サポートページは仕様欄がない。",
+   "ryzen-5-9500f": "発売日はAMD個別仕様のLaunch Date（9/8/25）を採用。",
+   "ryzen-3-3300x": "既存の2020/04/21は発表日。公式の提供予定は2020年5月で、実際の販売開始日を日単位で確定できないため発売日の掲載を取り下げ。",
+   "ryzen-3-3100": "既存の2020/04/21は発表日。公式の提供予定は2020年5月で、実際の販売開始日を日単位で確定できないため発売日の掲載を取り下げ。"
   },
   "gpu": {
-   "rx-560": "公称電力はメーカーの60〜80Wという範囲で確認済み。単一値・実測値ではありません。",
+   "rx-560": "公称電力はメーカーの60〜80Wという範囲で確認済み。単一値・実測値ではありません。 既存の2017/04/18はシリーズ発表日。公式本文はRX 560を5月発売予定としているため、発売日を取り下げ。",
    "rx-580": "掲載値は4GB版。MSI RX 580 GAMING X 4Gで4GB・185Wを照合。AMDの最大8GBという表記を4GB版の根拠には使わない。",
    "rx-480": "VRAMは容量違いがあるため、掲載4 GBを公式最大容量8 GBから確認済みとは扱わない。",
    "rx-460": "掲載値は4GB版。MSI公式カード仕様4GB・75Wを採用し、AMD一括表2GB・70Wからの流用を避ける。",
    "arc-a580": "電力は現在のIntel ARKのTBP 185 W。メーカー製カードや以前の175 Wの案内と異なる場合がある。",
-   "rx-590": "VRAM8GBはAMD公式で一致。225Wは発売時レビューの公称値との参考照合に留め、メーカーによる電力確認済み件数には含めない。"
+   "rx-590": "VRAM8GBはAMD公式で一致。225Wは発売時レビューの公称値との参考照合に留め、メーカーによる電力確認済み件数には含めない。",
+   "rx-6700": "AMD一括表と既存値の2021/06/09を発売日の根拠に採用しない。SAPPHIRE版の国内発売案内は2022/07/22で、海外の初回発売日とは別条件。日付が確定できないため掲載を取り下げ。"
   }
  }
 };

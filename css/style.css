@@ -356,8 +356,59 @@ a.btn-small:hover { color: var(--gold); }
 .footer a:hover { color: var(--gold); }
 
 /* 数値の確認範囲を、色だけに頼らず本文でも示す。 */
-.audit-summary { margin: 20px 0; padding: 16px 20px; border-left: 3px solid var(--gold); background: var(--gold-soft); font-size: 13px; line-height: 1.8; }
-.audit-summary p { margin: 5px 0 0; }
+.benchmark-guide { margin: 20px 0 16px; padding: 18px 22px; border: 1px solid var(--border); background: var(--surface); }
+.benchmark-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.metric-tab { border: 1px solid var(--border); background: transparent; color: var(--muted); padding: 9px 16px; font: inherit; font-size: 13px; cursor: pointer; }
+.metric-tab.active { background: var(--text); color: var(--bg); border-color: var(--text); }
+.benchmark-guide h2 { font-family: var(--serif); font-size: 21px; margin: 0 0 6px; }
+.benchmark-guide h2 span { display: inline-block; margin-left: 16px; font-family: var(--sans); font-size: 11px; font-weight: 400; color: var(--gold); }
+.benchmark-guide > p { font-size: 13px; line-height: 1.8; max-width: 900px; }
+.benchmark-method { font-size: 12px; line-height: 1.8; }
+.benchmark-method summary { cursor: pointer; color: var(--muted); }
+.benchmark-method summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.benchmark-settings { display: flex; align-items: flex-end; flex-wrap: wrap; gap: 12px 24px; margin: 12px 0 0; }
+.benchmark-settings label { font-size: 12px; color: var(--muted); }
+.benchmark-settings select { display: block; margin-top: 5px; max-width: 100%; min-height: 36px; padding: 5px 9px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font: inherit; }
+.measured-filter { display: inline-flex; align-items: center; gap: 7px; cursor: pointer; }
+.benchmark-credit { font-size: 11px; color: var(--muted); margin-right: 12px; }
+.view-switch { display: flex; gap: 22px; border-bottom: 1px solid var(--border); }
+.view-switch button { padding: 12px 0; font: inherit; font-size: 13px; color: var(--muted); background: transparent; border: 0; border-bottom: 2px solid transparent; cursor: pointer; }
+.view-switch button[aria-pressed="true"] { color: var(--text); border-bottom-color: var(--gold); }
+.ranking-caption { display: flex; justify-content: space-between; gap: 15px; padding: 14px 18px; font-size: 11px; color: var(--muted); border-bottom: 1px solid var(--border); }
+.performance-row { display: grid; grid-template-columns: 40px minmax(0, 1fr) minmax(210px, 38%); align-items: center; gap: 18px; padding: 14px 18px; border-bottom: 1px solid var(--border); color: var(--text); text-decoration: none; }
+.performance-row:hover { background: var(--surface); text-decoration: none; }
+.performance-row:focus-visible, .metric-tab:focus-visible, .view-switch button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+/* Cormorant の既定の数字は高さがそろわず「1」が「I」に見えるので、順位とスコアは等幅・高さそろえの数字にする */
+.performance-rank { font: 600 21px var(--latin); color: var(--gold); text-align: right; font-feature-settings: "lnum" 1, "tnum" 1; }
+.performance-name strong { display: block; font-size: 15px; font-weight: 500; }
+.performance-name small { display: block; font-size: 11px; color: var(--muted); margin-top: 5px; line-height: 1.6; }
+.performance-name .benchmark-setting { font-size: 10px; }
+.performance-number { display: block; text-align: right; font: 600 28px var(--latin); font-feature-settings: "lnum" 1, "tnum" 1; }
+.performance-number small { margin-left: 8px; font: 10px var(--sans); color: var(--muted); }
+.performance-meter { display: block; margin-top: 8px; height: 6px; background: var(--border); overflow: hidden; }
+.performance-meter i { display: block; height: 100%; background: var(--gold); }
+.relative-value { display: block; margin-top: 7px; text-align: right; font-size: 10px; color: var(--muted); }
+.relative-value b { color: var(--text); font-weight: 500; }
+.no-result .performance-number { color: var(--muted); }
+.ranking-hidden { margin: 0; padding: 16px 18px; font-size: 12px; color: var(--muted); border-bottom: 1px solid var(--border); }
+.ranking-hidden button { margin-left: 8px; padding: 0; border: 0; background: none; color: var(--gold); font: inherit; text-decoration: underline; cursor: pointer; }
+[hidden] { display: none !important; }
+@media (max-width: 600px) {
+  .benchmark-guide { padding: 18px 16px; margin-top: 20px; }
+  .benchmark-guide h2 { font-size: 18px; }
+  .benchmark-guide h2 span { display: block; margin: 8px 0 0; }
+  .metric-tab { padding: 8px 12px; font-size: 12px; }
+  .benchmark-settings { display: block; }
+  .benchmark-settings label { display: block; margin-top: 14px; }
+  .benchmark-settings select { width: 100%; }
+  .performance-row { grid-template-columns: 24px minmax(0, 1fr); gap: 8px 12px; padding: 18px 4px; }
+  .performance-rank { font-size: 21px; align-self: start; }
+  .performance-result { grid-column: 2; }
+  .performance-number { font-size: 29px; }
+  .performance-name strong { font-size: 14px; }
+  .ranking-caption { padding: 12px 4px; }
+  .ranking-caption span:last-child { max-width: 55%; text-align: right; }
+}
 .verification { margin-top: 32px; }
 .verification h2 { font-family: var(--serif); font-size: 21px; font-weight: 500; }
 .verification > p { line-height: 1.9; overflow-wrap: anywhere; }
