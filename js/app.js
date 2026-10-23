@@ -230,17 +230,25 @@
       if (y == null) return -1;
       return (field.type === "number" ? x - y : String(x).localeCompare(String(y), "ja")) * dir;
     };
-    // 順位は絞り込みや並び替えに左右されないよう、初期の並び順で全件に対して付ける
+    // 順位は絞り込みに左右されないよう全件に対して付ける。基準は、AI は選んだ指標、
+    // CPU・GPU は今並べ替えている性能の列（性能スコア・ゲーム性能など）。性能以外の列で並べ替えたときは性能スコアの順位
     const rankOf = new Map();
-    if (hasRank) {
-      const f = cat.fields.find((x) => x.key === st.metric);
+    const rankField = () => {
+      const sorted = cat.fields.find((x) => x.key === st.sort);
+      return ranking ? cat.fields.find((x) => x.key === st.metric) : sorted && (sorted.key === "score" || sorted.benchmark) ? sorted : cat.fields.find((x) => x.key === "score");
+    };
+    const updateRanks = () => {
+      rankOf.clear();
+      if (!hasRank) return;
+      const f = rankField();
+      const better = SPEC.benchmarkOf(cat.id, f.key)?.better || "high";
       // 基準の値が空欄（スコア未確認など）の製品には順位を付けない
       let previous, rank;
-      [...items].filter((i) => i[f.key] != null).sort(compareBy(f, metric.better === "low" ? 1 : -1)).forEach((i, n) => {
+      [...items].filter((i) => i[f.key] != null).sort(compareBy(f, better === "low" ? 1 : -1)).forEach((i, n) => {
         if (i[f.key] !== previous) rank = n + 1;
         rankOf.set(i.id, rank); previous = i[f.key];
       });
-    }
+    };
     // プルダウンの選択肢はデータに出てくる順（性能順のデータならシリーズも新しい順に並ぶ）
     const optionsFor = (key) => {
       const other = filterKeys.filter((k) => k !== key);
@@ -270,7 +278,7 @@
       <p class="muted">${esc(cat.description)}</p>
       ${ranking ? `<section class="benchmark-guide" aria-label="性能の比較方法">
         <div class="benchmark-tabs" role="group" aria-label="比較する性能">${config.metrics.map((m) => `<button type="button" class="metric-tab ${m.key === st.metric ? "active" : ""}" data-metric="${esc(m.key)}" aria-pressed="${m.key === st.metric}">${esc(m.label)}</button>`).join("")}</div>
-        <h2>${esc(metric.title)}<span>${metric.better === "low" ? "小さいほど速い" : "高いほど高性能"}</span></h2>
+        <h2>${esc(metric.title)}<span>${metric.betterLabel || (metric.better === "low" ? "小さいほど速い" : "高いほど高性能")}</span></h2>
         <details class="benchmark-method"><summary>指標の意味・測定条件</summary><p>${esc(metric.description)}</p><p class="note">${esc(metric.limit)}</p>
         ${cat.id === "ai" ? '<p class="note">主に高推論設定を掲載。設定名は提供元ごとに意味が異なり、同じ計算量ではありません。公開重みを手元で測定した結果ではありません。</p>' : '<p class="note">基準比200はスコアが基準製品の2倍という意味で、ゲームのFPSが2倍になるとは限りません。</p>'}
         ${metric.source ? `<a class="benchmark-credit ext" href="${esc(SPEC.performanceData.sources[metric.source].url)}" target="_blank" rel="noopener noreferrer">${esc(SPEC.performanceData.sources[metric.source].label)}</a><span class="benchmark-credit">取得 ${esc(SPEC.performanceData.checkedAt)}</span>` : ""}</details>
@@ -295,6 +303,7 @@
 
     const table = document.getElementById("specTable");
     const draw = () => {
+      updateRanks();
       const q = st.q.trim().toLowerCase();
       const field = cat.fields.find((f) => f.key === st.sort) || cat.fields[0];
       // 仕様一覧は絞り込みに合う全製品、性能ランキングは「比較データがある製品のみ」のときデータの無い製品を除く
@@ -305,13 +314,16 @@
       const rows = matched.filter((i) => !st.measuredOnly || i[st.metric] != null);
       const cols = listFields.length + (hasRank ? 1 : 0);
 
-      document.getElementById("hitCount").textContent = ranking ? `${matched.length} / ${items.length} 件 · 比較データ ${matched.filter((i) => i[st.metric] != null).length} 件` : `${matched.length} / ${items.length} 件`;
+      document.getElementById("hitCount").textContent = ranking ? `${matched.length} / ${items.length} 件 · 比較データ ${matched.filter((i) => i[st.metric] != null).length} 件` : `${matched.length} / ${items.length} 件 · 順位は${rankField().label}の順`;
       const base = items.find((i) => i.id === st.baseline);
-      const values = items.map((i) => i[st.metric]).filter((v) => v > 0);
+      const values = items.map((i) => i[st.metric]).filter((v) => Number.isFinite(v) && (metric.allowNegative || v > 0));
       const max = Math.max(...values, 1);
       const min = Math.min(...values);
-      // 棒は長いほど良い向きにそろえる（待ち時間のように小さいほど良い指標は、最小値を満たんにする）
-      const meter = (value) => value == null ? 0 : metric.better === "low" ? (min / value) * 100 : (value / max) * 100;
+      // 棒は長いほど良い向きにそろえる（待ち時間のように小さいほど良い指標は、最小値を満たんにする）。
+      // マイナスもある指標（正確性）は、いちばん低い値からいちばん高い値までを棒の長さに割り当てる
+      const meter = (value) => value == null ? 0
+        : metric.allowNegative ? Math.max(2, ((value - min) / ((max - min) || 1)) * 100)
+        : metric.better === "low" ? (min / value) * 100 : (value / max) * 100;
       // 測定条件の名前（「Claude Opus 5.5 (max with fallback)」）は、モデル名と同じ部分を除いて設定だけを見せる
       const settingOf = (item, record) => {
         if (!record) return "";
@@ -324,7 +336,7 @@
         const value = item[st.metric];
         const relative = SPEC.relativePerformance(value, base?.[st.metric]);
         const record = SPEC.performanceData[cat.id][item.id]?.[st.metric];
-        const meta = cat.id === "cpu" ? `${item.cores}コア / ${item.threads}スレッド` : cat.id === "gpu" ? item.integrated ? "内蔵GPU · メモリ共有" : `${item.vram} GB VRAM` : item.family || item.maker;
+        const meta = cat.id === "cpu" ? `${item.cores}コア / ${item.threads}スレッド` : cat.id === "gpu" ? item.integrated ? "内蔵GPU · メモリ共有" : `${item.vram} GB VRAM` : [item.maker, item.deploy].filter(Boolean).join(" · ");
         return `<a class="performance-row ${value == null ? "no-result" : ""}" href="#/c/${esc(cat.id)}/${esc(item.id)}">
           <span class="performance-rank">${rankOf.get(item.id) ?? "—"}</span>
           <span class="performance-name"><strong>${esc(item.name)}</strong><small>${esc(meta)}${cat.id !== "ai" && item.price ? ` · ¥${item.price.toLocaleString("ja-JP")}` : ""}</small>${cat.id === "ai" && settingOf(item, record) ? `<small class="benchmark-setting">${esc(settingOf(item, record))}</small>` : ""}</span>
@@ -341,7 +353,7 @@
       });
       table.innerHTML = `
         <thead><tr>
-          ${hasRank ? '<th scope="col" class="rank">#</th>' : ""}
+          ${hasRank ? `<th scope="col" class="rank" title="${esc(rankField().label)}の順位">#</th>` : ""}
           ${listFields
             .map((f) => {
               const active = f.key === st.sort;

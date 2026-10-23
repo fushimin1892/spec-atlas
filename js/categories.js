@@ -20,7 +20,7 @@ window.SPEC.categories = [
     status: "ready",
     description: "GPT・Claude・Kimi・DeepSeek・Qwen・GLMのモデル仕様と出典",
     searchHint: "モデル名・系列・IDで絞り込み（例: Kimi / GLM）",
-    note: "Bは10億パラメータ。通常コンテキストと拡張上限を区別しています。トークナイザーやAPI・重み版の条件が異なるため、長さだけで能力は比較できません。非公表・未確認は推測で補いません。指定6系列以外は既存の参考データで、今回は未再照合です。各モデルの詳細に出典・確認日・確認した項目を掲載しています。",
+    note: "Bは10億パラメータ。通常コンテキストと拡張上限を区別しています。トークナイザーやAPI・重み版の条件が異なるため、長さだけで能力は比較できません。非公表・未確認は推測で補いません。掲載は各系列の最新世代だけで、後継が出ている旧世代は載せていません。利用形態の「ローカル・クラウド」は重みが公開されていて手元のPCでも動かせるモデル、「クラウドのみ」は提供元のAPI・サービスでだけ使えるモデルです。各モデルの詳細に出典・確認日・確認した項目を掲載しています。",
     sources: [
       { label: "GPT: OpenAI 公式モデル仕様", url: "https://developers.openai.com/api/docs/models" },
       { label: "Claude: Anthropic 公式モデル仕様", url: "https://platform.claude.com/docs/en/models/overview" },
@@ -29,8 +29,8 @@ window.SPEC.categories = [
       { label: "Qwen: 公式モデルカード", url: "https://huggingface.co/Qwen" },
       { label: "GLM: Z.ai 公式モデルカード", url: "https://huggingface.co/zai-org" },
     ],
-    filters: ["family", "open"],
-    optionOrder: { family: ["GPT", "Claude", "Kimi", "DeepSeek", "Qwen", "GLM", "その他"], open: ["重み公開", "API のみ"] },
+    filters: ["family", "deploy"],
+    optionOrder: { family: ["GPT", "Claude", "Kimi", "DeepSeek", "Qwen", "GLM"], deploy: ["ローカル・クラウド", "クラウドのみ"] },
     defaultSort: { key: "checkedAt", dir: -1 },
     fields: [
       { key: "name", label: "モデル名", type: "text" },
@@ -44,6 +44,7 @@ window.SPEC.categories = [
       { key: "contextMax", label: "拡張時の上限", type: "number", unit: "tokens", list: false },
       { key: "maxOutput", label: "最大出力（通常API）", type: "number", unit: "tokens", list: false },
       { key: "modality", label: "入出力", type: "text" },
+      { key: "deploy", label: "利用形態", type: "text" },
       { key: "open", label: "公開形態", type: "text", list: false },
       { key: "license", label: "ライセンス", type: "text" },
       { key: "checkedAt", label: "資料確認日", type: "text", empty: "未再照合" },

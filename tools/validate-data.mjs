@@ -18,7 +18,8 @@ for (const [cat, items] of Object.entries(SPEC.data)) {
     assert.match(item.id, /^[a-z0-9]+(?:-[a-z0-9]+)*$/, `${cat}: ID形式`);
     assert(!ids.has(item.id), `${cat}: ID重複 ${item.id}`);
     ids.add(item.id);
-    for (const [key, value] of Object.entries(item)) if (typeof value === "number") assert(Number.isFinite(value) && value >= 0, `${item.name}: ${key}`);
+    // 正確性（AA-Omniscience Index）だけは -100〜100 なのでマイナスも正しい値
+    for (const [key, value] of Object.entries(item)) if (typeof value === "number") assert(Number.isFinite(value) && (value >= 0 || SPEC.benchmarkOf(cat, key)?.allowNegative), `${item.name}: ${key}`);
     if (item.release) assert.match(item.release, /^\d{4}\/\d{2}(?:\/\d{2})?$/);
     if (item.contextMax != null) assert(item.contextMax >= item.context && item.contextNote, `${item.name}: 拡張条件`);
     if (item.tdpRange) assert(item.tdp == null && item.tdpRange.length === 2 && item.tdpRange.every(Number.isFinite) && item.tdpRange[0] > 0 && item.tdpRange[0] < item.tdpRange[1], `${item.name}: 公称電力範囲`);
@@ -27,7 +28,9 @@ for (const [cat, items] of Object.entries(SPEC.data)) {
 }
 const families = ["GPT", "Claude", "Kimi", "DeepSeek", "Qwen", "GLM"];
 for (const family of families) assert(SPEC.data.ai.some((m) => m.family === family), `${family}未掲載`);
-for (const model of SPEC.data.ai.filter((m) => families.includes(m.family))) {
+// 掲載外の旧世代（SPEC.archive.ai）も出典の記録は同じ基準で確かめる
+const allAi = [...SPEC.data.ai, ...(SPEC.archive?.ai || [])];
+for (const model of allAi.filter((m) => families.includes(m.family))) {
   assert(model.modelId && model.sources.length && model.checkedAt, `${model.name}: 出典欠落`);
   for (const source of model.sources) {
     assert.equal(new URL(source.url).protocol, "https:");
@@ -36,7 +39,11 @@ for (const model of SPEC.data.ai.filter((m) => families.includes(m.family))) {
   }
   for (const field of model.verifiedFields) assert(model[field] != null, `${model.name}: 空欄を確認済みとしない (${field})`);
 }
-const model = (id) => SPEC.data.ai.find((m) => m.id === id);
+const model = (id) => allAi.find((m) => m.id === id);
+// 掲載は各系列の最新世代だけ。旧世代・未確認の参考データは理由付きで保管し、一覧には出さない
+for (const m of SPEC.archive.ai) assert(m.archivedReason && !SPEC.data.ai.includes(m), `${m.name}: 掲載外の理由`);
+for (const id of ["gpt-4o", "gpt-5-6-sol", "claude-opus-4-1", "kimi-k2-7-code", "deepseek-v4-flash", "qwen3-6-35b-a3b", "glm-5-2", "gemini-2-5-pro"]) assert(!SPEC.data.ai.some((m) => m.id === id), `${id}: 旧世代を掲載しない`);
+for (const m of SPEC.data.ai) assert(["ローカル・クラウド", "クラウドのみ"].includes(m.deploy) && (m.deploy === "ローカル・クラウド") === (m.open === "重み公開"), `${m.name}: 利用形態`);
 assert.equal(model("qwen3-32b").context, 32768);
 assert.equal(model("qwen3-32b").contextMax, 131072);
 assert.equal(model("gpt-4o").modality, "テキスト・画像 → テキスト");
@@ -107,7 +114,8 @@ for (const cat of ["cpu", "gpu", "ai"]) {
     assert(SPEC.data[cat].some((i) => i.id === id), `${cat}: ベンチマークの型番対応`);
     for (const [key, record] of Object.entries(records)) {
       assert(SPEC.benchmarkOf(cat, key), `${id}: 指標未定義`);
-      assert(Number.isFinite(record.value) && record.value > 0 && record.name && performance.sources[record.source]);
+      // 正確性（AA-Omniscience Index）は -100〜100 なのでマイナスも正しい値
+      assert(Number.isFinite(record.value) && (record.value > 0 || SPEC.benchmarkOf(cat, key).allowNegative) && record.name && performance.sources[record.source]);
       assert.equal(SPEC.data[cat].find((i) => i.id === id)[key], record.value);
     }
   }

@@ -5,7 +5,7 @@ import path from "node:path";
 import vm from "node:vm";
 import crypto from "node:crypto";
 import assert from "node:assert/strict";
-import { tablesOf, textOf, normalizeName } from "./spec-sources.mjs";
+import { tablesOf, textOf, normalizeName, aaModels } from "./spec-sources.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 const args = process.argv.slice(2);
@@ -75,13 +75,29 @@ const aiMatches = {
   "claude-haiku-5-5": "Claude Haiku 5.5 (max)",
   "claude-fable-5-1": "Claude Fable 5.1 (max with fallback)",
   "kimi-k3": "Kimi K3 (max)",
-  "kimi-k2-7-code": "Kimi K2.7 Code",
   "deepseek-v4-1-flash": "DeepSeek V4.1 Flash 1017 (max)",
   "qwen3-8-2-4t-a95b": "Qwen3.8 2.4T A95B",
   "qwen3-8-flash-next": "Qwen3.8-Flash-Next",
   "qwen3-8-27b": "Qwen3.8 27B (xhigh)",
-  "qwen3-6-35b-a3b": "Qwen3.6 35B A3B",
-  "qwen3-5-397b-a17b": "Qwen3.5 397B A17B",
+  "glm-5-3": "GLM-5.3 (max)",
+};
+// AA-Omniscience（正確さ）は表に無く、ページに埋め込まれたモデル一覧にだけある。
+// 一覧側の名前は表と書き方が違うものがある（Claude は「(Max, Default Fallback)」）ので、表と同じ測定設定の名前を明示して対応付ける。
+const aaJsonNames = {
+  "gpt-6-astra": "GPT-6 Astra (max)",
+  "gpt-6-1-sol": "GPT-6.1 Sol (max)",
+  "gpt-6-luna": "GPT-6 Luna (max)",
+  "gpt-oss-120b": "gpt-oss-120b (high)",
+  "gpt-oss-20b": "gpt-oss-20b (high)",
+  "claude-opus-5-5": "Claude Opus 5.5 (Max, Default Fallback)",
+  "claude-sonnet-5-5": "Claude Sonnet 5.5 (Max, Default Fallback)",
+  "claude-haiku-5-5": "Claude Haiku 5.5 (max)",
+  "claude-fable-5-1": "Claude Fable 5.1 (Max, Default Fallback)",
+  "kimi-k3": "Kimi K3 (max)",
+  "deepseek-v4-1-flash": "DeepSeek V4.1 Flash 1017 (max)",
+  "qwen3-8-2-4t-a95b": "Qwen3.8 2.4T A95B",
+  "qwen3-8-flash-next": "Qwen3.8-Flash-Next",
+  "qwen3-8-27b": "Qwen3.8 27B (xhigh)",
   "glm-5-3": "GLM-5.3 (max)",
 };
 const aiTable = tablesOf(html.aa).find((table) => table[1]?.[3]?.text === "Artificial Analysis Intelligence Index");
@@ -95,6 +111,19 @@ for (const [id, name] of Object.entries(aiMatches)) {
   for (const [key, column] of [["aiIndex", 3], ["aiSpeed", 5], ["aiLatency", 6]]) {
     if (/^\d+(\.\d+)?$/.test(row[column].text)) result.ai[id][key] = { name, value: Number(row[column].text), source: "aa" };
   }
+}
+const aaJson = aaModels(html.aa);
+for (const [id, name] of Object.entries(aaJsonNames)) {
+  const rows = aaJson.filter((m) => m.name.toLowerCase() === name.toLowerCase());
+  assert(rows.length === 1 && window.SPEC.data.ai.some((i) => i.id === id), `${name}: 正確さの対応が一意ではない`);
+  const m = rows[0];
+  // 表の総合能力と同じ測定かを、総合能力の値（表は整数に丸めた表示）で確かめる
+  assert.equal(Math.round(m.intelligenceIndex), result.ai[id]?.aiIndex?.value, `${name}: 表と埋め込み一覧で総合能力が違う`);
+  assert(!m.intelligenceIndexIsEstimated, `${name}: 推定値を確定スコアにしない`);
+  result.ai[id] ||= {};
+  if (Number.isFinite(m.omniscience)) result.ai[id].aiOmni = { name: m.name, value: Math.round(m.omniscience * 10) / 10, source: "aa" };
+  if (Number.isFinite(m.omniscienceAccuracy)) result.ai[id].aiAccuracy = { name: m.name, value: Math.round(m.omniscienceAccuracy * 1000) / 10, source: "aa" };
+  if (Number.isFinite(m.omniscienceNonHallucination)) result.ai[id].aiNonHallucination = { name: m.name, value: Math.round(m.omniscienceNonHallucination * 1000) / 10, source: "aa" };
 }
 const output = "// 公開ベンチマークの保存値。取得方法・対応条件は tools/collect-performance.mjs。\nwindow.SPEC.performanceData = " + JSON.stringify(result, null, 2) + ";\n";
 fs.writeFileSync(path.join(root, "data/performance.js"), output);

@@ -19,8 +19,12 @@
       ],
     },
     ai: {
-      default: "aiIndex", baseline: null,
+      // 既定は「正確性」。知識を問う問題で、正答を加点・誤答（ハルシネーション）を減点・回答を控えた場合は 0 点とする指標
+      default: "aiOmni", baseline: null,
       metrics: [
+        { key: "aiOmni", label: "正確性", betterLabel: "高いほど正確（誤答が少ない）", title: "AA-Omniscience Index", better: "high", unit: "pt", digits: 1, allowNegative: true, source: "aa", description: "42分野・6,000問の知識問題で、正しい答えを加点し、もっともらしい誤答（ハルシネーション）を減点し、分からないときに答えを控えた場合は加点も減点もしない指標です。-100〜100で、高いほど正確で、誤答をでっち上げにくいモデルです。", limit: "英語の知識問題での評価で、日本語の文章作成や計算の正確さを直接測るものではありません。0未満は正答より誤答が多いことを示します。" },
+        { key: "aiAccuracy", label: "正答率", betterLabel: "高いほど多く正解", title: "AA-Omniscience 正答率", better: "high", unit: "%", digits: 1, source: "aa", description: "同じ6,000問のうち、正しく答えた割合です。知っている知識の広さの目安です。", limit: "誤答の多さは含みません。正答率が高くても、知らない問題にでたらめに答えるモデルもあります。" },
+        { key: "aiNonHallucination", label: "でっち上げない率", betterLabel: "高いほど誤答をでっち上げない", title: "AA-Omniscience 非ハルシネーション率", better: "high", unit: "%", digits: 1, source: "aa", description: "正しく答えられなかった問題のうち、誤答をでっち上げずに「分からない」と答えを控えた割合（1 − ハルシネーション率）です。", limit: "知識の広さは含みません。答えを控えてばかりのモデルでも高くなるため、正答率と合わせて見てください。" },
         { key: "aiIndex", label: "総合能力", title: "AA Intelligence Index · v4.3.2", better: "high", unit: "pt", source: "aa", description: "推論・知識・コーディング・エージェント作業を含む10評価の総合指標。数値が高いほど高評価です。", limit: "主に英語・テキストの評価で、日本語・画像・音声の総合評価ではありません。正答率や満点に対する割合ではありません。" },
         { key: "aiSpeed", label: "出力の速さ", title: "出力速度（中央値）", better: "high", unit: "tokens/s", source: "aa", description: "生成が始まってからの出力速度。1秒あたりのトークン数が多いほど速く出力します。", limit: "推論の待ち時間は含みません。サービス・負荷・推論設定で変動し、同じ文字数を意味する値でもありません。" },
         { key: "aiLatency", label: "待ち時間", title: "最初の出力までの時間", better: "low", unit: "秒", digits: 2, source: "aa", description: "リクエストから最初の出力までの待ち時間。数値が小さいほど早く応答を始めます。", limit: "推論を長く行う設定では大きくなります。回答全体が終わるまでの時間とは異なります。" },
@@ -29,7 +33,7 @@
   };
   for (const [catId, config] of Object.entries(SPEC.benchmarks)) {
     const cat = SPEC.categories.find((c) => c.id === catId);
-    cat.description = { cpu: "ゲーム・シングル・マルチの性能を比較", gpu: "3D描画のベンチマークで性能を比較", ai: "共通ベンチマークで能力・速さを比較" }[catId];
+    cat.description = { cpu: "ゲーム・シングル・マルチの性能を比較", gpu: "3D描画のベンチマークで性能を比較", ai: "正確さ（誤答の少なさ）・能力・速さを、ローカルで動かせるモデルとクラウドのモデルで比較" }[catId];
     // AI は指標を切り替えるランキング、CPU・GPU は以前どおり総合スコア順の表（追加の指標は表の列として並べる）
     const tableView = catId !== "ai";
     cat.defaultSort = tableView ? { key: "score", dir: -1 } : { key: config.default, dir: config.metrics[0].better === "low" ? 1 : -1 };

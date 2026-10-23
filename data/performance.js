@@ -7,7 +7,7 @@ window.SPEC.performanceData = {
       "url": "https://www.cpubenchmark.net/singleThread.html",
       "label": "PassMark Single Thread",
       "checkedAt": "2026-10-23",
-      "sha256": "5e49f34eead90a70d81f6fb969ab1f7db770ed351cfc7f440a08e5ef732119e3"
+      "sha256": "c3fca37866a582694c6f75b85f6e33e1f676afc4bfed655a5c9b033a43b44a6e"
     },
     "gaming": {
       "url": "https://www.cpubenchmark.net/top-gaming-cpus.html",
@@ -25,13 +25,13 @@ window.SPEC.performanceData = {
       "url": "https://artificialanalysis.ai/leaderboards/models",
       "label": "Artificial Analysis モデル比較",
       "checkedAt": "2026-10-23",
-      "sha256": "89f3bc315fb855600a11144c9083773ecebcd9dc7896540f87515ba3660003f6"
+      "sha256": "afddc47ef5e03215aa98704fe187906a227fd76854abc836cd43b226dc10d201"
     },
     "method": {
       "url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
       "label": "Artificial Analysis 評価方法",
       "checkedAt": "2026-10-23",
-      "sha256": "7505b8eb21e3f9d1d38e677caedd9053f1dfcaf934b1fdeb22896faaa14a38cd"
+      "sha256": "62b4e8f385722ba4b3cda344d7b54b43847d177cf1fcf336bdee7b0aaa31218f"
     }
   },
   "cpu": {
@@ -2953,6 +2953,21 @@ window.SPEC.performanceData = {
         "name": "GPT-6 Astra (max)",
         "value": 268.25,
         "source": "aa"
+      },
+      "aiOmni": {
+        "name": "GPT-6 Astra (Max)",
+        "value": 43.4,
+        "source": "aa"
+      },
+      "aiAccuracy": {
+        "name": "GPT-6 Astra (Max)",
+        "value": 62.6,
+        "source": "aa"
+      },
+      "aiNonHallucination": {
+        "name": "GPT-6 Astra (Max)",
+        "value": 48.7,
+        "source": "aa"
       }
     },
     "gpt-6-1-sol": {
@@ -2969,6 +2984,21 @@ window.SPEC.performanceData = {
       "aiLatency": {
         "name": "GPT-6.1 Sol (max)",
         "value": 241.18,
+        "source": "aa"
+      },
+      "aiOmni": {
+        "name": "GPT-6.1 Sol (Max)",
+        "value": 41.5,
+        "source": "aa"
+      },
+      "aiAccuracy": {
+        "name": "GPT-6.1 Sol (Max)",
+        "value": 62.1,
+        "source": "aa"
+      },
+      "aiNonHallucination": {
+        "name": "GPT-6.1 Sol (Max)",
+        "value": 45.7,
         "source": "aa"
       }
     },
@@ -2987,6 +3017,21 @@ window.SPEC.performanceData = {
         "name": "GPT-6 Luna (max)",
         "value": 109.81,
         "source": "aa"
+      },
+      "aiOmni": {
+        "name": "GPT-6 Luna (Max)",
+        "value": 0.7,
+        "source": "aa"
+      },
+      "aiAccuracy": {
+        "name": "GPT-6 Luna (Max)",
+        "value": 43.8,
+        "source": "aa"
+      },
+      "aiNonHallucination": {
+        "name": "GPT-6 Luna (Max)",
+        "value": 23.3,
+        "source": "aa"
       }
     },
     "gpt-oss-120b": {
@@ -3003,6 +3048,21 @@ window.SPEC.performanceData = {
       "aiLatency": {
         "name": "gpt-oss-120b (high)",
         "value": 0.83,
+        "source": "aa"
+      },
+      "aiOmni": {
+        "name": "gpt-oss-120b (High)",
+        "value": -49.2,
+        "source": "aa"
+      },
+      "aiAccuracy": {
+        "name": "gpt-oss-120b (High)",
+        "value": 21.8,
+        "source": "aa"
+      },
+      "aiNonHallucination": {
+        "name": "gpt-oss-120b (High)",
+        "value": 9.2,
         "source": "aa"
       }
     },
@@ -3021,6 +3081,21 @@ window.SPEC.performanceData = {
         "name": "gpt-oss-20b (high)",
         "value": 0.84,
         "source": "aa"
+      },
+      "aiOmni": {
+        "name": "gpt-oss-20b (High)",
+        "value": -63,
+        "source": "aa"
+      },
+      "aiAccuracy": {
+        "name": "gpt-oss-20b (High)",
+        "value": 16,
+        "source": "aa"
+      },
+      "aiNonHallucination": {
+        "name": "gpt-oss-20b (High)",
+        "value": 5.9,
+        "source": "aa"
       }
     },
     "claude-opus-5-5": {
@@ -3037,6 +3112,21 @@ window.SPEC.performanceData = {
       "aiLatency": {
         "name": "Claude Opus 5.5 (max with fallback)",
         "value": 610.04,
+        "source": "aa"
+      },
+      "aiOmni": {
+        "name": "Claude Opus 5.5 (Max, Default Fallback)",
+        "value": 46.4,
+        "source": "aa"
+      },
+      "aiAccuracy": {
+        "name": "Claude Opus 5.5 (Max, Default Fallback)",
+        "value": 66.2,
+        "source": "aa"
+      },
+      "aiNonHallucination": {
+        "name": "Claude Opus 5.5 (Max, Default Fallback)",
+        "value": 41.4,
         "source": "aa"
       }
     },
@@ -3055,6 +3145,21 @@ window.SPEC.performanceData = {
         "name": "Claude Sonnet 5.5 (max with fallback)",
         "value": 367.29,
         "source": "aa"
+      },
+      "aiOmni": {
+        "name": "Claude Sonnet 5.5 (Max, Default Fallback)",
+        "value": 32.3,
+        "source": "aa"
+      },
+      "aiAccuracy": {
+        "name": "Claude Sonnet 5.5 (Max, Default Fallback)",
+        "value": 54,
+        "source": "aa"
+      },
+      "aiNonHallucination": {
+        "name": "Claude Sonnet 5.5 (Max, Default Fallback)",
+        "value": 53,
+        "source": "aa"
       }
     },
     "claude-haiku-5-5": {
@@ -3071,6 +3176,21 @@ window.SPEC.performanceData = {
       "aiLatency": {
         "name": "Claude Haiku 5.5 (max)",
         "value": 325.73,
+        "source": "aa"
+      },
+      "aiOmni": {
+        "name": "Claude Haiku 5.5 (Max)",
+        "value": 10.7,
+        "source": "aa"
+      },
+      "aiAccuracy": {
+        "name": "Claude Haiku 5.5 (Max)",
+        "value": 36.4,
+        "source": "aa"
+      },
+      "aiNonHallucination": {
+        "name": "Claude Haiku 5.5 (Max)",
+        "value": 59.6,
         "source": "aa"
       }
     },
@@ -3089,6 +3209,21 @@ window.SPEC.performanceData = {
         "name": "Claude Fable 5.1 (max with fallback)",
         "value": 257,
         "source": "aa"
+      },
+      "aiOmni": {
+        "name": "Claude Fable 5.1 (Max, Default Fallback)",
+        "value": 43.5,
+        "source": "aa"
+      },
+      "aiAccuracy": {
+        "name": "Claude Fable 5.1 (Max, Default Fallback)",
+        "value": 67.2,
+        "source": "aa"
+      },
+      "aiNonHallucination": {
+        "name": "Claude Fable 5.1 (Max, Default Fallback)",
+        "value": 27.4,
+        "source": "aa"
       }
     },
     "kimi-k3": {
@@ -3106,22 +3241,20 @@ window.SPEC.performanceData = {
         "name": "Kimi K3 (max)",
         "value": 3.61,
         "source": "aa"
-      }
-    },
-    "kimi-k2-7-code": {
-      "aiIndex": {
-        "name": "Kimi K2.7 Code",
-        "value": 26,
+      },
+      "aiOmni": {
+        "name": "Kimi K3 (Max)",
+        "value": 19.7,
         "source": "aa"
       },
-      "aiSpeed": {
-        "name": "Kimi K2.7 Code",
-        "value": 49,
+      "aiAccuracy": {
+        "name": "Kimi K3 (Max)",
+        "value": 47.6,
         "source": "aa"
       },
-      "aiLatency": {
-        "name": "Kimi K2.7 Code",
-        "value": 2.87,
+      "aiNonHallucination": {
+        "name": "Kimi K3 (Max)",
+        "value": 46.8,
         "source": "aa"
       }
     },
@@ -3140,6 +3273,21 @@ window.SPEC.performanceData = {
         "name": "DeepSeek V4.1 Flash 1017 (max)",
         "value": 1.01,
         "source": "aa"
+      },
+      "aiOmni": {
+        "name": "DeepSeek V4.1 Flash 1017 (Max)",
+        "value": 4.7,
+        "source": "aa"
+      },
+      "aiAccuracy": {
+        "name": "DeepSeek V4.1 Flash 1017 (Max)",
+        "value": 42.9,
+        "source": "aa"
+      },
+      "aiNonHallucination": {
+        "name": "DeepSeek V4.1 Flash 1017 (Max)",
+        "value": 33.2,
+        "source": "aa"
       }
     },
     "qwen3-8-2-4t-a95b": {
@@ -3156,6 +3304,21 @@ window.SPEC.performanceData = {
       "aiLatency": {
         "name": "Qwen3.8 2.4T A95B",
         "value": 3.04,
+        "source": "aa"
+      },
+      "aiOmni": {
+        "name": "Qwen3.8 2.4T A95B",
+        "value": 4.3,
+        "source": "aa"
+      },
+      "aiAccuracy": {
+        "name": "Qwen3.8 2.4T A95B",
+        "value": 31.3,
+        "source": "aa"
+      },
+      "aiNonHallucination": {
+        "name": "Qwen3.8 2.4T A95B",
+        "value": 60.8,
         "source": "aa"
       }
     },
@@ -3174,6 +3337,21 @@ window.SPEC.performanceData = {
         "name": "Qwen3.8-Flash-Next",
         "value": 1.99,
         "source": "aa"
+      },
+      "aiOmni": {
+        "name": "Qwen3.8-Flash-Next",
+        "value": -9.7,
+        "source": "aa"
+      },
+      "aiAccuracy": {
+        "name": "Qwen3.8-Flash-Next",
+        "value": 24.5,
+        "source": "aa"
+      },
+      "aiNonHallucination": {
+        "name": "Qwen3.8-Flash-Next",
+        "value": 54.7,
+        "source": "aa"
       }
     },
     "qwen3-8-27b": {
@@ -3191,39 +3369,20 @@ window.SPEC.performanceData = {
         "name": "Qwen3.8 27B (xhigh)",
         "value": 3.9,
         "source": "aa"
-      }
-    },
-    "qwen3-6-35b-a3b": {
-      "aiIndex": {
-        "name": "Qwen3.6 35B A3B",
-        "value": 18,
+      },
+      "aiOmni": {
+        "name": "Qwen3.8 27B (Xhigh)",
+        "value": -10,
         "source": "aa"
       },
-      "aiSpeed": {
-        "name": "Qwen3.6 35B A3B",
-        "value": 140,
+      "aiAccuracy": {
+        "name": "Qwen3.8 27B (Xhigh)",
+        "value": 15.6,
         "source": "aa"
       },
-      "aiLatency": {
-        "name": "Qwen3.6 35B A3B",
-        "value": 2.02,
-        "source": "aa"
-      }
-    },
-    "qwen3-5-397b-a17b": {
-      "aiIndex": {
-        "name": "Qwen3.5 397B A17B",
-        "value": 18,
-        "source": "aa"
-      },
-      "aiSpeed": {
-        "name": "Qwen3.5 397B A17B",
-        "value": 56,
-        "source": "aa"
-      },
-      "aiLatency": {
-        "name": "Qwen3.5 397B A17B",
-        "value": 2.12,
+      "aiNonHallucination": {
+        "name": "Qwen3.8 27B (Xhigh)",
+        "value": 69.7,
         "source": "aa"
       }
     },
@@ -3241,6 +3400,21 @@ window.SPEC.performanceData = {
       "aiLatency": {
         "name": "GLM-5.3 (max)",
         "value": 2.9,
+        "source": "aa"
+      },
+      "aiOmni": {
+        "name": "GLM-5.3 (Max)",
+        "value": 14.3,
+        "source": "aa"
+      },
+      "aiAccuracy": {
+        "name": "GLM-5.3 (Max)",
+        "value": 33.9,
+        "source": "aa"
+      },
+      "aiNonHallucination": {
+        "name": "GLM-5.3 (Max)",
+        "value": 70.4,
         "source": "aa"
       }
     }
