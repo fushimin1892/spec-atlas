@@ -80,11 +80,15 @@ const CPU_EXCLUDE = [
 
 // カテゴリごとの違い。sold = 単体で売っている型番だけ取る / tokens = 型番を商品名と比べる語に分ける
 // suffixes = 型番の直後に続いたら別モデルとみなす語（「RTX 5070」で「RTX 5070 Ti」、「Ryzen 5 1600」で「1600 AF」を拾わない）
+// models = 商品名に出てくる同じ種類の型番を拾う。自分以外の型番が並ぶ出品（「245K / 265K」など）は値段がどれのものか分からないので使わない
+// fallback = 見つからなかったときに検索し直す語（売っていないのか、検索語が合わなかっただけかを見分ける）
 export const CATEGORIES = {
   gpu: {
     sold: (g) => g.series !== "内蔵GPU",
     tokens: (name) => name.replace(/^NVIDIA\s+/i, "").split(/\s+/),
     suffixes: "TI|SUPER|XTX|XT|GRE",
+    models: /(?<![A-Z0-9])(?:RTX|GTX|RX|GT|ARC)[\s-]*([A-Z]?\d{3,4})(?![0-9])/g,
+    fallback: (name) => name.replace(/^NVIDIA\s+/i, "").replace(/\s+/, ""), // 「RTX5070」のように詰めて書く出品がある
     exclude: GPU_EXCLUDE,
   },
   cpu: {
@@ -93,13 +97,18 @@ export const CATEGORIES = {
     tokens: (name) => name.replace(/^Core\s+/i, "").split(/[\s-]+/),
     gap: "[\\s-]*(?:プロセッサー?[\\s-]*)?", // 「Core Ultra 7 プロセッサー 265K」のような書き方も拾う
     suffixes: "PLUS|AF",
+    models: /(?<![A-Z0-9])(?:I[3579]|ULTRA[\s-]*\d|RYZEN[\s-]*\d(?:[\s-]*PRO)?)[\s-]*(?:プロセッサー?[\s-]*)?(\d{3,5}[A-Z0-9]*)/g,
+    fallback: (name) => name.match(/\d{3,5}[A-Z0-9]*(?: AF| Plus)?$/i)?.[0], // 型番の数字部分だけ（「14700K」）
     exclude: CPU_EXCLUDE,
   },
 };
 
 export function modelMatcher(name, cat = "gpu") {
-  const { tokens: toTokens, gap = "[\\s-]*", suffixes: SUFFIXES, exclude: EXCLUDE } = CATEGORIES[cat];
+  const { tokens: toTokens, gap = "[\\s-]*", suffixes: SUFFIXES, models, exclude: EXCLUDE } = CATEGORIES[cat];
   const tokens = toTokens(norm(name));
+  // 自分の型番の数字部分（「14700K」「5070」）。商品名に別の型番が混ざっていないかの比較に使う
+  const own = [...` ${norm(name)}`.matchAll(models)].map((m) => m[1]);
+  const othersIn = (t) => [...t.matchAll(models)].some((m) => !own.includes(m[1]));
   // 「12GB」「GDDR6」のようなメモリ違いの区別語は、商品名のどこかに含まれていれば良い
   const memTokens = tokens.filter((t) => /^\d+GB$|^GDDR\d+$/.test(t));
   const core = tokens.filter((t) => !memTokens.includes(t));
@@ -110,7 +119,7 @@ export function modelMatcher(name, cat = "gpu") {
   const memRes = memTokens.map((t) => new RegExp(`(?<![0-9])${esc(t)}(?![A-Z0-9])`));
   return (title) => {
     const t = norm(title);
-    return coreRe.test(t) && memRes.every((r) => r.test(t)) && !EXCLUDE.some((r) => r.test(t));
+    return coreRe.test(t) && memRes.every((r) => r.test(t)) && !EXCLUDE.some((r) => r.test(t)) && !othersIn(t);
   };
 }
 
@@ -141,7 +150,7 @@ async function search(env, keyword, page) {
   const params = new URLSearchParams({
     applicationId: env.RAKUTEN_APP_ID,
     keyword,
-    sort: "+itemPrice",
+    // 安い順にするとネジや服など無関係の安い商品が先頭を埋めるので、関連度順（既定）で取り、最安値はこちらで選ぶ
     minPrice: "1000",
     hits: "30",
     page: String(page),
@@ -171,19 +180,26 @@ async function search(env, keyword, page) {
   throw new Error("HTTP 429 が続いたため中断しました");
 }
 
-// 1 型番の最安値を探す。安い順に 2 ページ（60 件）まで見る
+// 1 型番の最安値を探す。関連度の高い順に 2 ページ（60 件）まで見て、型番が合うものの最安値を選ぶ
 export async function findBest(env, item, cat = "gpu") {
   const match = modelMatcher(item.name, cat);
-  const keyword = CATEGORIES[cat].tokens(item.name).join(" ");
+  // 1 文字の語（「Ryzen 7 7800X3D」の「7」）があると楽天は検索語エラー（400）を返すので外す
+  const keyword = CATEGORIES[cat].tokens(item.name).filter((t) => t.length >= 2).join(" ");
   const hits = [];
-  for (let page = 1; page <= 2; page++) {
-    const data = await search(env, keyword, page);
-    for (const it of data.items || []) {
-      if (match(it.itemName)) hits.push(it);
+  const collect = async (kw) => {
+    for (let page = 1; page <= 2; page++) {
+      const data = await search(env, kw, page);
+      for (const it of data.Items || data.items || []) { // 2026-07-01 版は Items（大文字）で返る
+        if (match(it.itemName)) hits.push(it);
+      }
+      await sleep(WAIT_MS);
+      if (!data.pageCount || page >= data.pageCount) break;
     }
-    await sleep(WAIT_MS);
-    if (hits.length >= 5 || !data.pageCount || page >= data.pageCount) break;
-  }
+  };
+  await collect(keyword);
+  // 見つからなければ書き方を変えてもう一度探す。それでも無ければ楽天では売られていない（生産終了など）とみなす
+  const alt = CATEGORIES[cat].fallback(item.name);
+  if (!hits.length && alt && alt !== keyword) await collect(alt);
   if (!hits.length) return null;
   // 型番が合っていても極端に安いものは付属品の取りこぼしとみなし、中央値の 3 割未満は捨てる
   const prices = hits.map((h) => h.itemPrice).sort((a, b) => a - b);

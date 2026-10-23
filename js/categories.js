@@ -127,7 +127,7 @@ window.SPEC.categories = [
 // ---------- 参考価格（GPU・CPU 共通） ----------
 // data/<id>.js の最後に setupPrices(id, 注記) を呼ぶと、window.SPEC.applyPrices[id] ができ、すぐに 1 回当てはめる。
 // 当てはめるのは、ページ読み込み時（data/<id>-prices.js）と、手元のサーバーから新しい価格が届いたとき（app.js）。
-// 取得した価格が無ければ data ファイルに書いた価格のまま。取得済みで見つからなかった型番は「—」にする。
+// 取得した価格が無ければ data ファイルに書いた価格のまま。取得済みで見つからなかった型番は「—」に「楽天で取扱なし」と添える。
 window.SPEC.applyPrices = {};
 window.SPEC.setupPrices = function (id, baseNote) {
   const apply = function (fetched) {
@@ -140,9 +140,9 @@ window.SPEC.setupPrices = function (id, baseNote) {
     }
     for (const it of window.SPEC.data[id]) {
       if (fetched && fetched.items && it.id in fetched.items) {
-        const best = fetched.items[it.id]; // 見つからなかった型番は null
+        const best = fetched.items[it.id]; // 見つからなかった型番は null（生産終了などで売られていない）
         it.price = best ? best.price : null;
-        it.priceNote = best ? `${best.condition}・${best.shop}` : null;
+        it.priceNote = best ? `${best.condition}・${best.shop}` : "楽天で取扱なし";
         it.priceUrl = best ? best.url : null;
       }
       // コスパ = 1,000 円あたりの性能スコア
