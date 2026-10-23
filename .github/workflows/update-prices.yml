@@ -1,4 +1,4 @@
-# 毎日 1 回、楽天市場から GPU の参考価格を取り直して GitHub Pages に公開し直す。
+# 毎日 1 回、楽天市場から GPU・CPU の参考価格を取り直して GitHub Pages に公開し直す。
 # コードを main に push したときも公開し直す（そのときは価格は取らず、保存済みの価格を使う）。
 # 楽天のキーはリポジトリの Settings → Secrets and variables → Actions に登録する:
 #   RAKUTEN_APP_ID / RAKUTEN_ACCESS_KEY / RAKUTEN_REFERER（公開サイトの URL）
@@ -54,7 +54,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for f in data/gpu-prices.js data/gpu-official.js; do
+          for f in data/gpu-prices.js data/cpu-prices.js data/gpu-official.js; do
             [ -f "$f" ] && git add -A "$f"
           done
           if git diff --cached --quiet; then

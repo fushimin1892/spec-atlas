@@ -1,4 +1,4 @@
-// 楽天市場の商品検索 API（2026-07-01 版）で GPU の最安値を集める処理。
+// 楽天市場の商品検索 API（2026-07-01 版）で GPU・CPU の最安値を集める処理。
 // サーバー（server.mjs）と手動更新（tools/fetch-prices.mjs）の両方から使う。
 // キーは tools/rakuten.env に書く（rakuten.env.example を参照）。
 import fs from "node:fs";
@@ -8,7 +8,6 @@ import { fileURLToPath } from "node:url";
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const ENDPOINT = process.env.RAKUTEN_ENDPOINT || "https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260701"; // 差し替えはテスト用
-const OUT = path.join(ROOT, "data", "gpu-prices.js");
 const WAIT_MS = 1100; // 同じ URL を短時間に連打すると一時的に弾かれるので 1 秒強あける
 // RAKUTEN_REFERER は「Webアプリケーション」で登録したときだけ必要（「バックエンドサービス」は IP で判定される）
 const KEYS = ["RAKUTEN_APP_ID", "RAKUTEN_ACCESS_KEY", "RAKUTEN_REFERER"];
@@ -29,54 +28,84 @@ export function loadEnv() {
   return { env, missing: REQUIRED.filter((k) => !env[k]) };
 }
 
-// サイトと同じ data/gpu.js を読み、型番一覧を得る（二重管理しない）
-export function loadGpus() {
-  const window = { SPEC: { data: {}, categories: [] } };
-  vm.runInNewContext(fs.readFileSync(path.join(ROOT, "data", "gpu.js"), "utf8"), { window });
-  return window.SPEC.data.gpu.filter((g) => g.series !== "内蔵GPU"); // 単体では売っていない
+const outFile = (cat) => path.join(ROOT, "data", `${cat}-prices.js`);
+
+// サイトと同じ data/<cat>.js を読み、型番一覧を得る（二重管理しない）
+export function loadItems(cat) {
+  // setupPrices は画面用（js/categories.js）。ここでは型番が分かればよいので何もしない
+  const window = { SPEC: { data: {}, categories: [], setupPrices() {} } };
+  vm.runInNewContext(fs.readFileSync(path.join(ROOT, "data", `${cat}.js`), "utf8"), { window });
+  return window.SPEC.data[cat].filter(CATEGORIES[cat].sold);
 }
 
 // 保存済みの価格。file:// で開いたときも読めるよう JS 形式で保存している
-export function readPrices() {
-  if (!fs.existsSync(OUT)) return null;
+export function readPrices(cat) {
+  const file = outFile(cat);
+  if (!fs.existsSync(file)) return null;
   const window = { SPEC: {} };
-  vm.runInNewContext(fs.readFileSync(OUT, "utf8"), { window });
-  return window.SPEC.prices?.gpu || null;
+  vm.runInNewContext(fs.readFileSync(file, "utf8"), { window });
+  return window.SPEC.prices?.[cat] || null;
 }
 
-export function writePrices(data) {
-  const tmp = OUT + ".tmp";
+export function writePrices(cat, data) {
+  const file = outFile(cat);
+  const tmp = file + ".tmp";
   fs.writeFileSync(
     tmp,
     "// tools/prices.mjs が自動生成。手で編集しない。\n" +
       "window.SPEC.prices = window.SPEC.prices || {};\n" +
-      `window.SPEC.prices.gpu = ${JSON.stringify(data, null, 1)};\n`
+      `window.SPEC.prices.${cat} = ${JSON.stringify(data, null, 1)};\n`
   );
-  fs.renameSync(tmp, OUT); // 書きかけのファイルをサイトが読まないように置き換える
+  fs.renameSync(tmp, file); // 書きかけのファイルをサイトが読まないように置き換える
 }
 
 // ---------- 商品名の判定 ----------
 // 全角→半角・大文字化してから比べる
 const norm = (s) => s.normalize("NFKC").toUpperCase();
 
-// 本体ではない出品・PC まるごとの出品を落とす
-const EXCLUDE = [
+// 本体ではない出品・PC まるごとの出品を落とす（GPU 用）
+const GPU_EXCLUDE = [
   /ゲーミング\s*(PC|パソコン)/, /パソコン/, /ノート\s*PC/, /デスクトップ\s*PC/, /\bBTO\b/,
   /CORE\s*(I\d|ULTRA)/, /RYZEN\s*\d/, /ジャンク/, /ブラケット/, /ケーブル/, /ライザー/,
   /ステー/, /支え/, /水冷ブロック/, /ウォーターブロック/, /ヒートシンク/, /サーマルパッド/,
   /空箱/, /箱のみ/, /修理/, /部品取り/, /レンタル/, /ステッカー/, /対応\s*(ケース|電源)/,
 ];
 
-// 「RTX 5070」で「RTX 5070 Ti」を拾わないよう、型番の直後に上位モデルの語が続くものは除く
-const SUFFIXES = "TI|SUPER|XTX|XT|GRE";
-export function modelMatcher(name) {
-  const tokens = norm(name).replace(/^NVIDIA\s+/, "").split(/\s+/);
+// CPU 用。GPU 用は CPU 名を含む出品（PC）を落とすので使えない。PC・マザーボード付き・クーラーなどを落とす
+const CPU_EXCLUDE = [
+  /ゲーミング\s*(PC|パソコン)/, /パソコン/, /ノート\s*PC/, /デスクトップ\s*PC/, /\bBTO\b/, /中古PC/,
+  /RTX|GTX|RADEON|GEFORCE|\bRX\s*\d/, /マザーボード|マザーセット|\b[ABHZ]\d{3}M?\b|\bX\d{3}E?\b/,
+  /クーラー|CPUファン|グリス|殻割|ヒートスプレッダ|ピン曲|ジャンク|空箱|箱のみ|ステッカー|レンタル|対応\s*(クーラー|マザー|ケース)/,
+];
+
+// カテゴリごとの違い。sold = 単体で売っている型番だけ取る / tokens = 型番を商品名と比べる語に分ける
+// suffixes = 型番の直後に続いたら別モデルとみなす語（「RTX 5070」で「RTX 5070 Ti」、「Ryzen 5 1600」で「1600 AF」を拾わない）
+export const CATEGORIES = {
+  gpu: {
+    sold: (g) => g.series !== "内蔵GPU",
+    tokens: (name) => name.replace(/^NVIDIA\s+/i, "").split(/\s+/),
+    suffixes: "TI|SUPER|XTX|XT|GRE",
+    exclude: GPU_EXCLUDE,
+  },
+  cpu: {
+    sold: (c) => c.maker !== "Apple" && !/^AMD /.test(c.name), // Mac 本体・組み込み基板に載った形でしか売っていない
+    // 「Core i7-14700K」→ I7 / 14700K。商品名は「i7-14700K」「i7 14700K」などまちまちなので区切りを問わない
+    tokens: (name) => name.replace(/^Core\s+/i, "").split(/[\s-]+/),
+    gap: "[\\s-]*(?:プロセッサー?[\\s-]*)?", // 「Core Ultra 7 プロセッサー 265K」のような書き方も拾う
+    suffixes: "PLUS|AF",
+    exclude: CPU_EXCLUDE,
+  },
+};
+
+export function modelMatcher(name, cat = "gpu") {
+  const { tokens: toTokens, gap = "[\\s-]*", suffixes: SUFFIXES, exclude: EXCLUDE } = CATEGORIES[cat];
+  const tokens = toTokens(norm(name));
   // 「12GB」「GDDR6」のようなメモリ違いの区別語は、商品名のどこかに含まれていれば良い
   const memTokens = tokens.filter((t) => /^\d+GB$|^GDDR\d+$/.test(t));
   const core = tokens.filter((t) => !memTokens.includes(t));
   const esc = (t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const coreRe = new RegExp(
-    `(?<![A-Z0-9])${core.map(esc).join("[\\s-]*")}(?![A-Z0-9])(?![\\s-]*(?:${SUFFIXES})(?![A-Z0-9]))`
+    `(?<![A-Z0-9])${core.map(esc).join(gap)}(?![A-Z0-9])(?![\\s-]*(?:${SUFFIXES})(?![A-Z0-9]))`
   );
   const memRes = memTokens.map((t) => new RegExp(`(?<![0-9])${esc(t)}(?![A-Z0-9])`));
   return (title) => {
@@ -143,9 +172,9 @@ async function search(env, keyword, page) {
 }
 
 // 1 型番の最安値を探す。安い順に 2 ページ（60 件）まで見る
-export async function findBest(env, gpu) {
-  const match = modelMatcher(gpu.name);
-  const keyword = gpu.name.replace(/^NVIDIA\s+/, "");
+export async function findBest(env, item, cat = "gpu") {
+  const match = modelMatcher(item.name, cat);
+  const keyword = CATEGORIES[cat].tokens(item.name).join(" ");
   const hits = [];
   for (let page = 1; page <= 2; page++) {
     const data = await search(env, keyword, page);
@@ -171,38 +200,38 @@ export async function findBest(env, gpu) {
   };
 }
 
-// 全型番（または only で指定した型番）を取り直して保存する。
+// カテゴリ（gpu / cpu）の全型番（または only で指定した型番）を取り直して保存する。
 // 前回の結果に 1 件ずつ上書きしていくので、途中で止まっても取れた分は残る。
-// onItem(gpu, best, done, total) で進み具合を受け取れる。
-export async function refreshPrices({ env, only, onItem } = {}) {
-  const gpus = loadGpus().filter((g) => !only || g.name === only);
-  if (!gpus.length) throw new Error(`型番が見つかりません: ${only}`);
-  const prev = readPrices();
+// onItem(item, best, done, total) で進み具合を受け取れる。
+export async function refreshPrices({ env, cat = "gpu", only, onItem } = {}) {
+  const items = loadItems(cat).filter((it) => !only || it.name === only);
+  if (!items.length) throw new Error(`型番が見つかりません: ${only}`);
+  const prev = readPrices(cat);
   const data = { source: "楽天市場", fetchedAt: prev?.fetchedAt || null, items: { ...(prev?.items || {}) } };
 
   let found = 0;
   let failedInRow = 0;
-  for (const [n, gpu] of gpus.entries()) {
+  for (const [n, item] of items.entries()) {
     let best;
     try {
-      best = await findBest(env, gpu);
+      best = await findBest(env, item, cat);
       failedInRow = 0;
     } catch (e) {
       if (e instanceof AuthError) throw e; // キーの問題は続けても全部失敗する
-      onItem?.(gpu, undefined, n + 1, gpus.length, e);
+      onItem?.(item, undefined, n + 1, items.length, e);
       // 続けて失敗するなら通信が切れている。取得日時は更新せずに止め、後でやり直させる
       if (++failedInRow >= 5) {
-        writePrices(data);
+        writePrices(cat, data);
         throw new Error(`楽天市場に接続できないため中断しました（${e.message}）`);
       }
       continue; // 一時的な失敗は前回の値を残して次へ
     }
-    data.items[gpu.id] = best; // 見つからなかった型番は null
+    data.items[item.id] = best; // 見つからなかった型番は null
     if (best) found++;
-    onItem?.(gpu, best, n + 1, gpus.length);
-    if ((n + 1) % 10 === 0) writePrices(data); // 途中経過も残す
+    onItem?.(item, best, n + 1, items.length);
+    if ((n + 1) % 10 === 0) writePrices(cat, data); // 途中経過も残す
   }
   data.fetchedAt = new Date().toISOString();
-  writePrices(data);
-  return { found, total: gpus.length, data };
+  writePrices(cat, data);
+  return { found, total: items.length, data };
 }

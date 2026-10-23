@@ -25,7 +25,7 @@
     if (value === null || value === undefined || value === "") return '<span class="muted">—</span>';
     if (field.type === "number") {
       const d = field.digits || 0;
-      const n = Number(value).toLocaleString("ja-JP", { minimumFractionDigits: d, maximumFractionDigits: d });
+      const n = Number(value).toLocaleString("ja-JP", { minimumFractionDigits: d, maximumFractionDigits: field.maxDigits || d });
       return esc(`${field.prefix || ""}${n}${field.unit ? " " + field.unit : ""}`);
     }
     return esc(value);
@@ -185,7 +185,7 @@
       </div>
       ${cat.note ? `<p class="note">${esc(cat.note)}</p>` : ""}
       ${(cat.sources || []).map((s) => `<p class="note"><a class="ext" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></p>`).join("")}
-      ${cat.id === "gpu" ? `<p class="note live" id="priceStatus" role="status" aria-live="polite">${esc(SPEC.priceStatus || "")}</p>` : ""}
+      ${SPEC.applyPrices[cat.id] ? `<p class="note live" id="priceStatus" role="status" aria-live="polite">${esc(priceStatus[cat.id] || "")}</p>` : ""}
       <div class="table-wrap"><table class="spec-table" id="specTable"></table></div>`;
 
     const table = document.getElementById("specTable");
@@ -402,10 +402,12 @@
   }
 
   // ---------- 参考価格の自動更新 ----------
-  // サーバー（server.mjs）経由で開いたときだけ動く。file:// では data/gpu-prices.js の値のまま。
+  // サーバー（server.mjs）経由で開いたときだけ動く。file:// では data/<id>-prices.js の値のまま。
   // サーバーは保存済みの価格をすぐ返し、古ければ裏で取り直す。取り直し中は数秒おきに聞き直して表を差し替える。
+  // GPU・CPU など、価格を持つカテゴリ（SPEC.applyPrices にあるもの）ごとに別々に聞く。
   const POLL_MS = 5000;
-  let lastPrices = "";
+  const lastPrices = {};
+  const priceStatus = {};
 
   function priceStatusText(r) {
     if (r.updating) return r.progress && r.progress.total ? `楽天市場から最新の価格を取得中… ${r.progress.done} / ${r.progress.total}` : "楽天市場から最新の価格を取得中…";
@@ -434,26 +436,28 @@
     }
   }
 
-  async function pollPrices() {
+  // 今開いている一覧のカテゴリ。トップや詳細ページなら null
+  const shownCategory = () => (main.querySelector("#priceStatus") ? (location.hash.match(/^#\/c\/([^/?]+)/) || [])[1] : null);
+
+  async function pollPrices(id) {
     let r;
     try {
-      const res = await fetch("api/prices/gpu", { cache: "no-store" });
+      const res = await fetch(`api/prices/${id}`, { cache: "no-store" });
       if (!res.ok) return;
       r = await res.json();
     } catch (e) {
       return; // サーバーなしで開いている
     }
-    SPEC.priceStatus = priceStatusText(r);
+    priceStatus[id] = priceStatusText(r);
     const next = JSON.stringify(r.prices || null);
-    if (r.prices && next !== lastPrices) {
-      lastPrices = next;
-      SPEC.applyGpuPrices(r.prices);
+    if (r.prices && next !== lastPrices[id]) {
+      lastPrices[id] = next;
+      SPEC.applyPrices[id](r.prices);
       redrawKeepingState();
-    } else {
-      const el = document.getElementById("priceStatus");
-      if (el) el.textContent = SPEC.priceStatus;
+    } else if (shownCategory() === id) {
+      document.getElementById("priceStatus").textContent = priceStatus[id];
     }
-    if (r.updating) setTimeout(pollPrices, POLL_MS);
+    if (r.updating) setTimeout(() => pollPrices(id), POLL_MS);
   }
 
   // ---------- ヘッダー操作 ----------
@@ -482,6 +486,6 @@
   window.addEventListener("hashchange", route);
   saveCompare();
   route();
-  // 公開サイト（GitHub Pages）では価格は 1 日 1 回 data/gpu-prices.js ごと更新されるので、API に聞くのは手元のサーバーだけ
-  if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname) && SPEC.applyGpuPrices) pollPrices();
+  // 公開サイト（GitHub Pages）では価格は 1 日 1 回 data/<id>-prices.js ごと更新されるので、API に聞くのは手元のサーバーだけ
+  if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) Object.keys(SPEC.applyPrices).forEach(pollPrices);
 })();

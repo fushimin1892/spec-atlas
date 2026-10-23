@@ -5,7 +5,7 @@
 // 性能スコア・価格・発売日は公式ページに載っていないので、ここでは確認しない。
 import fs from "node:fs";
 import path from "node:path";
-import { ROOT, loadGpus } from "./prices.mjs";
+import { ROOT, loadItems } from "./prices.mjs";
 
 // 仕様表のあるページ。シリーズを足すときはここに追加する
 const PAGES = [
@@ -83,7 +83,7 @@ async function main() {
     await new Promise((r) => setTimeout(r, 500));
   }
 
-  const gpus = loadGpus();
+  const gpus = loadItems("gpu");
   let src = fs.readFileSync(GPU_FILE, "utf8");
   const items = {};
   const diffs = [];

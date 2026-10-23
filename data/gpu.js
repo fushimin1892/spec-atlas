@@ -182,29 +182,8 @@ GT 710,192,2,19,5480,新品,楽天,2014/03/27
       };
     });
 
-  // 取得した価格を当てはめ、コスパを計算し直す。
-  // ページ読み込み時（data/gpu-prices.js）と、サーバーの API から新しい価格が届いたとき（app.js）に呼ばれる。
-  // fetched が無ければ上の CSV の価格のまま。取得済みで見つからなかった型番は「—」にする。
-  window.SPEC.applyGpuPrices = function (fetched) {
-    const cat = window.SPEC.categories.find((c) => c.id === "gpu");
-    if (cat) {
-      const at = fetched && fetched.fetchedAt
-        ? new Date(fetched.fetchedAt).toLocaleString("ja-JP", { dateStyle: "medium", timeStyle: "short" })
-        : null;
-      cat.note = BASE_NOTE + (at ? `価格は${fetched.source}の最安値（${at} 取得）です。` : "価格は取得時点の参考値です。");
-    }
-    for (const g of window.SPEC.data.gpu) {
-      if (fetched && fetched.items && g.id in fetched.items) {
-        const best = fetched.items[g.id]; // 見つからなかった型番は null
-        g.price = best ? best.price : null;
-        g.priceNote = best ? `${best.condition}・${best.shop}` : null;
-        g.priceUrl = best ? best.url : null;
-      }
-      // コスパ = 1,000 円あたりの性能スコア
-      g.costPerf = g.price ? Math.round((g.score / g.price) * 10000) / 10 : null;
-    }
-  };
-  window.SPEC.applyGpuPrices(window.SPEC.prices && window.SPEC.prices.gpu);
+  // data/gpu-prices.js（楽天から取得した価格）があれば当てはめ、コスパを計算する（categories.js）
+  window.SPEC.setupPrices("gpu", BASE_NOTE);
 
   // tools/check-specs.mjs が作る data/gpu-official.js があれば、公式仕様と照合済みの型番に印を付ける
   const official = window.SPEC.official && window.SPEC.official.gpu;
