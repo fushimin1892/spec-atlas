@@ -24,4 +24,24 @@ export function amdItems(html) {
   return data.items;
 }
 
+// Artificial Analysis のモデル比較ページに埋め込まれたモデル一覧（initialModels）を読む。
+// 表に出ない AA-Omniscience（正確さ・ハルシネーションの少なさ）もここにある。
+export function aaModels(html) {
+  const text = [...html.matchAll(/self\.__next_f\.push\(\[1,"((?:[^"\\]|\\.)*)"\]\)/g)].map((m) => JSON.parse(`"${m[1]}"`)).join("");
+  const key = '"initialModels":';
+  const start = text.indexOf(key) + key.length;
+  if (start < key.length || text[start] !== "[") throw new Error("AIモデル一覧の埋め込みデータが見つかりません。");
+  let depth = 0, end = -1, inString = false;
+  for (let i = start; i < text.length; i++) {
+    const c = text[i];
+    if (inString) { if (c === "\\") i++; else if (c === '"') inString = false; continue; }
+    if (c === '"') inString = true;
+    else if (c === "[" || c === "{") depth++;
+    else if ((c === "]" || c === "}") && --depth === 0) { end = i + 1; break; }
+  }
+  const models = JSON.parse(text.slice(start, end));
+  if (!Array.isArray(models) || models.length < 100 || !models.some((m) => "omniscience" in m)) throw new Error("AIモデル一覧の構造を確認してください。");
+  return models;
+}
+
 export const normalizeName = (name) => name.replace(/\s*\(OEM Only\)|\s+with Radeon.*|\s+Dual Edition$/gi, "").replace(/\s+Processor$/i, "").replace(/AMD|Intel|GeForce|Radeon|®|™|\(R\)|\(TM\)/gi, "").replace(/[^a-z0-9]/gi, "").toLowerCase();

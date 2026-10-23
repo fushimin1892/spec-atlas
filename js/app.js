@@ -211,12 +211,16 @@
     const config = SPEC.benchmarks[cat.id];
     const filterKeys = cat.filters || ["maker"];
     const filterFields = filterKeys.map((k) => cat.fields.find((f) => f.key === k)).filter(Boolean);
-    const st = (listState[cat.id] ||= { q: "", filters: {}, sort: config.default, dir: config.metrics[0].better === "low" ? 1 : -1, metric: config.default, baseline: config.baseline, view: "performance", measuredOnly: true });
+    // AI は指標を切り替える性能ランキング。CPU・GPU は総合スコア順の表（ゲーム性能などは表の列）
+    const ranking = cat.id === "ai";
+    const st = (listState[cat.id] ||= ranking
+      ? { q: "", filters: {}, sort: config.default, dir: config.metrics[0].better === "low" ? 1 : -1, metric: config.default, baseline: config.baseline, view: "performance", measuredOnly: true }
+      : { q: "", filters: {}, sort: "score", dir: -1, metric: "score", baseline: null, view: "specs", measuredOnly: false });
     const metric = SPEC.benchmarkOf(cat.id, st.metric);
-    if (config.baseline && !items.some((i) => i.id === st.baseline && i[st.metric] > 0)) {
+    if (ranking && config.baseline && !items.some((i) => i.id === st.baseline && i[st.metric] > 0)) {
       st.baseline = items.find((i) => i.id === config.baseline && i[st.metric] > 0)?.id || items.find((i) => i[st.metric] > 0)?.id;
     }
-    const listFields = cat.fields.filter((f) => f.benchmark ? f.key === st.metric : f.list !== false);
+    const listFields = cat.fields.filter((f) => ranking && f.benchmark ? f.key === st.metric : f.list !== false);
     const hasRank = true;
 
     const compareBy = (field, dir) => (a, b) => {
@@ -264,7 +268,7 @@
       <p class="eyebrow">${esc(cat.en)}</p>
       <h1 class="page-title">${SPEC.icon(cat.icon, "title-icon")}${esc(cat.name)}</h1>
       <p class="muted">${esc(cat.description)}</p>
-      <section class="benchmark-guide" aria-label="性能の比較方法">
+      ${ranking ? `<section class="benchmark-guide" aria-label="性能の比較方法">
         <div class="benchmark-tabs" role="group" aria-label="比較する性能">${config.metrics.map((m) => `<button type="button" class="metric-tab ${m.key === st.metric ? "active" : ""}" data-metric="${esc(m.key)}" aria-pressed="${m.key === st.metric}">${esc(m.label)}</button>`).join("")}</div>
         <h2>${esc(metric.title)}<span>${metric.better === "low" ? "小さいほど速い" : "高いほど高性能"}</span></h2>
         <details class="benchmark-method"><summary>指標の意味・測定条件</summary><p>${esc(metric.description)}</p><p class="note">${esc(metric.limit)}</p>
@@ -275,7 +279,7 @@
           <label class="measured-filter"><input type="checkbox" id="measuredOnly" ${st.measuredOnly ? "checked" : ""}>ランキングは比較データがある製品のみ</label>
         </div>
       </section>
-      <div class="view-switch" role="group" aria-label="表示形式"><button data-view="performance" aria-pressed="${st.view === "performance"}">性能ランキング</button><button data-view="specs" aria-pressed="${st.view === "specs"}">仕様一覧</button></div>
+      <div class="view-switch" role="group" aria-label="表示形式"><button data-view="performance" aria-pressed="${st.view === "performance"}">性能ランキング</button><button data-view="specs" aria-pressed="${st.view === "specs"}">仕様一覧</button></div>` : ""}
       <div class="toolbar">
         <label class="grow">絞り込み <input id="fq" type="search" value="${esc(st.q)}" placeholder="${esc(cat.searchHint || "名前で絞り込み")}"></label>
         <span id="filterSelects" style="display:contents">${selectsHtml()}</span>
@@ -286,7 +290,7 @@
       ${cat.note ? `<p class="note">${esc(cat.note)}</p>` : ""}
       ${cat.specNote ? `<p class="note">${esc(cat.specNote)}</p>` : ""}${auditLine(cat)}${(cat.sources || []).map((s) => `<p class="note"><a class="ext" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></p>`).join("")}</details>
       ${SPEC.applyPrices[cat.id] ? `<p class="note live" id="priceStatus" role="status" aria-live="polite">${esc(priceStatus[cat.id] || "")}</p>` : ""}
-      <div id="performanceRows" class="performance-ranking" ${st.view !== "performance" ? "hidden" : ""}></div>
+      ${ranking ? `<div id="performanceRows" class="performance-ranking" ${st.view !== "performance" ? "hidden" : ""}></div>` : ""}
       <div class="table-wrap" ${st.view !== "specs" ? "hidden" : ""}><table class="spec-table" id="specTable"></table></div>`;
 
     const table = document.getElementById("specTable");
@@ -301,7 +305,7 @@
       const rows = matched.filter((i) => !st.measuredOnly || i[st.metric] != null);
       const cols = listFields.length + (hasRank ? 1 : 0);
 
-      document.getElementById("hitCount").textContent = `${matched.length} / ${items.length} 件 · 比較データ ${matched.filter((i) => i[st.metric] != null).length} 件`;
+      document.getElementById("hitCount").textContent = ranking ? `${matched.length} / ${items.length} 件 · 比較データ ${matched.filter((i) => i[st.metric] != null).length} 件` : `${matched.length} / ${items.length} 件`;
       const base = items.find((i) => i.id === st.baseline);
       const values = items.map((i) => i[st.metric]).filter((v) => v > 0);
       const max = Math.max(...values, 1);
@@ -316,7 +320,7 @@
         return record.name === item.name ? "" : `測定名: ${record.name}`;
       };
       const hidden = matched.length - rows.length;
-      document.getElementById("performanceRows").innerHTML = `<div class="ranking-caption"><span>モデル・製品</span><span>${esc(metric.title)}${config.baseline ? " / 基準比" : ""}</span></div>` + (rows.length ? rows.map((item) => {
+      if (ranking) document.getElementById("performanceRows").innerHTML = `<div class="ranking-caption"><span>モデル・製品</span><span>${esc(metric.title)}${config.baseline ? " / 基準比" : ""}</span></div>` + (rows.length ? rows.map((item) => {
         const value = item[st.metric];
         const relative = SPEC.relativePerformance(value, base?.[st.metric]);
         const record = SPEC.performanceData[cat.id][item.id]?.[st.metric];
@@ -382,7 +386,7 @@
       main.querySelector(`[data-view="${CSS.escape(st.view)}"]`).focus();
     }));
     document.getElementById("benchmarkBase")?.addEventListener("change", (event) => { st.baseline = event.target.value; draw(); });
-    document.getElementById("measuredOnly").addEventListener("change", (event) => { st.measuredOnly = event.target.checked; draw(); });
+    document.getElementById("measuredOnly")?.addEventListener("change", (event) => { st.measuredOnly = event.target.checked; draw(); });
 
     document.getElementById("fq").addEventListener("input", (e) => { st.q = e.target.value; draw(); });
     const selects = document.getElementById("filterSelects");

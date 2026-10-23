@@ -6,16 +6,16 @@
     cpu: {
       default: "gamingScore", baseline: "ryzen-5-7600",
       metrics: [
-        { key: "gamingScore", label: "ゲーム向け", title: "PassMark Gaming Score", better: "high", unit: "pt", source: "gaming", description: "シングル・素数計算・物理演算とL3キャッシュを組み合わせた合成指標。ゲーム向けCPUを比較する目安です。", limit: "実際のゲームのFPSではありません。公開表の上位300件にないCPUはデータなしです。" },
-        { key: "singleScore", label: "シングル", title: "PassMark Single Thread", better: "high", unit: "pt", source: "single", description: "1つの処理を実行する速さ。操作の応答や、並列化しにくい処理を比べる目安です。", limit: "ゲームのFPSはGPU・メモリ・ゲームの処理によっても変わります。" },
-        { key: "score", label: "マルチ", title: "PassMark CPU Mark", better: "high", unit: "pt", source: null, description: "CPU全体で並列処理する能力。レンダリング・圧縮などの重い作業を比べる目安です。", limit: "マルチの順位はゲームの順位と一致するとは限りません。2026-10-22更新分。" },
+        { key: "gamingScore", label: "ゲーム向け", columnLabel: "ゲーム性能", title: "PassMark Gaming Score", better: "high", unit: "pt", source: "gaming", description: "シングル・素数計算・物理演算とL3キャッシュを組み合わせた合成指標。ゲーム向けCPUを比較する目安です。", limit: "実際のゲームのFPSではありません。公開表の上位300件にないCPUはデータなしです。" },
+        { key: "singleScore", label: "シングル", columnLabel: "シングル性能", title: "PassMark Single Thread", better: "high", unit: "pt", source: "single", description: "1つの処理を実行する速さ。操作の応答や、並列化しにくい処理を比べる目安です。", limit: "ゲームのFPSはGPU・メモリ・ゲームの処理によっても変わります。" },
+        { key: "score", label: "マルチ", columnLabel: "マルチ性能", title: "PassMark CPU Mark", better: "high", unit: "pt", source: null, description: "CPU全体で並列処理する能力。レンダリング・圧縮などの重い作業を比べる目安です。", limit: "マルチの順位はゲームの順位と一致するとは限りません。2026-10-22更新分。" },
       ],
     },
     gpu: {
       default: "g3dScore", baseline: "rtx-4060",
       metrics: [
-        { key: "g3dScore", label: "3D描画", title: "PassMark G3D Mark", better: "high", unit: "pt", source: "g3d", description: "複数の3D描画テストをまとめたGPU性能。基準のGPUと比べて、スコアがどの程度違うかを表示します。", limit: "ゲームの実測FPS・レイトレーシング・DLSS等の性能を示す値ではありません。投稿PCの構成も異なります。" },
-        { key: "score", label: "Time Spy（参考）", title: "3DMark Time Spy Graphics", better: "high", unit: "pt", source: null, description: "DirectX 12の描画性能を比較する合成ベンチマーク。掲載済みの参考値です。", limit: "今回はUL公式の取得エラーで再照合できていません。G3D Markとは別の指標です。" },
+        { key: "g3dScore", label: "3D描画", columnLabel: "3D描画(G3D)", title: "PassMark G3D Mark", better: "high", unit: "pt", source: "g3d", description: "複数の3D描画テストをまとめたGPU性能。基準のGPUと比べて、スコアがどの程度違うかを表示します。", limit: "ゲームの実測FPS・レイトレーシング・DLSS等の性能を示す値ではありません。投稿PCの構成も異なります。" },
+        { key: "score", label: "Time Spy（参考）", columnLabel: "Time Spy", title: "3DMark Time Spy Graphics", better: "high", unit: "pt", source: null, description: "DirectX 12の描画性能を比較する合成ベンチマーク。掲載済みの参考値です。", limit: "今回はUL公式の取得エラーで再照合できていません。G3D Markとは別の指標です。" },
       ],
     },
     ai: {
@@ -30,12 +30,16 @@
   for (const [catId, config] of Object.entries(SPEC.benchmarks)) {
     const cat = SPEC.categories.find((c) => c.id === catId);
     cat.description = { cpu: "ゲーム・シングル・マルチの性能を比較", gpu: "3D描画のベンチマークで性能を比較", ai: "共通ベンチマークで能力・速さを比較" }[catId];
-    cat.defaultSort = { key: config.default, dir: config.metrics[0].better === "low" ? 1 : -1 };
+    // AI は指標を切り替えるランキング、CPU・GPU は以前どおり総合スコア順の表（追加の指標は表の列として並べる）
+    const tableView = catId !== "ai";
+    cat.defaultSort = tableView ? { key: "score", dir: -1 } : { key: config.default, dir: config.metrics[0].better === "low" ? 1 : -1 };
+    let at = tableView ? cat.fields.findIndex((f) => f.key === "score") + 1 : 1;
     for (const metric of config.metrics) {
       if (metric.key === "score") {
-        cat.fields.find((f) => f.key === "score").label = metric.title;
+        cat.fields.find((f) => f.key === "score").label = tableView ? metric.columnLabel || metric.title : metric.title;
       } else {
-        cat.fields.splice(1, 0, { ...metric, type: "number", list: false, benchmark: true, empty: "比較データなし" });
+        cat.fields.splice(at, 0, { ...metric, label: tableView ? metric.columnLabel || metric.label : metric.label, type: "number", list: tableView, benchmark: true, empty: "比較データなし" });
+        if (tableView) at++;
       }
     }
     for (const item of SPEC.data[catId]) {
@@ -45,13 +49,13 @@
     }
   }
   // ランキングでは性能と直接関係の薄い項目を減らす。詳細・比較では保持。
+  // CPU・GPU の表は以前どおりコスパ・電力あたり・発売日も並べる（計算に使うスコアは一覧の注記に明記）
   for (const cat of SPEC.categories.filter((c) => SPEC.benchmarks[c.id])) {
-    const hidden = cat.id === "ai" ? ["params", "active", "license", "checkedAt"] : ["verification", "costPerf", "efficiency", "release"];
+    const hidden = cat.id === "ai" ? ["params", "active", "license", "checkedAt"] : ["verification"];
     for (const field of cat.fields) if (hidden.includes(field.key)) field.list = false;
     if (cat.id !== "ai") {
-      const name = cat.id === "cpu" ? "CPU Mark" : "Time Spy（参考）";
-      cat.fields.find((f) => f.key === "costPerf").label = `${name} / 1,000円`;
-      cat.fields.find((f) => f.key === "efficiency").label = `${name} / 公称電力W`;
+      cat.fields.find((f) => f.key === "costPerf").label = "コスパ";
+      cat.fields.find((f) => f.key === "efficiency").label = "電力あたり";
     }
   }
   SPEC.benchmarkOf = (catId, key) => SPEC.benchmarks[catId]?.metrics.find((m) => m.key === key);
