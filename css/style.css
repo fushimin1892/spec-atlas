@@ -368,6 +368,7 @@ a.btn-small:hover { color: var(--gold); }
 .audit-verified { color: #3c684d; }
 .audit-mismatch { color: #a13825; font-weight: 600; }
 .audit-unverified { color: #775c29; }
+.audit-reference, .audit-notApplicable { color: #775c29; }
 .category-sources { margin: 12px 0 20px; font-size: 12px; }
 .category-sources summary { cursor: pointer; padding: 8px 0; }
 .category-sources summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }

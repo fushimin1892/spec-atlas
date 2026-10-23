@@ -31,6 +31,14 @@
     return esc(value);
   }
   // 横棒・添え書きまで含めたセルの中身（一覧・詳細・比較で共通）
+  function itemValue(field, item) {
+    if (item.integrated && field.key === "vram") return "システムメモリ共有";
+    if (item.integrated && field.key === "tdp") return "対象外（搭載CPU・設定に依存）";
+    const range = item[`${field.key}Range`];
+    if (range) return `${formatValue({ ...field, unit: null }, range[0])}–${formatValue(field, range[1])}`;
+    return formatValue(field, item[field.key]);
+  }
+
   function cellHtml(cat, field, item) {
     const value = item[field.key];
     if (cat.id === "ai" && field.key === "params" && value == null) {
@@ -45,34 +53,39 @@
     const url = field.link && item[field.link];
     // 外部データの URL なので https のものだけリンクにする
     const shown = url && /^https:\/\//.test(url)
-      ? `<a class="ext" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${formatValue(field, value)}</a>`
-      : formatValue(field, value);
+      ? `<a class="ext" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${itemValue(field, item)}</a>`
+      : itemValue(field, item);
     const check = field.key === "score" && SPEC.verificationOf?.(cat.id, item);
     return shown + sub + (check && check.fields.find((f) => f.key === "score").status !== "verified" && value != null ? '<span class="sub">未確認の既存値</span>' : "");
   }
 
   function auditSummary(cat) {
     if (!["cpu", "gpu"].includes(cat.id)) return "";
-    const checks = getItems(cat.id).map((item) => SPEC.verificationOf(cat.id, item));
-    const technical = checks.filter((c) => c.fields.filter((f) => !["release", "score"].includes(f.key)).every((f) => f.status === "verified")).length;
+    const items = getItems(cat.id);
+    const checks = items.map((item) => SPEC.verificationOf(cat.id, item));
+    const technicalFields = (check) => check.fields.filter((field) => !["release", "score"].includes(field.key));
+    const applicable = checks.filter((check) => technicalFields(check).some((field) => field.status !== "notApplicable"));
+    const technical = applicable.filter((check) => technicalFields(check).every((field) => field.status === "verified")).length;
+    const pending = items.filter((item, index) => technicalFields(checks[index]).some((field) => !["verified", "notApplicable"].includes(field.status)));
     const dated = checks.filter((c) => c.verified === c.total).length;
     const scores = checks.filter((c) => c.fields.find((f) => f.key === "score").status === "verified").length;
     const publishedScores = getItems(cat.id).filter((item) => item.score != null).length;
     return `<aside class="audit-summary" aria-label="情報の照合状況"><strong>照合状況（${esc(SPEC.hardwareEvidence.checkedAt)}）</strong>
-      <p>技術仕様 ${technical}/${checks.length}型番一致 · 発売日も含む仕様 ${dated}/${checks.length}型番一致 · 掲載スコア ${scores}/${publishedScores}件一致（${checks.length - publishedScores}件空欄）</p>
+      <p>技術仕様 ${technical}/${applicable.length}型番一致${checks.length !== applicable.length ? ` · 内蔵GPU ${checks.length - applicable.length}型番は専用VRAM・単体公称電力の対象外（全${checks.length}型番）` : ""} · 発売日も含む仕様 ${dated}/${checks.length}型番一致 · 掲載スコア ${scores}/${publishedScores}件一致（${checks.length - publishedScores}件空欄）</p>
+      ${pending.length ? `<p>技術仕様の確認が残る型番: ${pending.map((item) => `<a href="#/c/${esc(cat.id)}/${esc(item.id)}">${esc(item.name)}</a>`).join("、")}。参考資料との一致は一次資料での一致に含めません。</p>` : ""}
       <p>未確認の項目が残っています。各製品の詳細で、項目別の出典・確認日・条件を確認できます。</p></aside>`;
   }
 
   function verificationHtml(cat, item) {
     const check = SPEC.verificationOf?.(cat.id, item);
     if (check) {
-      const labels = { verified: "一致", mismatch: "要確認（不一致）", unverified: "未確認" };
+      const labels = { verified: "一致", mismatch: "要確認（不一致）", unverified: "未確認", notApplicable: "対象外（理由確認）", reference: "参考資料と一致（メーカー未確認）" };
       return `<section class="verification"><h2>出典・項目別の照合状況</h2>
-        <p class="note">${check.verified}/${check.total}項目の仕様が一致。性能スコア・価格は仕様と分けて確認します。未確認は正しさを保証できません。</p>
-        <div class="table-wrap"><table class="audit-table"><thead><tr><th scope="col">項目</th><th scope="col">掲載値</th><th scope="col">状態</th><th scope="col">照合値・一次資料・確認日</th></tr></thead>
+        <p class="note">対象${check.total}項目中${check.verified}項目の仕様が一致${check.notApplicable ? `（別途${check.notApplicable}項目は対象外）` : ""}。性能スコア・価格は仕様と分けて確認します。未確認は正しさを保証できません。</p>
+        <div class="table-wrap"><table class="audit-table"><thead><tr><th scope="col">項目</th><th scope="col">掲載値</th><th scope="col">状態</th><th scope="col">照合値・資料・確認日</th></tr></thead>
         <tbody>${check.fields.map((result) => {
           const field = cat.fields.find((f) => f.key === result.key);
-          return `<tr><th scope="row">${esc(field.label)}</th><td>${formatValue(field, item[result.key])}</td><td class="audit-${result.status}">${esc(labels[result.status])}</td><td>${result.claims.length ? result.claims.map((c) => `${formatValue(field, c.value)} · <a class="ext" href="${esc(c.source.url)}" target="_blank" rel="noopener noreferrer">${esc(c.source.label)}${c.page ? `（p.${c.page}）` : ""}</a> · ${esc(c.source.checkedAt)}`).join("<br>") : "今回の一次資料による照合は未完了"}</td></tr>`;
+          return `<tr><th scope="row">${esc(field.label)}</th><td>${itemValue(field, item)}</td><td class="audit-${result.status}">${esc(labels[result.status])}</td><td>${result.claims.length ? result.claims.map((c) => `${c.reason ? esc(c.reason) : c.range ? itemValue(field, { [`${field.key}Range`]: c.range }) : formatValue(field, c.value)} · <a class="ext" href="${esc(c.source.url)}" target="_blank" rel="noopener noreferrer">${esc(c.source.label)}${c.page ? `（p.${c.page}）` : ""}</a> · ${esc(c.source.checkedAt)}`).join("<br>") : "今回の一次資料による照合は未完了"}</td></tr>`;
         }).join("")}</tbody></table></div>
         ${check.notes.map((note) => `<p class="note">${esc(note)}</p>`).join("")}
         ${item.price != null ? `<p class="note">参考価格は楽天の保存済み取得値（${esc(SPEC.prices?.[cat.id]?.fetchedAt || "取得日時未確認")}）。現在の価格・在庫の一致は未確認です。</p>` : ""}

@@ -1,4 +1,4 @@
-// 2026-10-23に実際に取得した一次資料の照合値。未収録の項目は未確認。
+// 一次資料と参考資料を区別した項目別照合値。未収録は未確認。
 window.SPEC.hardwareEvidence = {
  "checkedAt": "2026-10-23",
  "sources": {
@@ -187,6 +187,182 @@ window.SPEC.hardwareEvidence = {
    "label": "NVIDIA RTX 4090 提供開始告知",
    "checkedAt": "2026-10-23",
    "sha256": "120443ca43801cec3c554fedab006295c2878080a47f51adcd035337a57cca54"
+  },
+  "additional-ryzen3500xcn": {
+   "url": "https://www.amd.com/zh-cn/support/downloads/drivers.html/processors/ryzen/ryzen-3000-series/amd-ryzen-5-3500x.html",
+   "label": "AMD公式 Ryzen 5 3500X 中国向け仕様",
+   "checkedAt": "2026-10-23",
+   "sha256": "f0375d12fd971810517d8f9a8cded9516f53631b926c7a9f6e25b9915d5e024f"
+  },
+  "additional-amd4700spassmark": {
+   "url": "https://www.cpubenchmark.net/cpu.php?cpu=AMD+4700S",
+   "label": "PassMark AMD 4700S 個別掲載仕様",
+   "checkedAt": "2026-10-23",
+   "sha256": "7b70c549001c6c3657cf2a16071298994e923adc90c1783978917df1bc9ec23c"
+  },
+  "additional-titanrtxpdf": {
+   "url": "https://www.nvidia.com/content/dam/en-zz/Solutions/titan/documents/titan-rtx-for-creators-us-nvidia-1011126-r6-web.pdf",
+   "label": "NVIDIA TITAN RTX 公式データシート",
+   "checkedAt": "2026-10-23",
+   "sha256": "4716ba20bfca6f9f3eecd3edbf80cd585e718a53456fffd8c2bb9a6ccce87090"
+  },
+  "additional-titanv": {
+   "url": "https://www.nvidia.com/sv-se/titan/titan-v/",
+   "label": "NVIDIA TITAN V 公式仕様（スウェーデン）",
+   "checkedAt": "2026-10-23",
+   "sha256": "fca5c0bbeb1f466db3384a397fc7a3970a59311047c7c37b881a1a820542ad84"
+  },
+  "additional-titanxp": {
+   "url": "https://www.nvidia.com/nl-nl/titan/titan-xp/",
+   "label": "NVIDIA TITAN Xp 公式仕様（オランダ）",
+   "checkedAt": "2026-10-23",
+   "sha256": "b4b2a94769c78d9d9141fe8968e862ecbb8fd4a8ad3598be4bf60fc33b4322c0"
+  },
+  "additional-titanxpascalpdf": {
+   "url": "https://deeplearning.lipingyang.org/wp-content/uploads/2017/04/NVIDIA-TITAN-X-Graphics-Card_-NVIDIA-GeForce_full-spec.pdf",
+   "label": "NVIDIA TITAN X Pascal 公式ページ保存PDF（2017-04-25）",
+   "checkedAt": "2026-10-23",
+   "sha256": "c8ef2c3ac7c0085c760974e50e2965fc000247fd20078beb185799cfdc1eb40e",
+   "archiveDate": "2017-04-25",
+   "originalUrl": "https://www.nvidia.com/en-us/geforce/products/10series/titan-x-pascal/"
+  },
+  "additional-gtx1080ti": {
+   "url": "https://www.msi.com/Graphics-Card/GeForce-GTX-1080-Ti-GAMING-X-11G/Specification",
+   "label": "MSI GTX 1080 Ti GAMING X 11G 公式仕様",
+   "checkedAt": "2026-10-23",
+   "sha256": "1399782cca6f52121da7227c4253b1b5ab2a6c3908fc7fdaebb355607dc109d9"
+  },
+  "additional-gtx1070ti": {
+   "url": "https://www.msi.com/Graphics-Card/GeForce-GTX-1070-Ti-GAMING-8G/Specification",
+   "label": "MSI GTX 1070 Ti GAMING 8G 公式仕様",
+   "checkedAt": "2026-10-23",
+   "sha256": "276ce31aad611ddd9781685d7b43cdf6fbd2c079eeeb2db15e7e5d9ce162d9f7"
+  },
+  "additional-gtx1070": {
+   "url": "https://www.msi.com/Graphics-Card/GeForce-GTX-1070-GAMING-X-8G/Specification",
+   "label": "MSI GTX 1070 GAMING X 8G 公式仕様",
+   "checkedAt": "2026-10-23",
+   "sha256": "2b07650b6d7e2d46f95f7334e5ec8da16da74dc0ba088d1c63a750a45e03632f"
+  },
+  "additional-gtx780": {
+   "url": "https://www.msi.com/Graphics-Card/N780-TF-3GD5OC/Specification",
+   "label": "MSI GTX 780 TF 3GD5/OC 公式仕様",
+   "checkedAt": "2026-10-23",
+   "sha256": "5ae1242a198036f823b807c3bca6e7240af8749b249afd1b0d230f89a1f60457"
+  },
+  "additional-rx580": {
+   "url": "https://www.msi.com/Graphics-Card/Radeon-RX-580-GAMING-X-4G/Specification",
+   "label": "MSI RX 580 GAMING X 4G 公式仕様",
+   "checkedAt": "2026-10-23",
+   "sha256": "d95c51b3afabec4c5e7f4bd1b596ce45c01f22c615100403104fb79a1d530088"
+  },
+  "additional-gt1030gddr5": {
+   "url": "https://www.msi.com/Graphics-Card/GeForce-GT-1030-2G-LP-OC/Specification",
+   "label": "MSI GT 1030 2G LP OC GDDR5 公式仕様",
+   "checkedAt": "2026-10-23",
+   "sha256": "c6fcdabefb3904117b662acb2e694237bb260164a609750461939e903495f273"
+  },
+  "additional-gt1030ddr4valid": {
+   "url": "https://www.msi.com/Graphics-Card/GeForce-GT-1030-2GHD4-LP-OC/Specification",
+   "label": "MSI GT 1030 2GHD4 LP OC DDR4 公式仕様",
+   "checkedAt": "2026-10-23",
+   "sha256": "96669290a57911f9c1c48538e9ace8ff1b1de978f541682c00a70b70bf6c7cfc"
+  },
+  "additional-gt730pny": {
+   "url": "https://www.pny.com/File%20Library/Support/PNY%20Products/Resource%20Center/Graphics%20Cards/GT%20700%20Series/PNY-NVIDIA-GeForce-Card-GT-730-1GB-GDDR5.pdf",
+   "label": "PNY GT 730 1GB GDDR5 公式データシート",
+   "checkedAt": "2026-10-23",
+   "sha256": "a6669427674542a207989f8a4a896c49a9155891b1d6887649800aa53d5b09a6"
+  },
+  "additional-gtx1080": {
+   "url": "https://www.nvidia.com/en-us/geforce/news/geforce-gtx-1080-gaming-perfected/",
+   "label": "NVIDIA GTX 1080 公式技術解説・仕様",
+   "checkedAt": "2026-10-23",
+   "sha256": "317d1a7a3b99166765c244f5a4ffd59941faa6d328a560dfca6472afaf40cb78"
+  },
+  "additional-gtx900": {
+   "url": "https://www.nvidia.com/en-gb/geforce/900-series/",
+   "label": "NVIDIA GTX 900シリーズ公式仕様",
+   "checkedAt": "2026-10-23",
+   "sha256": "ae7418003900b83ab6088596ca885dd365f4055070e0efe84f451360b8295bb1"
+  },
+  "additional-gtx770": {
+   "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/geforce-gtx-770/specifications/",
+   "label": "NVIDIA GTX 770 公式仕様",
+   "checkedAt": "2026-10-23",
+   "sha256": "b388d50f996c74d41b833ac4a7e648095ae58e1149d8b96e6f48af06c4d845a8"
+  },
+  "additional-gtx680": {
+   "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/geforce-gtx-680/specifications/",
+   "label": "NVIDIA GTX 680 公式仕様",
+   "checkedAt": "2026-10-23",
+   "sha256": "872001a345d1147bbbe3237b18311edb7f389dc7d00c6f971a5000dc3b8e1b30"
+  },
+  "additional-gtx660": {
+   "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/geforce-gtx-660/specifications/",
+   "label": "NVIDIA GTX 660 公式仕様",
+   "checkedAt": "2026-10-23",
+   "sha256": "42e1f2af1461d9fbb1648921d6247033003fb41ed1ebab294b656e4f2696a779"
+  },
+  "additional-gtx750ti": {
+   "url": "https://www.nvidia.com/es-la/drivers/geforce-gtx-750-ti/",
+   "label": "NVIDIA GTX 750 Ti 公式仕様（中南米）",
+   "checkedAt": "2026-10-23",
+   "sha256": "35e4f1d1e3a4305fec168b0fde4529c451cfeffadd0f9ade6ae9452dc4d4625f"
+  },
+  "additional-gtx1050": {
+   "url": "https://www.nvidia.com/content/apac/event/au/overwatch-campaign/geforce-gtx-1050.html",
+   "label": "NVIDIA GTX 1050/Ti 公式比較表",
+   "checkedAt": "2026-10-23",
+   "sha256": "6c68d38581f281ef9e97793ecfe43b63a9ccbc921224a13b2d5d4ae8fb45f505"
+  },
+  "additional-gtx1060": {
+   "url": "https://www.nvidia.com/content/apac/event/ph/overwatch-campaign/geforce-gtx-1060.html",
+   "label": "NVIDIA GTX 1060 6GB/3GB 公式比較表",
+   "checkedAt": "2026-10-23",
+   "sha256": "1bf5ba0724de5b5227baf37624b578bddce1af0ef78d2d8695af61352f385ca8"
+  },
+  "additional-gtx780ti": {
+   "url": "https://storage-asset.msi.com/datasheet/vga/es/GTX-780Ti-3GD5.pdf",
+   "label": "MSI GTX 780Ti 3GD5 公式データシート",
+   "checkedAt": "2026-10-23",
+   "sha256": "0fb8d35d4d924a49cdd2dc132b59e7f73350fa5c7b095aa701cb4efd9377e7a5"
+  },
+  "additional-rx6750gre12": {
+   "url": "https://www.amd.com/zh-cn/support/downloads/drivers.html/graphics/radeon-rx/radeon-rx-6000-series/amd-radeon-rx-6750-gre-12gb.html",
+   "label": "AMD RX 6750 GRE 12GB 中国向け公式仕様",
+   "checkedAt": "2026-10-23",
+   "sha256": "57fe5d04551b50fbb5b8a779eacf7196bb34b9f71ce86f6eb573708761c337db"
+  },
+  "additional-rx6750gre10": {
+   "url": "https://www.amd.com/zh-cn/support/downloads/drivers.html/graphics/radeon-rx/radeon-rx-6000-series/amd-radeon-rx-6750-gre-10gb.html",
+   "label": "AMD RX 6750 GRE 10GB 中国向け公式仕様",
+   "checkedAt": "2026-10-23",
+   "sha256": "8ca1730759c348acdf8e29ba301a369663698a1f1317c685053fc14a7e8353d3"
+  },
+  "additional-rx560official": {
+   "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-rx-500-series/radeon-rx-560.html",
+   "label": "AMD RX 560 公式仕様",
+   "checkedAt": "2026-10-23",
+   "sha256": "89ce80013f3740624fd224a3014022ede4cc863eba5376dd177fb4725caf1cc8"
+  },
+  "additional-rx590review": {
+   "url": "https://www.tomshardware.com/reviews/amd-radeon-rx-590%2C5907.html",
+   "label": "Tom’s Hardware 発売時実機レビュー（参考照合）",
+   "checkedAt": "2026-10-23",
+   "sha256": "367266a6be02e00479bac32dd9b04f7ecb84b4dc3f960ee687e1e89c37e9aea1"
+  },
+  "additional-intelshared": {
+   "url": "https://www.intel.com/content/www/us/en/support/articles/000020962/graphics.html",
+   "label": "Intel 内蔵グラフィックスの共有メモリFAQ",
+   "checkedAt": "2026-10-23",
+   "sha256": "e88f6944800656865cc02ccdc6575ba94612104782b7e7465a045105db40e46d"
+  },
+  "additional-amdshared": {
+   "url": "https://www.amd.com/en/resources/support-articles/faqs/PA-280.html",
+   "label": "AMD 内蔵GPUのUMA共有メモリ解説",
+   "checkedAt": "2026-10-23",
+   "sha256": "3137a2d6fb9a49c503f5477e7a69b7956664bdab21f61d25902cc77831786e6e"
   }
  },
  "cpu": {
@@ -3601,6 +3777,17 @@ window.SPEC.hardwareEvidence = {
      "score": 17914
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+4700S&id=4309"
+   },
+   {
+    "source": "additional-amd4700spassmark",
+    "values": {
+     "cores": 8,
+     "threads": 16,
+     "baseClock": 3.6,
+     "boostClock": 4,
+     "cache": 8
+    },
+    "note": "PassMark個別ページの掲載仕様と照合。CPUメーカーによる全仕様の再確認とは区別。L3はCPUパッケージ合計8MB。"
    }
   ],
   "ryzen-5-3600": [
@@ -4314,6 +4501,18 @@ window.SPEC.hardwareEvidence = {
      "score": 13162
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+5+3500X&id=3592"
+   },
+   {
+    "source": "additional-ryzen3500xcn",
+    "values": {
+     "cores": 6,
+     "threads": 6,
+     "tdp": 65,
+     "baseClock": 3.6,
+     "boostClock": 4.1,
+     "cache": 32,
+     "release": "2019/09/24"
+    }
    }
   ],
   "core-i7-9700f": [
@@ -5892,6 +6091,14 @@ window.SPEC.hardwareEvidence = {
      "vram": 8
     },
     "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-rx-500-series/radeon-rx-590.html"
+   },
+   {
+    "source": "additional-rx590review",
+    "values": {},
+    "referenceValues": {
+     "tdp": 225
+    },
+    "note": "実機レビューが記載したAMD公称値225Wと参考照合。現在のAMD公式ページは電力未記載。MSI ARMOR 8G OCの220Wを別カードへ流用せず、メーカー資料による一致には含めない。"
    }
   ],
   "r9-fury-x": [
@@ -5930,6 +6137,14 @@ window.SPEC.hardwareEvidence = {
      "tdp": 185
     },
     "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-rx-500-series/radeon-rx-580.html"
+   },
+   {
+    "source": "additional-rx580",
+    "values": {
+     "vram": 4,
+     "tdp": 185
+    },
+    "note": "記載したメーカー製カードの容量・公称電力で照合。他社製カードや別容量の製品には流用しません。"
    }
   ],
   "rx-480": [
@@ -6006,6 +6221,17 @@ window.SPEC.hardwareEvidence = {
      "vram": 4
     },
     "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-rx-500-series/radeon-rx-560.html"
+   },
+   {
+    "source": "additional-rx560official",
+    "values": {},
+    "ranges": {
+     "tdp": [
+      60,
+      80
+     ]
+    },
+    "note": "AMDの公称範囲60〜80Wをそのまま掲載。80Wの固定値や全製品共通値とは扱わず、単一値での効率計算を行わない。"
    }
   ],
   "rx-460": [
@@ -6136,6 +6362,14 @@ window.SPEC.hardwareEvidence = {
      "tdp": 180
     },
     "note": "PNY公式資料の基準TGPで照合。カードメーカー・製品によって異なる。"
+   },
+   {
+    "source": "additional-gtx1070ti",
+    "values": {
+     "vram": 8,
+     "tdp": 180
+    },
+    "note": "記載したメーカー製カードの容量・公称電力で照合。他社製カードや別容量の製品には流用しません。"
    }
   ],
   "gtx-1070": [
@@ -6145,6 +6379,14 @@ window.SPEC.hardwareEvidence = {
      "tdp": 150
     },
     "note": "PNY公式資料の基準TGPで照合。カードメーカー・製品によって異なる。"
+   },
+   {
+    "source": "additional-gtx1070",
+    "values": {
+     "vram": 8,
+     "tdp": 150
+    },
+    "note": "記載したメーカー製カードの容量・公称電力で照合。他社製カードや別容量の製品には流用しません。"
    }
   ],
   "gtx-1060-6gb": [
@@ -6154,6 +6396,12 @@ window.SPEC.hardwareEvidence = {
      "tdp": 120
     },
     "note": "PNY公式資料の基準TGPで照合。カードメーカー・製品によって異なる。"
+   },
+   {
+    "source": "additional-gtx1060",
+    "values": {
+     "vram": 6
+    }
    }
   ],
   "gtx-1060-3gb": [
@@ -6163,6 +6411,12 @@ window.SPEC.hardwareEvidence = {
      "tdp": 120
     },
     "note": "PNY公式資料の基準TGPで照合。カードメーカー・製品によって異なる。"
+   },
+   {
+    "source": "additional-gtx1060",
+    "values": {
+     "vram": 3
+    }
    }
   ],
   "gtx-1050-ti": [
@@ -6172,6 +6426,12 @@ window.SPEC.hardwareEvidence = {
      "tdp": 75
     },
     "note": "PNY公式資料の基準TGPで照合。カードメーカー・製品によって異なる。"
+   },
+   {
+    "source": "additional-gtx1050",
+    "values": {
+     "vram": 4
+    }
    }
   ],
   "gtx-1050": [
@@ -6181,6 +6441,12 @@ window.SPEC.hardwareEvidence = {
      "tdp": 75
     },
     "note": "PNY公式資料の基準TGPで照合。カードメーカー・製品によって異なる。"
+   },
+   {
+    "source": "additional-gtx1050",
+    "values": {
+     "vram": 2
+    }
    }
   ],
   "gt-710": [
@@ -6240,6 +6506,13 @@ window.SPEC.hardwareEvidence = {
      "vram": 6
     },
     "note": "MSI製カードの該当メモリ容量・電力を参考照合。基準カードや他社製カードの全仕様を保証するものではありません。"
+   },
+   {
+    "source": "additional-gtx900",
+    "values": {
+     "vram": 6,
+     "tdp": 250
+    }
    }
   ],
   "gtx-660": [
@@ -6249,6 +6522,12 @@ window.SPEC.hardwareEvidence = {
      "vram": 2
     },
     "note": "MSI製カードの該当メモリ容量・電力を参考照合。基準カードや他社製カードの全仕様を保証するものではありません。"
+   },
+   {
+    "source": "additional-gtx660",
+    "values": {
+     "tdp": 140
+    }
    }
   ],
   "gtx-760": [
@@ -6268,6 +6547,253 @@ window.SPEC.hardwareEvidence = {
      "vram": 2
     },
     "note": "MSI製カードの該当メモリ容量・電力を参考照合。基準カードや他社製カードの全仕様を保証するものではありません。"
+   },
+   {
+    "source": "additional-gtx770",
+    "values": {
+     "tdp": 230
+    }
+   }
+  ],
+  "nvidia-titan-rtx": [
+   {
+    "source": "additional-titanrtxpdf",
+    "values": {
+     "vram": 24,
+     "tdp": 280
+    },
+    "page": 1
+   }
+  ],
+  "nvidia-titan-v": [
+   {
+    "source": "additional-titanv",
+    "values": {
+     "vram": 12,
+     "tdp": 250
+    }
+   }
+  ],
+  "nvidia-titan-xp": [
+   {
+    "source": "additional-titanxp",
+    "values": {
+     "vram": 12,
+     "tdp": 250
+    }
+   }
+  ],
+  "nvidia-titan-x-pascal": [
+   {
+    "source": "additional-titanxpascalpdf",
+    "values": {
+     "vram": 12
+    },
+    "page": 1,
+    "note": "メーカー公式ページを第三者が保存した2017年のPDF。現行ページでは別製品へ転送されるため保存版を使用。"
+   },
+   {
+    "source": "additional-titanxpascalpdf",
+    "values": {
+     "tdp": 250
+    },
+    "page": 3
+   }
+  ],
+  "gtx-1080-ti": [
+   {
+    "source": "additional-gtx1080ti",
+    "values": {
+     "vram": 11,
+     "tdp": 250
+    },
+    "note": "記載したメーカー製カードの容量・公称電力で照合。他社製カードや別容量の製品には流用しません。"
+   }
+  ],
+  "gtx-780": [
+   {
+    "source": "additional-gtx780",
+    "values": {
+     "vram": 3,
+     "tdp": 250
+    },
+    "note": "記載したメーカー製カードの容量・公称電力で照合。他社製カードや別容量の製品には流用しません。"
+   }
+  ],
+  "gt-1030-gddr5": [
+   {
+    "source": "additional-gt1030gddr5",
+    "values": {
+     "vram": 2,
+     "tdp": 30
+    },
+    "note": "記載したメーカー製カードの容量・公称電力で照合。他社製カードや別容量の製品には流用しません。"
+   }
+  ],
+  "gt-1030-gddr4": [
+   {
+    "source": "additional-gt1030ddr4valid",
+    "values": {
+     "vram": 2,
+     "tdp": 20
+    },
+    "note": "記載したメーカー製カードの容量・公称電力で照合。他社製カードや別容量の製品には流用しません。"
+   }
+  ],
+  "gt-730": [
+   {
+    "source": "additional-gt730pny",
+    "values": {
+     "vram": 1,
+     "tdp": 38
+    },
+    "note": "記載したメーカー製カードの容量・公称電力で照合。他社製カードや別容量の製品には流用しません。"
+   }
+  ],
+  "gtx-1080": [
+   {
+    "source": "additional-gtx1080",
+    "values": {
+     "vram": 8,
+     "tdp": 180
+    }
+   }
+  ],
+  "gtx-680": [
+   {
+    "source": "additional-gtx680",
+    "values": {
+     "vram": 2,
+     "tdp": 195
+    }
+   }
+  ],
+  "gtx-750-ti": [
+   {
+    "source": "additional-gtx750ti",
+    "values": {
+     "vram": 2,
+     "tdp": 60
+    }
+   }
+  ],
+  "gtx-780-ti": [
+   {
+    "source": "additional-gtx780ti",
+    "values": {
+     "vram": 3,
+     "tdp": 250
+    },
+    "page": 1,
+    "note": "記載したメーカー製カードの容量・公称電力で照合。他社製カードや別容量の製品には流用しません。"
+   }
+  ],
+  "rx-6750-gre-12gb": [
+   {
+    "source": "additional-rx6750gre12",
+    "values": {
+     "vram": 12,
+     "tdp": 230
+    }
+   }
+  ],
+  "rx-6750-gre-10gb": [
+   {
+    "source": "additional-rx6750gre10",
+    "values": {
+     "vram": 10,
+     "tdp": 170
+    }
+   }
+  ],
+  "uhd-770": [
+   {
+    "source": "additional-intelshared",
+    "values": {},
+    "notApplicable": {
+     "vram": "専用VRAMを持たずシステムメモリを共有。固定GB値の照合は対象外。"
+    },
+    "note": "対象外は確認済みの数値や0GB・0Wを意味しない。割当メモリやCPUパッケージの電力をGPU単体値として流用しない。"
+   },
+   {
+    "source": "intel-desktop",
+    "values": {},
+    "notApplicable": {
+     "tdp": "内蔵GPU。搭載CPUとシステム設定に依存するため、このGPU名に固定した単体TGP/TBPは掲載対象外。"
+    },
+    "note": "メーカーCPU仕様資料の公称電力はCPUごとの値。内蔵GPU名の単体電力へ流用しない。"
+   }
+  ],
+  "uhd-750": [
+   {
+    "source": "additional-intelshared",
+    "values": {},
+    "notApplicable": {
+     "vram": "専用VRAMを持たずシステムメモリを共有。固定GB値の照合は対象外。"
+    },
+    "note": "対象外は確認済みの数値や0GB・0Wを意味しない。割当メモリやCPUパッケージの電力をGPU単体値として流用しない。"
+   },
+   {
+    "source": "intel-desktop",
+    "values": {},
+    "notApplicable": {
+     "tdp": "内蔵GPU。搭載CPUとシステム設定に依存するため、このGPU名に固定した単体TGP/TBPは掲載対象外。"
+    },
+    "note": "メーカーCPU仕様資料の公称電力はCPUごとの値。内蔵GPU名の単体電力へ流用しない。"
+   }
+  ],
+  "uhd-630": [
+   {
+    "source": "additional-intelshared",
+    "values": {},
+    "notApplicable": {
+     "vram": "専用VRAMを持たずシステムメモリを共有。固定GB値の照合は対象外。"
+    },
+    "note": "対象外は確認済みの数値や0GB・0Wを意味しない。割当メモリやCPUパッケージの電力をGPU単体値として流用しない。"
+   },
+   {
+    "source": "intel-desktop",
+    "values": {},
+    "notApplicable": {
+     "tdp": "内蔵GPU。搭載CPUとシステム設定に依存するため、このGPU名に固定した単体TGP/TBPは掲載対象外。"
+    },
+    "note": "メーカーCPU仕様資料の公称電力はCPUごとの値。内蔵GPU名の単体電力へ流用しない。"
+   }
+  ],
+  "hd-530": [
+   {
+    "source": "additional-intelshared",
+    "values": {},
+    "notApplicable": {
+     "vram": "専用VRAMを持たずシステムメモリを共有。固定GB値の照合は対象外。"
+    },
+    "note": "対象外は確認済みの数値や0GB・0Wを意味しない。割当メモリやCPUパッケージの電力をGPU単体値として流用しない。"
+   },
+   {
+    "source": "intel-desktop",
+    "values": {},
+    "notApplicable": {
+     "tdp": "内蔵GPU。搭載CPUとシステム設定に依存するため、このGPU名に固定した単体TGP/TBPは掲載対象外。"
+    },
+    "note": "メーカーCPU仕様資料の公称電力はCPUごとの値。内蔵GPU名の単体電力へ流用しない。"
+   }
+  ],
+  "rx-vega-8": [
+   {
+    "source": "additional-amdshared",
+    "values": {},
+    "notApplicable": {
+     "vram": "専用VRAMを持たずシステムメモリを共有。固定GB値の照合は対象外。"
+    },
+    "note": "対象外は確認済みの数値や0GB・0Wを意味しない。割当メモリやCPUパッケージの電力をGPU単体値として流用しない。"
+   },
+   {
+    "source": "amd-cpu",
+    "values": {},
+    "notApplicable": {
+     "tdp": "内蔵GPU。搭載CPUとシステム設定に依存するため、このGPU名に固定した単体TGP/TBPは掲載対象外。"
+    },
+    "note": "メーカーCPU仕様資料の公称電力はCPUごとの値。内蔵GPU名の単体電力へ流用しない。"
    }
   ]
  },
@@ -6277,15 +6803,16 @@ window.SPEC.hardwareEvidence = {
    "ryzen-5-7600x3d": "AMD公式Launch Dateは2024/09/05。地域・販売店によって提供時期が異なる。",
    "ryzen-3-8300g": "Zen 4 / Zen 4c混成モデル。ベースクロックは現在のAMD公式仕様表の3.4 GHzを採用。",
    "ryzen-9-3900": "OEM向け。発売日はAMD公式Launch Dateを採用。",
-   "amd-4700s": "専用キット向けCPU。今回取得した一括仕様表に対象がなく、仕様の一次資料照合は未完了。",
-   "ryzen-5-3500x": "今回取得した公式一括表に対象がなく、仕様の一次資料照合は未完了。"
+   "amd-4700s": "公称電力は資料によって65W・75Wなどが混在。現在取得できたAMD公式ページに値がなく、確定できない65Wの掲載を取り下げた。電力・発売日は未確認。CPU-ZのL3表記はCCX単位の場合があり、合計容量と混同しない。",
+   "ryzen-5-3500x": "中国向け製品。AMD中国向け公式ページに記載された6技術項目と発売日で照合。英語サポートページは仕様欄がない。"
   },
   "gpu": {
-   "rx-560": "AMD公式の電力は60〜80 Wの範囲。掲載80 Wは上限値であり、単一の基準電力としては未確認。",
-   "rx-580": "VRAMは容量違いがあるため、掲載4 GBを公式最大容量8 GBから確認済みとは扱わない。",
+   "rx-560": "公称電力はメーカーの60〜80Wという範囲で確認済み。単一値・実測値ではありません。",
+   "rx-580": "掲載値は4GB版。MSI RX 580 GAMING X 4Gで4GB・185Wを照合。AMDの最大8GBという表記を4GB版の根拠には使わない。",
    "rx-480": "VRAMは容量違いがあるため、掲載4 GBを公式最大容量8 GBから確認済みとは扱わない。",
    "rx-460": "掲載値は4GB版。MSI公式カード仕様4GB・75Wを採用し、AMD一括表2GB・70Wからの流用を避ける。",
-   "arc-a580": "電力は現在のIntel ARKのTBP 185 W。メーカー製カードや以前の175 Wの案内と異なる場合がある。"
+   "arc-a580": "電力は現在のIntel ARKのTBP 185 W。メーカー製カードや以前の175 Wの案内と異なる場合がある。",
+   "rx-590": "VRAM8GBはAMD公式で一致。225Wは発売時レビューの公称値との参考照合に留め、メーカーによる電力確認済み件数には含めない。"
   }
  }
 };

@@ -112,7 +112,7 @@ GTX 770,2137,2,230,2013/05/30
 GTX 1630,2024,4,75,2022/06/28
 GTX 680,1996,2,195,2012/03/22
 GTX 950,1879,2,90,2015/08/20
-RX 560,1816,4,80,2017/04/18
+RX 560,1816,4,,2017/04/18
 GTX 1050,1737,2,75,2016/10/25
 RX 460,1728,4,75,2016/08/08
 GTX 760,1666,2,170,2013/06/25
@@ -190,6 +190,14 @@ Arc B570,,10,150,2025/01/16
         release: release || null,
       };
     });
+
+  // 範囲を単一値と混同しない。内蔵GPUの空欄は、専用メモリ・単体電力の対象外を示す。
+  for (const item of window.SPEC.data.gpu) {
+    if (item.series === "内蔵GPU") item.integrated = true;
+    if (item.id === "rx-560") item.tdpRange = [60, 80];
+    if (item.id === "rx-590") item.tdpNote = "225Wは発売時レビューの公称値。現在のAMD資料では未確認。MSI ARMORの220Wとは区別。";
+    if (item.id === "gt-730") item.variantNote = "1GB GDDR5・64bit版。DDR3版とは仕様が異なります。";
+  }
 
   // data/gpu-prices.js（楽天から取得した価格）があれば当てはめ、コスパを計算する（categories.js）
   window.SPEC.setupPrices("gpu", "消費電力");

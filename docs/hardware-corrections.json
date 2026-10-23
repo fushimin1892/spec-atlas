@@ -45,6 +45,38 @@
       "from": "175",
       "to": "185",
       "reason": "現在のIntel ARKのTBPを採用。資料・製品差を注記。"
+    },
+    {
+      "category": "cpu",
+      "name": "AMD 4700S",
+      "field": "cache",
+      "from": null,
+      "to": 8,
+      "reason": "PassMark個別掲載仕様のCPUパッケージ合計L3 8MBを確認。メーカー再確認とは区別。"
+    },
+    {
+      "category": "cpu",
+      "name": "AMD 4700S",
+      "field": "tdp",
+      "from": 65,
+      "to": null,
+      "reason": "資料差を解消できない公称電力を取り下げ、効率計算も停止。未確認を一致扱いしない。"
+    },
+    {
+      "category": "cpu",
+      "name": "Ryzen 5 3500X",
+      "field": "release",
+      "from": "2019/10/08",
+      "to": "2019/09/24",
+      "reason": "AMD中国向け公式Launch Dateを確認して修正。"
+    },
+    {
+      "category": "gpu",
+      "name": "RX 560",
+      "field": "tdp",
+      "from": 80,
+      "to": "60–80W（範囲）",
+      "reason": "AMD公式の公称電力範囲をそのまま表現し、固定80Wからの効率計算を停止。"
     }
   ],
   "reviewDecisions": [
