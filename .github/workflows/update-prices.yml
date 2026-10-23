@@ -1,0 +1,78 @@
+# 毎日 1 回、楽天市場から GPU の参考価格を取り直して GitHub Pages に公開し直す。
+# コードを main に push したときも公開し直す（そのときは価格は取らず、保存済みの価格を使う）。
+# 楽天のキーはリポジトリの Settings → Secrets and variables → Actions に登録する:
+#   RAKUTEN_APP_ID / RAKUTEN_ACCESS_KEY / RAKUTEN_REFERER（公開サイトの URL）
+name: 価格更新と公開
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 21 * * *" # 毎日 6:00（日本時間）
+  workflow_dispatch: # Actions 画面から手動でも実行できる
+
+permissions:
+  contents: write # 取得した価格をリポジトリに保存する
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: 楽天市場から価格を取得
+        if: github.event_name != 'push'
+        env:
+          RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_ACCESS_KEY: ${{ secrets.RAKUTEN_ACCESS_KEY }}
+          RAKUTEN_REFERER: ${{ secrets.RAKUTEN_REFERER }}
+        run: |
+          if [ -z "$RAKUTEN_APP_ID" ] || [ -z "$RAKUTEN_ACCESS_KEY" ]; then
+            echo "::warning::楽天のキーが未登録のため、価格の取得を飛ばしました（保存済みの価格で公開します）"
+            exit 0
+          fi
+          node tools/fetch-prices.mjs
+
+      - name: 取得した価格を保存
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          [ -f data/gpu-prices.js ] || exit 0 # まだ一度も取得していない
+          git add -A data/gpu-prices.js
+          if git diff --cached --quiet; then
+            echo "価格に変化なし"
+          else
+            git commit -m "参考価格を更新（$(TZ=Asia/Tokyo date +%F)）"
+            git push
+          fi
+
+      # 公開するのはサイト本体だけ（tools/ や server.mjs は含めない）
+      - name: 公開するファイルをまとめる
+        run: |
+          mkdir _site
+          cp -r index.html css js data _site/
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
