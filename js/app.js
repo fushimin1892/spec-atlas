@@ -52,7 +52,7 @@
     if (field.bar && value != null) {
       const max = Math.max(...getItems(cat.id).map((i) => i[field.key] || 0)) || 1;
       const pending = SPEC.verificationOf?.(cat.id, item)?.fields.find((f) => f.key === field.key)?.status !== "verified";
-      return `<span class="bar-cell"><span class="bar"><i style="width:${((value / max) * 100).toFixed(1)}%"></i></span><span class="val">${formatValue(field, value)}</span></span>${pending ? '<span class="sub">未確認の既存値</span>' : ""}`;
+      return `<span class="bar-cell"><span class="bar"><i style="width:${((value / max) * 100).toFixed(1)}%"></i></span><span class="val">${formatValue(field, value)}</span></span>${pending ? '<span class="sub">参考値（出典で再確認待ち）</span>' : ""}`;
     }
     const sub = field.sub && item[field.sub] ? `<span class="sub">${esc(item[field.sub])}</span>` : "";
     const url = field.link && item[field.link];
@@ -61,7 +61,29 @@
       ? `<a class="ext" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${itemValue(field, item)}</a>`
       : itemValue(field, item);
     const check = field.key === "score" && SPEC.verificationOf?.(cat.id, item);
-    return shown + sub + (check && check.fields.find((f) => f.key === "score").status !== "verified" && value != null ? '<span class="sub">未確認の既存値</span>' : "");
+    return shown + sub + (check && check.fields.find((f) => f.key === "score").status !== "verified" && value != null ? '<span class="sub">参考値（出典で再確認待ち）</span>' : "");
+  }
+
+  // 一覧の上に出す「この表の見方」。表に出ている各列の意味を、初めての人にも分かる言葉で並べる。
+  // 初めは開いて見せ、閉じたらその閲覧者には閉じたままにする（localStorage。使えなければ毎回開く）
+  const GUIDE_KEY = "spec-guide-closed";
+  function guideClosed(catId) {
+    try { return (JSON.parse(localStorage.getItem(GUIDE_KEY)) || []).includes(catId); } catch (e) { return false; }
+  }
+  function setGuideClosed(catId, closed) {
+    try {
+      const list = new Set(JSON.parse(localStorage.getItem(GUIDE_KEY)) || []);
+      closed ? list.add(catId) : list.delete(catId);
+      localStorage.setItem(GUIDE_KEY, JSON.stringify([...list]));
+    } catch (e) { /* 保存できなくても画面は動かす */ }
+  }
+  function tableGuide(cat, fields) {
+    const rows = fields.filter((f) => f.help && f.key !== "name");
+    if (!rows.length) return "";
+    return `<details class="table-guide" data-guide="${esc(cat.id)}" ${guideClosed(cat.id) ? "" : "open"}>
+      <summary>この表の見方（各項目の意味）</summary>
+      <dl>${rows.map((f) => `<dt>${esc(f.label)}</dt><dd>${esc(f.help)}</dd>`).join("")}</dl>
+    </details>`;
   }
 
   // 一覧の「数値の見方・出典」に出す、メーカー資料との照合状況の要約（数え方は tools/audit-hardware.mjs と同じ）
@@ -80,7 +102,7 @@
   function benchmarkEvidence(cat, item) {
     const config = SPEC.benchmarks[cat.id];
     const records = SPEC.performanceData[cat.id][item.id] || {};
-    return `<section class="verification"><h2>ベンチマークの測定条件</h2>${config.metrics.filter((m) => m.key !== "score").map((metric) => {
+    return `<section class="verification"><h2>性能テストの値と測り方</h2>${config.metrics.filter((m) => m.key !== "score").map((metric) => {
       const record = records[metric.key];
       const source = record && SPEC.performanceData.sources[record.source];
       return `<p><strong>${esc(metric.title)}</strong> · ${record ? `${formatValue({ type: "number", unit: metric.unit, digits: metric.digits }, record.value)}` : "比較データなし"}</p>
@@ -92,13 +114,13 @@
   function verificationHtml(cat, item) {
     const check = SPEC.verificationOf?.(cat.id, item);
     if (check) {
-      const labels = { verified: "一致", mismatch: "要確認（不一致）", unverified: "未確認", notApplicable: "対象外（理由確認）", reference: "参考資料と一致（メーカー未確認）" };
-      return `<section class="verification"><h2>出典・項目別の照合状況</h2>
-        <p class="note">対象${check.total}項目中${check.verified}項目の仕様が一致${check.notApplicable ? `（別途${check.notApplicable}項目は対象外）` : ""}。性能スコア・価格は仕様と分けて確認します。未確認は正しさを保証できません。</p>
-        <div class="table-wrap"><table class="audit-table"><thead><tr><th scope="col">項目</th><th scope="col">掲載値</th><th scope="col">状態</th><th scope="col">照合値・資料・確認日</th></tr></thead>
+      const labels = { verified: "メーカー資料と一致", mismatch: "メーカー資料と食い違い（要確認）", unverified: "メーカー資料では未確認", notApplicable: "この製品には当てはまらない", reference: "メーカー以外の資料とは一致" };
+      return `<section class="verification"><h2>この情報の確かさ（出典との照合）</h2>
+        <p class="note">メーカーの公式資料と照らし合わせた結果、${check.total}項目のうち${check.verified}項目が一致しました${check.notApplicable ? `（ほかに${check.notApplicable}項目はこの製品には当てはまりません）` : ""}。「メーカー資料では未確認」は、間違いという意味ではなく、公式資料に書かれていないため確かめられていない項目です。</p>
+        <div class="table-wrap"><table class="audit-table"><thead><tr><th scope="col">項目</th><th scope="col">このサイトの値</th><th scope="col">確認の結果</th><th scope="col">資料に書かれた値・資料・確認した日</th></tr></thead>
         <tbody>${check.fields.map((result) => {
           const field = cat.fields.find((f) => f.key === result.key);
-          return `<tr><th scope="row">${esc(field.label)}</th><td>${itemValue(field, item)}</td><td class="audit-${result.status}">${esc(labels[result.status])}</td><td>${result.claims.length ? result.claims.map((c) => `${c.reason ? esc(c.reason) : c.range ? itemValue(field, { [`${field.key}Range`]: c.range }) : formatValue(field, c.value)} · <a class="ext" href="${esc(c.source.url)}" target="_blank" rel="noopener noreferrer">${esc(c.source.label)}${c.page ? `（p.${c.page}）` : ""}</a> · ${esc(c.source.checkedAt)}`).join("<br>") : "今回の一次資料による照合は未完了"}</td></tr>`;
+          return `<tr><th scope="row">${esc(field.label)}</th><td>${itemValue(field, item)}</td><td class="audit-${result.status}">${esc(labels[result.status])}</td><td>${result.claims.length ? result.claims.map((c) => `${c.reason ? esc(c.reason) : c.range ? itemValue(field, { [`${field.key}Range`]: c.range }) : formatValue(field, c.value)} · <a class="ext" href="${esc(c.source.url)}" target="_blank" rel="noopener noreferrer">${esc(c.source.label)}${c.page ? `（p.${c.page}）` : ""}</a> · ${esc(c.source.checkedAt)}`).join("<br>") : "メーカーの公式資料ではまだ確認できていません"}</td></tr>`;
         }).join("")}</tbody></table></div>
         ${check.notes.map((note) => `<p class="note">${esc(note)}</p>`).join("")}
         ${(SPEC.hardwareEvidence[cat.id][item.id] || []).filter((row) => row.note).map((row) => SPEC.hardwareEvidence.sources[row.source]).filter((source, index, all) => all.indexOf(source) === index).map((source) => `<p class="note"><a class="ext" href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.label)}</a> · ${esc(source.checkedAt)}</p>`).join("")}
@@ -299,9 +321,11 @@
       ${cat.specNote ? `<p class="note">${esc(cat.specNote)}</p>` : ""}${auditLine(cat)}${(cat.sources || []).map((s) => `<p class="note"><a class="ext" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></p>`).join("")}</details>
       ${SPEC.applyPrices[cat.id] ? `<p class="note live" id="priceStatus" role="status" aria-live="polite">${esc(priceStatus[cat.id] || "")}</p>` : ""}
       ${ranking ? `<div id="performanceRows" class="performance-ranking" ${st.view !== "performance" ? "hidden" : ""}></div>` : ""}
+      ${tableGuide(cat, listFields)}
       <div class="table-wrap" ${st.view !== "specs" ? "hidden" : ""}><table class="spec-table" id="specTable"></table></div>`;
 
     const table = document.getElementById("specTable");
+    main.querySelector(".table-guide")?.addEventListener("toggle", (e) => setGuideClosed(cat.id, !e.target.open));
     const draw = () => {
       updateRanks();
       const q = st.q.trim().toLowerCase();
@@ -359,7 +383,7 @@
               const active = f.key === st.sort;
               const aria = active ? (st.dir === 1 ? "ascending" : "descending") : "none";
               const arrow = active ? (st.dir === 1 ? "▲" : "▼") : "";
-              return `<th scope="col" class="${f.type === "number" ? "num" : ""}" aria-sort="${aria}"><button class="sort-btn" data-sort="${esc(f.key)}">${esc(f.label)} <span aria-hidden="true">${arrow}</span></button></th>`;
+              return `<th scope="col" class="${f.type === "number" ? "num" : ""}" aria-sort="${aria}"${f.help ? ` title="${esc(f.help)}"` : ""}><button class="sort-btn" data-sort="${esc(f.key)}">${esc(f.label)} <span aria-hidden="true">${arrow}</span></button></th>`;
             })
             .join("")}
         </tr></thead>
@@ -440,7 +464,7 @@
         <button class="btn" id="cmpBtn">この製品をほかと比較する</button>
       </div>
       <dl class="spec-list">
-        ${cat.fields.map((f) => `<dt>${esc(f.label)}</dt><dd>${cellHtml(cat, f, item)}</dd>`).join("")}
+        ${cat.fields.map((f) => `<dt>${esc(f.label)}${f.help ? `<span class="field-help">${esc(f.help)}</span>` : ""}</dt><dd>${cellHtml(cat, f, item)}</dd>`).join("")}
       </dl>
       ${benchmarkEvidence(cat, item)}
       ${cat.specNote ? `<p class="note">${esc(cat.specNote)}</p>` : ""}
@@ -483,7 +507,9 @@
         <span class="cmp-val">${cellHtml(cat, plain, i)}${isBest ? '<span class="sr-only">（最も良い値）</span>' : ""}</span>${bar}
       </td>`;
     });
-    return `<tr><th scope="row">${esc(f.label)}</th>${cells.join("")}</tr>`;
+    // 比較では数字を見比べやすいよう、説明は最初の一文だけ（全文は詳細ページと一覧の「この表の見方」）
+    const shortHelp = f.help ? f.help.split("。")[0] + "。" : "";
+    return `<tr><th scope="row">${esc(f.label)}${shortHelp ? `<span class="field-help">${esc(shortHelp)}</span>` : ""}</th>${cells.join("")}</tr>`;
   }
 
   // プルダウンの選択肢。シリーズ（無ければメーカー）ごとにまとめ、一覧の初期の並び順（性能順など）で並べる

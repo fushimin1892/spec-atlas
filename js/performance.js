@@ -6,16 +6,16 @@
     cpu: {
       default: "gamingScore", baseline: "ryzen-5-7600",
       metrics: [
-        { key: "gamingScore", label: "ゲーム向け", columnLabel: "ゲーム性能", title: "PassMark Gaming Score", better: "high", unit: "pt", source: "gaming", description: "シングル・素数計算・物理演算とL3キャッシュを組み合わせた合成指標。ゲーム向けCPUを比較する目安です。", limit: "実際のゲームのFPSではありません。公開表の上位300件にないCPUはデータなしです。" },
-        { key: "singleScore", label: "シングル", columnLabel: "シングル性能", title: "PassMark Single Thread", better: "high", unit: "pt", source: "single", description: "1つの処理を実行する速さ。操作の応答や、並列化しにくい処理を比べる目安です。", limit: "ゲームのFPSはGPU・メモリ・ゲームの処理によっても変わります。" },
-        { key: "score", label: "マルチ", columnLabel: "マルチ性能", title: "PassMark CPU Mark", better: "high", unit: "pt", source: null, description: "CPU全体で並列処理する能力。レンダリング・圧縮などの重い作業を比べる目安です。", limit: "マルチの順位はゲームの順位と一致するとは限りません。2026-10-22更新分。" },
+        { key: "gamingScore", label: "ゲーム向け", columnLabel: "ゲーム指標", title: "PassMark Gaming Score（キャッシュ重視）", help: "PassMark のゲーム向けの合成値。1 コアの速さと一部の計算テストに、L3 キャッシュの量を加えて計算します。キャッシュの多い X3D 系は、実際のゲームの差より大きく高く出る傾向があります。ゲームの FPS そのものではありません。", better: "high", unit: "pt", source: "gaming", description: "シングル・素数計算・物理演算とL3キャッシュを組み合わせた合成指標。ゲーム向けCPUを比較する目安です。", limit: "実際のゲームのFPSではありません。公開表の上位300件にないCPUはデータなしです。" },
+        { key: "singleScore", label: "シングル", columnLabel: "シングル性能", title: "PassMark Single Thread", help: "1 つのコアの速さ（PassMark Single Thread）。アプリの操作の軽さや、多くのゲームの動きやすさに関わります。", better: "high", unit: "pt", source: "single", description: "1つの処理を実行する速さ。操作の応答や、並列化しにくい処理を比べる目安です。", limit: "ゲームのFPSはGPU・メモリ・ゲームの処理によっても変わります。" },
+        { key: "score", label: "マルチ", columnLabel: "マルチ性能", title: "PassMark CPU Mark", help: "すべてのコアを使ったときの処理能力（PassMark CPU Mark）。動画の書き出しや圧縮など、重い作業の速さの目安です。数値が大きいほど速い CPU です。", better: "high", unit: "pt", source: null, description: "CPU全体で並列処理する能力。レンダリング・圧縮などの重い作業を比べる目安です。", limit: "マルチの順位はゲームの順位と一致するとは限りません。2026-10-22更新分。" },
       ],
     },
     gpu: {
       default: "g3dScore", baseline: "rtx-4060",
       metrics: [
-        { key: "g3dScore", label: "3D描画", columnLabel: "3D描画(G3D)", title: "PassMark G3D Mark", better: "high", unit: "pt", source: "g3d", description: "複数の3D描画テストをまとめたGPU性能。基準のGPUと比べて、スコアがどの程度違うかを表示します。", limit: "ゲームの実測FPS・レイトレーシング・DLSS等の性能を示す値ではありません。投稿PCの構成も異なります。" },
-        { key: "score", label: "Time Spy（参考）", columnLabel: "Time Spy", title: "3DMark Time Spy Graphics", better: "high", unit: "pt", source: null, description: "DirectX 12の描画性能を比較する合成ベンチマーク。掲載済みの参考値です。", limit: "今回はUL公式の取得エラーで再照合できていません。G3D Markとは別の指標です。" },
+        { key: "g3dScore", label: "3D描画", columnLabel: "3D描画(G3D)", title: "PassMark G3D Mark", help: "PassMark の 3D 描画テストをまとめた値。利用者が投稿した PC の測定をまとめたもので、最上位のカードどうしは差が小さく出やすい傾向があります。ゲームの FPS そのものではありません。", better: "high", unit: "pt", source: "g3d", description: "複数の3D描画テストをまとめたGPU性能の値。数値が大きいほど描画性能が高いGPUです。", limit: "ゲームの実測FPS・レイトレーシング・DLSS等の性能を示す値ではありません。投稿PCの構成も異なります。" },
+        { key: "score", label: "Time Spy（参考）", columnLabel: "Time Spy", title: "3DMark Time Spy Graphics", help: "3DMark Time Spy のグラフィックスの値（DirectX 12 のゲーム向け描画テスト）。ゲームでの描画性能の目安です。出典の UL Benchmarks が停止中のため、今は再確認できていない参考値です。", better: "high", unit: "pt", source: null, description: "DirectX 12の描画性能を比較する合成ベンチマーク。掲載済みの参考値です。", limit: "今回はUL公式の取得エラーで再照合できていません。G3D Markとは別の指標です。" },
       ],
     },
     ai: {
@@ -40,9 +40,11 @@
     let at = tableView ? cat.fields.findIndex((f) => f.key === "score") + 1 : 1;
     for (const metric of config.metrics) {
       if (metric.key === "score") {
-        cat.fields.find((f) => f.key === "score").label = tableView ? metric.columnLabel || metric.title : metric.title;
+        const scoreField = cat.fields.find((f) => f.key === "score");
+        scoreField.label = tableView ? metric.columnLabel || metric.title : metric.title;
+        scoreField.help = metric.help || `${metric.description} ${metric.limit}`;
       } else {
-        cat.fields.splice(at, 0, { ...metric, label: tableView ? metric.columnLabel || metric.label : metric.label, type: "number", list: tableView, benchmark: true, empty: "比較データなし" });
+        cat.fields.splice(at, 0, { ...metric, label: tableView ? metric.columnLabel || metric.label : metric.label, help: metric.help || `${metric.description} ${metric.limit}`, type: "number", list: tableView, benchmark: true, empty: "比較データなし" });
         if (tableView) at++;
       }
     }
