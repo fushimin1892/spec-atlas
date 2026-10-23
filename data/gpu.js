@@ -42,7 +42,7 @@ Arc A770 8GB,13552,8,225,,,,2022/10/12
 RX 6750 XT,13517,12,250,47980,中古,楽天,2022/05/10
 RTX 4060 Ti 8GB,13493,8,160,54980,中古,楽天,2023/05/24
 NVIDIA TITAN V,13490,12,250,,,,2017/12/07
-RTX 4060 Ti 16GB,13483,16,160,,,,2023/07/18
+RTX 4060 Ti 16GB,13483,16,165,,,,2023/07/18
 RTX 5060,12916,8,145,77800,新品,楽天,2025/05/19
 RX 9060 XT 8GB,12805,8,150,,,,2025/06/04
 RX 6700 XT,12786,12,230,39980,中古,楽天,2021/03/18
@@ -203,5 +203,15 @@ GT 710,192,2,19,5480,新品,楽天,2014/03/27
     }
   };
   window.SPEC.applyGpuPrices(window.SPEC.prices && window.SPEC.prices.gpu);
+
+  // tools/check-specs.mjs が作る data/gpu-official.js があれば、公式仕様と照合済みの型番に印を付ける
+  const official = window.SPEC.official && window.SPEC.official.gpu;
+  if (official) {
+    const checkedAt = new Date(official.checkedAt).toLocaleDateString("ja-JP");
+    for (const g of window.SPEC.data.gpu) {
+      const o = official.items[g.id];
+      if (o) g.official = { url: o.url, source: official.source, checkedAt };
+    }
+  }
 })();
 

@@ -43,13 +43,20 @@ jobs:
           fi
           node tools/fetch-prices.mjs
 
+      # NVIDIA 公式の仕様と VRAM・消費電力を照合する。食い違いは警告に出すだけで、公開は止めない
+      - name: 公式仕様と照合
+        if: github.event_name != 'push'
+        continue-on-error: true
+        run: node tools/check-specs.mjs
+
       - name: 取得した価格を保存
         if: github.event_name != 'push'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          [ -f data/gpu-prices.js ] || exit 0 # まだ一度も取得していない
-          git add -A data/gpu-prices.js
+          for f in data/gpu-prices.js data/gpu-official.js; do
+            [ -f "$f" ] && git add -A "$f"
+          done
           if git diff --cached --quiet; then
             echo "価格に変化なし"
           else

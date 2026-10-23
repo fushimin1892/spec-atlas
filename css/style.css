@@ -218,6 +218,7 @@ a.card:hover .card-arrow { transform: translateX(4px); }
 .note { margin: -8px 0 16px; font-size: 12px; color: var(--muted); letter-spacing: .04em; }
 .note.live { margin-top: -12px; color: var(--gold); }
 .note.live:empty { display: none; }
+.note.official { margin: 16px 0 0; max-width: 720px; }
 
 .table-wrap { overflow-x: auto; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .spec-table { width: 100%; border-collapse: collapse; font-size: 14px; }

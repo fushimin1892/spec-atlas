@@ -276,6 +276,9 @@
       <dl class="spec-list">
         ${cat.fields.map((f) => `<dt>${esc(f.label)}</dt><dd>${cellHtml(cat, f, item)}</dd>`).join("")}
       </dl>
+      ${item.official && /^https:\/\//.test(item.official.url)
+        ? `<p class="note official">✓ VRAM・消費電力は <a class="ext" href="${esc(item.official.url)}" target="_blank" rel="noopener noreferrer">${esc(item.official.source)}</a> と照合済み（${esc(item.official.checkedAt)}）</p>`
+        : ""}
       <section class="placeholder">
         <h2>ベンチマーク・関連製品</h2>
         <p class="muted">今後追加予定のエリアです。</p>
