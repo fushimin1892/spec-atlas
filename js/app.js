@@ -179,7 +179,7 @@
         <span class="muted" id="hitCount"></span>
       </div>
       ${cat.note ? `<p class="note">${esc(cat.note)}</p>` : ""}
-      ${cat.source ? `<p class="note"><a class="ext" href="${esc(cat.source.url)}" target="_blank" rel="noopener noreferrer">${esc(cat.source.label)}</a></p>` : ""}
+      ${(cat.sources || []).map((s) => `<p class="note"><a class="ext" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></p>`).join("")}
       ${cat.id === "gpu" ? `<p class="note live" id="priceStatus" role="status" aria-live="polite">${esc(SPEC.priceStatus || "")}</p>` : ""}
       <div class="table-wrap"><table class="spec-table" id="specTable"></table></div>`;
 
