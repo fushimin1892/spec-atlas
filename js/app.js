@@ -155,7 +155,12 @@
     const optionsFor = (key) => {
       const other = filterKeys.filter((k) => k !== key);
       const pool = items.filter((i) => other.every((k) => !st.filters[k] || i[k] === st.filters[k]));
-      return [...new Set(pool.map((i) => i[key]).filter(Boolean))];
+      const values = [...new Set(pool.map((i) => i[key]).filter(Boolean))];
+      // optionOrder があればその順（世代の新しい順など）。載っていない値は後ろに出てきた順で並べる
+      const order = (cat.optionOrder || {})[key];
+      if (!order) return values;
+      const rank = (v) => (order.includes(v) ? order.indexOf(v) : order.length);
+      return values.sort((a, b) => rank(a) - rank(b));
     };
     const selectsHtml = () =>
       filterFields

@@ -239,7 +239,7 @@ a.card:hover .card-arrow { transform: translateX(4px); }
 .rank { width: 36px; font-family: var(--latin); font-size: 15px; color: var(--faint); text-align: right; }
 /* 性能スコアの細い横棒 */
 .bar-cell { display: flex; align-items: center; gap: 14px; justify-content: flex-end; }
-.bar { width: 140px; height: 2px; background: var(--border); }
+.bar { width: 110px; height: 2px; background: var(--border); }
 .bar i { display: block; height: 100%; background: var(--gold); }
 .bar-cell .val { min-width: 56px; text-align: right; font-family: var(--latin); font-size: 17px; font-weight: 600; }
 .spec-table td a.ext, a.ext { font-family: inherit; font-size: inherit; border-bottom: 1px dotted var(--faint); }
