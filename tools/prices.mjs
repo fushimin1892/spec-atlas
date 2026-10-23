@@ -73,7 +73,8 @@ const GPU_EXCLUDE = [
 
 // CPU 用。GPU 用は CPU 名を含む出品（PC）を落とすので使えない。PC・マザーボード付き・クーラーなどを落とす
 const CPU_EXCLUDE = [
-  /ゲーミング\s*(PC|パソコン)/, /パソコン/, /ノート\s*PC/, /デスクトップ\s*PC/, /\bBTO\b/, /中古PC/,
+  /ゲーミング\s*(PC|パソコン)/, /パソコン/, /ノート\s*PC/, /デスクトップ/, /\bBTO\b/, /中古PC/,
+  /OPTIPLEX|PRODESK|ELITEDESK|THINKCENTRE|VOSTRO|\bMATE\b|WINDOWS|WIN\s*1[01]|OFFICE|SSD|HDD|メモリ\s*\d+\s*GB/,
   /RTX|GTX|RADEON|GEFORCE|\bRX\s*\d/, /マザーボード|マザーセット|\b[ABHZ]\d{3}M?\b|\bX\d{3}E?\b/,
   /クーラー|CPUファン|グリス|殻割|ヒートスプレッダ|ピン曲|ジャンク|空箱|箱のみ|ステッカー|レンタル|対応\s*(クーラー|マザー|ケース)/,
 ];
@@ -89,6 +90,7 @@ export const CATEGORIES = {
     suffixes: "TI|SUPER|XTX|XT|GRE",
     models: /(?<![A-Z0-9])(?:RTX|GTX|RX|GT|ARC)[\s-]*([A-Z]?\d{3,4})(?![0-9])/g,
     fallback: (name) => name.replace(/^NVIDIA\s+/i, "").replace(/\s+/, ""), // 「RTX5070」のように詰めて書く出品がある
+    genreId: "100081", // 楽天のジャンル「グラフィックボード」（型番が合う商品のジャンルを実際の応答で確認）
     exclude: GPU_EXCLUDE,
   },
   cpu: {
@@ -99,6 +101,7 @@ export const CATEGORIES = {
     suffixes: "PLUS|AF",
     models: /(?<![A-Z0-9])(?:I[3579]|ULTRA[\s-]*\d|RYZEN[\s-]*\d(?:[\s-]*PRO)?)[\s-]*(?:プロセッサー?[\s-]*)?(\d{3,5}[A-Z0-9]*)/g,
     fallback: (name) => name.match(/\d{3,5}[A-Z0-9]*(?: AF| Plus)?$/i)?.[0], // 型番の数字部分だけ（「14700K」）
+    genreId: "211582", // 楽天のジャンル「CPU」（同上）
     exclude: CPU_EXCLUDE,
   },
 };
@@ -146,11 +149,13 @@ function authMessage(status, body) {
   return head + "rakuten.env のアプリIDとアクセスキーが正しいか確認してください。" + (body ? ` 詳細: ${body.slice(0, 200)}` : "");
 }
 
-async function search(env, keyword, page) {
+async function search(env, keyword, page, genreId) {
   const params = new URLSearchParams({
     applicationId: env.RAKUTEN_APP_ID,
     keyword,
-    // 安い順にするとネジや服など無関係の安い商品が先頭を埋めるので、関連度順（既定）で取り、最安値はこちらで選ぶ
+    // 楽天のジャンル（グラフィックボード・CPU）に絞ってから安い順に並べる。
+    // ジャンルを絞らないと、ネジや服、PC 一式など無関係な商品が混ざる
+    ...(genreId ? { genreId, sort: "+itemPrice" } : {}),
     minPrice: "1000",
     hits: "30",
     page: String(page),
@@ -180,7 +185,7 @@ async function search(env, keyword, page) {
   throw new Error("HTTP 429 が続いたため中断しました");
 }
 
-// 1 型番の最安値を探す。関連度の高い順に 2 ページ（60 件）まで見て、型番が合うものの最安値を選ぶ
+// 1 型番の最安値を探す。ジャンル内を安い順に 2 ページ（60 件）まで見て、型番が合うものの最安値を選ぶ
 export async function findBest(env, item, cat = "gpu") {
   const match = modelMatcher(item.name, cat);
   // 1 文字の語（「Ryzen 7 7800X3D」の「7」）があると楽天は検索語エラー（400）を返すので外す
@@ -188,7 +193,7 @@ export async function findBest(env, item, cat = "gpu") {
   const hits = [];
   const collect = async (kw) => {
     for (let page = 1; page <= 2; page++) {
-      const data = await search(env, kw, page);
+      const data = await search(env, kw, page, CATEGORIES[cat].genreId);
       for (const it of data.Items || data.items || []) { // 2026-07-01 版は Items（大文字）で返る
         if (match(it.itemName)) hits.push(it);
       }
@@ -205,7 +210,8 @@ export async function findBest(env, item, cat = "gpu") {
   const prices = hits.map((h) => h.itemPrice).sort((a, b) => a - b);
   const median = prices[Math.floor(prices.length / 2)];
   const sane = hits.filter((h) => h.itemPrice >= median * 0.3).sort((a, b) => a.itemPrice - b.itemPrice);
-  const best = sane[0];
+  // コスパが中古の安値で実際より良く見えないよう、新品の最安値を優先する。新品が無いときだけ中古を使う
+  const best = sane.find((h) => conditionOf(h.itemName) === "新品") || sane[0];
   return {
     price: best.itemPrice,
     condition: conditionOf(best.itemName),
@@ -247,7 +253,8 @@ export async function refreshPrices({ env, cat = "gpu", only, onItem } = {}) {
     onItem?.(item, best, n + 1, items.length);
     if ((n + 1) % 10 === 0) writePrices(cat, data); // 途中経過も残す
   }
-  data.fetchedAt = new Date().toISOString();
+  // 取得日時は全型番を取り直したときだけ更新する（1 型番の動作確認で全体が新しく見えないように）
+  if (!only) data.fetchedAt = new Date().toISOString();
   writePrices(cat, data);
   return { found, total: items.length, data };
 }

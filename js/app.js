@@ -149,7 +149,8 @@
     const rankOf = new Map();
     if (cat.rank) {
       const f = cat.fields.find((x) => x.key === def.key);
-      [...items].sort(compareBy(f, def.dir)).forEach((i, n) => rankOf.set(i.id, n + 1));
+      // 基準の値が空欄（スコア未確認など）の製品には順位を付けない
+      [...items].filter((i) => i[f.key] != null).sort(compareBy(f, def.dir)).forEach((i, n) => rankOf.set(i.id, n + 1));
     }
     // プルダウンの選択肢はデータに出てくる順（性能順のデータならシリーズも新しい順に並ぶ）
     const optionsFor = (key) => {
@@ -186,7 +187,37 @@
       ${cat.note ? `<p class="note">${esc(cat.note)}</p>` : ""}
       ${(cat.sources || []).map((s) => `<p class="note"><a class="ext" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></p>`).join("")}
       ${SPEC.applyPrices[cat.id] ? `<p class="note live" id="priceStatus" role="status" aria-live="polite">${esc(priceStatus[cat.id] || "")}</p>` : ""}
-      <div class="table-wrap"><table class="spec-table" id="specTable"></table></div>`;
+      <div class="table-wrap"><table class="spec-table" id="specTable"></table></div>
+      <div class="compare-bar" id="cmpBar" role="region" aria-label="比較リスト" aria-live="polite"></div>`;
+
+    // 画面下の比較リスト。選んだ製品・比較画面への移動・解除をその場でできるようにする
+    const bar = document.getElementById("cmpBar");
+    const drawBar = () => {
+      const picked = comparedItems(cat);
+      bar.hidden = !picked.length;
+      if (!picked.length) return (bar.innerHTML = "");
+      bar.innerHTML = `
+        <span class="cmp-bar-title">比較リスト <b>${picked.length}</b> 件</span>
+        <span class="chips">${picked
+          .map((i) => `<span class="chip">${esc(i.name)}<button class="x-btn" data-unpick="${esc(i.id)}" aria-label="${esc(i.name)} を比較から外す">×</button></span>`)
+          .join("")}</span>
+        <span class="cmp-bar-actions">
+          <button class="btn btn-ghost btn-small" data-unpick-all>選択を解除</button>
+          ${picked.length >= 2
+            ? `<a class="btn btn-small" href="#/compare">比較する →</a>`
+            : `<span class="muted cmp-hint">もう 1 件選ぶと比べられます</span>`}
+        </span>`;
+    };
+    bar.addEventListener("click", (e) => {
+      const one = e.target.closest("[data-unpick]");
+      if (one) toggleCompare(cat.id, one.dataset.unpick);
+      else if (e.target.closest("[data-unpick-all]")) {
+        compare = compare.filter((k) => !k.startsWith(cat.id + "/"));
+        saveCompare();
+      } else return;
+      draw();
+      drawBar();
+    });
 
     const table = document.getElementById("specTable");
     const draw = () => {
@@ -201,7 +232,7 @@
       document.getElementById("hitCount").textContent = `${rows.length} / ${items.length} 件`;
       table.innerHTML = `
         <thead><tr>
-          <th scope="col" class="col-check"><span class="sr-only">比較</span></th>
+          <th scope="col" class="col-check">比較</th>
           ${cat.rank ? '<th scope="col" class="rank">#</th>' : ""}
           ${listFields
             .map((f) => {
@@ -220,7 +251,7 @@
                     const on = compare.includes(compareKey(cat.id, i.id));
                     return `<tr>
                       <td class="col-check"><input type="checkbox" data-cmp="${esc(i.id)}" ${on ? "checked" : ""} aria-label="${esc(i.name)} を比較に追加"></td>
-                      ${cat.rank ? `<td class="rank">${rankOf.get(i.id)}</td>` : ""}
+                      ${cat.rank ? `<td class="rank">${rankOf.get(i.id) ?? ""}</td>` : ""}
                       ${listFields
                         .map((f, idx) =>
                           idx === 0
@@ -263,8 +294,11 @@
       table.querySelector(`[data-sort="${CSS.escape(key)}"]`)?.focus();
     });
     table.addEventListener("change", (e) => {
-      if (e.target.dataset.cmp) toggleCompare(cat.id, e.target.dataset.cmp);
+      if (!e.target.dataset.cmp) return;
+      toggleCompare(cat.id, e.target.dataset.cmp);
+      drawBar();
     });
+    drawBar();
   }
 
   // ---------- 詳細 ----------
@@ -277,7 +311,10 @@
       <p class="eyebrow">${esc(cat.en)}</p>
       <h1 class="page-title">${esc(item.name)}</h1>
       <p class="muted">${esc(item.maker)}</p>
-      <button class="btn" id="cmpBtn" aria-pressed="${on}">${on ? "比較から外す" : "比較に追加"}</button>
+      <div class="detail-actions">
+        <button class="btn" id="cmpBtn" aria-pressed="${on}">${on ? "比較から外す" : "比較に追加"}</button>
+        ${comparedItems(cat).length ? `<a class="cmp-more" href="#/compare">比較を見る（${cat.name} ${comparedItems(cat).length} 件）→</a>` : ""}
+      </div>
       <dl class="spec-list">
         ${cat.fields.map((f) => `<dt>${esc(f.label)}</dt><dd>${cellHtml(cat, f, item)}</dd>`).join("")}
       </dl>
@@ -295,40 +332,96 @@
   }
 
   // ---------- 比較 ----------
+  // カテゴリの比較リストに入っている製品（入れた順）
+  function comparedItems(cat) {
+    return compare
+      .filter((k) => k.startsWith(cat.id + "/"))
+      .map((k) => getItems(cat.id).find((i) => i.id === k.slice(cat.id.length + 1)))
+      .filter(Boolean);
+  }
+
+  let diffOnly = false; // 「違いのある項目だけ」表示
+
+  // 比較表の 1 行。better のある数値項目は最良の値を強調し、ほかの製品には最良との差を添える
+  function compareRow(cat, f, items) {
+    const nums = items.map((i) => i[f.key]).filter((v) => typeof v === "number");
+    const best = f.better && nums.length >= 2 ? (f.better === "high" ? Math.max(...nums) : Math.min(...nums)) : null;
+    const plain = { ...f, bar: false }; // 一覧用の横棒はカテゴリ全体の最大値基準なので、比較では使わない
+    const cells = items.map((i) => {
+      const v = i[f.key];
+      const isBest = best !== null && v === best && nums.some((n) => n !== best);
+      let gap = "";
+      if (best !== null && typeof v === "number" && v !== best) {
+        gap = f.better === "high"
+          ? `最良の ${Math.round((v / best) * 100)}%`
+          : `最良より +${formatValue(plain, v - best).replace(/<[^>]+>/g, "")}`;
+      }
+      return `<td class="${f.type === "number" ? "num" : ""}${isBest ? " best" : ""}">
+        ${cellHtml(cat, plain, i)}${isBest ? '<span class="best-mark">最良</span>' : ""}${gap ? `<span class="gap">${esc(gap)}</span>` : ""}
+      </td>`;
+    });
+    return `<tr><th scope="row">${esc(f.label)}</th>${cells.join("")}</tr>`;
+  }
+
   function renderCompare() {
     // 項目がカテゴリごとに違うので、カテゴリ単位で表を分ける
     const groups = SPEC.categories
-      .map((cat) => ({
-        cat,
-        items: compare
-          .filter((k) => k.startsWith(cat.id + "/"))
-          .map((k) => getItems(cat.id).find((i) => i.id === k.slice(cat.id.length + 1)))
-          .filter(Boolean),
-      }))
+      .filter((cat) => cat.status === "ready")
+      .map((cat) => ({ cat, items: comparedItems(cat) }))
       .filter((g) => g.items.length);
+    const ready = SPEC.categories.filter((c) => c.status === "ready");
+    // 全製品で同じ値の項目は「違いのある項目だけ」のとき隠す
+    const differs = (f, items) => new Set(items.map((i) => String(i[f.key] ?? ""))).size > 1;
+
+    const groupHtml = ({ cat, items }) => {
+      const rows = cat.fields.slice(1).filter((f) => !diffOnly || items.length < 2 || differs(f, items));
+      const rest = getItems(cat.id).filter((i) => !items.includes(i));
+      return `
+        <section class="cmp-group">
+          <h2 class="section-title">${SPEC.icon(cat.icon)}${esc(cat.name)}<span class="count">${items.length} 件</span></h2>
+          <div class="cmp-tools">
+            <label class="cmp-add">製品を追加
+              <input type="search" list="cmp-dl-${esc(cat.id)}" data-add="${esc(cat.id)}" placeholder="型番を入力して選ぶ" autocomplete="off">
+            </label>
+            <datalist id="cmp-dl-${esc(cat.id)}">${rest.map((i) => `<option value="${esc(i.name)}"></option>`).join("")}</datalist>
+            <a class="cmp-more" href="#/c/${esc(cat.id)}">一覧から選ぶ →</a>
+          </div>
+          ${items.length < 2 ? `<p class="note live">もう 1 件以上追加すると、良い方が強調されて比べやすくなります。</p>` : ""}
+          <div class="table-wrap"><table class="spec-table compare-table">
+            <thead><tr><th scope="col" class="cmp-corner">項目</th>${items
+              .map((i) => `<th scope="col">
+                <a href="#/c/${esc(cat.id)}/${esc(i.id)}">${esc(i.name)}</a>
+                <button class="x-btn" data-rm="${esc(cat.id)}/${esc(i.id)}" aria-label="${esc(i.name)} を比較から外す" title="比較から外す">×</button>
+                <span class="sub">${esc(i.maker)}</span>
+              </th>`)
+              .join("")}</tr></thead>
+            <tbody>${rows.map((f) => compareRow(cat, f, items)).join("") || `<tr><td class="empty" colspan="${items.length + 1}">違いのある項目はありません</td></tr>`}</tbody>
+          </table></div>
+        </section>`;
+    };
 
     main.innerHTML = `
       <nav class="crumbs" aria-label="パンくず"><a href="#/">トップ</a> › 比較</nav>
       <h1 class="page-title">比較</h1>
       ${
         groups.length
-          ? `<button class="btn btn-ghost" id="clearCmp">すべてクリア</button>` +
-            groups
-              .map(
-                ({ cat, items }) => `
-            <h2 class="section-title">${SPEC.icon(cat.icon)}${esc(cat.name)}</h2>
-            <div class="table-wrap"><table class="spec-table compare-table">
-              <thead><tr><th scope="col">項目</th>${items.map((i) => `<th scope="col">${esc(i.name)} <button class="x-btn" data-rm="${esc(cat.id)}/${esc(i.id)}" aria-label="${esc(i.name)} を比較から外す">×</button></th>`).join("")}</tr></thead>
-              <tbody>${cat.fields
-                .slice(1)
-                .map((f) => `<tr><th scope="row">${esc(f.label)}</th>${items.map((i) => `<td class="${f.type === "number" ? "num" : ""}">${cellHtml(cat, f, i)}</td>`).join("")}</tr>`)
-                .join("")}</tbody>
-            </table></div>`
-              )
-              .join("")
-          : `<p class="empty-box">比較する製品がありません。一覧のチェックボックスか詳細ページの「比較に追加」から選べます。</p>`
+          ? `<div class="cmp-head">
+              <label class="toggle"><input type="checkbox" id="diffOnly" ${diffOnly ? "checked" : ""}> 違いのある項目だけ表示</label>
+              <span class="muted cmp-legend"><span class="best-mark">最良</span> 各項目で最も良い値</span>
+              <button class="btn btn-ghost btn-small" id="clearCmp">すべて外す</button>
+            </div>` + groups.map(groupHtml).join("")
+          : `<div class="empty-box">
+              <p>比較する製品がまだありません。</p>
+              <p>一覧の左端のチェックか、製品ページの「比較に追加」で選べます。</p>
+              <p class="empty-links">${ready.map((c) => `<a href="#/c/${esc(c.id)}">${SPEC.icon(c.icon)}${esc(c.name)}の一覧から選ぶ</a>`).join("")}</p>
+            </div>`
       }`;
 
+    document.getElementById("diffOnly")?.addEventListener("change", (e) => {
+      diffOnly = e.target.checked;
+      renderCompare();
+      document.getElementById("diffOnly")?.focus();
+    });
     document.getElementById("clearCmp")?.addEventListener("click", () => {
       compare = [];
       saveCompare();
@@ -339,6 +432,18 @@
         compare = compare.filter((k) => k !== b.dataset.rm);
         saveCompare();
         renderCompare();
+      })
+    );
+    // 候補から選ぶ（または型番を正確に打つ）とその場で表に加える
+    main.querySelectorAll("[data-add]").forEach((input) =>
+      input.addEventListener("change", () => {
+        const catId = input.dataset.add;
+        const name = input.value.trim().toLowerCase();
+        const item = getItems(catId).find((i) => i.name.toLowerCase() === name);
+        if (!item) return;
+        if (!compare.includes(compareKey(catId, item.id))) toggleCompare(catId, item.id);
+        renderCompare();
+        main.querySelector(`[data-add="${CSS.escape(catId)}"]`)?.focus();
       })
     );
   }

@@ -2,6 +2,7 @@
 // fields: 一覧・詳細・比較で使う項目。type は text / number。unit / prefix は表示用。
 //   list: false = 一覧表には出さない / bar: true = 最大値に対する横棒を付ける
 //   digits = 小数の桁数（maxDigits = 小数があるときだけ出す最大桁数） / sub = 値の下に小さく添える別項目のキー / link = 値を外部リンクにする URL の項目キー
+//   better: "high" / "low" = 比較画面で、大きい方／小さい方を「最良」として強調する
 // filters: 一覧のプルダウン絞り込みに使う項目（省略時はメーカー）
 // optionOrder: { 項目キー: [並び順] } = プルダウンの選択肢の並び（省略時はデータに出てくる順）
 // defaultSort: 一覧の初期の並び順。dir は 1 = 昇順 / -1 = 降順
@@ -33,7 +34,7 @@ window.SPEC.categories = [
       { key: "release", label: "公開日", type: "text" },
       { key: "params", label: "パラメータ数", type: "number", unit: "B", maxDigits: 1 },
       { key: "active", label: "アクティブ", type: "number", unit: "B", maxDigits: 1 },
-      { key: "context", label: "コンテキスト長", type: "number", unit: "tokens" },
+      { key: "context", label: "コンテキスト長", type: "number", unit: "tokens", better: "high" },
       { key: "modality", label: "入出力", type: "text" },
       { key: "open", label: "公開形態", type: "text", list: false },
       { key: "license", label: "ライセンス", type: "text" },
@@ -48,8 +49,8 @@ window.SPEC.categories = [
     searchHint: "型番で絞り込み（例: 9800X3D）",
     // note は data/cpu.js が価格の取得日時を添えて書き込む
     sources: [
-      { label: "性能スコア: PassMark CPU Mark（マルチスレッド・取得時点）", url: "https://www.cpubenchmark.net/" },
-      { label: "コア・スレッド・TDP・クロック・キャッシュ: 各メーカーの公表値", url: "https://www.intel.co.jp/content/www/jp/ja/products/overview.html" },
+      { label: "性能スコア: PassMark CPU Mark（マルチスレッド・2026年10月22日更新分）", url: "https://www.cpubenchmark.net/cpu_list.php" },
+      { label: "コア・スレッド・TDP・クロック・キャッシュ: 各メーカーの公表値（Wikipedia の各世代の表と照合済み）", url: "https://en.wikipedia.org/wiki/Raptor_Lake" },
       { label: "発売日: Wikipedia の各世代の記事（海外での発売日。一部は世代ごとの発売日）", url: "https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors" },
     ],
     filters: ["maker", "series"],
@@ -67,16 +68,16 @@ window.SPEC.categories = [
       { key: "name", label: "型番", type: "text" },
       { key: "maker", label: "メーカー", type: "text", list: false },
       { key: "series", label: "シリーズ", type: "text", list: false },
-      { key: "score", label: "性能スコア", type: "number", bar: true },
-      { key: "cores", label: "コア", type: "number" },
-      { key: "threads", label: "スレッド", type: "number" },
-      { key: "tdp", label: "TDP", type: "number", unit: "W" },
-      { key: "baseClock", label: "ベースクロック", type: "number", unit: "GHz", digits: 1, list: false },
-      { key: "boostClock", label: "ブースト", type: "number", unit: "GHz", digits: 1 },
-      { key: "cache", label: "L3キャッシュ", type: "number", unit: "MB" },
-      { key: "price", label: "参考価格", type: "number", prefix: "¥", sub: "priceNote", link: "priceUrl" },
-      { key: "costPerf", label: "コスパ", type: "number", digits: 1 },
-      { key: "efficiency", label: "電力効率", type: "number", digits: 1 },
+      { key: "score", label: "性能スコア", type: "number", bar: true, better: "high" },
+      { key: "cores", label: "コア", type: "number", better: "high" },
+      { key: "threads", label: "スレッド", type: "number", better: "high" },
+      { key: "tdp", label: "TDP", type: "number", unit: "W", better: "low" },
+      { key: "baseClock", label: "ベースクロック", type: "number", unit: "GHz", digits: 1, list: false, better: "high" },
+      { key: "boostClock", label: "ブースト", type: "number", unit: "GHz", digits: 1, better: "high" },
+      { key: "cache", label: "L3キャッシュ", type: "number", unit: "MB", better: "high" },
+      { key: "price", label: "参考価格", type: "number", prefix: "¥", sub: "priceNote", link: "priceUrl", better: "low" },
+      { key: "costPerf", label: "コスパ", type: "number", digits: 1, better: "high" },
+      { key: "efficiency", label: "電力効率", type: "number", digits: 1, better: "high" },
       { key: "release", label: "発売日", type: "text" },
     ],
   },
@@ -107,12 +108,12 @@ window.SPEC.categories = [
       { key: "name", label: "型番", type: "text" },
       { key: "maker", label: "メーカー", type: "text", list: false },
       { key: "series", label: "シリーズ", type: "text", list: false },
-      { key: "score", label: "性能スコア", type: "number", bar: true },
-      { key: "vram", label: "VRAM", type: "number", unit: "GB" },
-      { key: "tdp", label: "消費電力", type: "number", unit: "W" },
-      { key: "price", label: "参考価格", type: "number", prefix: "¥", sub: "priceNote", link: "priceUrl" },
-      { key: "costPerf", label: "コスパ", type: "number", digits: 1 },
-      { key: "efficiency", label: "電力効率", type: "number", digits: 1 },
+      { key: "score", label: "性能スコア", type: "number", bar: true, better: "high" },
+      { key: "vram", label: "VRAM", type: "number", unit: "GB", better: "high" },
+      { key: "tdp", label: "消費電力", type: "number", unit: "W", better: "low" },
+      { key: "price", label: "参考価格", type: "number", prefix: "¥", sub: "priceNote", link: "priceUrl", better: "low" },
+      { key: "costPerf", label: "コスパ", type: "number", digits: 1, better: "high" },
+      { key: "efficiency", label: "電力効率", type: "number", digits: 1, better: "high" },
       { key: "release", label: "発売日", type: "text" },
     ],
   },
@@ -125,28 +126,31 @@ window.SPEC.categories = [
 ];
 
 // ---------- 参考価格（GPU・CPU 共通） ----------
-// data/<id>.js の最後に setupPrices(id, 注記) を呼ぶと、window.SPEC.applyPrices[id] ができ、すぐに 1 回当てはめる。
+// data/<id>.js の最後に setupPrices(id, 電力の項目名) を呼ぶと、window.SPEC.applyPrices[id] ができ、すぐに 1 回当てはめる。
 // 当てはめるのは、ページ読み込み時（data/<id>-prices.js）と、手元のサーバーから新しい価格が届いたとき（app.js）。
-// 取得した価格が無ければ data ファイルに書いた価格のまま。取得済みで見つからなかった型番は「—」に「楽天で取扱なし」と添える。
+// 価格は楽天から取得したものだけを使う（出どころの分からない値でコスパを計算しない）。
+// 取得済みで見つからなかった型番は「楽天で取扱なし」、まだ取得していない型番は「価格未取得」と添える。
 window.SPEC.applyPrices = {};
-window.SPEC.setupPrices = function (id, baseNote) {
+window.SPEC.setupPrices = function (id, powerLabel) {
   const apply = function (fetched) {
     const cat = window.SPEC.categories.find((c) => c.id === id);
     if (cat) {
       const at = fetched && fetched.fetchedAt
         ? new Date(fetched.fetchedAt).toLocaleString("ja-JP", { dateStyle: "medium", timeStyle: "short" })
         : null;
-      cat.note = baseNote + (at ? `価格は${fetched.source}の最安値（${at} 取得）です。` : "価格は取得時点の参考値です。");
+      cat.note =
+        `コスパ ＝ 性能スコア ÷ 参考価格 × 1,000（1,000 円あたりの性能スコア）。電力効率 ＝ 性能スコア ÷ ${powerLabel}（1W あたりの性能スコア）。` +
+        (at
+          ? `参考価格は${fetched.source}の新品最安値（新品が無い型番は中古と表示）で、${at} 時点の値です。実際の価格・在庫は販売ページでご確認ください。`
+          : "参考価格はまだ取得していません。");
     }
     for (const it of window.SPEC.data[id]) {
-      if (fetched && fetched.items && it.id in fetched.items) {
-        const best = fetched.items[it.id]; // 見つからなかった型番は null（生産終了などで売られていない）
-        it.price = best ? best.price : null;
-        it.priceNote = best ? `${best.condition}・${best.shop}` : "楽天で取扱なし";
-        it.priceUrl = best ? best.url : null;
-      }
-      // コスパ = 1,000 円あたりの性能スコア
-      it.costPerf = it.price ? Math.round((it.score / it.price) * 10000) / 10 : null;
+      const known = fetched && fetched.items && it.id in fetched.items;
+      const best = known ? fetched.items[it.id] : null; // 見つからなかった型番は null（生産終了などで売られていない）
+      it.price = best ? best.price : null;
+      it.priceNote = best ? `${best.condition}・${best.shop}` : known ? "楽天で取扱なし" : "価格未取得";
+      it.priceUrl = best ? best.url : null;
+      it.costPerf = it.price && it.score ? Math.round((it.score / it.price) * 10000) / 10 : null;
     }
   };
   window.SPEC.applyPrices[id] = apply;
