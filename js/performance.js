@@ -46,7 +46,7 @@
         // 出典の UL が止まっていて取れていない GPU は、空欄の理由を表示する
         if (catId === "gpu") scoreField.empty = "未取得（出典停止中）";
       } else {
-        cat.fields.splice(at, 0, { ...metric, label: tableView ? metric.columnLabel || metric.label : metric.label, help: metric.help || `${metric.description} ${metric.limit}`, type: "number", list: tableView, benchmark: true, empty: "比較データなし" });
+        cat.fields.splice(at, 0, { ...metric, label: tableView ? metric.columnLabel || metric.label : metric.label, help: metric.help || `${metric.description} ${metric.limit}`, type: "number", list: tableView, benchmark: true, empty: catId === "cpu" ? "PassMark の公表なし" : "比較データなし" });
         if (tableView) at++;
       }
     }

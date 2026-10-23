@@ -287,6 +287,36 @@ Ryzen 5 1600 AF,,6,12,65,3.2,3.6,16,2019/10/11
       };
     });
 
+  // ソケットと内蔵グラフィックスの有無（初めての人がマザーボード・グラフィックボードの要否を判断するため）。
+  // AMD は 2026-10-23 に AMD 公式プロセッサ仕様表（cpuSocket・graphicsModel）と掲載 98 型番すべてで一致を確認した規則。
+  //   Ryzen 1000〜5000 は AM4、7000〜9000 は AM5。内蔵は型番末尾 G・GT・GE、または 7000・9000 番台（F 付きを除く）。
+  // Intel は世代ごとのソケットと、型番末尾の F（F・KF）が内蔵グラフィックス無しというメーカーの命名規則による。
+  // LGA1151 は第6・7世代と第8・9世代でマザーボード（チップセット）の互換性が無いため分けて書く。
+  function socketOf(c) {
+    if (/^AMD /.test(c.name)) return null; // 4700S は CPU が基板に載ったキット製品
+    if (/^Ryzen [1-5]000$/.test(c.series)) return "AM4";
+    if (/^Ryzen [7-9]000$/.test(c.series)) return "AM5";
+    if (/^Core Ultra 200S/.test(c.series)) return "LGA1851";
+    const gen = Number((c.series.match(/^第(\d+)世代/) || [])[1]);
+    if (gen >= 12) return "LGA1700";
+    if (gen >= 10) return "LGA1200";
+    if (gen >= 8) return "LGA1151（第8・9世代用）";
+    if (gen >= 6) return "LGA1151（第6・7世代用）";
+    return null;
+  }
+  function igpuOf(c) {
+    if (/^AMD /.test(c.name)) return null;
+    if (c.maker === "Intel") return /\d[A-Z]*F$/.test(c.name) ? "なし（グラボ必須）" : "あり";
+    if (/\d(G|GT|GE)$/.test(c.name)) return "あり";
+    if (/^Ryzen [79]000$/.test(c.series)) return /F$/.test(c.name) ? "なし（グラボ必須）" : "あり";
+    return "なし（グラボ必須）";
+  }
+  for (const c of window.SPEC.data.cpu) {
+    c.socket = socketOf(c);
+    c.igpu = igpuOf(c);
+    if (c.name === "Ryzen 9 3900XT" || c.name === "Ryzen 5 3500X") c.socketNote = "AMD 公式表に記載が無く、同じ世代の規則による。";
+  }
+
   // data/cpu-prices.js（楽天から取得した価格）があれば当てはめ、コスパを計算する（categories.js）
   window.SPEC.setupPrices("cpu", "TDP");
 })();

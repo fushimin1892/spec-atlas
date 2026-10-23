@@ -65,8 +65,10 @@ window.SPEC.categories = [
       { label: "AMD 公式プロセッサ仕様表（掲載全項目の確認を保証するものではありません）", url: "https://www.amd.com/en/products/specifications/processors.html" },
       { label: "Intel 公式デスクトップCPU比較資料（個別ARK・発売告知を優先する項目あり）", url: "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf" },
     ],
-    filters: ["maker", "series"],
+    filters: ["maker", "series", "socket", "igpu"],
     optionOrder: {
+      socket: ["AM5", "AM4", "LGA1851", "LGA1700", "LGA1200", "LGA1151（第8・9世代用）", "LGA1151（第6・7世代用）"],
+      igpu: ["あり", "なし（グラボ必須）"],
       maker: ["Intel", "AMD"],
       series: [
         "Core Ultra 200S Plus", "Core Ultra 200S", "第14世代 Core", "第13世代 Core", "第12世代 Core", "第11世代 Core",
@@ -80,6 +82,7 @@ window.SPEC.categories = [
       { key: "name", label: "型番", type: "text" },
       { key: "maker", label: "メーカー", type: "text", list: false },
       { key: "series", label: "シリーズ", type: "text", list: false },
+      { key: "igpu", label: "内蔵グラフィックス", type: "text", list: false, empty: "未確認" },
       { key: "score", label: "性能スコア", type: "number", bar: true, better: "high" },
       { key: "cores", label: "コア", type: "number", better: "high" },
       { key: "threads", label: "スレッド", type: "number", better: "high" },
@@ -87,6 +90,7 @@ window.SPEC.categories = [
       { key: "baseClock", label: "ベースクロック", type: "number", unit: "GHz", digits: 1, list: false, better: "high" },
       { key: "boostClock", label: "ブースト", type: "number", unit: "GHz", digits: 1, better: "high" },
       { key: "cache", label: "L3キャッシュ", type: "number", unit: "MB", better: "high" },
+      { key: "socket", label: "ソケット", type: "text", sub: "socketNote", empty: "なし（基板に搭載済み）" },
       { key: "price", label: "参考価格", type: "number", prefix: "¥", sub: "priceNote", link: "priceUrl", better: "low" },
       { key: "costPerf", label: "コスパ", type: "number", digits: 1, better: "high" },
       { key: "efficiency", label: "公称電力当たりスコア", type: "number", digits: 1, better: "high" },
@@ -151,6 +155,8 @@ window.SPEC.categories = [
   const HELP = {
     cpu: {
       name: "製品の型番。押すと詳しい仕様と出典を見られます。",
+      socket: "CPU を差し込むマザーボード側の形。CPU とマザーボードのソケットが同じでないと取り付けられません。同じソケットでも、マザーボードの世代（チップセット）や BIOS によっては使えないことがあります。",
+      igpu: "CPU に画面を映す機能（内蔵グラフィックス）があるか。「なし」の CPU は、グラフィックボードを付けないと画面が映りません。",
       cores: "CPU の中で同時に計算できる部分の数。多いほど、たくさんの作業を並行して進められます。",
       threads: "同時に扱える処理の流れの数。1 コアで 2 つ扱える CPU は、コア数の 2 倍になります。",
       tdp: "メーカーが示す電力の目安（TDP など）。実際の消費電力とは違い、重い作業ではこれより多く使うことがあります。小さいほど省電力・低発熱です。",
