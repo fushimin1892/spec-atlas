@@ -137,15 +137,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 72093,
+                  "value": 72088,
                   "kind": "value"
                 }
               ],
-              "current": 72093
+              "current": 72088
             }
           ],
           "verified": 6,
@@ -284,15 +284,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 70105,
+                  "value": 70106,
                   "kind": "value"
                 }
               ],
-              "current": 70105
+              "current": 70106
             }
           ],
           "verified": 7,
@@ -426,15 +426,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 68502,
+                  "value": 68506,
                   "kind": "value"
                 }
               ],
-              "current": 68502
+              "current": 68506
             }
           ],
           "verified": 6,
@@ -568,15 +568,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 67226,
+                  "value": 67227,
                   "kind": "value"
                 }
               ],
-              "current": 67226
+              "current": 67227
             }
           ],
           "verified": 6,
@@ -715,15 +715,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 65695,
+                  "value": 65693,
                   "kind": "value"
                 }
               ],
-              "current": 65695
+              "current": 65693
             }
           ],
           "verified": 7,
@@ -862,9 +862,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 62300,
                   "kind": "value"
@@ -1009,9 +1009,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 62125,
                   "kind": "value"
@@ -1151,9 +1151,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 60374,
                   "kind": "value"
@@ -1293,9 +1293,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 59821,
                   "kind": "value"
@@ -1435,9 +1435,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 58570,
                   "kind": "value"
@@ -1577,9 +1577,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 58446,
                   "kind": "value"
@@ -1719,15 +1719,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 58175,
+                  "value": 58173,
                   "kind": "value"
                 }
               ],
-              "current": 58175
+              "current": 58173
             }
           ],
           "verified": 6,
@@ -1861,15 +1861,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 58067,
+                  "value": 58068,
                   "kind": "value"
                 }
               ],
-              "current": 58067
+              "current": 58068
             }
           ],
           "verified": 6,
@@ -2003,15 +2003,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 58044,
+                  "value": 58043,
                   "kind": "value"
                 }
               ],
-              "current": 58044
+              "current": 58043
             }
           ],
           "verified": 6,
@@ -2145,15 +2145,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 57921,
+                  "value": 57910,
                   "kind": "value"
                 }
               ],
-              "current": 57921
+              "current": 57910
             }
           ],
           "verified": 6,
@@ -2287,15 +2287,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 57404,
+                  "value": 57405,
                   "kind": "value"
                 }
               ],
-              "current": 57404
+              "current": 57405
             }
           ],
           "verified": 6,
@@ -2434,15 +2434,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 56039,
+                  "value": 56038,
                   "kind": "value"
                 }
               ],
-              "current": 56039
+              "current": 56038
             }
           ],
           "verified": 7,
@@ -2581,15 +2581,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 54288,
+                  "value": 54283,
                   "kind": "value"
                 }
               ],
-              "current": 54288
+              "current": 54283
             }
           ],
           "verified": 7,
@@ -2723,9 +2723,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 51927,
                   "kind": "value"
@@ -2865,15 +2865,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 51909,
+                  "value": 51908,
                   "kind": "value"
                 }
               ],
-              "current": 51909
+              "current": 51908
             }
           ],
           "verified": 6,
@@ -3007,15 +3007,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 51405,
+                  "value": 51415,
                   "kind": "value"
                 }
               ],
-              "current": 51405
+              "current": 51415
             }
           ],
           "verified": 6,
@@ -3154,9 +3154,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 51208,
                   "kind": "value"
@@ -3296,15 +3296,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 51115,
+                  "value": 51075,
                   "kind": "value"
                 }
               ],
-              "current": 51115
+              "current": 51075
             }
           ],
           "verified": 6,
@@ -3443,9 +3443,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 50196,
                   "kind": "value"
@@ -3585,15 +3585,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 49513,
+                  "value": 49506,
                   "kind": "value"
                 }
               ],
-              "current": 49513
+              "current": 49506
             }
           ],
           "verified": 6,
@@ -3727,9 +3727,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 48404,
                   "kind": "value"
@@ -3869,9 +3869,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 48069,
                   "kind": "value"
@@ -4022,9 +4022,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 48010,
                   "kind": "value"
@@ -4166,9 +4166,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 46398,
                   "kind": "value"
@@ -4308,15 +4308,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 45586,
+                  "value": 45584,
                   "kind": "value"
                 }
               ],
-              "current": 45586
+              "current": 45584
             }
           ],
           "verified": 6,
@@ -4450,15 +4450,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 45504,
+                  "value": 45503,
                   "kind": "value"
                 }
               ],
-              "current": 45504
+              "current": 45503
             }
           ],
           "verified": 6,
@@ -4597,15 +4597,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 45242,
+                  "value": 45243,
                   "kind": "value"
                 }
               ],
-              "current": 45242
+              "current": 45243
             }
           ],
           "verified": 7,
@@ -4739,15 +4739,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 44551,
+                  "value": 44541,
                   "kind": "value"
                 }
               ],
-              "current": 44551
+              "current": 44541
             }
           ],
           "verified": 6,
@@ -4881,9 +4881,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 44494,
                   "kind": "value"
@@ -5028,15 +5028,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 43869,
+                  "value": 43872,
                   "kind": "value"
                 }
               ],
-              "current": 43869
+              "current": 43872
             }
           ],
           "verified": 7,
@@ -5170,15 +5170,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 43373,
+                  "value": 43372,
                   "kind": "value"
                 }
               ],
-              "current": 43373
+              "current": 43372
             }
           ],
           "verified": 6,
@@ -5312,9 +5312,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 43044,
                   "kind": "value"
@@ -5454,9 +5454,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 42994,
                   "kind": "value"
@@ -5596,9 +5596,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 42839,
                   "kind": "value"
@@ -5743,15 +5743,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 41289,
+                  "value": 41287,
                   "kind": "value"
                 }
               ],
-              "current": 41289
+              "current": 41287
             }
           ],
           "verified": 7,
@@ -5885,15 +5885,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 41240,
+                  "value": 41237,
                   "kind": "value"
                 }
               ],
-              "current": 41240
+              "current": 41237
             }
           ],
           "verified": 6,
@@ -6027,15 +6027,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 41095,
+                  "value": 41096,
                   "kind": "value"
                 }
               ],
-              "current": 41095
+              "current": 41096
             }
           ],
           "verified": 6,
@@ -6169,15 +6169,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 40438,
+                  "value": 40437,
                   "kind": "value"
                 }
               ],
-              "current": 40438
+              "current": 40437
             }
           ],
           "verified": 6,
@@ -6311,9 +6311,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 40199,
                   "kind": "value"
@@ -6458,9 +6458,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 39913,
                   "kind": "value"
@@ -6600,9 +6600,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 39164,
                   "kind": "value"
@@ -6747,9 +6747,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 38882,
                   "kind": "value"
@@ -6900,15 +6900,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 38393,
+                  "value": 38391,
                   "kind": "value"
                 }
               ],
-              "current": 38393
+              "current": 38391
             }
           ],
           "verified": 7,
@@ -7044,9 +7044,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 38351,
                   "kind": "value"
@@ -7186,15 +7186,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 38220,
+                  "value": 38218,
                   "kind": "value"
                 }
               ],
-              "current": 38220
+              "current": 38218
             }
           ],
           "verified": 6,
@@ -7328,15 +7328,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 37724,
+                  "value": 37726,
                   "kind": "value"
                 }
               ],
-              "current": 37724
+              "current": 37726
             }
           ],
           "verified": 6,
@@ -7470,9 +7470,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 37432,
                   "kind": "value"
@@ -7612,9 +7612,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 37298,
                   "kind": "value"
@@ -7759,15 +7759,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 36922,
+                  "value": 36921,
                   "kind": "value"
                 }
               ],
-              "current": 36922
+              "current": 36921
             }
           ],
           "verified": 7,
@@ -7901,9 +7901,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 36358,
                   "kind": "value"
@@ -8037,9 +8037,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 36114,
                   "kind": "value"
@@ -8179,157 +8179,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 35848,
                   "kind": "value"
                 }
               ],
               "current": 35848
-            }
-          ],
-          "verified": 6,
-          "total": 7,
-          "notApplicable": 0,
-          "mismatches": 0,
-          "notes": []
-        },
-        {
-          "id": "core-i9-12900f",
-          "name": "Core i9-12900F",
-          "fields": [
-            {
-              "key": "cores",
-              "status": "verified",
-              "claims": [
-                {
-                  "source": {
-                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
-                    "label": "Intel 公式デスクトップCPU比較資料"
-                  },
-                  "page": 5,
-                  "value": 16,
-                  "kind": "value"
-                }
-              ],
-              "current": 16
-            },
-            {
-              "key": "threads",
-              "status": "verified",
-              "claims": [
-                {
-                  "source": {
-                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
-                    "label": "Intel 公式デスクトップCPU比較資料"
-                  },
-                  "page": 5,
-                  "value": 24,
-                  "kind": "value"
-                }
-              ],
-              "current": 24
-            },
-            {
-              "key": "tdp",
-              "status": "verified",
-              "claims": [
-                {
-                  "source": {
-                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
-                    "label": "Intel 公式デスクトップCPU比較資料"
-                  },
-                  "page": 5,
-                  "value": 65,
-                  "kind": "value"
-                }
-              ],
-              "current": 65
-            },
-            {
-              "key": "baseClock",
-              "status": "verified",
-              "claims": [
-                {
-                  "source": {
-                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
-                    "label": "Intel 公式デスクトップCPU比較資料"
-                  },
-                  "page": 5,
-                  "value": 2.4,
-                  "kind": "value"
-                }
-              ],
-              "current": 2.4
-            },
-            {
-              "key": "boostClock",
-              "status": "verified",
-              "claims": [
-                {
-                  "source": {
-                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
-                    "label": "Intel 公式デスクトップCPU比較資料"
-                  },
-                  "page": 5,
-                  "value": 5.1,
-                  "kind": "value"
-                }
-              ],
-              "current": 5.1
-            },
-            {
-              "key": "cache",
-              "status": "verified",
-              "claims": [
-                {
-                  "source": {
-                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
-                    "label": "Intel 公式デスクトップCPU比較資料"
-                  },
-                  "page": 5,
-                  "value": 30,
-                  "kind": "value"
-                }
-              ],
-              "current": 30
-            },
-            {
-              "key": "release",
-              "status": "unverified",
-              "claims": [],
-              "current": "2022/01/04"
-            },
-            {
-              "key": "score",
-              "status": "verified",
-              "claims": [
-                {
-                  "source": {
-                    "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
-                  },
-                  "value": 35782,
-                  "kind": "value"
-                }
-              ],
-              "current": 35782
             }
           ],
           "verified": 6,
@@ -8463,15 +8321,157 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 35782,
+                  "value": 35779,
                   "kind": "value"
                 }
               ],
-              "current": 35782
+              "current": 35779
+            }
+          ],
+          "verified": 6,
+          "total": 7,
+          "notApplicable": 0,
+          "mismatches": 0,
+          "notes": []
+        },
+        {
+          "id": "core-i9-12900f",
+          "name": "Core i9-12900F",
+          "fields": [
+            {
+              "key": "cores",
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
+                    "label": "Intel 公式デスクトップCPU比較資料"
+                  },
+                  "page": 5,
+                  "value": 16,
+                  "kind": "value"
+                }
+              ],
+              "current": 16
+            },
+            {
+              "key": "threads",
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
+                    "label": "Intel 公式デスクトップCPU比較資料"
+                  },
+                  "page": 5,
+                  "value": 24,
+                  "kind": "value"
+                }
+              ],
+              "current": 24
+            },
+            {
+              "key": "tdp",
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
+                    "label": "Intel 公式デスクトップCPU比較資料"
+                  },
+                  "page": 5,
+                  "value": 65,
+                  "kind": "value"
+                }
+              ],
+              "current": 65
+            },
+            {
+              "key": "baseClock",
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
+                    "label": "Intel 公式デスクトップCPU比較資料"
+                  },
+                  "page": 5,
+                  "value": 2.4,
+                  "kind": "value"
+                }
+              ],
+              "current": 2.4
+            },
+            {
+              "key": "boostClock",
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
+                    "label": "Intel 公式デスクトップCPU比較資料"
+                  },
+                  "page": 5,
+                  "value": 5.1,
+                  "kind": "value"
+                }
+              ],
+              "current": 5.1
+            },
+            {
+              "key": "cache",
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
+                    "label": "Intel 公式デスクトップCPU比較資料"
+                  },
+                  "page": 5,
+                  "value": 30,
+                  "kind": "value"
+                }
+              ],
+              "current": 30
+            },
+            {
+              "key": "release",
+              "status": "unverified",
+              "claims": [],
+              "current": "2022/01/04"
+            },
+            {
+              "key": "score",
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://www.cpubenchmark.net/cpu-list/all",
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
+                  },
+                  "value": 35773,
+                  "kind": "value"
+                }
+              ],
+              "current": 35773
             }
           ],
           "verified": 6,
@@ -8610,15 +8610,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 35472,
+                  "value": 35473,
                   "kind": "value"
                 }
               ],
-              "current": 35472
+              "current": 35473
             }
           ],
           "verified": 7,
@@ -8763,15 +8763,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 34311,
+                  "value": 34312,
                   "kind": "value"
                 }
               ],
-              "current": 34311
+              "current": 34312
             }
           ],
           "verified": 7,
@@ -8912,15 +8912,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 34280,
+                  "value": 34278,
                   "kind": "value"
                 }
               ],
-              "current": 34280
+              "current": 34278
             }
           ],
           "verified": 7,
@@ -9054,15 +9054,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 34232,
+                  "value": 34230,
                   "kind": "value"
                 }
               ],
-              "current": 34232
+              "current": 34230
             }
           ],
           "verified": 6,
@@ -9201,9 +9201,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 33967,
                   "kind": "value"
@@ -9343,15 +9343,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 33899,
+                  "value": 33895,
                   "kind": "value"
                 }
               ],
-              "current": 33899
+              "current": 33895
             }
           ],
           "verified": 6,
@@ -9485,9 +9485,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 33632,
                   "kind": "value"
@@ -9632,9 +9632,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 32752,
                   "kind": "value"
@@ -9779,9 +9779,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 32464,
                   "kind": "value"
@@ -9915,15 +9915,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 32459,
+                  "value": 32460,
                   "kind": "value"
                 }
               ],
-              "current": 32459
+              "current": 32460
             }
           ],
           "verified": 6,
@@ -10051,9 +10051,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 31449,
                   "kind": "value"
@@ -10193,15 +10193,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 31025,
+                  "value": 31017,
                   "kind": "value"
                 }
               ],
-              "current": 31025
+              "current": 31017
             }
           ],
           "verified": 6,
@@ -10335,15 +10335,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 30908,
+                  "value": 30910,
                   "kind": "value"
                 }
               ],
-              "current": 30908
+              "current": 30910
             }
           ],
           "verified": 6,
@@ -10482,15 +10482,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 30833,
+                  "value": 30834,
                   "kind": "value"
                 }
               ],
-              "current": 30833
+              "current": 30834
             }
           ],
           "verified": 7,
@@ -10624,15 +10624,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 30670,
+                  "value": 30668,
                   "kind": "value"
                 }
               ],
-              "current": 30670
+              "current": 30668
             }
           ],
           "verified": 6,
@@ -10771,9 +10771,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 30545,
                   "kind": "value"
@@ -10915,15 +10915,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 30459,
+                  "value": 30460,
                   "kind": "value"
                 }
               ],
-              "current": 30459
+              "current": 30460
             }
           ],
           "verified": 6,
@@ -11057,9 +11057,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 30331,
                   "kind": "value"
@@ -11199,9 +11199,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 30137,
                   "kind": "value"
@@ -11346,9 +11346,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 30032,
                   "kind": "value"
@@ -11488,15 +11488,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 29741,
+                  "value": 29739,
                   "kind": "value"
                 }
               ],
-              "current": 29741
+              "current": 29739
             }
           ],
           "verified": 6,
@@ -11635,9 +11635,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 29301,
                   "kind": "value"
@@ -11777,9 +11777,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 28450,
                   "kind": "value"
@@ -11924,15 +11924,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 28285,
+                  "value": 28286,
                   "kind": "value"
                 }
               ],
-              "current": 28285
+              "current": 28286
             }
           ],
           "verified": 7,
@@ -12071,9 +12071,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 28260,
                   "kind": "value"
@@ -12219,9 +12219,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 28110,
                   "kind": "value"
@@ -12369,15 +12369,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 28022,
+                  "value": 28023,
                   "kind": "value"
                 }
               ],
-              "current": 28022
+              "current": 28023
             }
           ],
           "verified": 7,
@@ -12516,15 +12516,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 27655,
+                  "value": 27656,
                   "kind": "value"
                 }
               ],
-              "current": 27655
+              "current": 27656
             }
           ],
           "verified": 7,
@@ -12658,9 +12658,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 27501,
                   "kind": "value"
@@ -12800,9 +12800,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 27498,
                   "kind": "value"
@@ -12942,9 +12942,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 27216,
                   "kind": "value"
@@ -13095,9 +13095,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 26961,
                   "kind": "value"
@@ -13244,9 +13244,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 26882,
                   "kind": "value"
@@ -13391,15 +13391,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 26539,
+                  "value": 26540,
                   "kind": "value"
                 }
               ],
-              "current": 26539
+              "current": 26540
             }
           ],
           "verified": 7,
@@ -13538,9 +13538,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 26506,
                   "kind": "value"
@@ -13691,9 +13691,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 26309,
                   "kind": "value"
@@ -13840,9 +13840,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 25867,
                   "kind": "value"
@@ -13989,9 +13989,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 25666,
                   "kind": "value"
@@ -14136,9 +14136,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 25642,
                   "kind": "value"
@@ -14278,15 +14278,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 25395,
+                  "value": 25393,
                   "kind": "value"
                 }
               ],
-              "current": 25395
+              "current": 25393
             }
           ],
           "verified": 6,
@@ -14414,157 +14414,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 25180,
+                  "value": 25178,
                   "kind": "value"
                 }
               ],
-              "current": 25180
-            }
-          ],
-          "verified": 6,
-          "total": 7,
-          "notApplicable": 0,
-          "mismatches": 0,
-          "notes": []
-        },
-        {
-          "id": "core-i5-14400",
-          "name": "Core i5-14400",
-          "fields": [
-            {
-              "key": "cores",
-              "status": "verified",
-              "claims": [
-                {
-                  "source": {
-                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
-                    "label": "Intel 公式デスクトップCPU比較資料"
-                  },
-                  "page": 3,
-                  "value": 10,
-                  "kind": "value"
-                }
-              ],
-              "current": 10
-            },
-            {
-              "key": "threads",
-              "status": "verified",
-              "claims": [
-                {
-                  "source": {
-                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
-                    "label": "Intel 公式デスクトップCPU比較資料"
-                  },
-                  "page": 3,
-                  "value": 16,
-                  "kind": "value"
-                }
-              ],
-              "current": 16
-            },
-            {
-              "key": "tdp",
-              "status": "verified",
-              "claims": [
-                {
-                  "source": {
-                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
-                    "label": "Intel 公式デスクトップCPU比較資料"
-                  },
-                  "page": 3,
-                  "value": 65,
-                  "kind": "value"
-                }
-              ],
-              "current": 65
-            },
-            {
-              "key": "baseClock",
-              "status": "verified",
-              "claims": [
-                {
-                  "source": {
-                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
-                    "label": "Intel 公式デスクトップCPU比較資料"
-                  },
-                  "page": 3,
-                  "value": 2.5,
-                  "kind": "value"
-                }
-              ],
-              "current": 2.5
-            },
-            {
-              "key": "boostClock",
-              "status": "verified",
-              "claims": [
-                {
-                  "source": {
-                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
-                    "label": "Intel 公式デスクトップCPU比較資料"
-                  },
-                  "page": 3,
-                  "value": 4.7,
-                  "kind": "value"
-                }
-              ],
-              "current": 4.7
-            },
-            {
-              "key": "cache",
-              "status": "verified",
-              "claims": [
-                {
-                  "source": {
-                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
-                    "label": "Intel 公式デスクトップCPU比較資料"
-                  },
-                  "page": 3,
-                  "value": 20,
-                  "kind": "value"
-                }
-              ],
-              "current": 20
-            },
-            {
-              "key": "release",
-              "status": "unverified",
-              "claims": [],
-              "current": "2024/01/08"
-            },
-            {
-              "key": "score",
-              "status": "verified",
-              "claims": [
-                {
-                  "source": {
-                    "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
-                  },
-                  "value": 24999,
-                  "kind": "value"
-                }
-              ],
-              "current": 24999
+              "current": 25178
             }
           ],
           "verified": 6,
@@ -14703,18 +14561,160 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 24999,
+                  "value": 25002,
                   "kind": "value"
                 }
               ],
-              "current": 24999
+              "current": 25002
             }
           ],
           "verified": 7,
+          "total": 7,
+          "notApplicable": 0,
+          "mismatches": 0,
+          "notes": []
+        },
+        {
+          "id": "core-i5-14400",
+          "name": "Core i5-14400",
+          "fields": [
+            {
+              "key": "cores",
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
+                    "label": "Intel 公式デスクトップCPU比較資料"
+                  },
+                  "page": 3,
+                  "value": 10,
+                  "kind": "value"
+                }
+              ],
+              "current": 10
+            },
+            {
+              "key": "threads",
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
+                    "label": "Intel 公式デスクトップCPU比較資料"
+                  },
+                  "page": 3,
+                  "value": 16,
+                  "kind": "value"
+                }
+              ],
+              "current": 16
+            },
+            {
+              "key": "tdp",
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
+                    "label": "Intel 公式デスクトップCPU比較資料"
+                  },
+                  "page": 3,
+                  "value": 65,
+                  "kind": "value"
+                }
+              ],
+              "current": 65
+            },
+            {
+              "key": "baseClock",
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
+                    "label": "Intel 公式デスクトップCPU比較資料"
+                  },
+                  "page": 3,
+                  "value": 2.5,
+                  "kind": "value"
+                }
+              ],
+              "current": 2.5
+            },
+            {
+              "key": "boostClock",
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
+                    "label": "Intel 公式デスクトップCPU比較資料"
+                  },
+                  "page": 3,
+                  "value": 4.7,
+                  "kind": "value"
+                }
+              ],
+              "current": 4.7
+            },
+            {
+              "key": "cache",
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
+                    "checkedAt": "2026-10-23",
+                    "sha256": "857e138664c011c897ce1b3a87e79f151e6eeec233cdada59c27f2f9cab9171e",
+                    "label": "Intel 公式デスクトップCPU比較資料"
+                  },
+                  "page": 3,
+                  "value": 20,
+                  "kind": "value"
+                }
+              ],
+              "current": 20
+            },
+            {
+              "key": "release",
+              "status": "unverified",
+              "claims": [],
+              "current": "2024/01/08"
+            },
+            {
+              "key": "score",
+              "status": "verified",
+              "claims": [
+                {
+                  "source": {
+                    "url": "https://www.cpubenchmark.net/cpu-list/all",
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
+                  },
+                  "value": 24996,
+                  "kind": "value"
+                }
+              ],
+              "current": 24996
+            }
+          ],
+          "verified": 6,
           "total": 7,
           "notApplicable": 0,
           "mismatches": 0,
@@ -14845,9 +14845,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 24889,
                   "kind": "value"
@@ -14987,9 +14987,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 24870,
                   "kind": "value"
@@ -15183,15 +15183,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 24494,
+                  "value": 24495,
                   "kind": "value"
                 }
               ],
-              "current": 24494
+              "current": 24495
             }
           ],
           "verified": 6,
@@ -15332,15 +15332,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 24368,
+                  "value": 24366,
                   "kind": "value"
                 }
               ],
-              "current": 24368
+              "current": 24366
             }
           ],
           "verified": 7,
@@ -15474,9 +15474,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 24307,
                   "kind": "value"
@@ -15621,9 +15621,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 24208,
                   "kind": "value"
@@ -15768,15 +15768,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 24182,
+                  "value": 24183,
                   "kind": "value"
                 }
               ],
-              "current": 24182
+              "current": 24183
             }
           ],
           "verified": 7,
@@ -15912,15 +15912,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 23888,
+                  "value": 23886,
                   "kind": "value"
                 }
               ],
-              "current": 23888
+              "current": 23886
             }
           ],
           "verified": 6,
@@ -16059,9 +16059,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 23760,
                   "kind": "value"
@@ -16201,15 +16201,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 23733,
+                  "value": 23734,
                   "kind": "value"
                 }
               ],
-              "current": 23733
+              "current": 23734
             }
           ],
           "verified": 6,
@@ -16337,9 +16337,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 23390,
                   "kind": "value"
@@ -16484,15 +16484,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 22946,
+                  "value": 22945,
                   "kind": "value"
                 }
               ],
-              "current": 22946
+              "current": 22945
             }
           ],
           "verified": 7,
@@ -16631,9 +16631,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 22376,
                   "kind": "value"
@@ -16767,9 +16767,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 22356,
                   "kind": "value"
@@ -16909,9 +16909,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 22352,
                   "kind": "value"
@@ -17056,15 +17056,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 22258,
+                  "value": 22259,
                   "kind": "value"
                 }
               ],
-              "current": 22258
+              "current": 22259
             }
           ],
           "verified": 7,
@@ -17198,15 +17198,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 22214,
+                  "value": 22215,
                   "kind": "value"
                 }
               ],
-              "current": 22214
+              "current": 22215
             }
           ],
           "verified": 6,
@@ -17340,9 +17340,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 22127,
                   "kind": "value"
@@ -17482,9 +17482,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 22047,
                   "kind": "value"
@@ -17629,9 +17629,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 21931,
                   "kind": "value"
@@ -17771,9 +17771,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 21855,
                   "kind": "value"
@@ -17918,9 +17918,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 21845,
                   "kind": "value"
@@ -18065,9 +18065,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 21820,
                   "kind": "value"
@@ -18212,15 +18212,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 21488,
+                  "value": 21487,
                   "kind": "value"
                 }
               ],
-              "current": 21488
+              "current": 21487
             }
           ],
           "verified": 7,
@@ -18348,9 +18348,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 21354,
                   "kind": "value"
@@ -18490,15 +18490,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 21287,
+                  "value": 21281,
                   "kind": "value"
                 }
               ],
-              "current": 21287
+              "current": 21281
             }
           ],
           "verified": 6,
@@ -18632,9 +18632,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 21143,
                   "kind": "value"
@@ -18774,15 +18774,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 20749,
+                  "value": 20751,
                   "kind": "value"
                 }
               ],
-              "current": 20749
+              "current": 20751
             }
           ],
           "verified": 6,
@@ -18916,15 +18916,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 20580,
+                  "value": 20573,
                   "kind": "value"
                 }
               ],
-              "current": 20580
+              "current": 20573
             }
           ],
           "verified": 6,
@@ -19063,9 +19063,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 20329,
                   "kind": "value"
@@ -19210,9 +19210,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 20272,
                   "kind": "value"
@@ -19357,9 +19357,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 20206,
                   "kind": "value"
@@ -19504,9 +19504,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 20090,
                   "kind": "value"
@@ -19657,9 +19657,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 20088,
                   "kind": "value"
@@ -19801,9 +19801,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 19687,
                   "kind": "value"
@@ -19943,15 +19943,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 19667,
+                  "value": 19670,
                   "kind": "value"
                 }
               ],
-              "current": 19667
+              "current": 19670
             }
           ],
           "verified": 6,
@@ -20090,9 +20090,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 19618,
                   "kind": "value"
@@ -20232,15 +20232,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 19530,
+                  "value": 19529,
                   "kind": "value"
                 }
               ],
-              "current": 19530
+              "current": 19529
             }
           ],
           "verified": 6,
@@ -20374,15 +20374,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 19472,
+                  "value": 19473,
                   "kind": "value"
                 }
               ],
-              "current": 19472
+              "current": 19473
             }
           ],
           "verified": 6,
@@ -20516,9 +20516,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 19379,
                   "kind": "value"
@@ -20658,9 +20658,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 19339,
                   "kind": "value"
@@ -20805,15 +20805,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 19249,
+                  "value": 19250,
                   "kind": "value"
                 }
               ],
-              "current": 19249
+              "current": 19250
             }
           ],
           "verified": 7,
@@ -20941,9 +20941,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 19236,
                   "kind": "value"
@@ -21088,9 +21088,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 19049,
                   "kind": "value"
@@ -21230,9 +21230,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 19013,
                   "kind": "value"
@@ -21372,9 +21372,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 18826,
                   "kind": "value"
@@ -21508,9 +21508,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 18502,
                   "kind": "value"
@@ -21650,9 +21650,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 18479,
                   "kind": "value"
@@ -21797,9 +21797,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 18454,
                   "kind": "value"
@@ -21939,15 +21939,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 18265,
+                  "value": 18266,
                   "kind": "value"
                 }
               ],
-              "current": 18265
+              "current": 18266
             }
           ],
           "verified": 6,
@@ -22086,9 +22086,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 18112,
                   "kind": "value"
@@ -22228,9 +22228,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 18020,
                   "kind": "value"
@@ -22370,15 +22370,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 17992,
+                  "value": 17993,
                   "kind": "value"
                 }
               ],
-              "current": 17992
+              "current": 17993
             }
           ],
           "verified": 6,
@@ -22512,9 +22512,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 17952,
                   "kind": "value"
@@ -22642,9 +22642,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 17914,
                   "kind": "value"
@@ -22792,9 +22792,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 17647,
                   "kind": "value"
@@ -22939,9 +22939,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 17412,
                   "kind": "value"
@@ -23081,15 +23081,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 17049,
+                  "value": 17051,
                   "kind": "value"
                 }
               ],
-              "current": 17049
+              "current": 17051
             }
           ],
           "verified": 6,
@@ -23223,9 +23223,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 16866,
                   "kind": "value"
@@ -23359,15 +23359,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 16612,
+                  "value": 16610,
                   "kind": "value"
                 }
               ],
-              "current": 16612
+              "current": 16610
             }
           ],
           "verified": 6,
@@ -23501,9 +23501,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 16279,
                   "kind": "value"
@@ -23648,9 +23648,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 16268,
                   "kind": "value"
@@ -23790,9 +23790,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 16083,
                   "kind": "value"
@@ -23937,15 +23937,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 16001,
+                  "value": 16000,
                   "kind": "value"
                 }
               ],
-              "current": 16001
+              "current": 16000
             }
           ],
           "verified": 7,
@@ -24079,9 +24079,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 15967,
                   "kind": "value"
@@ -24226,15 +24226,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 15927,
+                  "value": 15926,
                   "kind": "value"
                 }
               ],
-              "current": 15927
+              "current": 15926
             }
           ],
           "verified": 7,
@@ -24373,15 +24373,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 15924,
+                  "value": 15926,
                   "kind": "value"
                 }
               ],
-              "current": 15924
+              "current": 15926
             }
           ],
           "verified": 7,
@@ -24520,9 +24520,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 15582,
                   "kind": "value"
@@ -24667,9 +24667,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 15579,
                   "kind": "value"
@@ -24809,15 +24809,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 15398,
+                  "value": 15399,
                   "kind": "value"
                 }
               ],
-              "current": 15398
+              "current": 15399
             }
           ],
           "verified": 6,
@@ -24956,9 +24956,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 15302,
                   "kind": "value"
@@ -25098,15 +25098,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 15088,
+                  "value": 15086,
                   "kind": "value"
                 }
               ],
-              "current": 15088
+              "current": 15086
             }
           ],
           "verified": 6,
@@ -25245,9 +25245,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 14730,
                   "kind": "value"
@@ -25387,15 +25387,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 14654,
+                  "value": 14653,
                   "kind": "value"
                 }
               ],
-              "current": 14654
+              "current": 14653
             }
           ],
           "verified": 6,
@@ -25529,9 +25529,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 14396,
                   "kind": "value"
@@ -25671,9 +25671,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 14365,
                   "kind": "value"
@@ -25813,9 +25813,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 14244,
                   "kind": "value"
@@ -25955,9 +25955,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 14237,
                   "kind": "value"
@@ -26097,15 +26097,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 14104,
+                  "value": 14105,
                   "kind": "value"
                 }
               ],
-              "current": 14104
+              "current": 14105
             }
           ],
           "verified": 6,
@@ -26239,15 +26239,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 14104,
+                  "value": 14103,
                   "kind": "value"
                 }
               ],
-              "current": 14104
+              "current": 14103
             }
           ],
           "verified": 6,
@@ -26381,9 +26381,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 14081,
                   "kind": "value"
@@ -26517,9 +26517,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 14019,
                   "kind": "value"
@@ -26661,15 +26661,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 13952,
+                  "value": 13953,
                   "kind": "value"
                 }
               ],
-              "current": 13952
+              "current": 13953
             }
           ],
           "verified": 6,
@@ -26808,9 +26808,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 13859,
                   "kind": "value"
@@ -26955,9 +26955,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 13736,
                   "kind": "value"
@@ -27097,9 +27097,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 13554,
                   "kind": "value"
@@ -27239,9 +27239,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 13525,
                   "kind": "value"
@@ -27381,15 +27381,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 13173,
+                  "value": 13174,
                   "kind": "value"
                 }
               ],
-              "current": 13173
+              "current": 13174
             }
           ],
           "verified": 6,
@@ -27528,9 +27528,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 13162,
                   "kind": "value"
@@ -27672,9 +27672,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 13157,
                   "kind": "value"
@@ -27819,9 +27819,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 13119,
                   "kind": "value"
@@ -27961,9 +27961,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 13009,
                   "kind": "value"
@@ -28108,15 +28108,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 13000,
+                  "value": 13004,
                   "kind": "value"
                 }
               ],
-              "current": 13000
+              "current": 13004
             }
           ],
           "verified": 7,
@@ -28255,9 +28255,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 12983,
                   "kind": "value"
@@ -28397,15 +28397,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 12885,
+                  "value": 12882,
                   "kind": "value"
                 }
               ],
-              "current": 12885
+              "current": 12882
             }
           ],
           "verified": 6,
@@ -28533,9 +28533,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 12746,
                   "kind": "value"
@@ -28675,9 +28675,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 12732,
                   "kind": "value"
@@ -28811,9 +28811,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 12578,
                   "kind": "value"
@@ -28956,9 +28956,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 12524,
                   "kind": "value"
@@ -29103,9 +29103,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 12242,
                   "kind": "value"
@@ -29245,15 +29245,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 12092,
+                  "value": 12091,
                   "kind": "value"
                 }
               ],
-              "current": 12092
+              "current": 12091
             }
           ],
           "verified": 6,
@@ -29387,9 +29387,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 11960,
                   "kind": "value"
@@ -29523,9 +29523,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 11505,
                   "kind": "value"
@@ -29673,15 +29673,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 11027,
+                  "value": 11028,
                   "kind": "value"
                 }
               ],
-              "current": 11027
+              "current": 11028
             }
           ],
           "verified": 7,
@@ -29820,9 +29820,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 10912,
                   "kind": "value"
@@ -29962,9 +29962,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 10653,
                   "kind": "value"
@@ -30104,9 +30104,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 10637,
                   "kind": "value"
@@ -30246,9 +30246,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 10579,
                   "kind": "value"
@@ -30388,9 +30388,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 10332,
                   "kind": "value"
@@ -30530,9 +30530,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 10214,
                   "kind": "value"
@@ -30672,15 +30672,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 10135,
+                  "value": 10134,
                   "kind": "value"
                 }
               ],
-              "current": 10135
+              "current": 10134
             }
           ],
           "verified": 6,
@@ -30819,9 +30819,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 10088,
                   "kind": "value"
@@ -30961,9 +30961,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 9994,
                   "kind": "value"
@@ -31103,9 +31103,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 9977,
                   "kind": "value"
@@ -31245,15 +31245,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 9840,
+                  "value": 9841,
                   "kind": "value"
                 }
               ],
-              "current": 9840
+              "current": 9841
             }
           ],
           "verified": 6,
@@ -31387,9 +31387,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 9634,
                   "kind": "value"
@@ -31529,9 +31529,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 9500,
                   "kind": "value"
@@ -31671,9 +31671,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 9463,
                   "kind": "value"
@@ -31818,9 +31818,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 9359,
                   "kind": "value"
@@ -31960,9 +31960,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 9350,
                   "kind": "value"
@@ -32102,9 +32102,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 9295,
                   "kind": "value"
@@ -32244,15 +32244,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 9235,
+                  "value": 9236,
                   "kind": "value"
                 }
               ],
-              "current": 9235
+              "current": 9236
             }
           ],
           "verified": 6,
@@ -32391,9 +32391,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 9150,
                   "kind": "value"
@@ -32538,9 +32538,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 9059,
                   "kind": "value"
@@ -32680,9 +32680,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 8932,
                   "kind": "value"
@@ -32822,9 +32822,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 8860,
                   "kind": "value"
@@ -32964,9 +32964,9 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
                   "value": 8471,
                   "kind": "value"
@@ -33106,15 +33106,15 @@
                 {
                   "source": {
                     "url": "https://www.cpubenchmark.net/cpu-list/all",
-                    "checkedAt": "2026-10-23",
-                    "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-                    "label": "PassMark CPU Mark（2026-10-22更新分）"
+                    "checkedAt": "2026-10-24",
+                    "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+                    "label": "PassMark CPU Mark（2026-10-24 取得）"
                   },
-                  "value": 8286,
+                  "value": 8288,
                   "kind": "value"
                 }
               ],
-              "current": 8286
+              "current": 8288
             }
           ],
           "verified": 6,

@@ -106,6 +106,48 @@
     </section>`;
   }
 
+  // 一覧の下に常に出す「データの出典」。項目ごとに、どの資料から取ったか・いつ確かめたかを並べる。
+  // 確認日・取得日はデータ（performanceData・hardwareEvidence・価格・AI の各レコード）から出す。製品ごとの個別の資料は詳細ページ
+  function sourcesSection(cat) {
+    const perf = SPEC.performanceData?.sources || {};
+    const ev = SPEC.hardwareEvidence?.sources || {};
+    const priceAt = SPEC.prices?.[cat.id]?.fetchedAt ? new Date(SPEC.prices[cat.id].fetchedAt).toLocaleDateString("sv-SE") : null;
+    const link = (label, url) => `<a class="ext" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`;
+    const fromPerf = (key) => perf[key] ? [link(perf[key].label, perf[key].url), perf[key].checkedAt] : null;
+    const fromEv = (key) => ev[key] ? link(ev[key].label, ev[key].url) : "";
+    const rakuten = ["参考価格", `${link("楽天市場 商品検索 API", "https://webservice.rakuten.co.jp/documentation/ichiba-item-search")}（PC パーツ専門店・大手家電店・大手中古 PC 店の 18 店に限定。店名は各価格に表示）`, priceAt];
+    const rows = {
+      cpu: [
+        ["マルチ性能", ev.passmark ? link(ev.passmark.label, "https://www.cpubenchmark.net/cpu_list.php") : "", ev.passmark?.checkedAt],
+        ["ゲーム指標", ...(fromPerf("gaming") || ["", ""])],
+        ["シングル性能", ...(fromPerf("single") || ["", ""])],
+        ["コア・スレッド・公称電力・クロック・L3キャッシュ", `${fromEv("amd-cpu")}、${fromEv("intel-desktop")}。一部は Intel ARK・AMD の個別ページ（製品ごとの資料は詳細ページ）`, SPEC.hardwareEvidence?.checkedAt],
+        ["発売日", `メーカー資料（${fromEv("amd-cpu")}・各社の発売告知）で日付まで確かめたもの（詳細ページで「メーカー資料と一致」）。それ以外は ${link("Wikipedia 英語版の各世代の記事", "https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors")} の日付で、メーカー資料では未確認`, SPEC.hardwareEvidence?.checkedAt],
+        ["ソケット・内蔵グラフィックス", `AMD は ${fromEv("amd-cpu")}（掲載 98 型番で一致を確認）。Intel は世代ごとのソケットと、型番末尾の F（内蔵グラフィックス無し）というメーカーの命名規則`, SPEC.hardwareEvidence?.checkedAt],
+        rakuten,
+      ],
+      gpu: [
+        ["3D描画性能", ...(fromPerf("g3d") || ["", ""])],
+        ["VRAM・公称電力", `${fromEv("nvidia-compare")}、${fromEv("amd-gpu")}、Intel ARK。古い製品は各社の製品ページ・メーカー製カードの仕様資料（製品ごとの資料は詳細ページ）`, SPEC.hardwareEvidence?.checkedAt],
+        ["発売日", `メーカー資料（NVIDIA・AMD の発売告知、${fromEv("amd-gpu-launch")}）で日付まで確かめたもの（詳細ページで「メーカー資料と一致」）。それ以外は ${link("Wikipedia 英語版の各シリーズの記事", "https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units")} の日付で、メーカー資料では未確認`, SPEC.hardwareEvidence?.checkedAt],
+        rakuten,
+      ],
+      ai: [
+        ["公開日・パラメータ数・コンテキスト・最大出力・入出力・ライセンス・利用形態", `各社の公式資料（${link("OpenAI", "https://developers.openai.com/api/docs/models")}・${link("Anthropic", "https://platform.claude.com/docs/en/models/overview")}・Hugging Face の公式モデルカード（${link("Moonshot AI", "https://huggingface.co/moonshotai")}・${link("DeepSeek", "https://huggingface.co/deepseek-ai")}・${link("Qwen", "https://huggingface.co/Qwen")}・${link("Z.ai", "https://huggingface.co/zai-org")}）など。モデルごとの資料は詳細ページ）`, getItems("ai")[0]?.checkedAt],
+        ["正確性・正答率・でっち上げない率", `${perf.aa ? link("Artificial Analysis（AA-Omniscience）", "https://artificialanalysis.ai/evaluations/omniscience") : ""}。モデル比較ページに載っている値`, perf.aa?.checkedAt],
+        ["総合能力・出力の速さ・待ち時間・料金", `${perf.aa ? link(perf.aa.label, perf.aa.url) : ""}（評価方法: ${perf.method ? link(perf.method.label, perf.method.url) : ""}）`, perf.aa?.checkedAt],
+        ["重みの大きさ（8bit）", "出典の値ではなく、公式資料の総パラメータ数から計算した目安（1 パラメータ＝1 バイト）", "—"],
+      ],
+    }[cat.id];
+    if (!rows) return "";
+    return `<section class="source-list" aria-labelledby="src-title">
+      <h2 id="src-title">データの出典</h2>
+      <div class="table-wrap"><table class="audit-table"><thead><tr><th scope="col">項目</th><th scope="col">出典</th><th scope="col">確認日</th></tr></thead>
+      <tbody>${rows.map(([what, src, date]) => `<tr><th scope="row">${esc(what)}</th><td>${src}</td><td>${esc(date || "—")}</td></tr>`).join("")}</tbody></table></div>
+      <p class="note">計算で出している値（コスパ・電力あたり・重みの大きさ）を除き、数値は上の出典の値をそのまま載せ、出典で確かめられない値は空欄にしています。製品ごとの出典・確認した日・照合の結果は、各製品の詳細ページにあります。</p>
+    </section>`;
+  }
+
   // 一覧の「数値の見方・出典」に出す、メーカー資料との照合状況の要約（数え方は tools/audit-hardware.mjs と同じ）
   function auditLine(cat) {
     if (!SPEC.verificationOf || !["cpu", "gpu"].includes(cat.id)) return "";
@@ -195,13 +237,10 @@
   function renderNav(activeId) {
     const ul = document.getElementById("categoryNav");
     ul.innerHTML = SPEC.categories
+      .filter((c) => c.status === "ready")
       .map((c) => {
-        const ready = c.status === "ready";
-        const count = ready ? `<span class="count">${getItems(c.id).length}</span>` : '<span class="soon">準備中</span>';
         const cls = c.id === activeId ? ' class="active" aria-current="page"' : "";
-        return ready
-          ? `<li><a href="#/c/${esc(c.id)}"${cls}>${SPEC.icon(c.icon)}${esc(c.name)}${count}</a></li>`
-          : `<li><span class="disabled">${SPEC.icon(c.icon)}${esc(c.name)}${count}</span></li>`;
+        return `<li><a href="#/c/${esc(c.id)}"${cls}>${SPEC.icon(c.icon)}${esc(c.name)}<span class="count">${getItems(c.id).length}</span></a></li>`;
       })
       .join("");
   }
@@ -209,25 +248,16 @@
   // ---------- トップ ----------
   function renderHome() {
     const ready = SPEC.categories.filter((c) => c.status === "ready");
-    const planned = SPEC.categories.filter((c) => c.status !== "ready");
     const total = ready.reduce((n, c) => n + getItems(c.id).length, 0);
     const no = (i) => String(i + 1).padStart(2, "0");
-    const card = (c, i) =>
-      c.status === "ready"
-        ? `<a class="card" href="#/c/${esc(c.id)}">
+    const card = (c, i) => `<a class="card" href="#/c/${esc(c.id)}">
             <span class="card-no">${no(i)}</span>
             ${SPEC.icon(c.icon, "card-icon")}
             <span class="card-en">${esc(c.en)}</span>
             <span class="card-name">${esc(c.name)}</span>
             <span class="card-desc">${esc(c.description)}</span>
             <span class="card-meta">${getItems(c.id).length} 件 ${SPEC.icon("arrow", "card-arrow")}</span>
-          </a>`
-        : `<div class="card card-planned">
-            ${SPEC.icon(c.icon, "card-icon")}
-            <span class="card-en">${esc(c.en)}</span>
-            <span class="card-name">${esc(c.name)}</span>
-            <span class="card-meta">準備中</span>
-          </div>`;
+          </a>`;
     main.innerHTML = `
       <section class="hero">
         <p class="eyebrow">THE SPECIFICATION ARCHIVE</p>
@@ -236,13 +266,10 @@
         <dl class="stats">
           <div><dt>カテゴリ</dt><dd>${ready.length}</dd></div>
           <div><dt>収録製品</dt><dd>${total}</dd></div>
-          <div><dt>追加予定</dt><dd>${planned.length}</dd></div>
         </dl>
       </section>
       <div class="rule"><span>COLLECTION</span></div>
-      <div class="cards">${ready.map(card).join("")}</div>
-      <div class="rule"><span>FORTHCOMING</span></div>
-      <div class="cards cards-planned">${planned.map(card).join("")}</div>`;
+      <div class="cards">${ready.map(card).join("")}</div>`;
   }
 
   // ---------- カテゴリ一覧 ----------
@@ -253,8 +280,8 @@
     const config = SPEC.benchmarks[cat.id];
     const filterKeys = cat.filters || ["maker"];
     const filterFields = filterKeys.map((k) => cat.fields.find((f) => f.key === k)).filter(Boolean);
-    // AI は指標を切り替える性能ランキング。CPU・GPU は総合スコア順の表（ゲーム性能などは表の列）
-    const ranking = cat.id === "ai";
+    // 3 カテゴリとも、指標を切り替える性能ランキング（細かい仕様は「仕様一覧」の表）
+    const ranking = Boolean(config);
     const st = (listState[cat.id] ||= ranking
       ? { q: "", filters: {}, sort: config.default, dir: config.metrics[0].better === "low" ? 1 : -1, metric: config.default, baseline: config.baseline, view: "performance", measuredOnly: true }
       : { q: "", filters: {}, sort: "score", dir: -1, metric: "score", baseline: null, view: "specs", measuredOnly: false });
@@ -327,7 +354,7 @@
         ${cat.id === "ai" ? '<p class="note">主に高推論設定を掲載。設定名は提供元ごとに意味が異なり、同じ計算量ではありません。公開重みを手元で測定した結果ではありません。</p>' : '<p class="note">基準比200はスコアが基準製品の2倍という意味で、ゲームのFPSが2倍になるとは限りません。</p>'}
         ${metric.source ? `<a class="benchmark-credit ext" href="${esc(SPEC.performanceData.sources[metric.source].url)}" target="_blank" rel="noopener noreferrer">${esc(SPEC.performanceData.sources[metric.source].label)}</a><span class="benchmark-credit">取得 ${esc(SPEC.performanceData.checkedAt)}</span>` : ""}</details>
         <div class="benchmark-settings">
-          ${config.baseline ? `<label>比較の基準 <select id="benchmarkBase">${items.filter((i) => i[st.metric] > 0).map((i) => `<option value="${esc(i.id)}" ${i.id === st.baseline ? "selected" : ""}>${esc(i.name)} = 100</option>`).join("")}</select></label>` : '<p class="note">測定時の推論設定を各モデルに併記</p>'}
+          ${config.baseline ? `<label>比較の基準 <select id="benchmarkBase">${items.filter((i) => i[st.metric] > 0).map((i) => `<option value="${esc(i.id)}" ${i.id === st.baseline ? "selected" : ""}>${esc(i.name)} = 100</option>`).join("")}</select></label>` : ""}
           <label class="measured-filter"><input type="checkbox" id="measuredOnly" ${st.measuredOnly ? "checked" : ""}>ランキングは比較データがある製品のみ</label>
         </div>
       </section>
@@ -335,17 +362,18 @@
       <div class="toolbar">
         <label class="grow">絞り込み <input id="fq" type="search" value="${esc(st.q)}" placeholder="${esc(cat.searchHint || "名前で絞り込み")}"></label>
         <span id="filterSelects" style="display:contents">${selectsHtml()}</span>
-        ${!ranking && SPEC.applyPrices[cat.id] ? `<label class="toggle priced-filter"><input type="checkbox" id="pricedOnly" ${st.pricedOnly ? "checked" : ""}> 今買える製品だけ（主要店で価格があるもの）</label>` : ""}
+        ${SPEC.applyPrices[cat.id] ? `<label class="toggle priced-filter"><input type="checkbox" id="pricedOnly" ${st.pricedOnly ? "checked" : ""}> 今買える製品だけ（主要店で価格があるもの）</label>` : ""}
         <span class="muted" id="hitCount"></span>
         <a class="btn btn-ghost btn-small toolbar-cmp" href="#/compare?cat=${esc(cat.id)}">${esc(cat.name)}を比較する</a>
       </div>
-      <details class="category-sources"><summary>数値の見方・出典・価格について</summary>
+      <details class="category-sources"><summary>数値の見方と照合の状況</summary>
       ${cat.note ? `<p class="note">${esc(cat.note)}</p>` : ""}
-      ${cat.specNote ? `<p class="note">${esc(cat.specNote)}</p>` : ""}${auditLine(cat)}${(cat.sources || []).map((s) => `<p class="note"><a class="ext" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></p>`).join("")}</details>
+      ${cat.specNote ? `<p class="note">${esc(cat.specNote)}</p>` : ""}${auditLine(cat)}<p class="note">出典はページの下の「データの出典」にまとめています。</p></details>
       ${SPEC.applyPrices[cat.id] ? `<p class="note live" id="priceStatus" role="status" aria-live="polite">${esc(priceStatus[cat.id] || "")}</p>` : ""}
       ${ranking ? `<div id="performanceRows" class="performance-ranking" ${st.view !== "performance" ? "hidden" : ""}></div>` : ""}
       ${tableGuide(cat, listFields)}
-      <div class="table-wrap" ${st.view !== "specs" ? "hidden" : ""}><table class="spec-table" id="specTable"></table></div>`;
+      <div class="table-wrap" ${st.view !== "specs" ? "hidden" : ""}><table class="spec-table" id="specTable"></table></div>
+      ${sourcesSection(cat)}`;
 
     const table = document.getElementById("specTable");
     main.querySelector(".table-guide")?.addEventListener("toggle", (e) => setGuideClosed(cat.id, !e.target.open));
@@ -385,7 +413,7 @@
         const value = item[st.metric];
         const relative = SPEC.relativePerformance(value, base?.[st.metric]);
         const record = SPEC.performanceData[cat.id][item.id]?.[st.metric];
-        const meta = cat.id === "cpu" ? `${item.cores}コア / ${item.threads}スレッド` : cat.id === "gpu" ? item.integrated ? "内蔵GPU · メモリ共有" : `${item.vram} GB VRAM` : [item.maker, item.deploy, item.weightSize ? `重み 約${item.weightSize.toLocaleString("ja-JP")}GB（8bit）` : null].filter(Boolean).join(" · ");
+        const meta = cat.id === "cpu" ? `${item.cores}コア / ${item.threads}スレッド${item.socket ? ` · ${item.socket}` : ""}` : cat.id === "gpu" ? item.integrated ? "内蔵GPU · メモリ共有" : `${item.vram} GB VRAM` : [item.maker, item.deploy, item.weightSize ? `重み 約${item.weightSize.toLocaleString("ja-JP")}GB（8bit）` : null].filter(Boolean).join(" · ");
         return `<a class="performance-row ${value == null ? "no-result" : ""}" href="#/c/${esc(cat.id)}/${esc(item.id)}">
           <span class="performance-rank">${rankOf.get(item.id) ?? "—"}</span>
           <span class="performance-name"><strong>${esc(item.name)}</strong><small>${esc(meta)}${cat.id !== "ai" && item.price ? ` · ¥${item.price.toLocaleString("ja-JP")}` : ""}</small>${cat.id === "ai" && settingOf(item, record) ? `<small class="benchmark-setting">${esc(settingOf(item, record))}</small>` : ""}</span>

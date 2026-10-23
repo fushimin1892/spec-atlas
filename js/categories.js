@@ -3,14 +3,14 @@
 //   list: false = 一覧表には出さない / bar: true = 最大値に対する横棒を付ける
 //   digits = 小数の桁数（maxDigits = 小数があるときだけ出す最大桁数） / sub = 値の下に小さく添える別項目のキー / link = 値を外部リンクにする URL の項目キー
 //   better: "high" / "low" = 比較画面で、大きい方／小さい方を「最良」として強調する
-//   filterOnly: true = 絞り込み専用（詳細・比較には出さない）
+//   filterOnly: true = 詳細・比較には出さない（絞り込み専用の項目や、ほかの欄と内容が重なる項目）
 // filters: 一覧のプルダウン絞り込みに使う項目（省略時はメーカー）
 // optionOrder: { 項目キー: [並び順] } = プルダウンの選択肢の並び（省略時はデータに出てくる順）
 // defaultSort: 一覧の初期の並び順。dir は 1 = 昇順 / -1 = 降順
 // rank: true = 一覧に順位列を出す / searchHint・note: 絞り込み欄の例文と表の注記
 // sources: [{ label, url }] = データの出典。表の注記の下にリンクで出す
 // icon: js/icons.js のキー名。en: 英字の小見出し。
-// status: "ready" = 公開中 / "planned" = 準備中（メニューに「準備中」で表示）
+// status: "ready" = 公開中
 window.SPEC = window.SPEC || { data: {} };
 
 window.SPEC.categories = [
@@ -47,7 +47,7 @@ window.SPEC.categories = [
       { key: "maxOutput", label: "最大出力（通常API）", type: "number", unit: "tokens", list: false },
       { key: "modality", label: "入出力", type: "text" },
       { key: "deploy", label: "利用形態", type: "text" },
-      { key: "open", label: "公開形態", type: "text", list: false },
+      { key: "open", label: "公開形態", type: "text", list: false, filterOnly: true },
       { key: "license", label: "ライセンス", type: "text" },
       { key: "checkedAt", label: "資料確認日", type: "text", empty: "未再照合" },
     ],
@@ -62,7 +62,7 @@ window.SPEC.categories = [
     searchHint: "型番で絞り込み（例: 9800X3D）",
     // note は data/cpu.js が価格の取得日時を添えて書き込む
     sources: [
-      { label: "性能スコア: PassMark CPU Mark（マルチスレッド・2026年10月22日更新分）", url: "https://www.cpubenchmark.net/cpu_list.php" },
+      { label: "性能スコア: PassMark CPU Mark（マルチスレッド）", url: "https://www.cpubenchmark.net/cpu_list.php" },
       { label: "AMD 公式プロセッサ仕様表（掲載全項目の確認を保証するものではありません）", url: "https://www.amd.com/en/products/specifications/processors.html" },
       { label: "Intel 公式デスクトップCPU比較資料（個別ARK・発売告知を優先する項目あり）", url: "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf" },
     ],
@@ -83,7 +83,6 @@ window.SPEC.categories = [
       { key: "name", label: "型番", type: "text" },
       { key: "maker", label: "メーカー", type: "text", list: false },
       { key: "series", label: "シリーズ", type: "text", list: false },
-      { key: "igpu", label: "内蔵グラフィックス", type: "text", list: false, empty: "未確認" },
       { key: "score", label: "性能スコア", type: "number", bar: true, better: "high" },
       { key: "cores", label: "コア", type: "number", better: "high" },
       { key: "threads", label: "スレッド", type: "number", better: "high" },
@@ -92,11 +91,12 @@ window.SPEC.categories = [
       { key: "boostClock", label: "ブースト", type: "number", unit: "GHz", digits: 1, better: "high" },
       { key: "cache", label: "L3キャッシュ", type: "number", unit: "MB", better: "high" },
       { key: "socket", label: "ソケット", type: "text", sub: "socketNote", empty: "なし（基板に搭載済み）" },
+      { key: "igpu", label: "内蔵グラフィックス", type: "text", list: false, empty: "未確認" },
       { key: "price", label: "参考価格", type: "number", prefix: "¥", sub: "priceNote", link: "priceUrl", better: "low" },
       { key: "costPerf", label: "コスパ", type: "number", digits: 1, better: "high" },
       { key: "efficiency", label: "公称電力当たりスコア", type: "number", digits: 1, better: "high" },
       { key: "release", label: "発売日", type: "text" },
-      { key: "verification", label: "仕様照合", type: "text" },
+      { key: "verification", label: "仕様照合", type: "text", list: false, filterOnly: true },
     ],
   },
   {
@@ -137,15 +137,9 @@ window.SPEC.categories = [
       { key: "costPerf", label: "コスパ", type: "number", digits: 1, better: "high" },
       { key: "efficiency", label: "公称電力当たりスコア", type: "number", digits: 1, better: "high" },
       { key: "release", label: "発売日", type: "text" },
-      { key: "verification", label: "仕様照合", type: "text" },
+      { key: "verification", label: "仕様照合", type: "text", list: false, filterOnly: true },
     ],
   },
-  // ここから下は準備中の候補。data ファイルを用意して status を "ready" にすれば公開される。
-  { id: "phone", name: "スマートフォン", icon: "phone", en: "SMARTPHONES", status: "planned", description: "SoC・画面・バッテリーなど", fields: [] },
-  { id: "memory", name: "メモリ", icon: "memory", en: "MEMORY", status: "planned", description: "DDR規格・容量・速度", fields: [] },
-  { id: "storage", name: "ストレージ", icon: "storage", en: "STORAGE", status: "planned", description: "SSD・HDD の速度と容量", fields: [] },
-  { id: "display", name: "ディスプレイ", icon: "display", en: "DISPLAYS", status: "planned", description: "解像度・リフレッシュレート・パネル", fields: [] },
-  { id: "console", name: "ゲーム機", icon: "console", en: "CONSOLES", status: "planned", description: "据え置き・携帯ゲーム機", fields: [] },
 ];
 
 // ---------- 項目のやさしい説明（help） ----------

@@ -22,9 +22,9 @@ window.SPEC.hardwareEvidence = {
   },
   "passmark": {
    "url": "https://www.cpubenchmark.net/cpu-list/all",
-   "checkedAt": "2026-10-23",
-   "sha256": "e9e73dd5071f26f2e413269f1911482272d96adf49c336b7b4ac08041c6a18ff",
-   "label": "PassMark CPU Mark（2026-10-22更新分）"
+   "checkedAt": "2026-10-24",
+   "sha256": "f2a4069e1b0bb2a2138f997c6cf2a875c5999872b409b78e3155e52c6c861c53",
+   "label": "PassMark CPU Mark（2026-10-24 取得）"
   },
   "intel-desktop": {
    "url": "https://cdrdv2-public.intel.com/841923/Intel-Core-Desktop-Boxed-Processors-Comparison-Chart.pdf",
@@ -400,7 +400,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 72093
+     "score": 72088
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+9+9950X3D2&id=7115"
    },
@@ -421,7 +421,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 70105
+     "score": 70106
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+9+9950X3D&id=6549"
    },
@@ -443,7 +443,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 68502
+     "score": 68506
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+Ultra+7+270K+Plus&id=7114"
    },
@@ -464,7 +464,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 67226
+     "score": 67227
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+Ultra+9+285K&id=6296"
    },
@@ -485,7 +485,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 65695
+     "score": 65693
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+9+9950X&id=6211"
    },
@@ -635,7 +635,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 58175
+     "score": 58173
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i9-14900K&id=5717"
    },
@@ -656,7 +656,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 58067
+     "score": 58068
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i9-14900KF&id=5684"
    },
@@ -677,7 +677,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 58044
+     "score": 58043
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i9-13900K&id=5022"
    },
@@ -698,7 +698,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 57921
+     "score": 57910
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+Ultra+9+285&id=6443"
    },
@@ -719,7 +719,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 57404
+     "score": 57405
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i9-13900KF&id=5055"
    },
@@ -740,7 +740,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 56039
+     "score": 56038
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+9+9900X3D&id=6548"
    },
@@ -762,7 +762,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 54288
+     "score": 54283
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+9+9900X&id=6171"
    },
@@ -805,7 +805,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 51909
+     "score": 51908
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i7-14700K&id=5719"
    },
@@ -826,7 +826,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 51405
+     "score": 51415
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+Ultra+5+250K+Plus&id=7221"
    },
@@ -869,7 +869,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 51115
+     "score": 51075
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+Ultra+5+250KF+Plus&id=7246"
    },
@@ -912,7 +912,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 49513
+     "score": 49506
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+Ultra+7+265F&id=6558"
    },
@@ -1027,7 +1027,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 45586
+     "score": 45584
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i7-13700K&id=5060"
    },
@@ -1048,7 +1048,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 45504
+     "score": 45503
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i7-13700KF&id=5061"
    },
@@ -1069,7 +1069,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 45242
+     "score": 45243
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+9+5950X&id=3862"
    },
@@ -1091,7 +1091,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 44551
+     "score": 44541
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i9-14900&id=5886"
    },
@@ -1133,7 +1133,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 43869
+     "score": 43872
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+9+5900XT&id=6187"
    },
@@ -1155,7 +1155,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 43373
+     "score": 43372
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i9-12900KS&id=4813"
    },
@@ -1239,7 +1239,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 41289
+     "score": 41287
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+7+9850X3D&id=7074"
    },
@@ -1261,7 +1261,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 41240
+     "score": 41237
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i7-14700F&id=5834"
    },
@@ -1282,7 +1282,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 41095
+     "score": 41096
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i9-12900K&id=4597"
    },
@@ -1303,7 +1303,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 40438
+     "score": 40437
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i9-12900KF&id=4611"
    },
@@ -1410,7 +1410,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 38393
+     "score": 38391
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+9+3950X&id=3598"
    },
@@ -1462,7 +1462,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 38220
+     "score": 38218
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i5-14600KF&id=5722"
    },
@@ -1483,7 +1483,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 37724
+     "score": 37726
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i7-13700F&id=5163"
    },
@@ -1546,7 +1546,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 36922
+     "score": 36921
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+7+9700X&id=6205"
    },
@@ -1631,7 +1631,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 35782
+     "score": 35773
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i9-12900F&id=4694"
    },
@@ -1652,7 +1652,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 35782
+     "score": 35779
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i5-14600&id=5865"
    },
@@ -1673,7 +1673,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 35472
+     "score": 35473
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+7+7700X&id=5036"
    },
@@ -1695,7 +1695,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 34311
+     "score": 34312
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+7+7700&id=5169"
    },
@@ -1726,7 +1726,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 34280
+     "score": 34278
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+7+7800X3D&id=5299"
    },
@@ -1748,7 +1748,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 34232
+     "score": 34230
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i7-12700K&id=4609"
    },
@@ -1791,7 +1791,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 33899
+     "score": 33895
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i7-12700KF&id=4608"
    },
@@ -1877,7 +1877,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 32459
+     "score": 32460
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+9+3900XT&id=3778"
    },
@@ -1919,7 +1919,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 31025
+     "score": 31017
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i5-13600&id=5159"
    },
@@ -1940,7 +1940,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 30908
+     "score": 30910
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+Ultra+5+225F&id=6457"
    },
@@ -1961,7 +1961,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 30833
+     "score": 30834
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+7+8700F&id=6104"
    },
@@ -1983,7 +1983,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 30670
+     "score": 30668
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i5-13500&id=4993"
    },
@@ -2026,7 +2026,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 30459
+     "score": 30460
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i5-14500&id=5835"
    },
@@ -2111,7 +2111,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 29741
+     "score": 29739
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i7-12700&id=4669"
    },
@@ -2175,7 +2175,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 28285
+     "score": 28286
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+7+5800X3D&id=4823"
    },
@@ -2247,7 +2247,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 28022
+     "score": 28023
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+7+5800XT&id=6307"
    },
@@ -2269,7 +2269,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 27655
+     "score": 27656
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+7+5800X&id=3869"
    },
@@ -2407,7 +2407,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 26539
+     "score": 26540
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+7+5700X&id=4814"
    },
@@ -2548,7 +2548,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 25395
+     "score": 25393
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i5-14400F&id=5837"
    },
@@ -2569,7 +2569,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 25180
+     "score": 25178
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+5+8600G&id=5842"
    },
@@ -2590,7 +2590,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 24999
+     "score": 24996
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i5-14400&id=5868"
    },
@@ -2611,7 +2611,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 24999
+     "score": 25002
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+5+7500X3D&id=7041"
    },
@@ -2675,7 +2675,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 24494
+     "score": 24495
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i9-11900KF+%40+3.50GHz&id=4240"
    },
@@ -2710,7 +2710,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 24368
+     "score": 24366
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+5+8400F&id=6056"
    },
@@ -2775,7 +2775,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 24182
+     "score": 24183
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+7+5700&id=4968"
    },
@@ -2797,7 +2797,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 23888
+     "score": 23886
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i5-13400&id=4994"
    },
@@ -2840,7 +2840,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 23733
+     "score": 23734
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i7-11700KF+%40+3.60GHz&id=4234"
    },
@@ -2882,7 +2882,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 22946
+     "score": 22945
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+7+3800X&id=3499"
    },
@@ -2968,7 +2968,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 22258
+     "score": 22259
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+5+5600XT&id=6387"
    },
@@ -2990,7 +2990,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 22214
+     "score": 22215
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i9-10900K+%40+3.70GHz&id=3730"
    },
@@ -3140,7 +3140,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 21488
+     "score": 21487
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+5+5600&id=4811"
    },
@@ -3183,7 +3183,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 21287
+     "score": 21281
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i5-12600&id=4688"
    },
@@ -3225,7 +3225,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 20749
+     "score": 20751
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i7-11700F+%40+2.50GHz&id=4264"
    },
@@ -3246,7 +3246,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 20580
+     "score": 20573
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i7-11700+%40+2.50GHz&id=3947"
    },
@@ -3407,7 +3407,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 19667
+     "score": 19670
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i9-10900F+%40+2.80GHz&id=3798"
    },
@@ -3450,7 +3450,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 19530
+     "score": 19529
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i5-12400F&id=4681"
    },
@@ -3471,7 +3471,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 19472
+     "score": 19473
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i5-11600K+%40+3.90GHz&id=4236"
    },
@@ -3534,7 +3534,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 19249
+     "score": 19250
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+5+5500&id=4807"
    },
@@ -3705,7 +3705,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 18265
+     "score": 18266
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i7-10700KF+%40+3.80GHz&id=3757"
    },
@@ -3769,7 +3769,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 17992
+     "score": 17993
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i9-9900KF+%40+3.60GHz&id=3435"
    },
@@ -3875,7 +3875,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 17049
+     "score": 17051
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i5-11500+%40+2.70GHz&id=4238"
    },
@@ -3917,7 +3917,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 16612
+     "score": 16610
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i5-11400+%40+2.60GHz&id=4233"
    },
@@ -4001,7 +4001,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 16001
+     "score": 16000
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+5+PRO+4650G&id=3795"
    },
@@ -4044,7 +4044,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 15927
+     "score": 15926
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+5+4500&id=4816"
    },
@@ -4066,7 +4066,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 15924
+     "score": 15926
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+5+4600G&id=3807"
    },
@@ -4132,7 +4132,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 15398
+     "score": 15399
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i3-14100F&id=5853"
    },
@@ -4175,7 +4175,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 15088
+     "score": 15086
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i3-14100&id=5831"
    },
@@ -4218,7 +4218,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 14654
+     "score": 14653
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i3-13100F&id=5156"
    },
@@ -4323,7 +4323,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 14104
+     "score": 14105
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i3-13100&id=5170"
    },
@@ -4344,7 +4344,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 14104
+     "score": 14103
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i5-10600KF+%40+4.10GHz&id=3810"
    },
@@ -4407,7 +4407,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 13952
+     "score": 13953
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i3-12100F&id=4670"
    },
@@ -4514,7 +4514,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 13173
+     "score": 13174
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i7-9700+%40+3.00GHz&id=3477"
    },
@@ -4620,7 +4620,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 13000
+     "score": 13004
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+3+5300G&id=4392"
    },
@@ -4664,7 +4664,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 12885
+     "score": 12882
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i5-10500+%40+3.10GHz&id=3749"
    },
@@ -4796,7 +4796,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 12092
+     "score": 12091
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i5-10400F+%40+2.90GHz&id=3767"
    },
@@ -4864,7 +4864,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 11027
+     "score": 11028
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=AMD+Ryzen+3+4100&id=4832"
    },
@@ -5013,7 +5013,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 10135
+     "score": 10134
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i5-8600K+%40+3.60GHz&id=3100"
    },
@@ -5098,7 +5098,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 9840
+     "score": 9841
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i5-9500+%40+3.00GHz&id=3444"
    },
@@ -5246,7 +5246,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 9235
+     "score": 9236
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i5-8400+%40+2.80GHz&id=3097"
    },
@@ -5374,7 +5374,7 @@ window.SPEC.hardwareEvidence = {
    {
     "source": "passmark",
     "values": {
-     "score": 8286
+     "score": 8288
     },
     "url": "https://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i3-10105+%40+3.70GHz&id=4259"
    },
