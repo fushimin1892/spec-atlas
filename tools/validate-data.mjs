@@ -129,6 +129,12 @@ assert.equal(hardware("cpu", "ryzen-5-7600").gamingScore, 5742);
 assert.equal(hardware("cpu", "core-i9-11900k").singleScore, 3501, "旧Intelの定格周波数の接尾辞を区別して照合");
 assert.equal(hardware("gpu", "rtx-4060").score, 19480, "GPU の性能スコアは PassMark G3D Mark");
 assert.equal(hardware("gpu", "rtx-4060-ti-8gb").score, null, "容量が未分離のGPU測定を8GBへ流用しない");
+// 2D・計算性能は G3D と同じ PassMark の行の値だけ。G3D が無い GPU に載せない
+for (const [id, record] of Object.entries(performance.gpu)) {
+  for (const key of ["g2dScore", "computeScore"]) if (record[key]) assert.equal(record[key].name, record.score?.name, `${id}: ${key} は G3D と同じ行`);
+}
+assert.equal(hardware("gpu", "rtx-4060-ti-8gb").g2dScore, null, "容量が未分離のGPUへ 2D 描画の値を流用しない");
+assert(hardware("gpu", "rtx-4060").g2dScore > 0 && hardware("gpu", "rtx-4060").computeScore > 0, "GPU の 2D 描画・計算性能");
 assert.equal(hardware("cpu", "ryzen-5-1600-af").singleScore, null, "AFなしの別CPUを流用しない");
 // 出力速度・待ち時間・料金は日々の測定で変わるので、値そのものではなく取り込まれていることを確かめる
 for (const key of ["aiIndex", "aiSpeed", "aiLatency", "aiOmni", "aiPrice"]) assert(Number.isFinite(model("gpt-6-astra")[key]), `GPT-6 Astra: ${key}`);

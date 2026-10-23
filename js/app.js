@@ -132,6 +132,8 @@
       ],
       gpu: [
         ["3D描画性能", perfLink("g3d", "PassMark G3D Mark"), perf.g3d?.checkedAt],
+        ["2D描画性能", perfLink("g2d", "PassMark G2D Mark（GPU 一覧）"), perf.g2d?.checkedAt],
+        ["計算性能", `${perfLink("compute", "PassMark GPU Compute")}（各 GPU のページの値。OpenCL・DirectCompute のテスト）`, perf.compute?.checkedAt],
         ["VRAM・公称電力", `${evLink("nvidia-compare", "NVIDIA")}・${evLink("amd-gpu", "AMD")}・Intel の仕様資料`, evAt],
         ["発売日", `メーカー資料（${wiki("https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units")}）`, evAt],
         rakuten,
@@ -606,7 +608,7 @@
       const meter = (v) => metric.allowNegative ? Math.max(2, ((v - gMin) / ((gMax - gMin) || 1)) * 100)
         : low ? (best / v) * 100 : (v / best) * 100;
       const gap = (v) => {
-        if (best == null || v === best || vals.length < 2) return "";
+        if (v == null || best == null || v === best || vals.length < 2) return "";
         if (metric.allowNegative) return `いちばん良い製品より ${formatValue({ type: "number", digits: metric.digits }, best - v).replace(/<[^>]+>/g, "")} pt 低い`;
         return low ? `いちばん良い製品の ${(v / best).toFixed(1)} 倍` : `いちばん良い製品の ${Math.round((v / best) * 100)}%`;
       };

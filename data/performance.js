@@ -18,7 +18,7 @@ window.SPEC.performanceData = {
     "g3d": {
       "url": "https://www.videocardbenchmark.net/gpu_list.php",
       "label": "PassMark G3D Mark",
-      "checkedAt": "2026-10-24",
+      "checkedAt": "2026-10-23",
       "sha256": "94056b4060bf3e30c32568433a39cb098b13b2b87c8adc8368c3a7ca8131b297"
     },
     "aa": {
@@ -32,6 +32,18 @@ window.SPEC.performanceData = {
       "label": "Artificial Analysis 評価方法",
       "checkedAt": "2026-10-23",
       "sha256": "b230ce8213257f52cfeca608040770382f33a3cba41ccf0d374b2b52389ace5d"
+    },
+    "g2d": {
+      "url": "https://www.videocardbenchmark.net/GPU_mega_page.html",
+      "label": "PassMark G2D Mark",
+      "checkedAt": "2026-10-23",
+      "sha256": "98d16c2ff2c9d351065bc7c082644a1f364c85240c0f8b0c495be08525cc7b6d"
+    },
+    "compute": {
+      "url": "https://www.videocardbenchmark.net/directCompute.html",
+      "label": "PassMark GPU Compute",
+      "checkedAt": "2026-10-23",
+      "sha256": "8c962a524784305fba0396245cbe9cdc9cdc0410fd04eb5743651cfb099320d5"
     }
   },
   "cpu": {
@@ -2152,6 +2164,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 5090",
         "value": 38990,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 5090",
+        "value": 1409,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 5090",
+        "value": 24420,
+        "source": "compute"
       }
     },
     "rtx-4090": {
@@ -2159,6 +2181,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 4090",
         "value": 38028,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 4090",
+        "value": 1303,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 4090",
+        "value": 25975,
+        "source": "compute"
       }
     },
     "rtx-5080": {
@@ -2166,6 +2198,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 5080",
         "value": 35646,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 5080",
+        "value": 1396,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 5080",
+        "value": 19084,
+        "source": "compute"
       }
     },
     "rx-7900-xtx": {
@@ -2173,6 +2215,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 7900 XTX",
         "value": 31473,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 7900 XTX",
+        "value": 1290,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 7900 XTX",
+        "value": 17776,
+        "source": "compute"
       }
     },
     "rtx-4080-super": {
@@ -2180,6 +2232,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 4080 SUPER",
         "value": 34214,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 4080 SUPER",
+        "value": 1279,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 4080 SUPER",
+        "value": 19585,
+        "source": "compute"
       }
     },
     "rtx-4080": {
@@ -2187,6 +2249,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 4080",
         "value": 34439,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 4080",
+        "value": 1251,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 4080",
+        "value": 20296,
+        "source": "compute"
       }
     },
     "rtx-5070-ti": {
@@ -2194,6 +2266,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 5070 Ti",
         "value": 32328,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 5070 Ti",
+        "value": 1322,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 5070 Ti",
+        "value": 17775,
+        "source": "compute"
       }
     },
     "rx-9070-xt": {
@@ -2201,6 +2283,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 9070 XT",
         "value": 26924,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 9070 XT",
+        "value": 1308,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 9070 XT",
+        "value": 16119,
+        "source": "compute"
       }
     },
     "rx-7900-xt": {
@@ -2208,6 +2300,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 7900 XT",
         "value": 29116,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 7900 XT",
+        "value": 1248,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 7900 XT",
+        "value": 16885,
+        "source": "compute"
       }
     },
     "rtx-4070-ti-super": {
@@ -2215,6 +2317,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 4070 Ti SUPER",
         "value": 31848,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 4070 Ti SUPER",
+        "value": 1247,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 4070 Ti SUPER",
+        "value": 18191,
+        "source": "compute"
       }
     },
     "rx-9070": {
@@ -2222,6 +2334,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 9070",
         "value": 25393,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 9070",
+        "value": 1260,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 9070",
+        "value": 14805,
+        "source": "compute"
       }
     },
     "rtx-4070-ti": {
@@ -2229,6 +2351,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 4070 Ti",
         "value": 31509,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 4070 Ti",
+        "value": 1209,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 4070 Ti",
+        "value": 18130,
+        "source": "compute"
       }
     },
     "rtx-3090-ti": {
@@ -2236,6 +2368,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 3090 Ti",
         "value": 29207,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 3090 Ti",
+        "value": 1225,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 3090 Ti",
+        "value": 16450,
+        "source": "compute"
       }
     },
     "rtx-5070": {
@@ -2243,6 +2385,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 5070",
         "value": 28678,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 5070",
+        "value": 1289,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 5070",
+        "value": 14335,
+        "source": "compute"
       }
     },
     "rx-6950-xt": {
@@ -2250,6 +2402,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 6950 XT",
         "value": 28074,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 6950 XT",
+        "value": 1085,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 6950 XT",
+        "value": 14130,
+        "source": "compute"
       }
     },
     "rtx-4070-super": {
@@ -2257,6 +2419,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 4070 SUPER",
         "value": 29937,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 4070 SUPER",
+        "value": 1192,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 4070 SUPER",
+        "value": 16920,
+        "source": "compute"
       }
     },
     "rx-7900-gre": {
@@ -2264,6 +2436,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 7900 GRE",
         "value": 27461,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 7900 GRE",
+        "value": 1212,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 7900 GRE",
+        "value": 15230,
+        "source": "compute"
       }
     },
     "rx-6900-xt": {
@@ -2271,6 +2453,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 6900 XT",
         "value": 26633,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 6900 XT",
+        "value": 1064,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 6900 XT",
+        "value": 14287,
+        "source": "compute"
       }
     },
     "rx-7800-xt": {
@@ -2278,6 +2470,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 7800 XT",
         "value": 24477,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 7800 XT",
+        "value": 1194,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 7800 XT",
+        "value": 13619,
+        "source": "compute"
       }
     },
     "rtx-3090": {
@@ -2285,6 +2487,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 3090",
         "value": 26464,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 3090",
+        "value": 1069,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 3090",
+        "value": 14998,
+        "source": "compute"
       }
     },
     "rtx-3080-ti": {
@@ -2292,6 +2504,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 3080 Ti",
         "value": 26728,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 3080 Ti",
+        "value": 1096,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 3080 Ti",
+        "value": 14920,
+        "source": "compute"
       }
     },
     "rx-6800-xt": {
@@ -2299,6 +2521,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 6800 XT",
         "value": 25117,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 6800 XT",
+        "value": 1047,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 6800 XT",
+        "value": 13065,
+        "source": "compute"
       }
     },
     "rtx-3080-12gb": {
@@ -2306,6 +2538,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 3080 12GB",
         "value": 26559,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 3080 12GB",
+        "value": 1095,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 3080 12GB",
+        "value": 15043,
+        "source": "compute"
       }
     },
     "rtx-4070": {
@@ -2313,6 +2555,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 4070",
         "value": 26850,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 4070",
+        "value": 1165,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 4070",
+        "value": 14555,
+        "source": "compute"
       }
     },
     "rx-7700-xt": {
@@ -2320,6 +2572,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 7700 XT",
         "value": 22775,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 7700 XT",
+        "value": 1157,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 7700 XT",
+        "value": 12991,
+        "source": "compute"
       }
     },
     "rx-6800": {
@@ -2327,6 +2589,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 6800",
         "value": 22055,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 6800",
+        "value": 1003,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 6800",
+        "value": 10745,
+        "source": "compute"
       }
     },
     "nvidia-titan-rtx": {
@@ -2334,6 +2606,16 @@ window.SPEC.performanceData = {
         "name": "TITAN RTX",
         "value": 19825,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "TITAN RTX",
+        "value": 835,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "TITAN RTX",
+        "value": 9511,
+        "source": "compute"
       }
     },
     "rtx-5060-ti-16gb": {
@@ -2341,6 +2623,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 5060 Ti 16GB",
         "value": 22632,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 5060 Ti 16GB",
+        "value": 1205,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 5060 Ti 16GB",
+        "value": 11267,
+        "source": "compute"
       }
     },
     "rtx-5060-ti-8gb": {
@@ -2348,6 +2640,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 5060 Ti 8GB",
         "value": 21810,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 5060 Ti 8GB",
+        "value": 1157,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 5060 Ti 8GB",
+        "value": 11477,
+        "source": "compute"
       }
     },
     "rtx-3070-ti": {
@@ -2355,6 +2657,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 3070 Ti",
         "value": 23159,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 3070 Ti",
+        "value": 1057,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 3070 Ti",
+        "value": 11366,
+        "source": "compute"
       }
     },
     "rx-9060-xt-16gb": {
@@ -2362,6 +2674,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 9060 XT 16GB",
         "value": 20123,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 9060 XT 16GB",
+        "value": 1167,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 9060 XT 16GB",
+        "value": 11259,
+        "source": "compute"
       }
     },
     "rtx-2080-ti": {
@@ -2369,6 +2691,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 2080 Ti",
         "value": 21401,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 2080 Ti",
+        "value": 925,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 2080 Ti",
+        "value": 9806,
+        "source": "compute"
       }
     },
     "rtx-3070": {
@@ -2376,6 +2708,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 3070",
         "value": 22063,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 3070",
+        "value": 1005,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 3070",
+        "value": 10988,
+        "source": "compute"
       }
     },
     "rx-6750-xt": {
@@ -2383,6 +2725,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 6750 XT",
         "value": 20697,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 6750 XT",
+        "value": 981,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 6750 XT",
+        "value": 9524,
+        "source": "compute"
       }
     },
     "nvidia-titan-v": {
@@ -2390,6 +2742,16 @@ window.SPEC.performanceData = {
         "name": "TITAN V",
         "value": 19346,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "TITAN V",
+        "value": 953,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "TITAN V",
+        "value": 8898,
+        "source": "compute"
       }
     },
     "rtx-4060-ti-16gb": {
@@ -2397,6 +2759,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 4060 Ti 16GB",
         "value": 22538,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 4060 Ti 16GB",
+        "value": 1078,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 4060 Ti 16GB",
+        "value": 11944,
+        "source": "compute"
       }
     },
     "rtx-5060": {
@@ -2404,6 +2776,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 5060",
         "value": 20606,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 5060",
+        "value": 1143,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 5060",
+        "value": 10406,
+        "source": "compute"
       }
     },
     "rx-9060-xt-8gb": {
@@ -2411,6 +2793,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 9060 XT 8GB",
         "value": 19668,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 9060 XT 8GB",
+        "value": 1111,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 9060 XT 8GB",
+        "value": 10821,
+        "source": "compute"
       }
     },
     "rx-6700-xt": {
@@ -2418,6 +2810,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 6700 XT",
         "value": 19712,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 6700 XT",
+        "value": 954,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 6700 XT",
+        "value": 9225,
+        "source": "compute"
       }
     },
     "arc-a750": {
@@ -2425,6 +2827,16 @@ window.SPEC.performanceData = {
         "name": "Intel Arc A750",
         "value": 12644,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Intel Arc A750",
+        "value": 737,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Intel Arc A750",
+        "value": 5300,
+        "source": "compute"
       }
     },
     "rtx-3060-ti": {
@@ -2432,6 +2844,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 3060 Ti",
         "value": 20210,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 3060 Ti",
+        "value": 989,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 3060 Ti",
+        "value": 9849,
+        "source": "compute"
       }
     },
     "rtx-2080-super": {
@@ -2439,6 +2861,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 2080 SUPER",
         "value": 19389,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 2080 SUPER",
+        "value": 916,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 2080 SUPER",
+        "value": 8143,
+        "source": "compute"
       }
     },
     "arc-b580": {
@@ -2446,6 +2878,16 @@ window.SPEC.performanceData = {
         "name": "Intel Arc B580",
         "value": 16106,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Intel Arc B580",
+        "value": 702,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Intel Arc B580",
+        "value": 8041,
+        "source": "compute"
       }
     },
     "rx-6700": {
@@ -2453,6 +2895,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 6700",
         "value": 18859,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 6700",
+        "value": 941,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 6700",
+        "value": 8209,
+        "source": "compute"
       }
     },
     "rtx-2080": {
@@ -2460,6 +2912,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 2080",
         "value": 18568,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 2080",
+        "value": 897,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 2080",
+        "value": 7706,
+        "source": "compute"
       }
     },
     "rx-7600": {
@@ -2467,6 +2929,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 7600",
         "value": 16436,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 7600",
+        "value": 984,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 7600",
+        "value": 8729,
+        "source": "compute"
       }
     },
     "rtx-4060": {
@@ -2474,6 +2946,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 4060",
         "value": 19480,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 4060",
+        "value": 1035,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 4060",
+        "value": 9146,
+        "source": "compute"
       }
     },
     "rtx-5050": {
@@ -2481,6 +2963,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 5050",
         "value": 16738,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 5050",
+        "value": 1049,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 5050",
+        "value": 8409,
+        "source": "compute"
       }
     },
     "nvidia-titan-xp": {
@@ -2488,6 +2980,16 @@ window.SPEC.performanceData = {
         "name": "NVIDIA TITAN Xp",
         "value": 18762,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "NVIDIA TITAN Xp",
+        "value": 884,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "NVIDIA TITAN Xp",
+        "value": 9443,
+        "source": "compute"
       }
     },
     "rtx-2070-super": {
@@ -2495,6 +2997,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 2070 SUPER",
         "value": 18121,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 2070 SUPER",
+        "value": 878,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 2070 SUPER",
+        "value": 7429,
+        "source": "compute"
       }
     },
     "rx-6650-xt": {
@@ -2502,6 +3014,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 6650 XT",
         "value": 17101,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 6650 XT",
+        "value": 926,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 6650 XT",
+        "value": 7442,
+        "source": "compute"
       }
     },
     "gtx-1080-ti": {
@@ -2509,6 +3031,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 1080 Ti",
         "value": 18597,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 1080 Ti",
+        "value": 940,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 1080 Ti",
+        "value": 9579,
+        "source": "compute"
       }
     },
     "rx-6600-xt": {
@@ -2516,6 +3048,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 6600 XT",
         "value": 16444,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 6600 XT",
+        "value": 914,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 6600 XT",
+        "value": 7383,
+        "source": "compute"
       }
     },
     "nvidia-titan-x-pascal": {
@@ -2523,6 +3065,11 @@ window.SPEC.performanceData = {
         "name": "NVIDIA TITAN X",
         "value": 13659,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "NVIDIA TITAN X",
+        "value": 912,
+        "source": "g2d"
       }
     },
     "rx-5700-xt": {
@@ -2530,6 +3077,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 5700 XT",
         "value": 16023,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 5700 XT",
+        "value": 920,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 5700 XT",
+        "value": 7511,
+        "source": "compute"
       }
     },
     "radeon-vii": {
@@ -2537,6 +3094,16 @@ window.SPEC.performanceData = {
         "name": "Radeon VII",
         "value": 16173,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon VII",
+        "value": 794,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon VII",
+        "value": 6884,
+        "source": "compute"
       }
     },
     "rtx-3060-12gb": {
@@ -2544,6 +3111,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 3060 12GB",
         "value": 16699,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 3060 12GB",
+        "value": 965,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 3060 12GB",
+        "value": 8220,
+        "source": "compute"
       }
     },
     "rtx-2070": {
@@ -2551,6 +3128,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 2070",
         "value": 16051,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 2070",
+        "value": 817,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 2070",
+        "value": 6370,
+        "source": "compute"
       }
     },
     "rtx-2060-super": {
@@ -2558,6 +3145,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 2060 SUPER",
         "value": 16455,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 2060 SUPER",
+        "value": 856,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 2060 SUPER",
+        "value": 6658,
+        "source": "compute"
       }
     },
     "rx-5700": {
@@ -2565,6 +3162,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 5700",
         "value": 14190,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 5700",
+        "value": 878,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 5700",
+        "value": 6402,
+        "source": "compute"
       }
     },
     "rx-6600": {
@@ -2572,6 +3179,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 6600",
         "value": 15034,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 6600",
+        "value": 895,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 6600",
+        "value": 6437,
+        "source": "compute"
       }
     },
     "rx-5600-xt": {
@@ -2579,6 +3196,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 5600 XT",
         "value": 13378,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 5600 XT",
+        "value": 871,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 5600 XT",
+        "value": 6181,
+        "source": "compute"
       }
     },
     "rtx-3060-8gb": {
@@ -2586,6 +3213,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 3060 8GB",
         "value": 15212,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 3060 8GB",
+        "value": 973,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 3060 8GB",
+        "value": 8073,
+        "source": "compute"
       }
     },
     "gtx-1080": {
@@ -2593,6 +3230,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 1080",
         "value": 15604,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 1080",
+        "value": 888,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 1080",
+        "value": 7626,
+        "source": "compute"
       }
     },
     "rx-vega-64": {
@@ -2600,6 +3247,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX Vega 64",
         "value": 13830,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX Vega 64",
+        "value": 782,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX Vega 64",
+        "value": 6182,
+        "source": "compute"
       }
     },
     "rtx-2060": {
@@ -2607,6 +3264,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 2060",
         "value": 14071,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 2060",
+        "value": 743,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 2060",
+        "value": 5421,
+        "source": "compute"
       }
     },
     "rx-vega-56": {
@@ -2614,6 +3281,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX Vega 56",
         "value": 12911,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX Vega 56",
+        "value": 762,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX Vega 56",
+        "value": 5766,
+        "source": "compute"
       }
     },
     "gtx-1070-ti": {
@@ -2621,6 +3298,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 1070 Ti",
         "value": 14682,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 1070 Ti",
+        "value": 877,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 1070 Ti",
+        "value": 7173,
+        "source": "compute"
       }
     },
     "gtx-1660-ti": {
@@ -2628,6 +3315,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 1660 Ti",
         "value": 12555,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 1660 Ti",
+        "value": 766,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 1660 Ti",
+        "value": 5003,
+        "source": "compute"
       }
     },
     "rtx-3050-8gb": {
@@ -2635,6 +3332,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 3050 8GB",
         "value": 12456,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 3050 8GB",
+        "value": 915,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 3050 8GB",
+        "value": 6404,
+        "source": "compute"
       }
     },
     "gtx-1070": {
@@ -2642,6 +3349,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 1070",
         "value": 13511,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 1070",
+        "value": 848,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 1070",
+        "value": 6123,
+        "source": "compute"
       }
     },
     "gtx-1660-super": {
@@ -2649,6 +3366,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 1660 SUPER",
         "value": 12655,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 1660 SUPER",
+        "value": 807,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 1660 SUPER",
+        "value": 5029,
+        "source": "compute"
       }
     },
     "gtx-980-ti": {
@@ -2656,6 +3383,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 980 Ti",
         "value": 13614,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 980 Ti",
+        "value": 848,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 980 Ti",
+        "value": 6092,
+        "source": "compute"
       }
     },
     "gtx-1660": {
@@ -2663,6 +3400,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 1660",
         "value": 11610,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 1660",
+        "value": 778,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 1660",
+        "value": 4923,
+        "source": "compute"
       }
     },
     "rx-6500-xt": {
@@ -2670,6 +3417,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 6500 XT",
         "value": 9615,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 6500 XT",
+        "value": 817,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 6500 XT",
+        "value": 4292,
+        "source": "compute"
       }
     },
     "rtx-3050-6gb": {
@@ -2677,6 +3434,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 3050 6GB",
         "value": 10740,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 3050 6GB",
+        "value": 884,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 3050 6GB",
+        "value": 5196,
+        "source": "compute"
       }
     },
     "rx-590": {
@@ -2684,6 +3451,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 590",
         "value": 9274,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 590",
+        "value": 790,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 590",
+        "value": 3729,
+        "source": "compute"
       }
     },
     "r9-fury-x": {
@@ -2691,6 +3468,16 @@ window.SPEC.performanceData = {
         "name": "Radeon R9 Fury X",
         "value": 9366,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon R9 Fury X",
+        "value": 783,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon R9 Fury X",
+        "value": 4034,
+        "source": "compute"
       }
     },
     "r9-fury": {
@@ -2698,6 +3485,16 @@ window.SPEC.performanceData = {
         "name": "Radeon R9 Fury",
         "value": 9516,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon R9 Fury",
+        "value": 784,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon R9 Fury",
+        "value": 4046,
+        "source": "compute"
       }
     },
     "gtx-1650-super": {
@@ -2705,6 +3502,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 1650 SUPER",
         "value": 10189,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 1650 SUPER",
+        "value": 748,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 1650 SUPER",
+        "value": 4450,
+        "source": "compute"
       }
     },
     "rx-580": {
@@ -2712,6 +3519,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 580",
         "value": 8781,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 580",
+        "value": 770,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 580",
+        "value": 3408,
+        "source": "compute"
       }
     },
     "arc-a380": {
@@ -2719,6 +3536,16 @@ window.SPEC.performanceData = {
         "name": "Intel Arc A380",
         "value": 6331,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Intel Arc A380",
+        "value": 643,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Intel Arc A380",
+        "value": 2783,
+        "source": "compute"
       }
     },
     "gtx-980": {
@@ -2726,6 +3553,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 980",
         "value": 11072,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 980",
+        "value": 788,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 980",
+        "value": 4741,
+        "source": "compute"
       }
     },
     "rx-480": {
@@ -2733,6 +3570,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 480",
         "value": 8524,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 480",
+        "value": 772,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 480",
+        "value": 3396,
+        "source": "compute"
       }
     },
     "gtx-1060-3gb": {
@@ -2740,6 +3587,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 1060 3GB",
         "value": 9859,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 1060 3GB",
+        "value": 777,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 1060 3GB",
+        "value": 4149,
+        "source": "compute"
       }
     },
     "gtx-970": {
@@ -2747,6 +3604,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 970",
         "value": 9636,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 970",
+        "value": 763,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 970",
+        "value": 4080,
+        "source": "compute"
       }
     },
     "rx-6400": {
@@ -2754,6 +3621,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 6400",
         "value": 7756,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 6400",
+        "value": 739,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 6400",
+        "value": 2778,
+        "source": "compute"
       }
     },
     "gtx-780-ti": {
@@ -2761,6 +3638,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 780 Ti",
         "value": 9474,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 780 Ti",
+        "value": 633,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 780 Ti",
+        "value": 4091,
+        "source": "compute"
       }
     },
     "gtx-780": {
@@ -2768,6 +3655,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 780",
         "value": 7972,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 780",
+        "value": 592,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 780",
+        "value": 3329,
+        "source": "compute"
       }
     },
     "gtx-1050-ti": {
@@ -2775,6 +3672,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 1050 Ti",
         "value": 6368,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 1050 Ti",
+        "value": 656,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 1050 Ti",
+        "value": 2669,
+        "source": "compute"
       }
     },
     "gtx-960": {
@@ -2782,6 +3689,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 960",
         "value": 6149,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 960",
+        "value": 677,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 960",
+        "value": 2802,
+        "source": "compute"
       }
     },
     "gtx-770": {
@@ -2789,6 +3706,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 770",
         "value": 5962,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 770",
+        "value": 565,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 770",
+        "value": 2767,
+        "source": "compute"
       }
     },
     "gtx-1630": {
@@ -2796,6 +3723,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 1630",
         "value": 4972,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 1630",
+        "value": 655,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 1630",
+        "value": 2102,
+        "source": "compute"
       }
     },
     "gtx-680": {
@@ -2803,6 +3740,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 680",
         "value": 5616,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 680",
+        "value": 531,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 680",
+        "value": 2639,
+        "source": "compute"
       }
     },
     "gtx-950": {
@@ -2810,6 +3757,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 950",
         "value": 5357,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 950",
+        "value": 654,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 950",
+        "value": 2269,
+        "source": "compute"
       }
     },
     "rx-560": {
@@ -2817,6 +3774,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 560",
         "value": 3687,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 560",
+        "value": 485,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 560",
+        "value": 1409,
+        "source": "compute"
       }
     },
     "gtx-1050": {
@@ -2824,6 +3791,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 1050",
         "value": 5053,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 1050",
+        "value": 458,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 1050",
+        "value": 2113,
+        "source": "compute"
       }
     },
     "rx-460": {
@@ -2831,6 +3808,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 460",
         "value": 4096,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 460",
+        "value": 582,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 460",
+        "value": 1612,
+        "source": "compute"
       }
     },
     "gtx-760": {
@@ -2838,6 +3825,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 760",
         "value": 4824,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 760",
+        "value": 539,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 760",
+        "value": 2164,
+        "source": "compute"
       }
     },
     "rx-vega-8": {
@@ -2845,6 +3842,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX Vega 8",
         "value": 1532,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX Vega 8",
+        "value": 403,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX Vega 8",
+        "value": 779,
+        "source": "compute"
       }
     },
     "gtx-660": {
@@ -2852,6 +3859,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 660",
         "value": 4042,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 660",
+        "value": 492,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 660",
+        "value": 1817,
+        "source": "compute"
       }
     },
     "gtx-750-ti": {
@@ -2859,6 +3876,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GTX 750 Ti",
         "value": 3900,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GTX 750 Ti",
+        "value": 534,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GTX 750 Ti",
+        "value": 1741,
+        "source": "compute"
       }
     },
     "rx-550": {
@@ -2866,6 +3893,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 550",
         "value": 2699,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 550",
+        "value": 476,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 550",
+        "value": 961,
+        "source": "compute"
       }
     },
     "uhd-770": {
@@ -2873,6 +3910,16 @@ window.SPEC.performanceData = {
         "name": "Intel UHD 770",
         "value": 1357,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Intel UHD 770",
+        "value": 605,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Intel UHD 770",
+        "value": 44,
+        "source": "compute"
       }
     },
     "uhd-750": {
@@ -2880,6 +3927,16 @@ window.SPEC.performanceData = {
         "name": "Intel UHD Graphics 750",
         "value": 1682,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Intel UHD Graphics 750",
+        "value": 375,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Intel UHD Graphics 750",
+        "value": 733,
+        "source": "compute"
       }
     },
     "uhd-630": {
@@ -2887,6 +3944,16 @@ window.SPEC.performanceData = {
         "name": "Intel UHD 630",
         "value": 720,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Intel UHD 630",
+        "value": 216,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Intel UHD 630",
+        "value": 228,
+        "source": "compute"
       }
     },
     "hd-530": {
@@ -2894,6 +3961,16 @@ window.SPEC.performanceData = {
         "name": "Intel HD 530",
         "value": 984,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Intel HD 530",
+        "value": 249,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Intel HD 530",
+        "value": 444,
+        "source": "compute"
       }
     },
     "gt-730": {
@@ -2901,6 +3978,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GT 730",
         "value": 820,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GT 730",
+        "value": 260,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GT 730",
+        "value": 507,
+        "source": "compute"
       }
     },
     "gt-710": {
@@ -2908,6 +3995,16 @@ window.SPEC.performanceData = {
         "name": "GeForce GT 710",
         "value": 616,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce GT 710",
+        "value": 217,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce GT 710",
+        "value": 361,
+        "source": "compute"
       }
     },
     "rx-9070-gre": {
@@ -2915,6 +4012,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 9070 GRE",
         "value": 23373,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 9070 GRE",
+        "value": 1241,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 9070 GRE",
+        "value": 14582,
+        "source": "compute"
       }
     },
     "rx-7600-xt": {
@@ -2922,6 +4029,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 7600 XT",
         "value": 17361,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 7600 XT",
+        "value": 1025,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 7600 XT",
+        "value": 8967,
+        "source": "compute"
       }
     },
     "rx-6750-gre-12gb": {
@@ -2929,6 +4046,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 6750 GRE 12GB",
         "value": 20410,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 6750 GRE 12GB",
+        "value": 1036,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 6750 GRE 12GB",
+        "value": 9031,
+        "source": "compute"
       }
     },
     "rx-6750-gre-10gb": {
@@ -2936,6 +4063,16 @@ window.SPEC.performanceData = {
         "name": "Radeon RX 6750 GRE 10GB",
         "value": 18941,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Radeon RX 6750 GRE 10GB",
+        "value": 946,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Radeon RX 6750 GRE 10GB",
+        "value": 8150,
+        "source": "compute"
       }
     },
     "rtx-2060-12gb": {
@@ -2943,6 +4080,16 @@ window.SPEC.performanceData = {
         "name": "GeForce RTX 2060 12GB",
         "value": 15913,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "GeForce RTX 2060 12GB",
+        "value": 852,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "GeForce RTX 2060 12GB",
+        "value": 6746,
+        "source": "compute"
       }
     },
     "arc-a580": {
@@ -2950,6 +4097,16 @@ window.SPEC.performanceData = {
         "name": "Intel Arc A580",
         "value": 12076,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Intel Arc A580",
+        "value": 742,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Intel Arc A580",
+        "value": 4892,
+        "source": "compute"
       }
     },
     "arc-b570": {
@@ -2957,6 +4114,16 @@ window.SPEC.performanceData = {
         "name": "Intel Arc B570",
         "value": 14085,
         "source": "g3d"
+      },
+      "g2dScore": {
+        "name": "Intel Arc B570",
+        "value": 628,
+        "source": "g2d"
+      },
+      "computeScore": {
+        "name": "Intel Arc B570",
+        "value": 7410,
+        "source": "compute"
       }
     }
   },

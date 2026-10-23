@@ -18,11 +18,13 @@ const sources = {
   aa: { url: "https://artificialanalysis.ai/leaderboards/models", label: "Artificial Analysis モデル比較" },
   method: { url: "https://artificialanalysis.ai/methodology/intelligence-benchmarking", label: "Artificial Analysis 評価方法" },
 };
+// PassMark は User-Agent の無い取得を拒むことがあるので、ブラウザと同じ形で名乗る
+const UA = { "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36" };
 const html = {};
 for (const [key, source] of Object.entries(sources)) {
   const file = path.join(cache, `${key}.html`);
   if (!args.includes("--offline")) {
-    const response = await fetch(source.url);
+    const response = await fetch(source.url, { headers: UA });
     assert(response.ok && response.url === source.url, `${key}: 取得失敗・転送先変更`);
     fs.writeFileSync(file, await response.text());
   }
@@ -73,6 +75,53 @@ for (const item of window.SPEC.data.gpu) {
     result.gpu[item.id] = { score: { name: matches[0][0].text, value: Number(matches[0][1].text), source: "g3d" } };
   }
 }
+// G2D Mark と GPU Compute は、G3D で対応付けた PassMark の行と同じ名前・同じ G3D の値の行に限って載せる（別の型番へ流用しない）。
+// G2D: GPU 一覧（GPU_mega_page.html）が読み込むデータ。セッションの Cookie が無いと空で返る。
+// GPU Compute: 各 GPU のページの「Test Suite Average Results」。PerformanceTest V9 以降は OpenCL のテストを含む（directCompute.html の説明）。
+const gpuSources = {
+  g2d: { url: "https://www.videocardbenchmark.net/GPU_mega_page.html", label: "PassMark G2D Mark" },
+  compute: { url: "https://www.videocardbenchmark.net/directCompute.html", label: "PassMark GPU Compute" },
+};
+const megaFile = path.join(cache, "g2d.json");
+if (!args.includes("--offline")) {
+  const page = await fetch(gpuSources.g2d.url, { headers: UA });
+  assert(page.ok, "g2d: 一覧ページの取得失敗");
+  const cookie = page.headers.getSetCookie().map((c) => c.split(";")[0]).join("; ");
+  const data = await fetch("https://www.videocardbenchmark.net/data/", { headers: { ...UA, cookie, "x-requested-with": "XMLHttpRequest", referer: gpuSources.g2d.url } });
+  assert(data.ok, "g2d: データの取得失敗");
+  fs.writeFileSync(megaFile, await data.text());
+}
+const megaText = fs.readFileSync(megaFile, "utf8");
+const mega = JSON.parse(megaText).data;
+assert(mega.length > 2000, "g2d: 一覧の欠落");
+const today = new Date().toISOString().slice(0, 10);
+Object.assign(gpuSources.g2d, { checkedAt: today, sha256: crypto.createHash("sha256").update(megaText).digest("hex") });
+const num = (text) => (/^[\d,]+$/.test(text ?? "") ? Number(text.replaceAll(",", "")) : null);
+const computePages = [];
+for (const [id, record] of Object.entries(result.gpu)) {
+  const rows = mega.filter((row) => row.name === record.score.name);
+  // 一覧（gpu_list.php）とデータで G3D の丸め方が違い、同じ行でも 1 ずれることがある
+  const sameG3d = (value) => value != null && Math.abs(value - record.score.value) <= 1;
+  if (rows.length !== 1 || !sameG3d(num(rows[0].g3d))) continue;
+  const row = rows[0];
+  const g2d = num(row.g2d);
+  if (g2d) record.g2dScore = { name: row.name, value: g2d, source: "g2d" };
+  const file = path.join(cache, `gpu-${row.id}.html`);
+  if (!args.includes("--offline")) {
+    const response = await fetch(`https://www.videocardbenchmark.net/gpu.php?gpu=${row.href.replaceAll("&amp;", "&")}`, { headers: UA });
+    assert(response.ok, `${row.name}: 個別ページの取得失敗`);
+    fs.writeFileSync(file, await response.text());
+    await new Promise((r) => setTimeout(r, 300)); // 取得先に負荷をかけない
+  }
+  const text = textOf(fs.readFileSync(file, "utf8").replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<[^>]*>/g, " ")).replace(/\s+/g, " ");
+  computePages.push(text);
+  // 同じ GPU のページか（名前と G3D の平均値）を確かめてから読む
+  if (!text.includes(`Test Suite Average Results for ${row.name} `) || !sameG3d(num(text.match(/Average G3D Mark:?\s*([\d,]+)/)?.[1]))) continue;
+  const compute = num(text.match(/GPU Compute\s+([\d,]+)\s+Ops\/Sec/)?.[1]);
+  if (compute) record.computeScore = { name: row.name, value: compute, source: "compute" };
+}
+Object.assign(gpuSources.compute, { checkedAt: today, sha256: crypto.createHash("sha256").update(computePages.join("\n")).digest("hex") });
+Object.assign(result.sources, gpuSources);
 // 明示した測定モデルと設定だけを対応付ける。モデル名の部分一致や最高値の自動選択をしない。
 const aiMatches = {
   "gpt-6-astra": "GPT-6 Astra (max)",

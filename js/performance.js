@@ -16,6 +16,9 @@
       default: "score", baseline: "rtx-4060",
       metrics: [
         { key: "score", label: "3D描画性能", columnLabel: "3D描画性能", title: "PassMark G3D Mark", help: "PassMark G3D Mark。3D 描画のテストをまとめた GPU の性能の値で、数値が大きいほど描画性能が高いカードです。利用者が投稿した PC の測定をまとめたもので、最上位のカードどうしは差が小さく出やすい傾向があります。ゲームの FPS そのものではありません。", better: "high", unit: "pt", source: "g3d", description: "複数の3D描画テストをまとめたGPU性能の値。数値が大きいほど描画性能が高いGPUです。", limit: "ゲームの実測FPS・レイトレーシング・DLSS等の性能を示す値ではありません。投稿PCの構成も異なります。容量違いなど、測定がどの型番のものか特定できないGPUは空欄です。" },
+        // G2D・計算性能は G3D と同じ PassMark の行の値だけ（tools/collect-performance.mjs）
+        { key: "g2dScore", label: "2D描画性能", columnLabel: "2D描画性能", title: "PassMark G2D Mark", help: "PassMark G2D Mark。文字・図形・画像の表示など、2D 描画のテストをまとめた値で、数値が大きいほど速く描けます。CPU やドライバーの影響も大きく受けます。", better: "high", unit: "pt", source: "g2d", description: "文字・図形・画像の表示など、2D描画のテストをまとめた値。数値が大きいほど速く描けるGPUです。", limit: "PassMark の説明どおり、CPU・ドライバーなどの影響を大きく受け、高価なカードほど高いとは限りません。投稿PCの構成も異なります。" },
+        { key: "computeScore", label: "計算性能", columnLabel: "計算性能", title: "PassMark GPU Compute（OpenCL・DirectCompute）", help: "PassMark GPU Compute。GPU に汎用の計算をさせるテスト（OpenCL と DirectCompute）の速さで、1 秒あたりの演算回数です。多いほど速く計算できます。", better: "high", unit: "演算/秒", source: "compute", description: "GPUに汎用の計算をさせるテスト（OpenCL と DirectCompute）の速さ。1秒あたりの演算回数が多いほど速く計算できるGPUです。", limit: "AIの学習・推論や動画の書き出しの速さそのものではありません。NVIDIA の CUDA など各社専用の仕組みでの速さは含みません。" },
       ],
     },
     ai: {
@@ -50,7 +53,7 @@
   };
   for (const [catId, config] of Object.entries(SPEC.benchmarks)) {
     const cat = SPEC.categories.find((c) => c.id === catId);
-    cat.description = { cpu: "マルチ・シングル・ゲームの性能を、ソケットや価格で絞り込んで比較", gpu: "3D描画性能を、VRAM の量や価格で絞り込んで比較", ai: "正確さ（誤答の少なさ）・能力・速さを、ローカルで動かせるモデルとクラウドのモデルで比較" }[catId];
+    cat.description = { cpu: "マルチ・シングル・ゲームの性能を、ソケットや価格で絞り込んで比較", gpu: "3D描画・2D描画・計算の性能を、VRAM の量や価格で絞り込んで比較", ai: "正確さ（誤答の少なさ）・能力・速さを、ローカルで動かせるモデルとクラウドのモデルで比較" }[catId];
     // 3 カテゴリとも、指標を切り替える性能ランキング（細かい仕様は「仕様一覧」の表）。
     // 項目名は表・詳細・比較で分かりやすい columnLabel、指標のボタンは短い label を使う
     const def = config.metrics.find((m) => m.key === config.default);
@@ -65,7 +68,7 @@
         // PassMark に載っていない GPU。型番ごとの理由は下の SCORE_GAPS
         if (catId === "gpu") scoreField.empty = "PassMark に掲載なし";
       } else {
-        cat.fields.splice(at, 0, { ...metric, label: metric.columnLabel || metric.label, help: metric.help || `${metric.description} ${metric.limit}`, type: "number", list: false, benchmark: true, empty: catId === "cpu" ? "PassMark の公表なし" : "比較データなし" });
+        cat.fields.splice(at, 0, { ...metric, label: metric.columnLabel || metric.label, help: metric.help || `${metric.description} ${metric.limit}`, type: "number", list: false, benchmark: true, empty: { cpu: "PassMark の公表なし", gpu: "PassMark に掲載なし" }[catId] || "比較データなし" });
         at++;
       }
     }
@@ -75,7 +78,8 @@
         if (record) item[metric.key] = record.value;
         else if (metric.key !== "score") item[metric.key] = null;
       }
-      if (catId === "gpu" && item.score == null && SCORE_GAPS[item.id]) item.scoreGap = SCORE_GAPS[item.id];
+      // 3D 描画と同じ PassMark の行が決められない GPU は、2D・計算性能も同じ理由で空欄
+      if (catId === "gpu" && item.score == null && SCORE_GAPS[item.id]) item.scoreGap = item.g2dScoreGap = item.computeScoreGap = SCORE_GAPS[item.id];
       // GPU は性能スコアをここで当てるので、電力あたりもここで計算する（コスパは下で価格と一緒に計算し直す）
       if (catId === "gpu") item.efficiency = item.score && item.tdp ? Math.round((item.score / item.tdp) * 10) / 10 : null;
     }
