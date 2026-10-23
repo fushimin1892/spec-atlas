@@ -355,6 +355,25 @@ a.btn-small:hover { color: var(--gold); }
 .footer a { color: var(--muted); border-bottom: 1px dotted var(--faint); }
 .footer a:hover { color: var(--gold); }
 
+/* 数値の確認範囲を、色だけに頼らず本文でも示す。 */
+.audit-summary { margin: 20px 0; padding: 16px 20px; border-left: 3px solid var(--gold); background: var(--gold-soft); font-size: 13px; line-height: 1.8; }
+.audit-summary p { margin: 5px 0 0; }
+.verification { margin-top: 32px; }
+.verification h2 { font-family: var(--serif); font-size: 21px; font-weight: 500; }
+.verification > p { line-height: 1.9; overflow-wrap: anywhere; }
+.audit-table { width: 100%; min-width: 620px; border-collapse: collapse; font-size: 13px; line-height: 1.8; }
+.audit-table th, .audit-table td { padding: 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); }
+.audit-table th { font-weight: 500; }
+.audit-table td:last-child { min-width: 260px; overflow-wrap: anywhere; }
+.audit-verified { color: #3c684d; }
+.audit-mismatch { color: #a13825; font-weight: 600; }
+.audit-unverified { color: #775c29; }
+.category-sources { margin: 12px 0 20px; font-size: 12px; }
+.category-sources summary { cursor: pointer; padding: 8px 0; }
+.category-sources summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.spec-table .sub { max-width: 240px; white-space: normal; line-height: 1.6; }
+.spec-list dd, .cmp-val { overflow-wrap: anywhere; }
+
 /* スマホ幅: サイドバーを引き出しにする */
 @media (max-width: 760px) {
   :root { --header-h: 60px; }

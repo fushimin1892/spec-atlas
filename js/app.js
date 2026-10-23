@@ -22,7 +22,7 @@
     return SPEC.data[catId] || [];
   }
   function formatValue(field, value) {
-    if (value === null || value === undefined || value === "") return '<span class="muted">—</span>';
+    if (value === null || value === undefined || value === "") return `<span class="muted">${esc(field.empty || "—")}</span>`;
     if (field.type === "number") {
       const d = field.digits || 0;
       const n = Number(value).toLocaleString("ja-JP", { minimumFractionDigits: d, maximumFractionDigits: field.maxDigits || d });
@@ -33,9 +33,13 @@
   // 横棒・添え書きまで含めたセルの中身（一覧・詳細・比較で共通）
   function cellHtml(cat, field, item) {
     const value = item[field.key];
+    if (cat.id === "ai" && field.key === "params" && value == null) {
+      return `<span class="muted">${esc(item.paramsStatus || "未確認")}</span>${item.paramsNote ? `<span class="sub">${esc(item.paramsNote)}</span>` : ""}`;
+    }
     if (field.bar && value != null) {
       const max = Math.max(...getItems(cat.id).map((i) => i[field.key] || 0)) || 1;
-      return `<span class="bar-cell"><span class="bar"><i style="width:${((value / max) * 100).toFixed(1)}%"></i></span><span class="val">${formatValue(field, value)}</span></span>`;
+      const pending = SPEC.verificationOf?.(cat.id, item)?.fields.find((f) => f.key === field.key)?.status !== "verified";
+      return `<span class="bar-cell"><span class="bar"><i style="width:${((value / max) * 100).toFixed(1)}%"></i></span><span class="val">${formatValue(field, value)}</span></span>${pending ? '<span class="sub">未確認の既存値</span>' : ""}`;
     }
     const sub = field.sub && item[field.sub] ? `<span class="sub">${esc(item[field.sub])}</span>` : "";
     const url = field.link && item[field.link];
@@ -43,7 +47,50 @@
     const shown = url && /^https:\/\//.test(url)
       ? `<a class="ext" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${formatValue(field, value)}</a>`
       : formatValue(field, value);
-    return shown + sub;
+    const check = field.key === "score" && SPEC.verificationOf?.(cat.id, item);
+    return shown + sub + (check && check.fields.find((f) => f.key === "score").status !== "verified" && value != null ? '<span class="sub">未確認の既存値</span>' : "");
+  }
+
+  function auditSummary(cat) {
+    if (!["cpu", "gpu"].includes(cat.id)) return "";
+    const checks = getItems(cat.id).map((item) => SPEC.verificationOf(cat.id, item));
+    const technical = checks.filter((c) => c.fields.filter((f) => !["release", "score"].includes(f.key)).every((f) => f.status === "verified")).length;
+    const dated = checks.filter((c) => c.verified === c.total).length;
+    const scores = checks.filter((c) => c.fields.find((f) => f.key === "score").status === "verified").length;
+    const publishedScores = getItems(cat.id).filter((item) => item.score != null).length;
+    return `<aside class="audit-summary" aria-label="情報の照合状況"><strong>照合状況（${esc(SPEC.hardwareEvidence.checkedAt)}）</strong>
+      <p>技術仕様 ${technical}/${checks.length}型番一致 · 発売日も含む仕様 ${dated}/${checks.length}型番一致 · 掲載スコア ${scores}/${publishedScores}件一致（${checks.length - publishedScores}件空欄）</p>
+      <p>未確認の項目が残っています。各製品の詳細で、項目別の出典・確認日・条件を確認できます。</p></aside>`;
+  }
+
+  function verificationHtml(cat, item) {
+    const check = SPEC.verificationOf?.(cat.id, item);
+    if (check) {
+      const labels = { verified: "一致", mismatch: "要確認（不一致）", unverified: "未確認" };
+      return `<section class="verification"><h2>出典・項目別の照合状況</h2>
+        <p class="note">${check.verified}/${check.total}項目の仕様が一致。性能スコア・価格は仕様と分けて確認します。未確認は正しさを保証できません。</p>
+        <div class="table-wrap"><table class="audit-table"><thead><tr><th scope="col">項目</th><th scope="col">掲載値</th><th scope="col">状態</th><th scope="col">照合値・一次資料・確認日</th></tr></thead>
+        <tbody>${check.fields.map((result) => {
+          const field = cat.fields.find((f) => f.key === result.key);
+          return `<tr><th scope="row">${esc(field.label)}</th><td>${formatValue(field, item[result.key])}</td><td class="audit-${result.status}">${esc(labels[result.status])}</td><td>${result.claims.length ? result.claims.map((c) => `${formatValue(field, c.value)} · <a class="ext" href="${esc(c.source.url)}" target="_blank" rel="noopener noreferrer">${esc(c.source.label)}${c.page ? `（p.${c.page}）` : ""}</a> · ${esc(c.source.checkedAt)}`).join("<br>") : "今回の一次資料による照合は未完了"}</td></tr>`;
+        }).join("")}</tbody></table></div>
+        ${check.notes.map((note) => `<p class="note">${esc(note)}</p>`).join("")}
+        ${item.price != null ? `<p class="note">参考価格は楽天の保存済み取得値（${esc(SPEC.prices?.[cat.id]?.fetchedAt || "取得日時未確認")}）。現在の価格・在庫の一致は未確認です。</p>` : ""}
+      </section>`;
+    }
+    if (cat.id === "ai") {
+      const checked = item.verifiedFields || [];
+      const pending = ["release", "params", "active", "context", "modality", "license"].filter((key) => !checked.includes(key) && !(item.open === "API のみ" && ["params", "active", "license"].includes(key)));
+      const label = (key) => cat.fields.find((f) => f.key === key)?.label || key;
+      return `<section class="verification"><h2>公式資料・確認範囲</h2>
+        <p>${esc(item.notes || "")}</p>
+        <p class="note">資料確認日: ${esc(item.checkedAt || "今回未再照合")}。${checked.length ? `再照合した項目: ${esc(checked.map(label).join("、"))}。` : ""}</p>
+        ${pending.length ? `<p class="note">未確認・未再照合の項目: ${esc(pending.map(label).join("、"))}。空欄には該当しない項目も含みます。</p>` : ""}
+        ${(item.sources || []).map((s) => `<p class="note"><a class="ext" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a> · ${esc(s.checkedAt)}</p>`).join("")}
+        <p class="note">重み公開と、無条件に利用できることは同じではありません。ライセンスは各提供元の原文をご確認ください。</p>
+      </section>`;
+    }
+    return "";
   }
 
   // 比較画面の選択。カテゴリごとに列の並び（製品 id、未選択の列は null）と、最後に開いたカテゴリを持つ。
@@ -188,7 +235,9 @@
         <a class="btn btn-ghost btn-small toolbar-cmp" href="#/compare?cat=${esc(cat.id)}">${esc(cat.name)}を比較する</a>
       </div>
       ${cat.note ? `<p class="note">${esc(cat.note)}</p>` : ""}
-      ${(cat.sources || []).map((s) => `<p class="note"><a class="ext" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></p>`).join("")}
+      ${cat.specNote ? `<p class="note">${esc(cat.specNote)}</p>` : ""}
+      ${auditSummary(cat)}
+      <details class="category-sources"><summary>カテゴリの参考資料</summary>${(cat.sources || []).map((s) => `<p class="note"><a class="ext" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></p>`).join("")}</details>
       ${SPEC.applyPrices[cat.id] ? `<p class="note live" id="priceStatus" role="status" aria-live="polite">${esc(priceStatus[cat.id] || "")}</p>` : ""}
       <div class="table-wrap"><table class="spec-table" id="specTable"></table></div>`;
 
@@ -197,7 +246,7 @@
       const q = st.q.trim().toLowerCase();
       const field = cat.fields.find((f) => f.key === st.sort) || cat.fields[0];
       const rows = items
-        .filter((i) => !q || String(i.name).toLowerCase().includes(q))
+        .filter((i) => !q || [i.name, i.maker, i.family, i.modelId].some((v) => String(v || "").toLowerCase().includes(q)))
         .filter((i) => filterKeys.every((k) => !st.filters[k] || i[k] === st.filters[k]))
         .sort(compareBy(field, st.dir));
       const cols = listFields.length + (cat.rank ? 1 : 0);
@@ -280,13 +329,8 @@
       <dl class="spec-list">
         ${cat.fields.map((f) => `<dt>${esc(f.label)}</dt><dd>${cellHtml(cat, f, item)}</dd>`).join("")}
       </dl>
-      ${item.official && /^https:\/\//.test(item.official.url)
-        ? `<p class="note official">✓ VRAM・消費電力は <a class="ext" href="${esc(item.official.url)}" target="_blank" rel="noopener noreferrer">${esc(item.official.source)}</a> と照合済み（${esc(item.official.checkedAt)}）</p>`
-        : ""}
-      <section class="placeholder">
-        <h2>ベンチマーク・関連製品</h2>
-        <p class="muted">今後追加予定のエリアです。</p>
-      </section>`;
+      ${cat.specNote ? `<p class="note">${esc(cat.specNote)}</p>` : ""}
+      ${verificationHtml(cat, item)}`;
     // 1 列目にこの製品を入れて比較画面を開く（2 列目以降の選択は残す）
     document.getElementById("cmpBtn").addEventListener("click", () => {
       const others = slotsOf(cat.id).filter((id) => id && id !== item.id);
@@ -303,7 +347,7 @@
 
   // 比較表の項目の区切り。ここに無い項目は「基本情報」に入る。メーカー・シリーズは列の見出しに出すので行にしない
   const CMP_SECTIONS = [
-    ["性能", ["score", "cores", "threads", "baseClock", "boostClock", "cache", "vram", "params", "active", "context"]],
+    ["性能・仕様", ["score", "cores", "threads", "baseClock", "boostClock", "cache", "vram", "params", "active", "context", "contextMax", "maxOutput"]],
     ["価格・効率", ["price", "costPerf", "efficiency", "tdp"]],
   ];
   const CMP_HIDDEN = ["maker", "series"];
@@ -377,6 +421,7 @@
       <nav class="crumbs" aria-label="パンくず"><a href="#/">トップ</a> › 比較</nav>
       <h1 class="page-title">比較</h1>
       <p class="muted">比べたいカテゴリを選び、各列のプルダウンで製品を選んでください。</p>
+      ${cat.specNote || cat.id === "ai" ? `<p class="note">${esc(cat.specNote || cat.note)}</p>` : ""}
       <nav class="cmp-cats" aria-label="比較するカテゴリ">
         ${ready.map((c) => `<a href="#/compare?cat=${esc(c.id)}"${c.id === cat.id ? ' aria-current="page"' : ""}>${SPEC.icon(c.icon)}${esc(c.name)}</a>`).join("")}
       </nav>
@@ -455,7 +500,7 @@
         .filter((c) => c.status === "ready")
         .forEach((cat) =>
           getItems(cat.id).forEach((i) => {
-            if ([i.name, i.maker].some((v) => String(v ?? "").toLowerCase().includes(term))) hits.push({ cat, i });
+            if ([i.name, i.maker, i.family, i.modelId].some((v) => String(v ?? "").toLowerCase().includes(term))) hits.push({ cat, i });
           })
         );
     }

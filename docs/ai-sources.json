@@ -1,0 +1,503 @@
+{
+  "checkedAt": "2026-10-23",
+  "sources": [
+    {
+      "id": "openai-gpt-6-astra",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-astra.md",
+      "status": 200,
+      "sha256": "b7c19b3bb89e87a392a0f3f8b732c5e7c9f0bf558cbe3022c491575a947fcef8"
+    },
+    {
+      "id": "openai-gpt-6-luna",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-luna.md",
+      "status": 200,
+      "sha256": "2e4861582095740f5ea84b14bb18fa476a49c426b397b779b964bc144397b451"
+    },
+    {
+      "id": "openai-gpt-6.1-sol",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol.md",
+      "status": 200,
+      "sha256": "acfe91d19882aaf7bb52877898684614035a947de02f2955c9de905a7efb1362"
+    },
+    {
+      "id": "openai-gpt-5.6-sol",
+      "url": "https://developers.openai.com/api/docs/models/gpt-5.6-sol.md",
+      "status": 200,
+      "sha256": "5afb8d587e02be517ecf973aeb941cddc8c90cf834037ddc23fb9f74f95296e8"
+    },
+    {
+      "id": "openai-gpt-4o",
+      "url": "https://developers.openai.com/api/docs/models/gpt-4o.md",
+      "status": 200,
+      "sha256": "f3c708a3ba44098a5086c550dabed6f0eeb262d51c97261a97b5315f93dc08c9"
+    },
+    {
+      "id": "openai-gpt-oss-120b",
+      "url": "https://developers.openai.com/api/docs/models/gpt-oss-120b.md",
+      "status": 200,
+      "sha256": "c86e04912baaae00ed7252d49367131a9794b8c10c343a65a2e7d429efecadbc"
+    },
+    {
+      "id": "openai-gpt-5",
+      "url": "https://developers.openai.com/api/docs/models/gpt-5.md",
+      "status": 200,
+      "sha256": "5a084b92e90ba72052da84de156236546cc7b7a1caa9286b3f988c53f60ddce2"
+    },
+    {
+      "id": "openai-gpt-4.1",
+      "url": "https://developers.openai.com/api/docs/models/gpt-4.1.md",
+      "status": 200,
+      "sha256": "6bd8db17d8440bada9a0c291374f7ee09aacd1a30ab7bc73766b061ec5ec7fb4"
+    },
+    {
+      "id": "openai-gpt-oss-20b",
+      "url": "https://developers.openai.com/api/docs/models/gpt-oss-20b.md",
+      "status": 200,
+      "sha256": "2576ce22d9150a56c6f173beafa1e990be55e1ac8b98a6eaf53b39840dd3e442"
+    },
+    {
+      "id": "claude-opus-5-5",
+      "url": "https://platform.claude.com/docs/en/models/opus-5-5/overview.md",
+      "status": 200,
+      "sha256": "4873b679684d23389e8ce7aa2d01e16b6148d02ba2e9593067ac5e07375a1fe0"
+    },
+    {
+      "id": "claude-fable-5-1",
+      "url": "https://platform.claude.com/docs/en/models/fable-5-1/overview.md",
+      "status": 200,
+      "sha256": "2429aba21158890ee7c5d62719439da0ffe36e4f45fbcf47d03e739efb4704bd"
+    },
+    {
+      "id": "claude-sonnet-5-5",
+      "url": "https://platform.claude.com/docs/en/models/sonnet-5-5/overview.md",
+      "status": 200,
+      "sha256": "9cd453d151f1a6d557806996291b4b9bc670c66070bb13097bc7c4bb458d87aa"
+    },
+    {
+      "id": "Kimi-K2.6",
+      "url": "https://huggingface.co/moonshotai/Kimi-K2.6/raw/main/README.md",
+      "status": 200,
+      "sha256": "95db3be1d0473e482c7aa901f237ad7af8bb7929625a777b27428081bb8ea9f7"
+    },
+    {
+      "id": "Kimi-K2.7-Code",
+      "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code/raw/main/README.md",
+      "status": 200,
+      "sha256": "c78bbe5af19636b180eda956abf1f30a79027ec04d6642ebddc44edbc4470879"
+    },
+    {
+      "id": "Kimi-K3",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3/raw/main/README.md",
+      "status": 200,
+      "sha256": "57de265b5842dfa465c6e73b368b0e15a89b8793b5450528dad577da202cc6fe"
+    },
+    {
+      "id": "claude-haiku-5-5",
+      "url": "https://platform.claude.com/docs/en/models/haiku-5-5/overview.md",
+      "status": 200,
+      "sha256": "6df3648758680851b002f1135d3889c808a24141a4c92e03a25ed5d902d54581"
+    },
+    {
+      "id": "Kimi-K2-Instruct",
+      "url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct/raw/main/README.md",
+      "status": 200,
+      "sha256": "72e2785dbd9ada9355ea3a812d2a9da606f1ae07feea7a0f7e18b8111deb8837"
+    },
+    {
+      "id": "Kimi-K2.5",
+      "url": "https://huggingface.co/moonshotai/Kimi-K2.5/raw/main/README.md",
+      "status": 200,
+      "sha256": "1b04bed9c6c25894171c0ab5e0b4c4d57667698a654dbfd5a6c1649b922810a5"
+    },
+    {
+      "id": "DeepSeek-V4.1-Flash",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/raw/main/README.md",
+      "status": 200,
+      "sha256": "347c9db4e5506acb531cbc3b724407ab88e9af8781679152f0823d7bac16d251"
+    },
+    {
+      "id": "Kimi-K2-Thinking",
+      "url": "https://huggingface.co/moonshotai/Kimi-K2-Thinking/raw/main/README.md",
+      "status": 200,
+      "sha256": "8343341da86d2a74ee576768ea2f8c0be2d3e9cf1cb51838a794581e7a1466cd"
+    },
+    {
+      "id": "DeepSeek-V4-Flash",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash/raw/main/README.md",
+      "status": 200,
+      "sha256": "c4d714818a4d3333542edc7d38ea065825a0cf7aa8fea3605bbd1d1c18e4a610"
+    },
+    {
+      "id": "DeepSeek-V4-Pro",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/raw/main/README.md",
+      "status": 200,
+      "sha256": "c4d714818a4d3333542edc7d38ea065825a0cf7aa8fea3605bbd1d1c18e4a610"
+    },
+    {
+      "id": "DeepSeek-V3.1",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.1/raw/main/README.md",
+      "status": 200,
+      "sha256": "dcb317340f6f0ae5146c99b0f0062c1c9781d330997901254ff0c18a5b35a918"
+    },
+    {
+      "id": "DeepSeek-V3.2",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2/raw/main/README.md",
+      "status": 200,
+      "sha256": "22b9f57e1ece2df27f9de0e71377e19481f7a6892eca8bc23e73fcdffe1d845c"
+    },
+    {
+      "id": "Qwen3.8-2.4T-A95B",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B/raw/main/README.md",
+      "status": 200,
+      "sha256": "7690c680c2d6eb284179ef5dd4db63260d248531cae9087b09b2c2200230f331"
+    },
+    {
+      "id": "DeepSeek-R1",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1/raw/main/README.md",
+      "status": 200,
+      "sha256": "d26d26ddb518fee60c6c6bf7a708bd751b1619d93a4944f188143693d956c77f"
+    },
+    {
+      "id": "DeepSeek-V3",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3/raw/main/README.md",
+      "status": 200,
+      "sha256": "3739763a851074c810f1565f9823956f3a095231f8c591dd3c254581bdd3cf08"
+    },
+    {
+      "id": "Qwen3.8-27B",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-27B/raw/main/README.md",
+      "status": 200,
+      "sha256": "57e4bdb258ee1a7d2635c5174ebd4e56abe392505cdb5f8bbb356b0dc4293641"
+    },
+    {
+      "id": "Qwen3-235B-A22B",
+      "url": "https://huggingface.co/Qwen/Qwen3-235B-A22B/raw/main/README.md",
+      "status": 200,
+      "sha256": "30c0bf0d8f2f926d22db64d47bc78cb0790b898742aecfb2e208bad77b190907"
+    },
+    {
+      "id": "Qwen3.6-35B-A3B",
+      "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B/raw/main/README.md",
+      "status": 200,
+      "sha256": "c4ddaa065649ff6352648f64747a16eda31726f3e34add94ce04abb461c77b75"
+    },
+    {
+      "id": "Qwen3.5-397B-A17B",
+      "url": "https://huggingface.co/Qwen/Qwen3.5-397B-A17B/raw/main/README.md",
+      "status": 200,
+      "sha256": "bda4b24e975f65ac677985306ddbad33362e65064637660654c8bb7dea7edf50"
+    },
+    {
+      "id": "Qwen3.8-Flash-Next",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next/raw/main/README.md",
+      "status": 200,
+      "sha256": "35ca37ccc366f1ba478dab33841a2c0c18ce53fd62f291ca05341f7728b225b2"
+    },
+    {
+      "id": "GLM-5.1",
+      "url": "https://huggingface.co/zai-org/GLM-5.1/raw/main/README.md",
+      "status": 200,
+      "sha256": "2cb148b732f596716f8c9366edf072e35746de6d06fe69c92301ddb492557077"
+    },
+    {
+      "id": "Qwen2.5-72B-Instruct",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct/raw/main/README.md",
+      "status": 200,
+      "sha256": "62d6f2176c0925b7c7e5ec6c5ee06cad83868bb21a8e25d58283e3d7707d3f79"
+    },
+    {
+      "id": "GLM-5.2",
+      "url": "https://huggingface.co/zai-org/GLM-5.2/raw/main/README.md",
+      "status": 200,
+      "sha256": "7ba22185651d8f69fbf6227ee718eb680fd834ec8e79ba78df6fa54896614b3d"
+    },
+    {
+      "id": "Qwen3-32B",
+      "url": "https://huggingface.co/Qwen/Qwen3-32B/raw/main/README.md",
+      "status": 200,
+      "sha256": "0af37735eef45eb3b406f3d74952e6cbcbc180904dc68b73a31a690719a235da"
+    },
+    {
+      "id": "GLM-4.6",
+      "url": "https://huggingface.co/zai-org/GLM-4.6/raw/main/README.md",
+      "status": 200,
+      "sha256": "d96ae299bba652f051a0c2c3ac037abbeb06ad7804b17844d62662c70a0d276f"
+    },
+    {
+      "id": "GLM-4.7",
+      "url": "https://huggingface.co/zai-org/GLM-4.7/raw/main/README.md",
+      "status": 200,
+      "sha256": "ad072cbe81374f18149a107f2e1cbed93f27a6b220409a6bb34ba97a4d36757e"
+    },
+    {
+      "id": "GLM-5",
+      "url": "https://huggingface.co/zai-org/GLM-5/raw/main/README.md",
+      "status": 200,
+      "sha256": "4f8859aa1e0585e25f4fc61b5c17b2c488c767f37f41231818bc065a865ceae7"
+    },
+    {
+      "id": "GLM-4.5",
+      "url": "https://huggingface.co/zai-org/GLM-4.5/raw/main/README.md",
+      "status": 200,
+      "sha256": "b88456f5d679312860924870b8c557e578d18c7e3612b4f9d1ea22be38ea95c3"
+    },
+    {
+      "id": "GLM-4.5-Air",
+      "url": "https://huggingface.co/zai-org/GLM-4.5-Air/raw/main/README.md",
+      "status": 200,
+      "sha256": "fdcdf454bbb54db5cf1a1dd83152feb6555c4962678cae5c7658bf9cd0261e8b"
+    },
+    {
+      "id": "deepseek-pricing",
+      "url": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "status": 200,
+      "sha256": "b856a6e93fa4793ecc8f3fd03a01bb7d8f7572f78a4739da8ce6dbdb09328d66"
+    },
+    {
+      "id": "glm-docs",
+      "url": "https://docs.z.ai/guides/llm/glm-5.2.md",
+      "status": 200,
+      "sha256": "04182374ad828bc68ef956f8ccc09cfc55961fc883ba135dd9ecd402c9c77d3a"
+    },
+    {
+      "id": "openai-changelog",
+      "url": "https://developers.openai.com/api/docs/changelog.md",
+      "status": 200,
+      "sha256": "fd180bcc5673a9f6052ac00299c33b92a9213a15151e5827ae9be0ad6b8215ab"
+    },
+    {
+      "id": "GLM-5.3",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-BF16/raw/main/README.md",
+      "status": 200,
+      "sha256": "9bdaa8b83a653f3ccac2a140d1c3880929d6f16e4a2b38d03e358b9fad0ee95f"
+    },
+    {
+      "id": "docs-glm-5",
+      "url": "https://docs.z.ai/guides/llm/glm-5.md",
+      "status": 200,
+      "sha256": "920a5e4067632befc1c5a0905f58c2b1bf1f52f14e4436089ea5d5a6c4bfc400"
+    },
+    {
+      "id": "glm-5.3-docs",
+      "url": "https://docs.z.ai/guides/llm/glm-5.3.md",
+      "status": 200,
+      "sha256": "c2182fdb62d0a92d76d9b59551b3154319ebfb38d05af94aa960d776c625dcd4"
+    },
+    {
+      "id": "docs-glm-4.5",
+      "url": "https://docs.z.ai/guides/llm/glm-4.5.md",
+      "status": 200,
+      "sha256": "c6241d5b97085dabfb4c840ba19780cef099e392116df7d29d9f2f016cdd24ca"
+    },
+    {
+      "id": "docs-glm-4.7",
+      "url": "https://docs.z.ai/guides/llm/glm-4.7.md",
+      "status": 200,
+      "sha256": "4028ff03c86881adffac0956784a69105b792c14a83747937463c9347bd17d59"
+    },
+    {
+      "id": "docs-glm-4.6",
+      "url": "https://docs.z.ai/guides/llm/glm-4.6.md",
+      "status": 200,
+      "sha256": "a9d8b4d46600deeb6fdd48d2d9a0a85fafc0556bb85f7e2661ff6cf3272cfa56"
+    },
+    {
+      "id": "docs-glm-5.1",
+      "url": "https://docs.z.ai/guides/llm/glm-5.1.md",
+      "status": 200,
+      "sha256": "08e2ca6e7d271212c8fccd5b54c4a95d78142a4b76a521a6ac3d4eae3d214322"
+    },
+    {
+      "id": "Kimi-K2.6-config",
+      "url": "https://huggingface.co/moonshotai/Kimi-K2.6/resolve/main/config.json",
+      "status": 200,
+      "sha256": "85825ca6e18cbe539eb83ee09eedfb3f4222265929f06e9f535a6d9364f55899"
+    },
+    {
+      "id": "Kimi-K2.7-Code-config",
+      "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code/resolve/main/config.json",
+      "status": 200,
+      "sha256": "ffbb57bff844e024f6c112640b63da80af228ceb8fb3e2e21908a21febbcdffb"
+    },
+    {
+      "id": "Kimi-K3-config",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3/resolve/main/config.json",
+      "status": 200,
+      "sha256": "9710e121a58d03ac92c8d6da287a19541994319afbbe6d6202af001ffd379213"
+    },
+    {
+      "id": "Kimi-K2-Instruct-config",
+      "url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct/resolve/main/config.json",
+      "status": 200,
+      "sha256": "8c13ae1049df55f29b3bdcae69a562433f243ff70dac251d819ecad8dbdf7439"
+    },
+    {
+      "id": "Kimi-K2.5-config",
+      "url": "https://huggingface.co/moonshotai/Kimi-K2.5/resolve/main/config.json",
+      "status": 200,
+      "sha256": "acd5bb01a16f64b309599cd6ed196be056f613c99d6bc9300692b82cd10882f6"
+    },
+    {
+      "id": "DeepSeek-V4-Pro-config",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/resolve/main/config.json",
+      "status": 200,
+      "sha256": "5fe4568daee51c208cb8a79538eaeda090ae011ade1dee2c386aa95f569c810e"
+    },
+    {
+      "id": "DeepSeek-V4.1-Flash-config",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/resolve/main/config.json",
+      "status": 200,
+      "sha256": "8be45ce0476004a3f529fd896115a4a2e800a129ad2d3ec05b16050f52e21879"
+    },
+    {
+      "id": "DeepSeek-V4-Flash-config",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash/resolve/main/config.json",
+      "status": 200,
+      "sha256": "b628e63398a645abc711d92207f8737dd8140f7a4ef1e0a5b3616019e0ddd818"
+    },
+    {
+      "id": "Kimi-K2-Thinking-config",
+      "url": "https://huggingface.co/moonshotai/Kimi-K2-Thinking/resolve/main/config.json",
+      "status": 200,
+      "sha256": "666ee58fc3871ecc369a22bc8c100075c2ad24ccbe8b3e336fa5f726e6111c15"
+    },
+    {
+      "id": "DeepSeek-V3.2-config",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2/resolve/main/config.json",
+      "status": 200,
+      "sha256": "c7fa8b191e9936d8e6a57d864baab82b792fae16a116416cdd3a75ba76bc5af1"
+    },
+    {
+      "id": "DeepSeek-R1-config",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1/resolve/main/config.json",
+      "status": 200,
+      "sha256": "79ddea672a62e95d3f0be27be434375538e1988975971cffcf87c96c1de84a65"
+    },
+    {
+      "id": "Qwen3.8-2.4T-A95B-config",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B/resolve/main/config.json",
+      "status": 200,
+      "sha256": "4e3819548967e319ab435d044a3a331dbe3b078590ce822e9d74b79430533987"
+    },
+    {
+      "id": "DeepSeek-V3.1-config",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.1/resolve/main/config.json",
+      "status": 200,
+      "sha256": "3e5d192d745758862b0a3e6338ee181991db49933dbbd3185e1bde34944e7bad"
+    },
+    {
+      "id": "Qwen3-235B-A22B-config",
+      "url": "https://huggingface.co/Qwen/Qwen3-235B-A22B/resolve/main/config.json",
+      "status": 200,
+      "sha256": "0ecd5d6fe6f2db6739e4e36ab06b88ebe7bd013ef31b9583f43796059a2b23a4"
+    },
+    {
+      "id": "DeepSeek-V3-config",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3/resolve/main/config.json",
+      "status": 200,
+      "sha256": "cbf0b95dc614de208a109bb5fd4e7eed11385e9c68411d2c17db5319443035d9"
+    },
+    {
+      "id": "Qwen3.8-27B-config",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-27B/resolve/main/config.json",
+      "status": 200,
+      "sha256": "191e0af232104ed8b65258cf3fb2b842e288008baca7633c11b82a1ac7203aab"
+    },
+    {
+      "id": "Qwen3.6-35B-A3B-config",
+      "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B/resolve/main/config.json",
+      "status": 200,
+      "sha256": "93a4693fa9d8392fbfccd4b3c9873f4bfdcb14fdede978b123d07d19675efe99"
+    },
+    {
+      "id": "GLM-5.1-config",
+      "url": "https://huggingface.co/zai-org/GLM-5.1/resolve/main/config.json",
+      "status": 200,
+      "sha256": "726e45e28d1be1636a5834048a4101a2cfe384819ad2ebe08d41f6fe04656526"
+    },
+    {
+      "id": "Qwen2.5-72B-Instruct-config",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct/resolve/main/config.json",
+      "status": 200,
+      "sha256": "14ca217334fe0fd10148413592d68c99eeb33431ed89c1afa130fee560be2a29"
+    },
+    {
+      "id": "Qwen3.5-397B-A17B-config",
+      "url": "https://huggingface.co/Qwen/Qwen3.5-397B-A17B/resolve/main/config.json",
+      "status": 200,
+      "sha256": "3ae7fa89c2f7d1354096418ddaf1331e9e0898a8ca11e804fb6dbaa087efb7da"
+    },
+    {
+      "id": "Qwen3.8-Flash-Next-config",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next/resolve/main/config.json",
+      "status": 200,
+      "sha256": "889658f2508e8c61d409b02e70e0d78d8d4452ec65aaafbe129805d213d2e74b"
+    },
+    {
+      "id": "GLM-5.2-config",
+      "url": "https://huggingface.co/zai-org/GLM-5.2/resolve/main/config.json",
+      "status": 200,
+      "sha256": "185f93ee6d12548e16a847e279dc0c3c90b1524c970b0866b42fb545747d859a"
+    },
+    {
+      "id": "Qwen3-32B-config",
+      "url": "https://huggingface.co/Qwen/Qwen3-32B/resolve/main/config.json",
+      "status": 200,
+      "sha256": "97e295b63283935788fac5e4f8860862a56d4089538cafc93f0431f2ebe483bb"
+    },
+    {
+      "id": "GLM-4.6-config",
+      "url": "https://huggingface.co/zai-org/GLM-4.6/resolve/main/config.json",
+      "status": 200,
+      "sha256": "f713924a536ac1965d8af2a3144d3a0ce0acae94f0fbfd7407240cbafcb08c53"
+    },
+    {
+      "id": "GLM-4.7-config",
+      "url": "https://huggingface.co/zai-org/GLM-4.7/resolve/main/config.json",
+      "status": 200,
+      "sha256": "f713924a536ac1965d8af2a3144d3a0ce0acae94f0fbfd7407240cbafcb08c53"
+    },
+    {
+      "id": "GLM-5-config",
+      "url": "https://huggingface.co/zai-org/GLM-5/resolve/main/config.json",
+      "status": 200,
+      "sha256": "308d3ceebe7bd9c2246d20550d5b793098dd03838d1e504f8236063ae152bcae"
+    },
+    {
+      "id": "GLM-4.5-Air-config",
+      "url": "https://huggingface.co/zai-org/GLM-4.5-Air/resolve/main/config.json",
+      "status": 200,
+      "sha256": "e59f21d7be4b4b917d80bb3a2d1211356d29cf3aeff93372523daf7d0ffb839d"
+    },
+    {
+      "id": "GLM-4.5-config",
+      "url": "https://huggingface.co/zai-org/GLM-4.5/resolve/main/config.json",
+      "status": 200,
+      "sha256": "a5dbd07371a8a51b0013a63a7a70543a7094af1a9598812b537133e6da78dda7"
+    },
+    {
+      "id": "claude-legacy-opus41",
+      "url": "https://www.anthropic.com/news/claude-opus-4-1",
+      "status": 200,
+      "sha256": "62115233a09d2ea9602f3d2c00ccf5c48b9d2dc9317622526e5e2a1df7f2d821"
+    },
+    {
+      "id": "claude-legacy-4",
+      "url": "https://www.anthropic.com/news/claude-4",
+      "status": 200,
+      "sha256": "fc6f0dfa74c078f07cd77909588fcecdfa254632bae0c219f50c9d38d562cb8d"
+    },
+    {
+      "id": "claude-legacy-35",
+      "url": "https://www.anthropic.com/news/claude-3-5-sonnet",
+      "status": 200,
+      "sha256": "e924324c385c256aaa14897a2616b57d571fe729b42bf4781bd1f72f11aa0509"
+    },
+    {
+      "id": "GLM-5.3-config",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-BF16/resolve/main/config.json",
+      "status": 200,
+      "sha256": "ca8f2f47b07919a514c0ca223dc2ea2bc7445afaa5ac76c013a3784e096426ca"
+    }
+  ]
+}

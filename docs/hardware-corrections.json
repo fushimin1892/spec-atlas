@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-10-23",
+  "corrections": [
+    {
+      "category": "cpu",
+      "name": "Ryzen 9 3900",
+      "field": "release",
+      "column": 8,
+      "from": "2019/10/08",
+      "to": "2019/09/24",
+      "reason": "AMD公式のOEM向けLaunch Dateへ修正。"
+    },
+    {
+      "category": "cpu",
+      "name": "Ryzen 5 7600X3D",
+      "field": "release",
+      "column": 8,
+      "from": "2024/08/31",
+      "to": "2024/09/05",
+      "reason": "AMD公式のLaunch Dateへ修正。"
+    },
+    {
+      "category": "cpu",
+      "name": "Ryzen 7 5700",
+      "field": "release",
+      "column": 8,
+      "from": "2022/04/04",
+      "to": "2024/01/31",
+      "reason": "公式に確認できた一般販売開始日に統一。OEM向け提供日と区別して注記。"
+    },
+    {
+      "category": "cpu",
+      "name": "Ryzen 3 8300G",
+      "field": "baseClock",
+      "column": 5,
+      "from": "4.0",
+      "to": "3.4",
+      "reason": "現在のAMD公式ベースクロックを採用。混成コアの条件を注記。"
+    },
+    {
+      "category": "gpu",
+      "name": "Arc A580",
+      "field": "tdp",
+      "column": 3,
+      "from": "175",
+      "to": "185",
+      "reason": "現在のIntel ARKのTBPを採用。資料・製品差を注記。"
+    }
+  ],
+  "reviewDecisions": [
+    "RX 460の75W→70Wは最終確認で取り消し。AMD一括表の2GB版と掲載4GB版の条件差があり、MSI公式4GB版の75Wを根拠に元値を維持。"
+  ]
+}

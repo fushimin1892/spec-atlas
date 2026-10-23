@@ -43,7 +43,7 @@ jobs:
           fi
           node tools/fetch-prices.mjs
 
-      # NVIDIA 公式の仕様と VRAM・消費電力を照合する。食い違いは警告に出すだけで、公開は止めない
+      # NVIDIA公式の一部仕様を取得。取得エラーは警告とし、掲載値との不一致は後続の検証で公開を止める。
       - name: 公式仕様と照合
         if: github.event_name != 'push'
         continue-on-error: true
@@ -63,6 +63,14 @@ jobs:
             git commit -m "参考価格・公式仕様の照合結果を自動更新（$(TZ=Asia/Tokyo date +%F)）"
             git push
           fi
+
+      - name: 掲載データと出典の整合性を検証
+        run: |
+          node tools/validate-data.mjs
+          node tools/audit-hardware.mjs
+          node --check js/app.js
+          node --check js/categories.js
+          node --check js/verification.js
 
       # 公開するのはサイト本体だけ（tools/ や server.mjs は含めない）
       - name: 公開するファイルをまとめる

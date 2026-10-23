@@ -1,7 +1,7 @@
 // GPU（デスクトップ）性能比較データ。
 // 性能スコアは UL Benchmarks が公表する 3DMark Time Spy グラフィックススコアの中央値（毎日更新される値の取得時点）。
-// VRAM・消費電力・発売日はメーカー公表値。2026-10-23 に Wikipedia の各シリーズ記事と照合し 36 行を修正済み。
-// 発売日は海外（米国）での発売日にそろえている。
+// 一次資料の項目別照合値は data/hardware-evidence.js。全件確認済みではない。
+// 発売日の既存値は海外（米国）を基準とするが、今回再照合できたのは一部。項目別状態と条件を詳細画面に表示する。
 // 1 行 = 型番,性能スコア,VRAM(GB),消費電力(W),発売日
 // 分からない値は空欄にする。メーカー・シリーズ・コスパは下の処理で自動で付ける。
 // 末尾の 8 行（RX 9070 GRE〜Arc B570）は 2026-10-23 に追加。仕様は Wikipedia の各シリーズの表（RX 9070 GRE の消費電力は AMD 公式）で確認した。
@@ -134,7 +134,7 @@ RX 6750 GRE 12GB,,12,230,2023/10/18
 RX 6750 GRE 10GB,,10,170,2023/10/18
 RTX 2060 12GB,,12,185,2021/12/07
 Arc A770 16GB,,16,225,2022/10/12
-Arc A580,,8,175,2023/10/10
+Arc A580,,8,185,2023/10/10
 Arc B570,,10,150,2025/01/16
 `;
 
@@ -200,7 +200,7 @@ Arc B570,,10,150,2025/01/16
     const checkedAt = new Date(official.checkedAt).toLocaleDateString("ja-JP");
     for (const g of window.SPEC.data.gpu) {
       const o = official.items[g.id];
-      if (o) g.official = { url: o.url, source: official.source, checkedAt };
+      if (o && g.vram === o.vram && g.tdp === o.tdp) g.official = { url: o.url, source: official.source, checkedAt };
     }
   }
 })();
