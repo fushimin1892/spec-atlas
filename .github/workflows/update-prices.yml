@@ -61,6 +61,8 @@ jobs:
             echo "価格に変化なし"
           else
             git commit -m "参考価格・公式仕様の照合結果を自動更新（$(TZ=Asia/Tokyo date +%F)）"
+            # 取得中（約 20 分）にサイトの変更が push されていても保存できるよう、最新を取り込んでから push する
+            git pull --rebase --autostash
             git push
           fi
 
