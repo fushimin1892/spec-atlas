@@ -2,7 +2,7 @@
 window.SPEC.prices = window.SPEC.prices || {};
 window.SPEC.prices.gpu = {
  "source": "楽天市場",
- "fetchedAt": "2026-10-23T02:41:33.146Z",
+ "fetchedAt": "2026-10-23T23:54:23.931Z",
  "items": {
   "rtx-5090": null,
   "rtx-4090": null,
@@ -12,7 +12,7 @@ window.SPEC.prices.gpu = {
    "shop": "コンプモト 楽天市場店",
    "url": "https://item.rakuten.co.jp/compmoto-r/4988755071413/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "GIGABYTE ギガバイト Nvidia Geforce RTX5080搭載 グラフィックボード GDDR7 16GB(GV-N5080WF3OC-16GD) 取り寄せ商品",
-   "matched": 7
+   "matched": 6
   },
   "rx-7900-xtx": null,
   "rtx-4080-super": null,
@@ -25,12 +25,12 @@ window.SPEC.prices.gpu = {
    "matched": 8
   },
   "rtx-5070-ti": {
-   "price": 218000,
+   "price": 249260,
    "condition": "新品",
-   "shop": "ドスパラ楽天市場店",
-   "url": "https://item.rakuten.co.jp/dospara-r/ic651027/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
-   "title": "PNY VCG5070T16TFXPB1-O (GeForce RTX 5070 Ti 16GB)",
-   "matched": 10
+   "shop": "e-zoa 楽天市場 SHOP",
+   "url": "https://item.rakuten.co.jp/e-zoa/itm0015895254/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
+   "title": "【エントリーで最大10万ポイント】MSI エムエスアイGeForce RTX 5070 Ti 16G GAMING TRIO OC グラフィックボード 転送不可 G507T-16GTC(2652178)代引不可 送料無料",
+   "matched": 11
   },
   "rx-9070-xt": {
    "price": 148000,
@@ -38,7 +38,7 @@ window.SPEC.prices.gpu = {
    "shop": "ドスパラ楽天市場店",
    "url": "https://item.rakuten.co.jp/dospara-r/ic566229/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "ASRock | アスロック AMD Radeon RX 9070 XT Challenger 16GB (RX9070XT CL 16G)",
-   "matched": 45
+   "matched": 44
   },
   "rx-7900-xt": null,
   "rtx-4070-ti-super": null,
@@ -65,7 +65,7 @@ window.SPEC.prices.gpu = {
    "shop": "パソコン工房 楽天市場店",
    "url": "https://item.rakuten.co.jp/pckoubou/m4s1p1143488/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "GIGABYTE GeForce RTX 5070 WINDFORCE OC SFF 12G NVIDIA GeForce RTX 5070 搭載グラフィックカード",
-   "matched": 19
+   "matched": 20
   },
   "rx-6950-xt": null,
   "rtx-4070-super": {
@@ -74,7 +74,7 @@ window.SPEC.prices.gpu = {
    "shop": "じゃんぱら楽天市場店",
    "url": "https://item.rakuten.co.jp/janpara/67706392-241/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【中古】Palit GeForce RTX 4070 SUPER NED407S019K9-1043D RTX4070Super/12GB (GDDR6X)【イオンモール新利府】保証期間1週間",
-   "matched": 5
+   "matched": 6
   },
   "rx-7900-gre": null,
   "rx-6900-xt": {
@@ -129,7 +129,7 @@ window.SPEC.prices.gpu = {
    "shop": "ドスパラ楽天市場店",
    "url": "https://item.rakuten.co.jp/dospara-r/ic625088/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "PNY | ピーエヌワイ VCG5060T16DFXPB1-O (GeForce RTX 5060 Ti OC 16GB)",
-   "matched": 10
+   "matched": 9
   },
   "rtx-5060-ti-8gb": {
    "price": 86800,
@@ -137,7 +137,7 @@ window.SPEC.prices.gpu = {
    "shop": "ドスパラ楽天市場店",
    "url": "https://item.rakuten.co.jp/dospara-r/ic543911/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "Palit NE7506TU19P1-GB2062M (GeForce RTX 5060 Ti White OC 8GB)",
-   "matched": 8
+   "matched": 9
   },
   "rtx-3070-ti": {
    "price": 42980,
@@ -145,7 +145,7 @@ window.SPEC.prices.gpu = {
    "shop": "じゃんぱら楽天市場店",
    "url": "https://item.rakuten.co.jp/janpara/108211478-222/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【中古】Gainward GeForce RTX 3070 Ti Phoenix（NED307T019P2-1046X-G）RTX3070Ti/8GB(GDDR6X)【ECセンター】保証期間1週間",
-   "matched": 11
+   "matched": 10
   },
   "rx-9060-xt-16gb": {
    "price": 93474,
@@ -153,7 +153,7 @@ window.SPEC.prices.gpu = {
    "shop": "ツクモ 楽天市場店",
    "url": "https://item.rakuten.co.jp/shoptsukumo/9172058017/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "XFX SWIFT AMD Radeon RX 9060XT OC Triple Fan Gaming Edition with 16GB GDDR6　RX-96TS316B7-GP/U",
-   "matched": 32
+   "matched": 30
   },
   "rtx-2080-ti": {
    "price": 44980,
@@ -161,7 +161,7 @@ window.SPEC.prices.gpu = {
    "shop": "じゃんぱら楽天市場店",
    "url": "https://item.rakuten.co.jp/janpara/69281055-69/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【中古】NVIDIA 【PC抜き取り品】 GeForce RTX 2080Ti 11GB (GDDR6)【京都】保証期間1週間",
-   "matched": 5
+   "matched": 4
   },
   "rtx-3070": {
    "price": 37980,
@@ -186,7 +186,7 @@ window.SPEC.prices.gpu = {
    "shop": "じゃんぱら楽天市場店",
    "url": "https://item.rakuten.co.jp/janpara/108209524-222/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【中古】PNY GeForce RTX 4060 Ti 8GB VERTO ダブルファン VCG4060T8DFXPB1 RTX4060Ti/8G【ECセンター】保証期間1週間",
-   "matched": 19
+   "matched": 18
   },
   "nvidia-titan-v": {
    "price": 106980,
@@ -219,7 +219,7 @@ window.SPEC.prices.gpu = {
    "shop": "エクセラー",
    "url": "https://item.rakuten.co.jp/excellar/1050029324/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【1日と5.0のつく日、18日はポイント3倍！】【中古】SAPPHIRE PULSE Radeon RX 6700 XT 12G GDDR6 11306-02-20G PCIExp 12GB 訳あり 元箱あり",
-   "matched": 9
+   "matched": 7
   },
   "arc-a750": null,
   "rtx-3060-ti": {
@@ -228,15 +228,15 @@ window.SPEC.prices.gpu = {
    "shop": "じゃんぱら楽天市場店",
    "url": "https://item.rakuten.co.jp/janpara/216065292-216/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【中古】ZOTAC GeForce RTX3060Ti 8GB(ZT-A30610A-10BLHR)【大宮東口】保証期間1週間",
-   "matched": 58
+   "matched": 59
   },
   "rtx-2080-super": {
-   "price": 30980,
+   "price": 33980,
    "condition": "中古",
    "shop": "じゃんぱら楽天市場店",
-   "url": "https://item.rakuten.co.jp/janpara/67697410-67/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
-   "title": "【中古】GIGABYTE AORUS GeForceRTX 2080 SUPER WATERFORCE WB 8G(GV-N208SAORUS WB-8GC) RTX2080Super/8GB(GDDR6)/PCI-E【秋葉2号】保証期間1週間",
-   "matched": 5
+   "url": "https://item.rakuten.co.jp/janpara/66431193-66/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
+   "title": "【中古】NVIDIA 【PC抜き取り品】 GeForce RTX 2080Super 8GB (GDDR6)【秋葉3号】保証期間1週間",
+   "matched": 4
   },
   "arc-b580": {
    "price": 63137,
@@ -264,12 +264,12 @@ window.SPEC.prices.gpu = {
    "matched": 21
   },
   "rtx-4060": {
-   "price": 49980,
+   "price": 47980,
    "condition": "中古",
    "shop": "じゃんぱら楽天市場店",
-   "url": "https://item.rakuten.co.jp/janpara/108208387-222/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
-   "title": "【中古】Inno3D GeForce RTX 4060 TWIN X2 OC WHITE N40602-08D6X-173051W RTX4060/8GB(GDDR6)【ECセンター】保証期間1週間",
-   "matched": 19
+   "url": "https://item.rakuten.co.jp/janpara/108211539-222/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
+   "title": "【中古】ZOTAC ZOTAC GAMING GeForce RTX 4060 8GB SOLO ZT-D40600G-10L RTX4060/8GB(GDDR6)【ECセンター】保証期間1週間",
+   "matched": 20
   },
   "rtx-5050": {
    "price": 53980,
@@ -286,7 +286,7 @@ window.SPEC.prices.gpu = {
    "shop": "e-zoa 楽天市場 SHOP",
    "url": "https://item.rakuten.co.jp/e-zoa/itm0015931537/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【エントリーで最大10万ポイント】NB ノーブランドGeForce RTX 2070 SUPER 搭載 グラフィックボード 8GB GDDR6 新品バルク品 2080261040364(2689880)送料無料",
-   "matched": 49
+   "matched": 50
   },
   "rx-6650-xt": {
    "price": 31980,
@@ -297,12 +297,12 @@ window.SPEC.prices.gpu = {
    "matched": 4
   },
   "gtx-1080-ti": {
-   "price": 27980,
+   "price": 24200,
    "condition": "中古",
-   "shop": "じゃんぱら楽天市場店",
-   "url": "https://item.rakuten.co.jp/janpara/96118143-96/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
-   "title": "【中古】EVGA GeForce GTX 1080 Ti FOUNDERS EDITION 11G-P4-6390-KR【吉祥寺】保証期間1週間",
-   "matched": 24
+   "shop": "エクセラー",
+   "url": "https://item.rakuten.co.jp/excellar/1050014178/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
+   "title": "【1日と5.0のつく日、18日はポイント3倍！】【中古】MSI製グラボ GTX 1080 Ti ARMOR 11G OC PCIExp 11GB",
+   "matched": 27
   },
   "rx-6600-xt": {
    "price": 31980,
@@ -319,7 +319,7 @@ window.SPEC.prices.gpu = {
    "shop": "じゃんぱら楽天市場店",
    "url": "https://item.rakuten.co.jp/janpara/108209268-222/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【中古】ASRock Radeon RX 5700 XT Challenger D 8G OC RX5700XT/8GB(GDDR6)/PCI-E【ECセンター】保証期間1週間",
-   "matched": 6
+   "matched": 7
   },
   "radeon-vii": null,
   "rtx-3060-12gb": {
@@ -336,7 +336,7 @@ window.SPEC.prices.gpu = {
    "shop": "ソフマップ中古専門楽天市場店",
    "url": "https://item.rakuten.co.jp/akiba-u-shop/2133074695310/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【中古】ZOTAC(ゾタック) ZOTAC GeForce RTX 2070 8G ZT-T20700A-10B 【344-ud】",
-   "matched": 33
+   "matched": 34
   },
   "rtx-2060-super": {
    "price": 27980,
@@ -372,12 +372,12 @@ window.SPEC.prices.gpu = {
    "matched": 1
   },
   "gtx-1080": {
-   "price": 14350,
+   "price": 14180,
    "condition": "中古",
    "shop": "エクセラー3号館 楽天市場店",
    "url": "https://item.rakuten.co.jp/home-carpentry/1050021780/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【中古】PALIT GeForce GTX 1080 JetStream NEB1080015P2-1040J",
-   "matched": 43
+   "matched": 46
   },
   "rtx-2060": {
    "price": 23980,
@@ -385,15 +385,15 @@ window.SPEC.prices.gpu = {
    "shop": "じゃんぱら楽天市場店",
    "url": "https://item.rakuten.co.jp/janpara/108204448-222/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【中古】NVIDIA GeForce RTX2060 6GB (GDDR6)/PCI-E【ECセンター】保証期間1週間",
-   "matched": 19
+   "matched": 22
   },
   "gtx-1070-ti": {
-   "price": 13980,
+   "price": 13800,
    "condition": "中古",
-   "shop": "じゃんぱら楽天市場店",
-   "url": "https://item.rakuten.co.jp/janpara/217019595-67/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
-   "title": "【中古】Palit GTX1070Ti 8GB DUAL(NE5107T015P2-1043D) GTX1070Ti/8GB(GDDR5)/PCI-E【秋葉2号】保証期間1週間",
-   "matched": 18
+   "shop": "エクセラー2号館 楽天市場店",
+   "url": "https://item.rakuten.co.jp/kadekaden/1050013857/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
+   "title": "【中古】PALIT GTX1070Ti 8GB DUAL NE5107T015P2-1043D PCIExp 8GB",
+   "matched": 17
   },
   "gtx-1660-ti": {
    "price": 17980,
@@ -417,7 +417,7 @@ window.SPEC.prices.gpu = {
    "shop": "エクセラー3号館 楽天市場店",
    "url": "https://item.rakuten.co.jp/home-carpentry/1050007866/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【中古】ZOTAC GeForce GTX 1070 ZT-P10700J-10B",
-   "matched": 34
+   "matched": 37
   },
   "gtx-1660-super": {
    "price": 15980,
@@ -491,7 +491,7 @@ window.SPEC.prices.gpu = {
   "rx-480": null,
   "rx-570-8gb": null,
   "gtx-1060-3gb": {
-   "price": 7590,
+   "price": 7400,
    "condition": "中古",
    "shop": "エクセラー",
    "url": "https://item.rakuten.co.jp/excellar/1050005521/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
@@ -500,12 +500,12 @@ window.SPEC.prices.gpu = {
   },
   "rx-470": null,
   "gtx-970": {
-   "price": 5830,
+   "price": 6980,
    "condition": "中古",
-   "shop": "エクセラー",
-   "url": "https://item.rakuten.co.jp/excellar/1050014937/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
-   "title": "【1日と5.0のつく日、18日はポイント3倍！】【中古】PALIT GeForce GTX 970 JetStream NE5X970016G2-2043J",
-   "matched": 14
+   "shop": "じゃんぱら楽天市場店",
+   "url": "https://item.rakuten.co.jp/janpara/97041731-97/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
+   "title": "【中古】ASUS STRIX-GTX970-DC2OC-4GD5 GTX970/4GB(3.5G+0.5G)/PCI-E/OC版【札幌南2条】保証期間1週間",
+   "matched": 11
   },
   "gtx-1650-gddr6": {
    "price": 14980,
@@ -522,7 +522,7 @@ window.SPEC.prices.gpu = {
    "shop": "PCとパーツのパソどん楽天市場店",
    "url": "https://item.rakuten.co.jp/pasodon/gtx1650/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【中古パーツ】GeForce GTX 1650 4GB GDDR5 補助電源不要 1週間動作保証 グラフィックボード ビデオカード",
-   "matched": 22
+   "matched": 21
   },
   "gtx-780-ti": null,
   "gtx-780": null,
@@ -532,7 +532,7 @@ window.SPEC.prices.gpu = {
    "shop": "エクセラー3号館 楽天市場店",
    "url": "https://item.rakuten.co.jp/home-carpentry/1050006320/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【中古】ASUS グラフィックボード PH-GTX1050TI-4G PCIExp 4GB",
-   "matched": 48
+   "matched": 49
   },
   "gtx-960": {
    "price": 11528,
@@ -574,7 +574,7 @@ window.SPEC.prices.gpu = {
    "shop": "PCとパーツのパソどん楽天市場店",
    "url": "https://item.rakuten.co.jp/pasodon/gtx-1050/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【中古パーツ】GeForce GTX 1050 2GB GDDR5 補助電源不要 使いやすいショートサイズ 1週間動作保証 グラフィックボード ビデオカード",
-   "matched": 17
+   "matched": 16
   },
   "rx-460": null,
   "gtx-760": {
@@ -632,7 +632,7 @@ window.SPEC.prices.gpu = {
    "shop": "ドスパラ楽天市場店",
    "url": "https://item.rakuten.co.jp/dospara-r/ic465312/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "玄人志向 くろうとしこう / GF-GT710-E1GB/HS / GT710 1GB DDR3 / [GF-GT710-E1GB/HS] / 4988755047128 / グラフィックボード",
-   "matched": 18
+   "matched": 20
   },
   "rx-9070-gre": {
    "price": 99800,
