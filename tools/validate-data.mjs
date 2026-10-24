@@ -42,7 +42,7 @@ for (const model of allAi.filter((m) => families.includes(m.family))) {
 const model = (id) => allAi.find((m) => m.id === id);
 // 掲載は各系列の最新世代だけ。旧世代・未確認の参考データは理由付きで保管し、一覧には出さない
 for (const m of SPEC.archive.ai) assert(m.archivedReason && !SPEC.data.ai.includes(m), `${m.name}: 掲載外の理由`);
-for (const id of ["gpt-4o", "gpt-5-6-sol", "claude-opus-4-1", "kimi-k2-7-code", "deepseek-v4-flash", "qwen3-6-35b-a3b", "glm-5-2", "gemini-2-5-pro", "kimi-k3", "deepseek-v4-pro", "gpt-oss-20b"]) assert(!SPEC.data.ai.some((m) => m.id === id), `${id}: 旧世代を掲載しない`);
+for (const id of ["gpt-4o", "gpt-5-6-sol", "claude-opus-4-1", "kimi-k2-7-code", "deepseek-v4-flash", "qwen3-6-35b-a3b", "glm-5-2", "gemini-2-5-pro", "kimi-k3", "deepseek-v4-pro", "gpt-oss-120b", "gpt-oss-20b"]) assert(!SPEC.data.ai.some((m) => m.id === id), `${id}: 旧世代を掲載しない`);
 for (const m of SPEC.data.ai) assert(["ローカル・クラウド", "クラウドのみ"].includes(m.deploy) && (m.deploy === "ローカル・クラウド") === (m.open === "重み公開"), `${m.name}: 利用形態`);
 assert.equal(model("qwen3-32b").context, 32768);
 assert.equal(model("qwen3-32b").contextMax, 131072);

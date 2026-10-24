@@ -2224,7 +2224,8 @@ window.SPEC.data.ai = [
   // 後継以外の理由で掲載しないモデル（2026-10-25 の方針）
   const excluded = {
     "deepseek-v4-pro": "共通の評価（Artificial Analysis）が無く比較できない",
-    "gpt-oss-20b": "掲載対象から外した（同じ系列の gpt-oss-120b を掲載）",
+    "gpt-oss-120b": "掲載対象から外した",
+    "gpt-oss-20b": "掲載対象から外した",
   };
   const all = window.SPEC.data.ai;
   for (const m of all) {

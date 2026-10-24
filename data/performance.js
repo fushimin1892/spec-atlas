@@ -4242,44 +4242,6 @@ window.SPEC.performanceData = {
         "source": "aa"
       }
     },
-    "gpt-oss-120b": {
-      "aiIndex": {
-        "name": "gpt-oss-120b (high)",
-        "value": 12,
-        "source": "aa"
-      },
-      "aiSpeed": {
-        "name": "gpt-oss-120b (high)",
-        "value": 208,
-        "source": "aa"
-      },
-      "aiLatency": {
-        "name": "gpt-oss-120b (high)",
-        "value": 0.82,
-        "source": "aa"
-      },
-      "aiOmni": {
-        "name": "gpt-oss-120b (High)",
-        "value": -49.2,
-        "source": "aa"
-      },
-      "aiAccuracy": {
-        "name": "gpt-oss-120b (High)",
-        "value": 21.8,
-        "source": "aa"
-      },
-      "aiNonHallucination": {
-        "name": "gpt-oss-120b (High)",
-        "value": 9.2,
-        "source": "aa"
-      },
-      "aiPrice": {
-        "name": "gpt-oss-120b (High)",
-        "value": 0.6,
-        "input": 0.15,
-        "source": "aa"
-      }
-    },
     "claude-opus-5-5": {
       "aiIndex": {
         "name": "Claude Opus 5.5 (max with fallback)",
