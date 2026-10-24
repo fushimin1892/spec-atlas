@@ -218,6 +218,8 @@ a.card:hover .card-arrow { transform: translateX(4px); }
 .spec-table td a { font-family: var(--serif); font-size: 15px; font-weight: 500; letter-spacing: .04em; border-bottom: 1px solid transparent; transition: border-color .2s, color .2s; }
 .spec-table td a:hover { color: var(--gold); border-color: var(--gold); }
 .spec-table .num { text-align: right; font-variant-numeric: tabular-nums lining-nums; }
+/* 表が画面より狭いときの余白は型番の列で受け、ほかの列は中身の幅に詰める */
+.spec-table .name { width: 100%; }
 .sort-btn { background: none; border: 0; padding: 0; font: inherit; letter-spacing: inherit; color: inherit; cursor: pointer; }
 .sort-btn:hover, th[aria-sort="ascending"] .sort-btn, th[aria-sort="descending"] .sort-btn { color: var(--gold); }
 .empty { text-align: center; color: var(--muted); padding: 40px; }
@@ -359,9 +361,6 @@ a.btn-small:hover { color: var(--gold); }
 .metric-scale { margin: 0 0 6px; font-size: 12px; color: var(--text); }
 .benchmark-method summary { cursor: pointer; color: var(--muted); }
 .benchmark-method summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
-.benchmark-settings { display: flex; align-items: flex-end; flex-wrap: wrap; gap: 12px 24px; margin: 12px 0 0; }
-.benchmark-settings label { font-size: 12px; color: var(--muted); }
-.benchmark-settings select { display: block; margin-top: 5px; max-width: 100%; min-height: 36px; padding: 5px 9px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font: inherit; }
 .benchmark-credit { font-size: 11px; color: var(--muted); margin-right: 12px; }
 .view-switch { display: flex; gap: 22px; border-bottom: 1px solid var(--border); }
 .view-switch button { padding: 12px 0; font: inherit; font-size: 13px; color: var(--muted); background: transparent; border: 0; border-bottom: 2px solid transparent; cursor: pointer; }
@@ -379,17 +378,12 @@ a.btn-small:hover { color: var(--gold); }
 .performance-number small { margin-left: 8px; font: 10px var(--sans); color: var(--muted); }
 .performance-meter { display: block; margin-top: 8px; height: 6px; background: var(--border); overflow: hidden; }
 .performance-meter i { display: block; height: 100%; background: var(--gold); }
-.relative-value { display: block; margin-top: 7px; text-align: right; font-size: 10px; color: var(--muted); }
-.relative-value b { color: var(--text); font-weight: 500; }
 [hidden] { display: none !important; }
 @media (max-width: 600px) {
   .benchmark-guide { padding: 18px 16px; margin-top: 20px; }
   .benchmark-guide h2 { font-size: 18px; }
   .benchmark-guide h2 span { display: block; margin: 8px 0 0; }
   .metric-tab { padding: 8px 12px; font-size: 12px; }
-  .benchmark-settings { display: block; }
-  .benchmark-settings label { display: block; margin-top: 14px; }
-  .benchmark-settings select { width: 100%; }
   .performance-row { grid-template-columns: 24px minmax(0, 1fr); gap: 8px 12px; padding: 18px 4px; }
   .performance-rank { font-size: 21px; align-self: start; }
   .performance-result { grid-column: 2; }
@@ -432,7 +426,12 @@ a.btn-small:hover { color: var(--gold); }
 .table-guide dd { margin: 0; color: var(--muted); }
 /* 詳細・比較で項目名の下に添える一言の説明 */
 .field-help { display: block; margin-top: 4px; font-size: 11px; font-weight: 400; letter-spacing: .02em; line-height: 1.6; color: var(--muted); white-space: normal; }
-.spec-table .sub { max-width: 240px; white-space: normal; line-height: 1.6; }
+/* 数値は 1 行のまま、文章（空欄の理由・店名・入出力など）は折り返して列を広げすぎない */
+.spec-table td:not(.num):not(.name):not(.rank) { white-space: normal; min-width: 6em; line-height: 1.6; }
+.spec-table td > .muted { display: inline-block; max-width: 11em; white-space: normal; line-height: 1.5; }
+.spec-table td.num > .muted { max-width: 7em; text-align: right; }
+.spec-table .sub { max-width: 12em; white-space: normal; line-height: 1.6; }
+.spec-table .col-price .sub { min-width: 9em; } /* 店名が細く折れすぎないように */
 .spec-list dd, .cmp-val { overflow-wrap: anywhere; }
 
 /* スマホ幅: サイドバーを引き出しにする */

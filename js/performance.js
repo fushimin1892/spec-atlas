@@ -4,7 +4,7 @@
   const SPEC = window.SPEC;
   SPEC.benchmarks = {
     cpu: {
-      default: "score", baseline: "ryzen-5-7600",
+      default: "score",
       metrics: [
         { key: "score", label: "マルチ", columnLabel: "マルチ性能", title: "PassMark CPU Mark", help: "すべてのコアを使ったときの処理能力（PassMark CPU Mark）。動画の書き出しや圧縮など、重い作業の速さの目安です。数値が大きいほど速い CPU です。", better: "high", unit: "pt", source: null, description: "CPU全体で並列処理する能力。レンダリング・圧縮などの重い作業を比べる目安です。", limit: "マルチの順位はゲームの順位と一致するとは限りません。PassMark の値は毎日少しずつ更新されます。" },
         { key: "singleScore", label: "シングル", columnLabel: "シングル性能", title: "PassMark Single Thread", help: "1 つのコアの速さ（PassMark Single Thread）。アプリの操作の軽さや、多くのゲームの動きやすさに関わります。", better: "high", unit: "pt", source: "single", description: "1つの処理を実行する速さ。操作の応答や、並列化しにくい処理を比べる目安です。", limit: "ゲームのFPSはGPU・メモリ・ゲームの処理によっても変わります。" },
@@ -13,7 +13,7 @@
     },
     gpu: {
       // 性能スコアは PassMark G3D Mark（確認済みの値）。Time Spy は出典の UL が停止して確かめられないため 2026-10-24 に削除
-      default: "score", baseline: "rtx-4060",
+      default: "score",
       metrics: [
         { key: "score", label: "3D描画性能", columnLabel: "3D描画性能", title: "PassMark G3D Mark", help: "PassMark G3D Mark。3D 描画のテストをまとめた GPU の性能の値で、数値が大きいほど描画性能が高いカードです。利用者が投稿した PC の測定をまとめたもので、最上位のカードどうしは差が小さく出やすい傾向があります。ゲームの FPS そのものではありません。", better: "high", unit: "pt", source: "g3d", description: "複数の3D描画テストをまとめたGPU性能の値。数値が大きいほど描画性能が高いGPUです。", limit: "ゲームの実測FPS・レイトレーシング・DLSS等の性能を示す値ではありません。投稿PCの構成も異なります。容量違いなど、測定がどの型番のものか特定できないGPUは空欄です。" },
         // G2D・計算性能は G3D と同じ PassMark の行の値だけ（tools/collect-performance.mjs）
@@ -23,7 +23,7 @@
     },
     ai: {
       // 既定は「正確性」。知識を問う問題で、正答を加点・誤答（ハルシネーション）を減点・回答を控えた場合は 0 点とする指標
-      default: "aiOmni", baseline: null,
+      default: "aiOmni",
       metrics: [
         { key: "aiOmni", label: "正確性", scale: "−100〜100 点（満点は 100。0 は正答と誤答が同じ数、マイナスは誤答の方が多い）", betterLabel: "高いほど正確（誤答が少ない）", title: "AA-Omniscience Index", better: "high", unit: "pt", digits: 1, allowNegative: true, source: "aa", description: "42分野・6,000問の知識問題で、正しい答えを加点し、もっともらしい誤答（ハルシネーション）を減点し、分からないときに答えを控えた場合は加点も減点もしない指標です。-100〜100で、高いほど正確で、誤答をでっち上げにくいモデルです。", limit: "英語の知識問題での評価で、日本語の文章作成や計算の正確さを直接測るものではありません。0未満は正答より誤答が多いことを示します。" },
         { key: "aiAccuracy", label: "正答率", scale: "0〜100%（満点は 100%）", betterLabel: "高いほど多く正解", title: "AA-Omniscience 正答率", better: "high", unit: "%", digits: 1, source: "aa", description: "同じ6,000問のうち、正しく答えた割合です。知っている知識の広さの目安です。", limit: "誤答の多さは含みません。正答率が高くても、知らない問題にでたらめに答えるモデルもあります。" },
@@ -98,5 +98,4 @@
     cat.fields = cat.fields.filter((f) => !["costPerf", "efficiency"].includes(f.key));
   }
   SPEC.benchmarkOf = (catId, key) => SPEC.benchmarks[catId]?.metrics.find((m) => m.key === key);
-  SPEC.relativePerformance = (value, baseline) => Number.isFinite(value) && baseline > 0 ? Math.round(value / baseline * 100) : null;
 })();

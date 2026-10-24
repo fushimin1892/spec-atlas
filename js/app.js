@@ -32,8 +32,8 @@
   }
   // 横棒・添え書きまで含めたセルの中身（一覧・詳細・比較で共通）
   function itemValue(field, item) {
-    if (item.integrated && field.key === "vram") return "システムメモリ共有";
-    if (item.integrated && field.key === "tdp") return "対象外（搭載CPU・設定に依存）";
+    if (item.integrated && field.key === "vram") return '<span class="muted">システムメモリ共有</span>';
+    if (item.integrated && field.key === "tdp") return '<span class="muted">対象外（搭載CPU・設定に依存）</span>';
     const range = item[`${field.key}Range`];
     if (range) return `${formatValue({ ...field, unit: null }, range[0])}–${formatValue(field, range[1])}`;
     return formatValue(field, item[field.key]);
@@ -305,12 +305,9 @@
     // 3 カテゴリとも、指標を切り替える性能ランキング（細かい仕様は「仕様一覧」の表）
     const ranking = Boolean(config);
     const st = (listState[cat.id] ||= ranking
-      ? { q: "", filters: {}, sort: config.default, dir: config.metrics[0].better === "low" ? 1 : -1, metric: config.default, baseline: config.baseline, view: "performance" }
-      : { q: "", filters: {}, sort: "score", dir: -1, metric: "score", baseline: null, view: "specs" });
+      ? { q: "", filters: {}, sort: config.default, dir: config.metrics[0].better === "low" ? 1 : -1, metric: config.default, view: "performance" }
+      : { q: "", filters: {}, sort: "score", dir: -1, metric: "score", view: "specs" });
     const metric = SPEC.benchmarkOf(cat.id, st.metric);
-    if (ranking && config.baseline && !items.some((i) => i.id === st.baseline && i[st.metric] > 0)) {
-      st.baseline = items.find((i) => i.id === config.baseline && i[st.metric] > 0)?.id || items.find((i) => i[st.metric] > 0)?.id;
-    }
     const listFields = cat.fields.filter((f) => ranking && f.benchmark ? f.key === st.metric : f.list !== false);
     const hasRank = true;
 
@@ -373,11 +370,8 @@
         <h2>${esc(metric.title)}<span>${metric.betterLabel || (metric.better === "low" ? "小さいほど速い" : "高いほど高性能")}</span></h2>
         ${metric.scale ? `<p class="metric-scale">点数の範囲: ${esc(metric.scale)}</p>` : ""}
         <details class="benchmark-method"><summary>指標の意味・測定条件</summary><p>${esc(metric.description)}</p><p class="note">${esc(metric.limit)}</p>
-        ${cat.id === "ai" ? '<p class="note">主に高推論設定を掲載。設定名は提供元ごとに意味が異なり、同じ計算量ではありません。公開重みを手元で測定した結果ではありません。</p>' : '<p class="note">基準比200はスコアが基準製品の2倍という意味で、ゲームのFPSが2倍になるとは限りません。</p>'}
+        ${cat.id === "ai" ? '<p class="note">主に高推論設定を掲載。設定名は提供元ごとに意味が異なり、同じ計算量ではありません。公開重みを手元で測定した結果ではありません。</p>' : '<p class="note">スコアが2倍でも、ゲームのFPSが2倍になるとは限りません。</p>'}
         ${metric.source ? `<a class="benchmark-credit ext" href="${esc(SPEC.performanceData.sources[metric.source].url)}" target="_blank" rel="noopener noreferrer">${esc(SPEC.performanceData.sources[metric.source].label)}</a><span class="benchmark-credit">取得 ${esc(SPEC.performanceData.checkedAt)}</span>` : ""}</details>
-        ${config.baseline ? `<div class="benchmark-settings">
-          <label>比較の基準 <select id="benchmarkBase">${items.filter((i) => i[st.metric] > 0).map((i) => `<option value="${esc(i.id)}" ${i.id === st.baseline ? "selected" : ""}>${esc(i.name)} = 100</option>`).join("")}</select></label>
-        </div>` : ""}
       </section>
       <div class="view-switch" role="group" aria-label="表示形式"><button data-view="performance" aria-pressed="${st.view === "performance"}">性能ランキング</button><button data-view="specs" aria-pressed="${st.view === "specs"}">仕様一覧</button></div>` : ""}
       <div class="toolbar">
@@ -410,7 +404,6 @@
       const cols = listFields.length + (hasRank ? 1 : 0);
 
       document.getElementById("hitCount").textContent = ranking ? `${matched.length} / ${items.length} 件 · 比較データ ${matched.filter((i) => i[st.metric] != null).length} 件` : `${matched.length} / ${items.length} 件 · 順位は${rankField().label}の順`;
-      const base = items.find((i) => i.id === st.baseline);
       const values = items.map((i) => i[st.metric]).filter((v) => Number.isFinite(v) && (metric.allowNegative || v > 0));
       const max = Math.max(...values, 1);
       const min = Math.min(...values);
@@ -426,28 +419,26 @@
         if (paren) return `設定: ${paren[1]}`;
         return record.name === item.name ? "" : `測定名: ${record.name}`;
       };
-      if (ranking) document.getElementById("performanceRows").innerHTML = `<div class="ranking-caption"><span>モデル・製品</span><span>${esc(metric.title)}${config.baseline ? " / 基準比" : ""}</span></div>` + (rows.length ? rows.map((item) => {
+      if (ranking) document.getElementById("performanceRows").innerHTML = `<div class="ranking-caption"><span>モデル・製品</span><span>${esc(metric.title)}</span></div>` + (rows.length ? rows.map((item) => {
         const value = item[st.metric];
-        const relative = SPEC.relativePerformance(value, base?.[st.metric]);
         const record = SPEC.performanceData[cat.id][item.id]?.[st.metric];
         const meta = cat.id === "cpu" ? `${item.cores}コア / ${item.threads}スレッド${item.socket ? ` · ${item.socket}` : ""}` : cat.id === "gpu" ? item.integrated ? "内蔵GPU · メモリ共有" : `${item.vram} GB VRAM` : [item.maker, item.deploy, item.weightSize ? `重み 約${item.weightSize.toLocaleString("ja-JP")}GB（8bit）` : null].filter(Boolean).join(" · ");
         return `<a class="performance-row" href="#/c/${esc(cat.id)}/${esc(item.id)}">
           <span class="performance-rank">${rankOf.get(item.id) ?? "—"}</span>
           <span class="performance-name"><strong>${esc(item.name)}</strong><small>${esc(meta)}${cat.id !== "ai" && item.price ? ` · ¥${item.price.toLocaleString("ja-JP")}` : ""}</small>${cat.id === "ai" && settingOf(item, record) ? `<small class="benchmark-setting">${esc(settingOf(item, record))}</small>` : ""}</span>
           <span class="performance-result"><span class="performance-number">${value == null ? "—" : Number(value).toLocaleString("ja-JP", { maximumFractionDigits: metric.digits || 0 })}<small>${value == null ? "比較データなし" : esc(metric.unit)}</small></span>
-          <span class="performance-meter" aria-hidden="true"><i style="width:${meter(value).toFixed(2)}%"></i></span>
-          ${relative != null ? `<small class="relative-value">基準比 <b>${relative}</b>（${(relative / 100).toFixed(2)}倍）</small>` : ""}</span>
+          <span class="performance-meter" aria-hidden="true"><i style="width:${meter(value).toFixed(2)}%"></i></span></span>
         </a>`;
       }).join("") : '<p class="empty">該当する製品がありません</p>');
       table.innerHTML = `
         <thead><tr>
           ${hasRank ? `<th scope="col" class="rank" title="${esc(rankField().label)}の順位">#</th>` : ""}
           ${listFields
-            .map((f) => {
+            .map((f, idx) => {
               const active = f.key === st.sort;
               const aria = active ? (st.dir === 1 ? "ascending" : "descending") : "none";
               const arrow = active ? (st.dir === 1 ? "▲" : "▼") : "";
-              return `<th scope="col" class="${f.type === "number" ? "num" : ""}" aria-sort="${aria}"${f.help ? ` title="${esc(f.help)}"` : ""}><button class="sort-btn" data-sort="${esc(f.key)}">${esc(f.label)} <span aria-hidden="true">${arrow}</span></button></th>`;
+              return `<th scope="col" class="${idx === 0 ? "name" : f.type === "number" ? "num" : ""}" aria-sort="${aria}"${f.help ? ` title="${esc(f.help)}"` : ""}><button class="sort-btn" data-sort="${esc(f.key)}">${esc(f.label)} <span aria-hidden="true">${arrow}</span></button></th>`;
             })
             .join("")}
         </tr></thead>
@@ -461,8 +452,8 @@
                       ${listFields
                         .map((f, idx) =>
                           idx === 0
-                            ? `<td><a href="#/c/${esc(cat.id)}/${esc(i.id)}">${esc(i[f.key])}</a></td>`
-                            : `<td class="${f.type === "number" ? "num" : ""}">${cellHtml(cat, f, i)}</td>`
+                            ? `<td class="name"><a href="#/c/${esc(cat.id)}/${esc(i.id)}">${esc(i[f.key])}</a></td>`
+                            : `<td class="${f.type === "number" ? "num " : ""}col-${esc(f.key)}">${cellHtml(cat, f, i)}</td>`
                         )
                         .join("")}
                     </tr>`;
@@ -485,7 +476,6 @@
       renderList(cat);
       main.querySelector(`[data-view="${CSS.escape(st.view)}"]`).focus();
     }));
-    document.getElementById("benchmarkBase")?.addEventListener("change", (event) => { st.baseline = event.target.value; draw(); });
 
     document.getElementById("fq").addEventListener("input", (e) => { st.q = e.target.value; draw(); });
     const selects = document.getElementById("filterSelects");

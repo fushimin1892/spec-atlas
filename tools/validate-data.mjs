@@ -122,9 +122,6 @@ for (const cat of ["cpu", "gpu", "ai"]) {
     }
   }
 }
-assert.equal(SPEC.relativePerformance(null, 100), null, "未測定を0にしない");
-assert.equal(SPEC.relativePerformance(200, 0), null, "基準値なしで比率を作らない");
-assert.equal(SPEC.relativePerformance(250, 100), 250);
 // PassMark の値は投稿が増えるたびに少しずつ変わるので、固定値ではなく、正しい行から取り込まれていることを確かめる
 assert(hardware("cpu", "ryzen-5-7600").gamingScore > 0);
 assert.equal(performance.cpu["core-i9-11900k"].singleScore.name, "Intel Core i9-11900K @ 3.50GHz", "旧Intelの定格周波数の接尾辞を区別して照合");
@@ -147,10 +144,6 @@ assert(!performance.ai["deepseek-v4-pro"], "0813のAPI評価を公開重み版�
 assert.equal(SPEC.benchmarkOf("ai", "aiLatency").better, "low");
 assert.equal(SPEC.benchmarkOf("cpu", "gamingScore").source, "gaming");
 for (const family of families) assert(SPEC.data.ai.some((i) => i.family === family && i.aiIndex > 0), `${family}: 共通評価`);
-for (const cat of ["cpu", "gpu"]) {
-  const base = hardware(cat, SPEC.benchmarks[cat].baseline);
-  for (const metric of SPEC.benchmarks[cat].metrics) assert(base[metric.key] > 0, `${cat}: 初期基準の指標欠落`);
-}
 assert.equal(hardware("cpu", "ryzen-5-9500f").release, "2025/09/08");
 for (const [cat, id] of [["cpu", "ryzen-3-3300x"], ["cpu", "ryzen-3-3100"], ["gpu", "rx-560"], ["gpu", "rx-6700"]]) assert.equal(hardware(cat, id).release, null, `${id}: 未確定の発売日は空欄`);
 console.log(`検証成功: CPU ${SPEC.data.cpu.length}件、GPU ${SPEC.data.gpu.length}件、AI ${SPEC.data.ai.length}件。6系列・出典・拡張条件・未確認判定・計算を確認。`);
