@@ -146,9 +146,7 @@
     }[cat.id];
     if (!rows) return "";
     const score = { cpu: "マルチ性能", gpu: "3D描画性能" }[cat.id];
-    const calc = score
-      ? [`コスパ ＝ ${score} ÷ 参考価格 × 1,000（1,000 円あたり）`, `電力あたり ＝ ${score} ÷ 公称電力（1W あたり）`]
-      : ["重みの大きさ ＝ 総パラメータ数 × 1 バイト（8bit）または 0.5 バイト（4bit）"];
+    const calc = score ? [] : ["重みの大きさ ＝ 総パラメータ数 × 1 バイト（8bit）または 0.5 バイト（4bit）"];
     const cautions = [
       ...(cat.cautions || []),
       ...(score ? ["参考価格は新品の最安値（新品が無ければ中古）で、取得した時点の値です。"] : []),
@@ -160,7 +158,7 @@
       <div class="table-wrap"><table class="audit-table"><thead><tr><th scope="col">項目</th><th scope="col">出典</th><th scope="col">確認日</th></tr></thead>
       <tbody>${rows.map(([what, src, date]) => `<tr><th scope="row">${esc(what)}</th><td>${src}</td><td class="src-date">${esc(date || "—")}</td></tr>`).join("")}</tbody></table></div>
       <div class="source-notes">
-        <div><h3>計算している値</h3><ul>${calc.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>
+        ${calc.length ? `<div><h3>計算している値</h3><ul>${calc.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>` : ""}
         <div><h3>注意</h3><ul>${cautions.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>
         ${audit ? `<div><h3>メーカー資料との照合（${esc(evAt)}）</h3><ul>${audit}</ul></div>` : ""}
       </div>
@@ -551,7 +549,7 @@
   // 比較表の項目の区切り。ここに無い項目は「基本情報」に入る。メーカー・シリーズは列の見出しに出すので行にしない
   const CMP_SECTIONS = [
     ["仕様", ["cores", "threads", "baseClock", "boostClock", "cache", "vram", "params", "active", "context", "contextMax", "maxOutput"]],
-    ["価格・効率", ["price", "aiPrice", "costPerf", "efficiency", "tdp"]],
+    ["価格・電力", ["price", "aiPrice", "tdp"]],
   ];
   const CMP_HIDDEN = ["maker", "series"];
 

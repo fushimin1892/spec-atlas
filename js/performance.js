@@ -90,14 +90,12 @@
     if (catId === "gpu") SPEC.applyPrices.gpu(SPEC.prices && SPEC.prices.gpu);
   }
   // ランキングでは性能と直接関係の薄い項目を減らす。詳細・比較では保持。
-  // CPU・GPU の表は以前どおりコスパ・電力あたり・発売日も並べる（計算に使うスコアは一覧の注記に明記）
+  // CPU・GPU の表は発売日も並べる
   for (const cat of SPEC.categories.filter((c) => SPEC.benchmarks[c.id])) {
     const hidden = cat.id === "ai" ? ["params", "active", "license", "checkedAt"] : ["verification"];
     for (const field of cat.fields) if (hidden.includes(field.key)) field.list = false;
-    if (cat.id !== "ai") {
-      cat.fields.find((f) => f.key === "costPerf").label = "コスパ";
-      cat.fields.find((f) => f.key === "efficiency").label = "電力あたり";
-    }
+    // コスパ・電力あたりは画面に出さない（2026-10-25 のユーザー指示）。値の計算は検証ツールが確かめるので残す
+    cat.fields = cat.fields.filter((f) => !["costPerf", "efficiency"].includes(f.key));
   }
   SPEC.benchmarkOf = (catId, key) => SPEC.benchmarks[catId]?.metrics.find((m) => m.key === key);
   SPEC.relativePerformance = (value, baseline) => Number.isFinite(value) && baseline > 0 ? Math.round(value / baseline * 100) : null;
