@@ -213,6 +213,7 @@ window.SPEC.setupPrices = function (id) {
       const best = known ? fetched.items[it.id] : null; // 見つからなかった型番は null（生産終了などで売られていない）
       it.price = best ? best.price : null;
       it.priceNote = best ? `${best.condition}・${best.shop}` : known ? "主要店で取扱なし" : null;
+      it.priceShort = best ? best.condition : it.priceNote; // 一覧の表は新品・中古だけ（店名は詳細・比較とカーソルを合わせたとき）
       it.priceUrl = best ? best.url : null;
       it.costPerf = it.price && it.score ? Math.round((it.score / it.price) * 10000) / 10 : null;
     }

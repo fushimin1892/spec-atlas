@@ -209,8 +209,8 @@ a.card:hover .card-arrow { transform: translateX(4px); }
 
 .table-wrap { overflow-x: auto; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .spec-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-.spec-table th, .spec-table td { padding: 14px 14px; border-bottom: 1px solid var(--border); text-align: left; white-space: nowrap; }
-.spec-table thead th { font-size: 11px; font-weight: 500; letter-spacing: .14em; color: var(--muted); border-bottom: 1px solid var(--line); }
+.spec-table th, .spec-table td { padding: 14px 7px; border-bottom: 1px solid var(--border); text-align: left; white-space: nowrap; }
+.spec-table thead th { font-size: 11px; font-weight: 500; letter-spacing: .04em; color: var(--muted); border-bottom: 1px solid var(--line); }
 .spec-table thead th.num { text-align: right; }
 .spec-table tbody tr { transition: background .2s; }
 .spec-table tbody tr:hover { background: var(--gold-soft); }
@@ -220,6 +220,8 @@ a.card:hover .card-arrow { transform: translateX(4px); }
 .spec-table .num { text-align: right; font-variant-numeric: tabular-nums lining-nums; }
 /* 表が画面より狭いときの余白は型番の列で受け、ほかの列は中身の幅に詰める */
 .spec-table .name { width: 100%; }
+.spec-table .bar { width: 40px; }
+.spec-table .bar-cell { gap: 10px; }
 .sort-btn { background: none; border: 0; padding: 0; font: inherit; letter-spacing: inherit; color: inherit; cursor: pointer; }
 .sort-btn:hover, th[aria-sort="ascending"] .sort-btn, th[aria-sort="descending"] .sort-btn { color: var(--gold); }
 .empty { text-align: center; color: var(--muted); padding: 40px; }
@@ -431,7 +433,6 @@ a.btn-small:hover { color: var(--gold); }
 .spec-table td > .muted { display: inline-block; max-width: 11em; white-space: normal; line-height: 1.5; }
 .spec-table td.num > .muted { max-width: 7em; text-align: right; }
 .spec-table .sub { max-width: 12em; white-space: normal; line-height: 1.6; }
-.spec-table .col-price .sub { min-width: 9em; } /* 店名が細く折れすぎないように */
 .spec-list dd, .cmp-val { overflow-wrap: anywhere; }
 
 /* スマホ幅: サイドバーを引き出しにする */

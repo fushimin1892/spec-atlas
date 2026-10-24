@@ -453,7 +453,9 @@
                         .map((f, idx) =>
                           idx === 0
                             ? `<td class="name"><a href="#/c/${esc(cat.id)}/${esc(i.id)}">${esc(i[f.key])}</a></td>`
-                            : `<td class="${f.type === "number" ? "num " : ""}col-${esc(f.key)}">${cellHtml(cat, f, i)}</td>`
+                            : f.key === "price"
+                              ? `<td class="num col-price"${i.priceNote ? ` title="${esc(i.priceNote)}"` : ""}>${cellHtml(cat, { ...f, sub: "priceShort" }, i)}</td>`
+                              : `<td class="${f.type === "number" ? "num " : ""}col-${esc(f.key)}">${cellHtml(cat, f, i)}</td>`
                         )
                         .join("")}
                     </tr>`;
