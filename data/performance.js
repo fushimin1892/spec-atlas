@@ -4699,7 +4699,5 @@ window.SPEC.performanceData = {
       }
     }
   },
-  "aiUnlisted": {
-    "kimi-k3": "Kimi K3 (max)"
-  }
+  "aiUnlisted": {}
 };

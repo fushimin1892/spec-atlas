@@ -42,7 +42,7 @@ for (const model of allAi.filter((m) => families.includes(m.family))) {
 const model = (id) => allAi.find((m) => m.id === id);
 // 掲載は各系列の最新世代だけ。旧世代・未確認の参考データは理由付きで保管し、一覧には出さない
 for (const m of SPEC.archive.ai) assert(m.archivedReason && !SPEC.data.ai.includes(m), `${m.name}: 掲載外の理由`);
-for (const id of ["gpt-4o", "gpt-5-6-sol", "claude-opus-4-1", "kimi-k2-7-code", "deepseek-v4-flash", "qwen3-6-35b-a3b", "glm-5-2", "gemini-2-5-pro"]) assert(!SPEC.data.ai.some((m) => m.id === id), `${id}: 旧世代を掲載しない`);
+for (const id of ["gpt-4o", "gpt-5-6-sol", "claude-opus-4-1", "kimi-k2-7-code", "deepseek-v4-flash", "qwen3-6-35b-a3b", "glm-5-2", "gemini-2-5-pro", "kimi-k3", "deepseek-v4-pro"]) assert(!SPEC.data.ai.some((m) => m.id === id), `${id}: 旧世代を掲載しない`);
 for (const m of SPEC.data.ai) assert(["ローカル・クラウド", "クラウドのみ"].includes(m.deploy) && (m.deploy === "ローカル・クラウド") === (m.open === "重み公開"), `${m.name}: 利用形態`);
 assert.equal(model("qwen3-32b").context, 32768);
 assert.equal(model("qwen3-32b").contextMax, 131072);
@@ -143,7 +143,7 @@ assert.equal(hardware("cpu", "ryzen-5-1600-af").singleScore, null, "AFなしの�
 for (const key of ["aiIndex", "aiSpeed", "aiLatency", "aiOmni", "aiPrice"]) assert(Number.isFinite(model("gpt-6-astra")[key]), `GPT-6 Astra: ${key}`);
 assert(model("gpt-6-astra").aiLatency > 0 && model("gpt-6-astra").aiPrice > 0);
 assert.match(performance.ai["deepseek-v4-1-flash"].aiIndex.name, /1017 \(max\)$/);
-assert.equal(model("deepseek-v4-pro").aiIndex, null, "0813のAPI評価を公開重み版へ無条件に流用しない");
+assert(!performance.ai["deepseek-v4-pro"], "0813のAPI評価を公開重み版へ無条件に流用しない");
 assert.equal(SPEC.benchmarkOf("ai", "aiLatency").better, "low");
 assert.equal(SPEC.benchmarkOf("cpu", "gamingScore").source, "gaming");
 for (const family of families) assert(SPEC.data.ai.some((i) => i.family === family && i.aiIndex > 0), `${family}: 共通評価`);
