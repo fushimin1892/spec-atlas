@@ -362,7 +362,6 @@ a.btn-small:hover { color: var(--gold); }
 .benchmark-settings { display: flex; align-items: flex-end; flex-wrap: wrap; gap: 12px 24px; margin: 12px 0 0; }
 .benchmark-settings label { font-size: 12px; color: var(--muted); }
 .benchmark-settings select { display: block; margin-top: 5px; max-width: 100%; min-height: 36px; padding: 5px 9px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font: inherit; }
-.measured-filter { display: inline-flex; align-items: center; gap: 7px; cursor: pointer; }
 .benchmark-credit { font-size: 11px; color: var(--muted); margin-right: 12px; }
 .view-switch { display: flex; gap: 22px; border-bottom: 1px solid var(--border); }
 .view-switch button { padding: 12px 0; font: inherit; font-size: 13px; color: var(--muted); background: transparent; border: 0; border-bottom: 2px solid transparent; cursor: pointer; }
@@ -382,9 +381,6 @@ a.btn-small:hover { color: var(--gold); }
 .performance-meter i { display: block; height: 100%; background: var(--gold); }
 .relative-value { display: block; margin-top: 7px; text-align: right; font-size: 10px; color: var(--muted); }
 .relative-value b { color: var(--text); font-weight: 500; }
-.no-result .performance-number { color: var(--muted); }
-.ranking-hidden { margin: 0; padding: 16px 18px; font-size: 12px; color: var(--muted); border-bottom: 1px solid var(--border); }
-.ranking-hidden button { margin-left: 8px; padding: 0; border: 0; background: none; color: var(--gold); font: inherit; text-decoration: underline; cursor: pointer; }
 [hidden] { display: none !important; }
 @media (max-width: 600px) {
   .benchmark-guide { padding: 18px 16px; margin-top: 20px; }

@@ -307,8 +307,8 @@
     // 3 カテゴリとも、指標を切り替える性能ランキング（細かい仕様は「仕様一覧」の表）
     const ranking = Boolean(config);
     const st = (listState[cat.id] ||= ranking
-      ? { q: "", filters: {}, sort: config.default, dir: config.metrics[0].better === "low" ? 1 : -1, metric: config.default, baseline: config.baseline, view: "performance", measuredOnly: true }
-      : { q: "", filters: {}, sort: "score", dir: -1, metric: "score", baseline: null, view: "specs", measuredOnly: false });
+      ? { q: "", filters: {}, sort: config.default, dir: config.metrics[0].better === "low" ? 1 : -1, metric: config.default, baseline: config.baseline, view: "performance" }
+      : { q: "", filters: {}, sort: "score", dir: -1, metric: "score", baseline: null, view: "specs" });
     const metric = SPEC.benchmarkOf(cat.id, st.metric);
     if (ranking && config.baseline && !items.some((i) => i.id === st.baseline && i[st.metric] > 0)) {
       st.baseline = items.find((i) => i.id === config.baseline && i[st.metric] > 0)?.id || items.find((i) => i[st.metric] > 0)?.id;
@@ -377,10 +377,9 @@
         <details class="benchmark-method"><summary>指標の意味・測定条件</summary><p>${esc(metric.description)}</p><p class="note">${esc(metric.limit)}</p>
         ${cat.id === "ai" ? '<p class="note">主に高推論設定を掲載。設定名は提供元ごとに意味が異なり、同じ計算量ではありません。公開重みを手元で測定した結果ではありません。</p>' : '<p class="note">基準比200はスコアが基準製品の2倍という意味で、ゲームのFPSが2倍になるとは限りません。</p>'}
         ${metric.source ? `<a class="benchmark-credit ext" href="${esc(SPEC.performanceData.sources[metric.source].url)}" target="_blank" rel="noopener noreferrer">${esc(SPEC.performanceData.sources[metric.source].label)}</a><span class="benchmark-credit">取得 ${esc(SPEC.performanceData.checkedAt)}</span>` : ""}</details>
-        <div class="benchmark-settings">
-          ${config.baseline ? `<label>比較の基準 <select id="benchmarkBase">${items.filter((i) => i[st.metric] > 0).map((i) => `<option value="${esc(i.id)}" ${i.id === st.baseline ? "selected" : ""}>${esc(i.name)} = 100</option>`).join("")}</select></label>` : ""}
-          <label class="measured-filter"><input type="checkbox" id="measuredOnly" ${st.measuredOnly ? "checked" : ""}>ランキングは比較データがある製品のみ</label>
-        </div>
+        ${config.baseline ? `<div class="benchmark-settings">
+          <label>比較の基準 <select id="benchmarkBase">${items.filter((i) => i[st.metric] > 0).map((i) => `<option value="${esc(i.id)}" ${i.id === st.baseline ? "selected" : ""}>${esc(i.name)} = 100</option>`).join("")}</select></label>
+        </div>` : ""}
       </section>
       <div class="view-switch" role="group" aria-label="表示形式"><button data-view="performance" aria-pressed="${st.view === "performance"}">性能ランキング</button><button data-view="specs" aria-pressed="${st.view === "specs"}">仕様一覧</button></div>` : ""}
       <div class="toolbar">
@@ -403,13 +402,13 @@
       updateRanks();
       const q = st.q.trim().toLowerCase();
       const field = cat.fields.find((f) => f.key === st.sort) || cat.fields[0];
-      // 仕様一覧は絞り込みに合う全製品、性能ランキングは「比較データがある製品のみ」のときデータの無い製品を除く
+      // 仕様一覧は絞り込みに合う全製品、性能ランキングはその指標のデータがある製品だけ
       const matched = items
         .filter((i) => !q || [i.name, i.maker, i.family, i.modelId].some((v) => String(v || "").toLowerCase().includes(q)))
         .filter((i) => filterKeys.every((k) => !st.filters[k] || i[k] === st.filters[k]))
         .filter((i) => !st.pricedOnly || i.price != null)
         .sort(compareBy(field, st.dir));
-      const rows = matched.filter((i) => !st.measuredOnly || i[st.metric] != null);
+      const rows = matched.filter((i) => i[st.metric] != null);
       const cols = listFields.length + (hasRank ? 1 : 0);
 
       document.getElementById("hitCount").textContent = ranking ? `${matched.length} / ${items.length} 件 · 比較データ ${matched.filter((i) => i[st.metric] != null).length} 件` : `${matched.length} / ${items.length} 件 · 順位は${rankField().label}の順`;
@@ -429,26 +428,19 @@
         if (paren) return `設定: ${paren[1]}`;
         return record.name === item.name ? "" : `測定名: ${record.name}`;
       };
-      const hidden = matched.length - rows.length;
       if (ranking) document.getElementById("performanceRows").innerHTML = `<div class="ranking-caption"><span>モデル・製品</span><span>${esc(metric.title)}${config.baseline ? " / 基準比" : ""}</span></div>` + (rows.length ? rows.map((item) => {
         const value = item[st.metric];
         const relative = SPEC.relativePerformance(value, base?.[st.metric]);
         const record = SPEC.performanceData[cat.id][item.id]?.[st.metric];
         const meta = cat.id === "cpu" ? `${item.cores}コア / ${item.threads}スレッド${item.socket ? ` · ${item.socket}` : ""}` : cat.id === "gpu" ? item.integrated ? "内蔵GPU · メモリ共有" : `${item.vram} GB VRAM` : [item.maker, item.deploy, item.weightSize ? `重み 約${item.weightSize.toLocaleString("ja-JP")}GB（8bit）` : null].filter(Boolean).join(" · ");
-        return `<a class="performance-row ${value == null ? "no-result" : ""}" href="#/c/${esc(cat.id)}/${esc(item.id)}">
+        return `<a class="performance-row" href="#/c/${esc(cat.id)}/${esc(item.id)}">
           <span class="performance-rank">${rankOf.get(item.id) ?? "—"}</span>
           <span class="performance-name"><strong>${esc(item.name)}</strong><small>${esc(meta)}${cat.id !== "ai" && item.price ? ` · ¥${item.price.toLocaleString("ja-JP")}` : ""}</small>${cat.id === "ai" && settingOf(item, record) ? `<small class="benchmark-setting">${esc(settingOf(item, record))}</small>` : ""}</span>
           <span class="performance-result"><span class="performance-number">${value == null ? "—" : Number(value).toLocaleString("ja-JP", { maximumFractionDigits: metric.digits || 0 })}<small>${value == null ? "比較データなし" : esc(metric.unit)}</small></span>
           <span class="performance-meter" aria-hidden="true"><i style="width:${meter(value).toFixed(2)}%"></i></span>
           ${relative != null ? `<small class="relative-value">基準比 <b>${relative}</b>（${(relative / 100).toFixed(2)}倍）</small>` : ""}</span>
         </a>`;
-      }).join("") : '<p class="empty">該当する製品がありません</p>') +
-        (hidden ? `<p class="ranking-hidden">この指標の比較データが無い ${hidden} 件は表示していません。<button type="button" id="showUnmeasured">表示する</button></p>` : "");
-      document.getElementById("showUnmeasured")?.addEventListener("click", () => {
-        st.measuredOnly = false;
-        document.getElementById("measuredOnly").checked = false;
-        draw();
-      });
+      }).join("") : '<p class="empty">該当する製品がありません</p>');
       table.innerHTML = `
         <thead><tr>
           ${hasRank ? `<th scope="col" class="rank" title="${esc(rankField().label)}の順位">#</th>` : ""}
@@ -496,7 +488,6 @@
       main.querySelector(`[data-view="${CSS.escape(st.view)}"]`).focus();
     }));
     document.getElementById("benchmarkBase")?.addEventListener("change", (event) => { st.baseline = event.target.value; draw(); });
-    document.getElementById("measuredOnly")?.addEventListener("change", (event) => { st.measuredOnly = event.target.checked; draw(); });
 
     document.getElementById("fq").addEventListener("input", (e) => { st.q = e.target.value; draw(); });
     const selects = document.getElementById("filterSelects");
