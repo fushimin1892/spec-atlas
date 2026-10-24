@@ -80,6 +80,10 @@
       }
       // 3D 描画と同じ PassMark の行が決められない GPU は、2D・計算性能も同じ理由で空欄
       if (catId === "gpu" && item.score == null && SCORE_GAPS[item.id]) item.scoreGap = item.g2dScoreGap = item.computeScoreGap = SCORE_GAPS[item.id];
+      // Artificial Analysis の一覧から外れたモデル（後継など別のモデルの値は流用しない）
+      if (catId === "ai" && SPEC.performanceData.aiUnlisted?.[item.id]) {
+        for (const metric of config.metrics) item[`${metric.key}Gap`] = "Artificial Analysis の一覧から外れました";
+      }
       // GPU は性能スコアをここで当てるので、電力あたりもここで計算する（コスパは下で価格と一緒に計算し直す）
       if (catId === "gpu") item.efficiency = item.score && item.tdp ? Math.round((item.score / item.tdp) * 10) / 10 : null;
     }

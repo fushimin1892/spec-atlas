@@ -655,6 +655,57 @@ window.SPEC.data.ai = [
  {
   "release": null,
   "contextMax": null,
+  "checkedAt": "2026-10-25",
+  "name": "Kimi K3.1 Pro",
+  "family": "Kimi",
+  "modelId": "kimi-k3.1-pro",
+  "maker": "Moonshot AI",
+  "params": null,
+  "active": null,
+  "context": 1000000,
+  "maxOutput": 1048576,
+  "modality": "テキスト・画像・動画 → テキスト",
+  "open": "API のみ",
+  "license": "未公開（重みは 2026/11/04 までに公開予定と公式に記載）",
+  "contextNote": "公式の記載は「100 万 token」。最大出力（max_completion_tokens）は既定 131,072、最大 1,048,576。",
+  "notes": "API の仕様。Kimi K3 を追加学習したモデル。重みは公式に「11 月 4 日までに公開」とあり、公開後に重み版の仕様を確かめて更新します。",
+  "sources": [
+   {
+    "label": "Moonshot AI 公式ブログ（発表）",
+    "url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+    "retrievedUrl": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+    "checkedAt": "2026-10-25",
+    "sha256": "40b9934ea4e4b595116c0b1d4956e1275dc8bdd47dc7fc4a381e51b2b5996c14"
+   },
+   {
+    "label": "Kimi API 公式ドキュメント（K3.1 Pro）",
+    "url": "https://platform.kimi.com/docs/guide/kimi-k3-1-pro-quickstart",
+    "retrievedUrl": "https://platform.kimi.com/docs/guide/kimi-k3-1-pro-quickstart",
+    "checkedAt": "2026-10-25",
+    "sha256": "02e08f8549f42d02d529a08468a21b60eef0899b1492de4124787b6b995c604c"
+   },
+   {
+    "label": "Kimi API 公式モデル一覧",
+    "url": "https://platform.kimi.com/docs/models",
+    "retrievedUrl": "https://platform.kimi.com/docs/models",
+    "checkedAt": "2026-10-25",
+    "sha256": "b2df25e4229aef01bf1d47bcedd02707b225f13c46cb6ca2d6547fa7dec52223"
+   }
+  ],
+  "verifiedFields": [
+   "modelId",
+   "context",
+   "maxOutput",
+   "modality"
+  ],
+  "releaseNote": "公式資料に公開日の記載なし（ページの更新日のみ）",
+  "id": "kimi-k3-1-pro",
+  "paramsStatus": "非公表（公式は「3 兆級」とだけ記載）",
+  "verification": "出典・確認日あり"
+ },
+ {
+  "release": null,
+  "contextMax": null,
   "checkedAt": "2026-10-23",
   "name": "Kimi K2.7 Code",
   "family": "Kimi",

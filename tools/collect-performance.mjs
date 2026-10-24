@@ -134,6 +134,7 @@ const aiMatches = {
   "claude-haiku-5-5": "Claude Haiku 5.5 (max)",
   "claude-fable-5-1": "Claude Fable 5.1 (max with fallback)",
   "kimi-k3": "Kimi K3 (max)",
+  "kimi-k3-1-pro": "Kimi K3.1 Pro",
   "deepseek-v4-1-flash": "DeepSeek V4.1 Flash 1017 (max)",
   "qwen3-8-2-4t-a95b": "Qwen3.8 2.4T A95B",
   "qwen3-8-flash-next": "Qwen3.8-Flash-Next",
@@ -153,6 +154,7 @@ const aaJsonNames = {
   "claude-haiku-5-5": "Claude Haiku 5.5 (max)",
   "claude-fable-5-1": "Claude Fable 5.1 (Max, Default Fallback)",
   "kimi-k3": "Kimi K3 (max)",
+  "kimi-k3-1-pro": "Kimi K3.1 Pro",
   "deepseek-v4-1-flash": "DeepSeek V4.1 Flash 1017 (max)",
   "qwen3-8-2-4t-a95b": "Qwen3.8 2.4T A95B",
   "qwen3-8-flash-next": "Qwen3.8-Flash-Next",
@@ -161,9 +163,17 @@ const aaJsonNames = {
 };
 const aiTable = tablesOf(html.aa).find((table) => table[1]?.[3]?.text === "Artificial Analysis Intelligence Index");
 assert(aiTable?.length > 200, "AI一覧の構造変更");
+// AA の一覧から外れたモデルは推測で別のモデル（後継・別版）へ付け替えず、空欄にして aiUnlisted に記録する（画面で理由を出す）
+result.aiUnlisted = {};
 for (const [id, name] of Object.entries(aiMatches)) {
   const rows = aiTable.filter((row) => row[0]?.text === name);
-  assert(rows.length === 1 && window.SPEC.data.ai.some((i) => i.id === id), `${name}: 対応が一意ではない`);
+  assert(window.SPEC.data.ai.some((i) => i.id === id), `${id}: 掲載モデルに無い`);
+  if (!rows.length) {
+    result.aiUnlisted[id] = name;
+    console.warn(`注意: ${name} が Artificial Analysis の一覧に無いため空欄にします`);
+    continue;
+  }
+  assert(rows.length === 1, `${name}: 同じ名前の行が複数ある`);
   const row = rows[0];
   assert(/^\d+$/.test(row[3].text), `${name}: 暫定値・未測定を確定スコアにしない`);
   result.ai[id] = {};
@@ -173,6 +183,7 @@ for (const [id, name] of Object.entries(aiMatches)) {
 }
 const aaJson = aaModels(html.aa);
 for (const [id, name] of Object.entries(aaJsonNames)) {
+  if (result.aiUnlisted[id]) continue;
   const rows = aaJson.filter((m) => m.name.toLowerCase() === name.toLowerCase());
   assert(rows.length === 1 && window.SPEC.data.ai.some((i) => i.id === id), `${name}: 正確さの対応が一意ではない`);
   const m = rows[0];
