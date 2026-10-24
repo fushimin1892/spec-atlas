@@ -2221,8 +2221,11 @@ window.SPEC.data.ai = [
     "qwen3-6-35b-a3b": "Qwen3.8 系", "qwen3-5-397b-a17b": "Qwen3.8 系", "qwen3-235b-a22b": "Qwen3.8 系", "qwen3-32b": "Qwen3.8 系", "qwen2-5-72b": "Qwen3.8 系",
     "kimi-k3": "Kimi K3.1 Pro", "glm-5-2": "GLM-5.3", "glm-5-1": "GLM-5.3", "glm-5": "GLM-5.3", "glm-4-7": "GLM-5.3", "glm-4-6": "GLM-5.3", "glm-4-5": "GLM-5.3", "glm-4-5-air": "GLM-5.3",
   };
-  // 共通の評価（Artificial Analysis）が無く、ランキングで比べられないモデルは掲載しない（2026-10-25 の方針）
-  const unrated = { "deepseek-v4-pro": "共通の評価（Artificial Analysis）が無く比較できない" };
+  // 後継以外の理由で掲載しないモデル（2026-10-25 の方針）
+  const excluded = {
+    "deepseek-v4-pro": "共通の評価（Artificial Analysis）が無く比較できない",
+    "gpt-oss-20b": "掲載対象から外した（同じ系列の gpt-oss-120b を掲載）",
+  };
   const all = window.SPEC.data.ai;
   for (const m of all) {
     m.deploy = m.open === "重み公開" ? "ローカル・クラウド" : "クラウドのみ";
@@ -2230,7 +2233,7 @@ window.SPEC.data.ai = [
     m.weightSize = m.open === "重み公開" && m.params ? m.params : null;
     m.weightNote = m.weightSize ? `4bit なら約 ${Math.round(m.weightSize / 2).toLocaleString("ja-JP")} GB` : null;
     // 指定 6 系列以外（2024〜2025 年の参考データ）は最新世代か確認していないので掲載しない
-    m.archivedReason = superseded[m.id] ? `後継の ${superseded[m.id]} が公開済み` : unrated[m.id] ? unrated[m.id] : m.family === "その他" ? "最新世代か未確認の参考データ" : null;
+    m.archivedReason = superseded[m.id] ? `後継の ${superseded[m.id]} が公開済み` : excluded[m.id] ? excluded[m.id] : m.family === "その他" ? "最新世代か未確認の参考データ" : null;
   }
   window.SPEC.archive = window.SPEC.archive || {};
   window.SPEC.archive.ai = all.filter((m) => m.archivedReason);
