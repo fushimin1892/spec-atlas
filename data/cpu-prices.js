@@ -2,7 +2,7 @@
 window.SPEC.prices = window.SPEC.prices || {};
 window.SPEC.prices.cpu = {
  "source": "楽天市場",
- "fetchedAt": "2026-10-25T23:22:44.028Z",
+ "fetchedAt": "2026-10-27T00:35:15.637Z",
  "items": {
   "ryzen-9-9950x3d2": {
    "price": 178000,
@@ -17,7 +17,7 @@ window.SPEC.prices.cpu = {
    "condition": "新品",
    "shop": "総合通販PREMOA 楽天市場店",
    "url": "https://item.rakuten.co.jp/premoa/2980000646942/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
-   "title": "【10/25!エントリーでP10倍】 AMD Ryzen 9 9950X3D CPU + DEEPCOOL R-AM5TPG-CUNNAN-G AM5 Thermal Paste Guard サーマルペーストガード セット【KK9N0D18P】 XP1025",
+   "title": "AMD Ryzen 9 9950X3D CPU + DEEPCOOL R-AM5TPG-CUNNAN-G AM5 Thermal Paste Guard サーマルペーストガード セット【KK9N0D18P】",
    "matched": 12
   },
   "core-ultra-7-270k-plus": {
@@ -26,7 +26,7 @@ window.SPEC.prices.cpu = {
    "shop": "ドスパラ楽天市場店",
    "url": "https://item.rakuten.co.jp/dospara-r/ic615465/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "Intel Core Ultra 7 270K Plus BOX",
-   "matched": 48
+   "matched": 44
   },
   "core-ultra-9-285k": {
    "price": 83980,
@@ -91,7 +91,7 @@ window.SPEC.prices.cpu = {
    "shop": "ドスパラ楽天市場店",
    "url": "https://item.rakuten.co.jp/dospara-r/ic512737/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "Intel Core Ultra 7 265KF BOX",
-   "matched": 4
+   "matched": 2
   },
   "core-i9-13900k": {
    "price": 51980,
@@ -131,7 +131,7 @@ window.SPEC.prices.cpu = {
    "shop": "Joshin web 家電とPCの大型専門店",
    "url": "https://item.rakuten.co.jp/jism/0730143315296-44-22814-n/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "AMD｜エーエムディー AMD Ryzen 9 9900X BOX【国内正規品】 (12C/24T4.4GHz120W) 100-100000662WOF",
-   "matched": 5
+   "matched": 9
   },
   "core-i7-14700kf": {
    "price": 70780,
@@ -139,7 +139,7 @@ window.SPEC.prices.cpu = {
    "shop": "Joshin web 家電とPCの大型専門店",
    "url": "https://item.rakuten.co.jp/jism/0735858546942-44-22814-n/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "Intel｜インテル 【国内正規品】Intel CPU Core i7 14700KF 第14世代 インテル CPU BX8071514700KF",
-   "matched": 16
+   "matched": 15
   },
   "core-ultra-5-250k-plus": {
    "price": 45074,
@@ -217,7 +217,7 @@ window.SPEC.prices.cpu = {
    "shop": "じゃんぱら楽天市場店",
    "url": "https://item.rakuten.co.jp/janpara/72367449-72/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【中古】AMD Ryzen 9 5950X (3.4GHz/TC:4.9GHz) bulk AM4/16C/32T/L3 64MB/TDP 105W【川崎】保証期間1週間",
-   "matched": 2
+   "matched": 3
   },
   "core-i7-13700k": null,
   "core-i9-12900ks": null,
@@ -242,7 +242,7 @@ window.SPEC.prices.cpu = {
    "condition": "新品",
    "shop": "ドスパラ楽天市場店",
    "url": "https://item.rakuten.co.jp/dospara-r/ic509915/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
-   "title": "AMD Ryzen 9 5900XT BOX",
+   "title": "【期間限定・枚数限定10,000円OFFクーポン配布中】AMD Ryzen 9 5900XT BOX",
    "matched": 9
   },
   "core-i9-13900t": null,
@@ -268,7 +268,7 @@ window.SPEC.prices.cpu = {
    "shop": "XPRICE楽天市場店",
    "url": "https://item.rakuten.co.jp/a-price/2980000646911/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "AMD Ryzen 7 9850X3D W/O Cooler WOF 100-100001973WOF CPU (8C/16T 4.7Ghz 120W) + DEEPCOOL R-AM5TPG-CUNNAN-G AM5 Thermal Paste Guard サーマルペーストガード セット",
-   "matched": 9
+   "matched": 8
   },
   "core-i9-12900k": null,
   "core-i9-12900kf": null,
@@ -281,11 +281,11 @@ window.SPEC.prices.cpu = {
    "matched": 3
   },
   "ryzen-7-9800x3d": {
-   "price": 65680,
+   "price": 65800,
    "condition": "新品",
-   "shop": "Joshin web 家電とPCの大型専門店",
-   "url": "https://item.rakuten.co.jp/jism/0730143315289-44-22814-n/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
-   "title": "AMD｜エーエムディー AMD Ryzen 7 9800X3D BOX【国内正規品】 100-100001084WOF",
+   "shop": "ドスパラ楽天市場店",
+   "url": "https://item.rakuten.co.jp/dospara-r/ic516296/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
+   "title": "【期間限定・枚数限定6000円OFFクーポン配布中】AMD Ryzen 7 9800X3D BOX",
    "matched": 10
   },
   "ryzen-9-5900x": {
@@ -333,10 +333,10 @@ window.SPEC.prices.cpu = {
   "ryzen-7-9700x": {
    "price": 47800,
    "condition": "新品",
-   "shop": "Joshin web 家電とPCの大型専門店",
-   "url": "https://item.rakuten.co.jp/jism/0730143315593-44-22814-n/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
-   "title": "AMD｜エーエムディー AMD Ryzen 7 9700X BOX【国内正規品】 100-100001404WOF",
-   "matched": 10
+   "shop": "XPRICE楽天市場店",
+   "url": "https://item.rakuten.co.jp/a-price/0730143315593/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
+   "title": "AMD Ryzen 7 9700X W/O Cooler WOF (8C/16T、3.8GHz、65W) [CPU] 【KK9N0D18P】",
+   "matched": 14
   },
   "core-i7-13700": null,
   "core-i9-12900f": null,
@@ -486,7 +486,7 @@ window.SPEC.prices.cpu = {
    "condition": "新品",
    "shop": "総合通販PREMOA 楽天市場店",
    "url": "https://item.rakuten.co.jp/premoa/2980000646850/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
-   "title": "【10/25!エントリーでP10倍】 AMD Ryzen 5 9500F CPU + DEEPCOOL R-AM5TPG-CUNNAN-G AM5 Thermal Paste Guard サーマルペーストガード セット【KK9N0D18P】 XP1025",
+   "title": "AMD Ryzen 5 9500F CPU + DEEPCOOL R-AM5TPG-CUNNAN-G AM5 Thermal Paste Guard サーマルペーストガード セット【KK9N0D18P】",
    "matched": 10
   },
   "ryzen-5-7600x": {
@@ -495,7 +495,7 @@ window.SPEC.prices.cpu = {
    "shop": "コンプモト 楽天市場店",
    "url": "https://item.rakuten.co.jp/compmoto-r/0730143314442/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "AMD BOX(NoFAN) Ryzen 5 7600X without cooler AM5 105W(100-100000593WOF) 目安在庫=○",
-   "matched": 6
+   "matched": 5
   },
   "ryzen-7-5800x3d": {
    "price": 66800,
@@ -512,7 +512,7 @@ window.SPEC.prices.cpu = {
    "shop": "エクセラー",
    "url": "https://item.rakuten.co.jp/excellar/1050021174/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【1日と5.0のつく日、18日はポイント3倍！】【中古】Core i5 12600KF 3.7GHz LGA1700 SRL4U 元箱あり",
-   "matched": 3
+   "matched": 4
   },
   "ryzen-7-5800x": {
    "price": 87394,
@@ -528,8 +528,8 @@ window.SPEC.prices.cpu = {
    "condition": "新品",
    "shop": "総合通販PREMOA 楽天市場店",
    "url": "https://item.rakuten.co.jp/premoa/2980000646829/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
-   "title": "【10/25!エントリーでP10倍】 AMD Ryzen5 7600 With Wraith Stealth Cooler 100-100001015BOX CPU (6C/12T 4.0Ghz 65W) + DEEPCOOL R-AM5TPG-CUNNAN-G AM5 Thermal Paste Guard サーマルペーストガード セット【KK9N0D18P】 XP1025",
-   "matched": 11
+   "title": "AMD Ryzen5 7600 With Wraith Stealth Cooler 100-100001015BOX CPU (6C/12T 4.0Ghz 65W) + DEEPCOOL R-AM5TPG-CUNNAN-G AM5 Thermal Paste Guard サーマルペーストガード セット【KK9N0D18P】",
+   "matched": 10
   },
   "ryzen-7-5700x": {
    "price": 34680,
@@ -537,7 +537,7 @@ window.SPEC.prices.cpu = {
    "shop": "Joshin web 家電とPCの大型専門店",
    "url": "https://item.rakuten.co.jp/jism/0730143314275-44-22814-n/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "AMD｜エーエムディー AMD Ryzen 7 5700X BOX【国内正規品】 100-100000926WOF",
-   "matched": 20
+   "matched": 22
   },
   "ryzen-5-7500f": {
    "price": 26800,
@@ -545,7 +545,7 @@ window.SPEC.prices.cpu = {
    "shop": "XPRICE楽天市場店",
    "url": "https://item.rakuten.co.jp/a-price/2980000646812/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "AMD Ryzen 5 7500F CPU + DEEPCOOL R-AM5TPG-CUNNAN-G AM5 Thermal Paste Guard サーマルペーストガード セット",
-   "matched": 9
+   "matched": 10
   },
   "ryzen-7-5700x3d": null,
   "ryzen-7-5800": null,
@@ -685,12 +685,12 @@ window.SPEC.prices.cpu = {
   },
   "ryzen-5-5600x3d": null,
   "ryzen-5-5600x": {
-   "price": 22980,
+   "price": 20980,
    "condition": "中古",
    "shop": "じゃんぱら楽天市場店",
-   "url": "https://item.rakuten.co.jp/janpara/66431956-66/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
-   "title": "【中古】AMD Ryzen 5 5600X (3.7GHz/TC:4.6GHz) bulk AM4/6C/12T/L3 32MB/TDP 65W【秋葉3号】保証期間1週間",
-   "matched": 9
+   "url": "https://item.rakuten.co.jp/janpara/67711741-67/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
+   "title": "【中古】AMD Ryzen 5 5600X (3.7GHz/TC:4.6GHz) bulk AM4/6C/12T/L3 32MB/TDP 65W【秋葉2号】保証期間1週間",
+   "matched": 10
   },
   "ryzen-5-8500g": {
    "price": 26858,
@@ -698,7 +698,7 @@ window.SPEC.prices.cpu = {
    "shop": "ツクモ 楽天市場店",
    "url": "https://item.rakuten.co.jp/shoptsukumo/9173183015/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "Ryzen 5 8500G　100-100000931BOX　【国内正規品】",
-   "matched": 9
+   "matched": 13
   },
   "ryzen-5-5600": {
    "price": 22750,
@@ -706,7 +706,7 @@ window.SPEC.prices.cpu = {
    "shop": "楽天ビック(ビックカメラ×楽天)",
    "url": "https://item.rakuten.co.jp/biccamera/0730143314190/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【エントリーで最大2万ポイント当たる｜10/27まで】 AMD｜エーエムディー 〔CPU〕AMD Ryzen 5 5600 Wraith Stealth Cooler （Zen3） 100-100000927BOX [AMD Ryzen 5 /Socket AM4]",
-   "matched": 8
+   "matched": 10
   },
   "core-i5-12600": {
    "price": 28600,
@@ -728,14 +728,7 @@ window.SPEC.prices.cpu = {
    "matched": 24
   },
   "ryzen-7-pro-4750g": null,
-  "ryzen-5-5600gt": {
-   "price": 23280,
-   "condition": "中古",
-   "shop": "エクセラー2号館 楽天市場店",
-   "url": "https://item.rakuten.co.jp/kadekaden/1050029286/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
-   "title": "【中古】AMD Ryzen 5 5600GT 100-000001488 3.6GHz Socket AM4",
-   "matched": 3
-  },
+  "ryzen-5-5600gt": null,
   "ryzen-5-5500gt": {
    "price": 22980,
    "condition": "新品",
@@ -809,9 +802,9 @@ window.SPEC.prices.cpu = {
    "price": 13980,
    "condition": "中古",
    "shop": "じゃんぱら楽天市場店",
-   "url": "https://item.rakuten.co.jp/janpara/39261780-39/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
-   "title": "【中古】AMD Ryzen 5 3600XT (3.8GHz/TC:4.5GHz) bulk AM4/6C/12T/L3 32MB/TDP 95W【千葉】保証期間1週間",
-   "matched": 3
+   "url": "https://item.rakuten.co.jp/janpara/96107450-96/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
+   "title": "【中古】AMD Ryzen 5 3600XT (3.8GHz/TC:4.5GHz) BOX AM4/6C/12T/L3 32MB/TDP 95W【吉祥寺】保証期間1週間",
+   "matched": 2
   },
   "core-i7-10700kf": {
    "price": 25600,
@@ -828,7 +821,7 @@ window.SPEC.prices.cpu = {
    "shop": "エクセラー2号館 楽天市場店",
    "url": "https://item.rakuten.co.jp/kadekaden/1050015332/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【中古】Core i9 9900K 3.6GHz LGA1151 95W SRG19",
-   "matched": 40
+   "matched": 37
   },
   "ryzen-5-3600x": {
    "price": 13980,
@@ -852,7 +845,7 @@ window.SPEC.prices.cpu = {
    "shop": "じゃんぱら楽天市場店",
    "url": "https://item.rakuten.co.jp/janpara/108203092-222/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【中古】AMD Ryzen 5 3600 (3.6GHz/TC:4.2GHz) BOX AM4/6C/12T/L3 32MB/TDP 65W【ECセンター】保証期間1週間",
-   "matched": 38
+   "matched": 39
   },
   "ryzen-7-2700x": {
    "price": 9980,
@@ -880,7 +873,14 @@ window.SPEC.prices.cpu = {
    "matched": 21
   },
   "core-i9-9900": null,
-  "ryzen-7-1800x": null,
+  "ryzen-7-1800x": {
+   "price": 5500,
+   "condition": "中古",
+   "shop": "じゃんぱら楽天市場店",
+   "url": "https://item.rakuten.co.jp/janpara/67711730-67/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
+   "title": "【中古】AMD Ryzen 7 1800X (3.6GHz/TC:4GHz) BOX AM4/8C/16T/L3 16MB/TDP 95W【秋葉2号】保証期間1週間",
+   "matched": 1
+  },
   "core-i7-10700f": {
    "price": 25980,
    "condition": "中古",
@@ -944,12 +944,12 @@ window.SPEC.prices.cpu = {
    "matched": 58
   },
   "ryzen-7-1700": {
-   "price": 4480,
+   "price": 4400,
    "condition": "中古",
-   "shop": "PCとパーツのパソどん楽天市場店",
-   "url": "https://item.rakuten.co.jp/pasodon/r7-1700/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
-   "title": "【中古パーツ】AMD Ryzen 7 1700 AM4 CPU　付属品無し　メール便送料無料",
-   "matched": 1
+   "shop": "じゃんぱら楽天市場店",
+   "url": "https://item.rakuten.co.jp/janpara/65331412-65/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
+   "title": "【中古】AMD Ryzen 7 1700 (3GHz/TC:3.7GHz) bulk AM4/8C/16T/L3 16MB/TDP 65W【大須】保証期間1週間",
+   "matched": 2
   },
   "core-i5-10600k": null,
   "core-i7-9700kf": {
@@ -1010,7 +1010,7 @@ window.SPEC.prices.cpu = {
    "shop": "じゃんぱら楽天市場店",
    "url": "https://item.rakuten.co.jp/janpara/64254099-64/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【中古】Intel Core i7-9700 (3GHz/TB:4.7GHz/SRG13/R0) bulk LGA1151/8C/8T/L3 12M/UHD630/TDP65W【仙台駅東口】保証期間1週間",
-   "matched": 47
+   "matched": 49
   },
   "core-i7-9700f": {
    "price": 14980,
@@ -1047,12 +1047,12 @@ window.SPEC.prices.cpu = {
   },
   "ryzen-5-1600-af": null,
   "ryzen-3-5300g": {
-   "price": 20180,
+   "price": 21427,
    "condition": "新品",
-   "shop": "楽天ビック(ビックカメラ×楽天)",
-   "url": "https://item.rakuten.co.jp/biccamera/0730143317122/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
-   "title": "AMD｜エーエムディー 〔CPU〕AMD Ryzen 3 5300G With Wraith Stealth Cooler (4C/8T4.0GHz65W) 100-100000253BOX [AMD Ryzen 3 /Socket AM4 /グラフィックス搭載]",
-   "matched": 7
+   "shop": "コンプモト 楽天市場店",
+   "url": "https://item.rakuten.co.jp/compmoto-r/0730143317122/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
+   "title": "AMD Ryzen3 5300G with Wraith Stealth Cooler AM4 65W 100-100000253BOX 目安在庫=○",
+   "matched": 6
   },
   "ryzen-5-3500": {
    "price": 8980,
@@ -1068,17 +1068,17 @@ window.SPEC.prices.cpu = {
    "shop": "エクセラー",
    "url": "https://item.rakuten.co.jp/excellar/1050012719/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【1日と5.0のつく日、18日はポイント3倍！】【中古】Core i7 8700 3.2GHz LGA1151 SR3QS",
-   "matched": 54
+   "matched": 55
   },
   "ryzen-3-3300x": null,
   "ryzen-5-1600": null,
   "core-i5-10400f": {
-   "price": 12980,
+   "price": 13980,
    "condition": "中古",
    "shop": "じゃんぱら楽天市場店",
-   "url": "https://item.rakuten.co.jp/janpara/230013066-230/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
-   "title": "【中古】Intel Core i5-10400F (2.9GHz/TB:4.3GHz) bulk LGA1200/6C/12T/L3 12M/No iGPU/TDP65W【川越クレアモール】保証期間1週間",
-   "matched": 6
+   "url": "https://item.rakuten.co.jp/janpara/65331895-65/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
+   "title": "【中古】Intel Core i5-10400F (2.9GHz/TB:4.3GHz) BOX LGA1200/6C/12T/L3 12M/No iGPU/TDP65W【大須】保証期間1週間",
+   "matched": 4
   },
   "core-i5-10400": {
    "price": 14980,
@@ -1089,7 +1089,7 @@ window.SPEC.prices.cpu = {
    "matched": 7
   },
   "ryzen-3-4300g": {
-   "price": 18264,
+   "price": 18263,
    "condition": "新品",
    "shop": "コンプモト 楽天市場店",
    "url": "https://item.rakuten.co.jp/compmoto-r/0730143313988/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
@@ -1162,7 +1162,7 @@ window.SPEC.prices.cpu = {
    "shop": "じゃんぱら楽天市場店",
    "url": "https://item.rakuten.co.jp/janpara/64256153-64/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【中古】Intel Core i5-9500 (3GHz/TB:4.4GHz/SRF4B/U0) bulk LGA1151/6C/6T/L3 9M/UHD630/TDP65W【仙台駅東口】保証期間1週間",
-   "matched": 88
+   "matched": 89
   },
   "core-i5-9400f": {
    "price": 7000,
@@ -1178,7 +1178,7 @@ window.SPEC.prices.cpu = {
    "shop": "じゃんぱら楽天市場店",
    "url": "https://item.rakuten.co.jp/janpara/64253277-64/?rafcid=wsc_i_is_d2c101e1-d614-49e9-b1a9-ee2645d0ba42",
    "title": "【中古】Intel Core i5-9400 (2.9GHz/TB:4.1GHz/SRG0Y/R0) bulk LGA1151/6C/6T/L3 9M/UHD630/TDP65W【仙台駅東口】保証期間1週間",
-   "matched": 60
+   "matched": 63
   },
   "ryzen-5-3400g": {
    "price": 11180,
