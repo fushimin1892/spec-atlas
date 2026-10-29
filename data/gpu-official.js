@@ -2,7 +2,7 @@
 window.SPEC.official = window.SPEC.official || {};
 window.SPEC.official.gpu = {
  "source": "NVIDIA 公式仕様",
- "checkedAt": "2026-10-28T00:37:42.401Z",
+ "checkedAt": "2026-10-29T00:58:03.589Z",
  "items": {
   "rtx-4090": {
    "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/",
